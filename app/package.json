@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
   "scripts": {
     "dev": "vite",
     "build": "node build.mjs",
@@ -17,6 +20,12 @@
     "react-dom": "^19.2.8",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.18.2"
+  },
+  "overrides": {
+    "react-helmet-async": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

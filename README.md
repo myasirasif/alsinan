@@ -35,6 +35,25 @@ Settings -> Deployment Protection, which does not depend on crawlers behaving.
 deploy, so note that **JSON takes no comments** — document rules here, not in
 the file.
 
+### The react-helmet-async override
+
+`react-helmet-async@2` still declares its peer range as React 16/17/18, so a
+plain `npm install` on React 19 fails with `ERESOLVE`. The package itself works
+on React 19 — the prerender, hydration and all 22 routes are verified against it
+— only its metadata is stale. `package.json` therefore carries:
+
+```json
+"overrides": { "react-helmet-async": { "react": "$react", "react-dom": "$react-dom" } }
+```
+
+Never install with `--legacy-peer-deps`: it hides this locally and lets a broken
+tree reach Vercel, which installs with no flags. `npm install` from a clean
+checkout must succeed on its own.
+
+Version 3 of the package is not an option here: on React 19 it delegates to
+React's built-in metadata hoisting and stops populating the SSR context that
+`prerender.mjs` reads, so the static HTML comes out with no head tags.
+
 Nothing else is required — the build emits plain static files:
 
 ```

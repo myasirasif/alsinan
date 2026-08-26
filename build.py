@@ -157,21 +157,94 @@ def make_header_jsx(header_html):
                        if not c.startswith(("current-", "current_", "page-item-", "page_item")))
         return "%s{mi(%s, %s)}%s%s" % (m.group(1), json.dumps(cls), m.group(4), m.group(3), m.group(4))
 
-    return MENU_LI.sub(repl, jsx)
+    jsx = MENU_LI.sub(repl, jsx)
+
+    # the <nav> owns the toggled class, the ref and the delegated close handler
+    jsx = jsx.replace(
+        '<nav id="site-navigation" className="main-navigation">',
+        '<nav id="site-navigation" ref={navRef} onClick={onNavClick}\n'
+        '     className={"main-navigation" + (menuOpen ? " toggled" : "")}>',
+        1,
+    )
+
+    # the hamburger drives React state instead of navigation.js
+    jsx = re.sub(
+        r'<button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false">',
+        '<button className="menu-toggle" aria-controls="primary-menu"\n'
+        '        aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}>',
+        jsx, count=1,
+    )
+
+    # a parent item toggles its sub-menu on mobile rather than navigating
+    jsx = re.sub(
+        r'(<li id="menu-item-\d+" className=\{mi\("[^"]*menu-item-has-children[^"]*", '
+        r'"([^"]*)"\)\}>\s*)<Link to="\2">',
+        lambda m: '%s<Link to="%s" onClick={(e) => onParentClick(e, "%s")}>'
+                  % (m.group(1), m.group(2), m.group(2)),
+        jsx,
+    )
+
+    return jsx
 
 
-HEADER_TPL = '''import { Link, useLocation } from "react-router-dom";
+HEADER_TPL = '''import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+// the breakpoint where styles.css swaps the nav for the hamburger
+const MOBILE = "(max-width: 1024px)";
 
 export default function Header() {
   const { pathname } = useLocation();
   const here = pathname.endsWith("/") ? pathname : pathname + "/";
+  const navRef = useRef(null);
 
-  // Rebuilds the active-state classes WordPress renders server-side.
+  // WordPress reloaded the page on every click, which closed the menu for free.
+  // Client-side routing does not, so the menu has to close itself.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openSub, setOpenSub] = useState(null);
+
+  const close = () => {
+    setMenuOpen(false);
+    setOpenSub(null);
+  };
+
+  useEffect(close, [pathname]);
+
+  // clicking away from the nav closes it, as navigation.js used to do
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDocClick = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) close();
+    };
+    document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, [menuOpen]);
+
+  // Rebuilds the active-state classes WordPress renders server-side, plus the
+  // .focus class the theme uses to reveal a sub-menu.
   const mi = (base, to) => {
     const target = to.endsWith("/") ? to : to + "/";
-    if (here === target) return base + " current-menu-item current_page_item";
-    if (target !== "/" && here.startsWith(target)) return base + " current-menu-ancestor current-menu-parent";
-    return base;
+    let cls = base;
+    if (here === target) cls += " current-menu-item current_page_item";
+    else if (target !== "/" && here.startsWith(target)) cls += " current-menu-ancestor current-menu-parent";
+    if (openSub === to) cls += " focus";
+    return cls;
+  };
+
+  // On mobile a parent item opens its sub-menu instead of navigating, matching
+  // the theme's touchstart behaviour. On desktop the CSS hover still applies.
+  const onParentClick = (e, to) => {
+    if (typeof window === "undefined" || !window.matchMedia(MOBILE).matches) return;
+    e.preventDefault();
+    setOpenSub((cur) => (cur === to ? null : to));
+  };
+
+  // any ordinary menu link closes the whole thing, including same-page links
+  const onNavClick = (e) => {
+    const link = e.target.closest("a");
+    if (!link || !navRef.current?.contains(link)) return;
+    if (link.parentElement?.classList.contains("menu-item-has-children")) return;
+    close();
   };
 
   return (

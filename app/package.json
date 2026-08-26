@@ -13,7 +13,9 @@
     "prerender": "node prerender.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test:contact": "node test-contact.mjs"
+    "test:contact": "node test-contact.mjs",
+    "test": "node test-paths.mjs && node test-contact.mjs",
+    "test:paths": "node test-paths.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",

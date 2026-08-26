@@ -35,6 +35,19 @@ Settings -> Deployment Protection, which does not depend on crawlers behaving.
 deploy, so note that **JSON takes no comments** — document rules here, not in
 the file.
 
+### Do not derive paths from `import.meta.url` by string surgery
+
+`build.mjs` once located Vite with
+`new URL("./node_modules/vite/bin/vite.js", import.meta.url).pathname.replace(/^\//, "")`.
+Stripping that leading slash is correct on Windows (`/C:/x` -> `C:/x`) and wrong
+on Linux, where it turns an absolute path into a relative one that Node then
+resolves against the cwd — Vercel failed with
+`vercel/path0/app/node_modules/vite/bin/vite.js` doubled onto the cwd.
+
+`build.mjs` now calls Vite's JavaScript API, so there is no path to get wrong,
+and `fileURLToPath` is used everywhere else. `npm run test:paths` fails the
+build if that pattern comes back.
+
 ### The react-helmet-async override
 
 `react-helmet-async@2` still declares its peer range as React 16/17/18, so a
@@ -125,6 +138,16 @@ requests to the old domain.
   snippets through `useThemeScripts` and destroys carousels on route exit.
 - **Active nav classes** (`current-menu-item`, `current-menu-ancestor`) are
   recomputed from the current route, since WordPress rendered them server-side.
+- **The mobile menu is React's now**, and `navigation.js` is deliberately not
+  loaded. That script ran once at page load and toggled `.toggled` / `.focus`
+  itself, so with client-side routing the menu stayed open after every tap, and
+  it fought React over the same classes. `Header.jsx` drives the same classes
+  from state and closes on route change, on any ordinary link, and on an outside
+  click. The theme's sub-menu is parked at `left: -15984px` and pulled back with
+  `.focus`, so on mobile a parent item toggles its sub-menu instead of
+  navigating; on desktop the CSS `:hover` rule is untouched and the parent still
+  links through. `assets/css/spa-fixes.css` restores keyboard access with
+  `:focus-within`, which the removed script used to provide.
 - **Body classes** are applied per route, both in the prerendered HTML and after
   hydration.
 - WordPress's own nested-`<a>` bug around the logo is unwrapped — it is invalid

@@ -1,0 +1,26 @@
+/* Small corrections that only exist because the site is a SPA now.
+   Everything else in assets/css is the WordPress theme, untouched. */
+
+/* navigation.js used to add .focus on keyboard focus so a sub-menu opened for
+   keyboard users. Header.jsx owns .focus for mobile taps, so :focus-within
+   restores the keyboard path without any JavaScript. */
+.main-navigation ul li:focus-within > ul {
+  left: auto;
+  display: block;
+}
+
+.main-navigation ul ul li:focus-within > ul {
+  left: auto;
+  display: block;
+}
+
+/* The hamburger is a real toggle button now, so give it a visible focus ring
+   and a pointer, which the theme never styled. */
+header#masthead button.menu-toggle {
+  cursor: pointer;
+}
+
+header#masthead button.menu-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}

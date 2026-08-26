@@ -3,9 +3,11 @@
 // JSON-LD references keep resolving.
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
-const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\//, ""));
+// fileURLToPath handles both /C:/... on Windows and /var/... on POSIX
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const UPLOADS = path.join(ROOT, "app", "public", "wp-content", "uploads");
 const THRESHOLD = 150 * 1024;
 

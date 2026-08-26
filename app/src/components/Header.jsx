@@ -1,15 +1,61 @@
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+// the breakpoint where styles.css swaps the nav for the hamburger
+const MOBILE = "(max-width: 1024px)";
 
 export default function Header() {
   const { pathname } = useLocation();
   const here = pathname.endsWith("/") ? pathname : pathname + "/";
+  const navRef = useRef(null);
 
-  // Rebuilds the active-state classes WordPress renders server-side.
+  // WordPress reloaded the page on every click, which closed the menu for free.
+  // Client-side routing does not, so the menu has to close itself.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openSub, setOpenSub] = useState(null);
+
+  const close = () => {
+    setMenuOpen(false);
+    setOpenSub(null);
+  };
+
+  useEffect(close, [pathname]);
+
+  // clicking away from the nav closes it, as navigation.js used to do
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDocClick = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) close();
+    };
+    document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, [menuOpen]);
+
+  // Rebuilds the active-state classes WordPress renders server-side, plus the
+  // .focus class the theme uses to reveal a sub-menu.
   const mi = (base, to) => {
     const target = to.endsWith("/") ? to : to + "/";
-    if (here === target) return base + " current-menu-item current_page_item";
-    if (target !== "/" && here.startsWith(target)) return base + " current-menu-ancestor current-menu-parent";
-    return base;
+    let cls = base;
+    if (here === target) cls += " current-menu-item current_page_item";
+    else if (target !== "/" && here.startsWith(target)) cls += " current-menu-ancestor current-menu-parent";
+    if (openSub === to) cls += " focus";
+    return cls;
+  };
+
+  // On mobile a parent item opens its sub-menu instead of navigating, matching
+  // the theme's touchstart behaviour. On desktop the CSS hover still applies.
+  const onParentClick = (e, to) => {
+    if (typeof window === "undefined" || !window.matchMedia(MOBILE).matches) return;
+    e.preventDefault();
+    setOpenSub((cur) => (cur === to ? null : to));
+  };
+
+  // any ordinary menu link closes the whole thing, including same-page links
+  const onNavClick = (e) => {
+    const link = e.target.closest("a");
+    if (!link || !navRef.current?.contains(link)) return;
+    if (link.parentElement?.classList.contains("menu-item-has-children")) return;
+    close();
   };
 
   return (
@@ -48,11 +94,13 @@ export default function Header() {
       <div className="col-lg-10 col-7 col-menu">
       <div className="menu_wrap">
       <div className="menu_box">
-      <nav id="site-navigation" className="main-navigation">
-      <button className="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" /></button>
+      <nav id="site-navigation" ref={navRef} onClick={onNavClick}
+           className={"main-navigation" + (menuOpen ? " toggled" : "")}>
+      <button className="menu-toggle" aria-controls="primary-menu"
+              aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" /></button>
       <div className="menu-menu-1-container"><ul id="primary-menu" className="menu"><li id="menu-item-47" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47", "/")}><Link to="/">Home</Link></li>
       <li id="menu-item-48" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-48", "/about/")}><Link to="/about/">About</Link></li>
-      <li id="menu-item-52" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52", "/services/")}><Link to="/services/">Services</Link>
+      <li id="menu-item-52" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52", "/services/")}><Link to="/services/" onClick={(e) => onParentClick(e, "/services/")}>Services</Link>
       <ul className="sub-menu">
       <li id="menu-item-258" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-258", "/services/dubai-tours-transport-services/")}><Link to="/services/dubai-tours-transport-services/">For Tours &#038; Excursions</Link></li>
       <li id="menu-item-259" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-259", "/services/private-car-rental-in-dubai/")}><Link to="/services/private-car-rental-in-dubai/">For Private Travellers</Link></li>

@@ -1,0 +1,7 @@
+node_modules/
+__pycache__/
+dist/
+dist-ssr/
+.playwright-mcp/
+*.png.tmp
+.vercel

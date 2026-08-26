@@ -1,0 +1,225 @@
+
+			
+@media screen and (min-width:1024px) and (max-width:1400px){
+	.needbox_section .need_box_wrap{
+		    min-height: 300px !important;
+max-height: 380px !important;
+	}
+	.need_box_wrap .img_car{
+max-width: 30% !important;
+width:30% !important;
+}
+	.content_middle{
+		min-width: 40% !important;
+    width: 40% !important;
+}
+	.needbox_section .need_box_wrap .whatsapp_num.white_num{
+		    min-width: 28% !important;
+width:28% !important;
+	
+	}
+}
+
+.about-us-sec{
+	padding-top:115px !important;
+}
+.page-id-39 section.about_section, .meet-our-journey{
+	padding-top:0px !important;
+}
+section.about_section.meet-our-team{
+	padding-top:100px !important;
+}
+
+
+
+.why-choose-pod h5{
+	font-size: 30px;
+    font-weight: 700 !important;
+	text-align:center;
+}
+
+.why-choose-pod p{
+	font-family: "Poppins", sans-serif;
+	text-align:center;
+}
+.content_middle_contact_form .sub_head{
+	color:#DD0A1B !important;
+}
+
+.page-id-45 section.services_section{
+	margin-bottom:100px !important;
+margin-top:0px !important;
+}
+.page-id-45 .needbox_section{
+	padding-bottom:0;
+}
+
+.meet-our-team h2, .meet-our-team p{
+text-align:center;
+}
+    
+.why-we-offer-sec h2{
+	margin-bottom:30px !important;
+}
+
+.why-choose-us-infographic {
+  background-color: #000;
+  color: #fff;
+	padding:100px 0px; 
+}
+
+.why-choose-us-infographic h2{
+	color:#fff !important;
+}
+
+.illustration {
+  max-width: 300px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.step-icon i {
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.step-text h5 {
+  margin: 0;
+font-size: 23px;
+    font-weight: 700 !important;
+}
+
+.step-text p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+
+/* .fleet-card {
+  transition: transform 0.3s ease;
+}
+
+.fleet-card:hover {
+  transform: translateY(-5px);
+} */
+
+.card-body{
+	padding-top:40px !important;
+}
+
+.fleet-img {
+  height: 400px;
+  object-fit: cover;
+border-radius:100px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-body .title{
+	margin-bottom:30px !important;
+}
+
+.fleet-subtitle {
+  font-size: 0.95rem;
+}
+
+.card-body a{
+	display:inline-block;
+border-radius:50px;
+	font-size:16px;
+font-weight:bold;
+font-family:"poppins";
+background-color:#DD0A1B !important;
+	color:#fff !important;
+	padding: 11px 20px !important;
+	margin-right: auto;
+    margin-left: 0;
+width:auto !important;
+}
+.card-body a:hover{
+	border-color:#DD0A1B !important;
+}
+.card-body a:focus{
+	border-color:#DD0A1B !important;
+}
+
+.shadow-sm{
+	box-shadow:none !important;
+	
+}
+
+.card-body .title h5{
+	font-size:30px !important;
+	font-family:"poppins" !important;
+}
+.card-body .title span{
+	font-family:"poppins";
+font-size:14px !important;
+}
+.card-body .title p{
+		font-family:"poppins";
+font-size:16px !important;
+}
+
+.needbox_section.out-fleet-needbox{
+	padding-bottom:0px !important;
+}
+
+.card-body .title span{
+	display:none;
+}
+
+.fleet-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.fleet-card .card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.fleet-card .btn {
+  margin-top: auto;
+}
+
+section.services_area_section .service_area_box li{
+       font-size: 16px;
+    color: #ffff;
+	    font-family: "Poppins", sans-serif;
+}
+
+.our-fleet-title{
+	margin-bottom:30px;
+}
+.out-fleet-needbox .form_top_row{
+	padding-bottom:0px;
+}
+
+.list-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.why-we-offer-sec .services_box li {
+    list-style: none;
+    display: flex
+;
+}
+		

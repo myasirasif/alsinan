@@ -104,6 +104,24 @@ def body_parts(html):
     }
 
 
+# The Contact Form 7 markup has no backend now, so swap the whole <form> for our
+# own component. The wrapping div.wpcf7 stays, because the theme CSS targets it.
+CF7_FORM = re.compile(r'<form\b[^>]*class="wpcf7-form[^"]*"[^>]*>.*?</form>', re.S)
+
+
+def replace_forms(html):
+    """Return (html, variants) with each CF7 form swapped for a placeholder tag."""
+    variants = []
+
+    def repl(m):
+        # the contact page splits first/last name across two columns
+        variant = "contact" if 'data-name="text-lname"' in m.group(0) else "compact"
+        variants.append(variant)
+        return '<contactform variant="%s"></contactform>' % variant
+
+    return CF7_FORM.sub(repl, html), variants
+
+
 CORE_SCRIPT_MARKERS = ("_wpemojiSettings", "wp.i18n.setLocaleData", "wpcf7 =", "wpcf7_recaptcha",
                        "prefetch", "googletagmanager", "dataLayer.push", "gtag(")
 
@@ -174,7 +192,7 @@ export default function Footer() {
 '''
 
 PAGE_TPL = '''import { Link } from "react-router-dom";
-import Seo from "../components/Seo";
+import Seo from "../components/Seo";%(form_import)s
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -213,6 +231,7 @@ def main():
         seo["jsonld"].extend(header_ld)
         seo_map[path] = patch_seo(path, seo)
         parts["content"] = add_internal_links(parts["content"], path)
+        parts["content"], form_variants = replace_forms(parts["content"])
 
         if not header_done:
             hj = make_header_jsx(parts["header"])
@@ -226,12 +245,16 @@ def main():
             footer_done = True
 
         body_jsx, _, _ = html_to_jsx(parts["content"])
+        body_jsx = re.sub(r'<contactform variant="(\w+)"></contactform>',
+                          lambda m: '<ContactForm variant="%s" />' % m.group(1), body_jsx)
         scripts = page_scripts(parts["tail"], parts["content"])
         comp = comp_name(name)
         code = PAGE_TPL % {
             "comp": comp,
             "key": json.dumps(path),
             "scripts": json.dumps(scripts, ensure_ascii=False),
+            "form_import": ('\nimport ContactForm from "../components/ContactForm";'
+                            if form_variants else ""),
             "body": indent(body_jsx.strip(), "      "),
         }
         with open(os.path.join(SRC, "pages", comp + ".jsx"), "w", encoding="utf-8") as f:

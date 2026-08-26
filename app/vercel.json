@@ -18,6 +18,12 @@
   ],
   "headers": [
     {
+      "comment": "Any host other than the real domain (staging, *.vercel.app) is kept out of Google. Remove nothing here when going live - the condition switches itself off once the request arrives on alsinantransport.com.",
+      "source": "/(.*)",
+      "missing": [{ "type": "host", "value": "alsinantransport.com" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
       "source": "/wp-content/uploads/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -85,32 +86,7 @@ export default function PostTheDailyTransportChallengesBusinessesFaceInDubai() {
 
       <div className="wpcf7 no-js" id="wpcf7-f328-o1" lang="en-US" dir="ltr" data-wpcf7-id="328">
       <div className="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-      <form action="/the-daily-transport-challenges-businesses-face-in-dubai/#wpcf7-f328-o1" method="post" className="wpcf7-form init" aria-label="Contact form" noValidate="novalidate" data-status="init">
-      <fieldset className="hidden-fields-container"><input type="hidden" name="_wpcf7" defaultValue="328" /><input type="hidden" name="_wpcf7_version" defaultValue="6.1.4" /><input type="hidden" name="_wpcf7_locale" defaultValue="en_US" /><input type="hidden" name="_wpcf7_unit_tag" defaultValue="wpcf7-f328-o1" /><input type="hidden" name="_wpcf7_container_post" defaultValue="0" /><input type="hidden" name="_wpcf7_posted_data_hash" defaultValue="" /><input type="hidden" name="_wpcf7_recaptcha_response" defaultValue="" />
-      </fieldset>
-      <div className="row">
-      <div className="col-lg-12">
-      <p><span className="wpcf7-form-control-wrap" data-name="text-fname"><input size="40" maxLength="400" className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" defaultValue="" type="text" name="text-fname" /></span>
-      </p>
-      </div>
-      <div className="col-lg-12">
-      <p><span className="wpcf7-form-control-wrap" data-name="email-add"><input size="40" maxLength="400" className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" defaultValue="" type="email" name="email-add" /></span>
-      </p>
-      </div>
-      <div className="col-lg-12">
-      <p><span className="wpcf7-form-control-wrap" data-name="tel-num"><input size="40" maxLength="400" className="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Phone" defaultValue="" type="tel" name="tel-num" /></span>
-      </p>
-      </div>
-      <div className="col-lg-12">
-      <p><span className="wpcf7-form-control-wrap" data-name="textarea-message"><textarea cols="40" rows="10" maxLength="2000" className="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message" name="textarea-message"></textarea></span>
-      </p>
-      </div>
-      <div className="col-lg-12">
-      <p><input className="wpcf7-form-control wpcf7-submit has-spinner btn btn-secondary" type="submit" defaultValue="Send" />
-      </p>
-      </div>
-      </div><div className="wpcf7-response-output" aria-hidden="true"></div>
-      </form>
+      <ContactForm variant="compact" />
       </div>
       </div>
       </div>

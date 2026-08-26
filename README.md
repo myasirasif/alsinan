@@ -123,20 +123,51 @@ titles on a site that already ranks risks more than the two or three characters
 it would save. They are listed in `seo_audit.py` output if you want them
 shortened anyway.
 
+## Contact form
+
+The Contact Form 7 markup had no backend once WordPress was gone. It is now a
+real form: `app/src/components/ContactForm.jsx` posts to `app/api/contact.js`,
+a Vercel function that sends through Resend. The classes and layout are
+unchanged, so the theme CSS still styles it, including Contact Form 7's own
+`init` / `submitting` / `sent` / `invalid` / `failed` state classes.
+
+Two variants exist, matching the live site: `contact` (full form on
+`/contact-us/`, split first/last name) and `compact` (blog sidebar, single name
+field). `build.py` picks the variant automatically from the original markup.
+
+### Environment variables (set these in Vercel, never in the repo)
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `RESEND_API_KEY` | yes | Resend sending key. Scope it to this domain. |
+| `CONTACT_TO_EMAIL` | no | Where leads land. Defaults to `alsinantransport@gmail.com`. |
+| `CONTACT_FROM_EMAIL` | no | Defaults to `Alsinan Website <noreply@alsinantransport.com>`. The domain must be verified in Resend. |
+| `RECAPTCHA_SECRET_KEY` | no | Enables server-side reCAPTCHA v3 checks. Without it the honeypot and rate limit still apply. |
+
+### What the endpoint does
+
+Server-side validation with per-field messages, a honeypot, a per-IP rate limit
+(5 per 10 minutes, best-effort since serverless instances are recycled), HTML
+escaping of everything that reaches the email, `reply_to` set to the customer so
+replying in Gmail goes straight back to them, and the originating page included
+in the email so you can see which page converts. On success the form pushes a
+`generate_lead` event to the dataLayer for GTM.
+
+`npm run test:contact` exercises the handler with `fetch` stubbed — no key, no
+network, no real email. Currently 15/15 pass. Note that `npm run preview` does
+**not** run the function; only `vercel dev` or a real deployment does.
+
 ## Notes and remaining work
 
-1. **Contact Form 7 forms render but do not submit.** There is no WordPress
-   backend behind them. They need a form endpoint, and reCAPTCHA v3 needs
-   re-wiring (site key `6Lfj1dsrAAAAAKUs09nt_VhSem1mXmIKbUIPUvAU` is in the markup).
-2. **The sitemaps are a snapshot** of what Rank Math generated. They are correct
+1. **The sitemaps are a snapshot** of what Rank Math generated. They are correct
    for the current 22 URLs, but they will not update themselves when pages are
    added — regenerate them from the route list at that point.
-3. **`og:image` and JSON-LD URLs still point at `alsinantransport.com`.** That is
+2. **`og:image` and JSON-LD URLs still point at `alsinantransport.com`.** That is
    correct as long as the site ships on that domain; it needs a find-and-replace
    if the domain changes.
-4. **Font Awesome and Google Fonts still load from their CDNs**, exactly as the
+3. **Font Awesome and Google Fonts still load from their CDNs**, exactly as the
    live site does. Self-hosting them would remove two third-party round trips.
-5. **The JS bundle is ~842 kB (162 kB gzipped)** in one chunk, because
+4. **The JS bundle is ~842 kB (162 kB gzipped)** in one chunk, because
    `renderToString` cannot resolve `React.lazy` during prerendering. Content is
    visible before that JS runs, so this affects interactivity, not first paint.
    Splitting it needs a streaming SSR setup.

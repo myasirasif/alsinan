@@ -16,9 +16,24 @@ npm run preview  # serve dist/ exactly as it will be served in production
 
 ## Deploying to Vercel
 
-Point the project at the `app/` directory. `vercel.json` already sets the build
-command, output directory, `trailingSlash: true` (matching the WordPress URLs)
-and long-lived cache headers for `/wp-content/uploads` and `/assets`.
+Point the project at the `app/` directory. `vercel.json` sets the build command,
+output directory, `trailingSlash: true` (matching the WordPress URLs), the
+legacy WordPress redirects, and long-lived cache headers for
+`/wp-content/uploads` and `/assets`.
+
+**Staging safety.** The first rule in `headers` attaches
+`X-Robots-Tag: noindex, nofollow` to every response whose host is *not*
+`alsinantransport.com`. Staging and `*.vercel.app` URLs therefore stay out of
+Google, and the rule switches itself off on the real domain — nothing to
+remember at launch. The page HTML still says `index`, which is what the live
+domain needs; where the two disagree Google honours the more restrictive one.
+For staging that must not be publicly reachable at all, also turn on
+Settings -> Deployment Protection, which does not depend on crawlers behaving.
+
+`vercel.json` is validated locally before every build by
+`check-vercel-config.mjs`. Vercel rejects unknown properties and fails the whole
+deploy, so note that **JSON takes no comments** — document rules here, not in
+the file.
 
 Nothing else is required — the build emits plain static files:
 

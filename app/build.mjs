@@ -8,6 +8,7 @@ const run = (args) => {
 
 const vite = new URL("./node_modules/vite/bin/vite.js", import.meta.url).pathname.replace(/^\//, "");
 
+run(["check-vercel-config.mjs"]);
 run([vite, "build"]);
 run([vite, "build", "--ssr", "src/entry-server.jsx", "--outDir", "dist-ssr"]);
 run(["prerender.mjs"]);

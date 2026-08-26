@@ -6,33 +6,84 @@
   "trailingSlash": true,
   "cleanUrls": false,
   "redirects": [
-    { "source": "/tag/:slug*", "destination": "/blogs/", "permanent": true },
-    { "source": "/author/:slug*", "destination": "/blogs/", "permanent": true },
-    { "source": "/:year(\\d{4})/:month(\\d{2})", "destination": "/blogs/", "permanent": true },
-    { "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})", "destination": "/blogs/", "permanent": true },
-    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
-    { "source": "/wp-login.php", "destination": "/", "permanent": true },
-    { "source": "/feed/", "destination": "/blogs/", "permanent": true },
-    { "source": "/wp-sitemap.xml", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true }
+    {
+      "source": "/tag/:slug*",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    }
   ],
   "headers": [
     {
-      "comment": "Any host other than the real domain (staging, *.vercel.app) is kept out of Google. Remove nothing here when going live - the condition switches itself off once the request arrives on alsinantransport.com.",
       "source": "/(.*)",
-      "missing": [{ "type": "host", "value": "alsinantransport.com" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "missing": [
+        {
+          "type": "host",
+          "value": "alsinantransport.com"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     },
     {
       "source": "/wp-content/uploads/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/assets/(css|js|fonts)/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]

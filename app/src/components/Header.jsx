@@ -14,12 +14,32 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSub, setOpenSub] = useState(null);
 
+  // On WordPress a click reloaded the page, so the hovered sub-menu vanished.
+  // Here the cursor is still sitting on the parent after navigating and CSS
+  // :hover keeps the panel open over the new page. Suppress hover until the
+  // pointer actually moves again.
+  const [hoverOff, setHoverOff] = useState(false);
+
   const close = () => {
     setMenuOpen(false);
     setOpenSub(null);
   };
 
-  useEffect(close, [pathname]);
+  useEffect(() => {
+    close();
+    setHoverOff(true);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!hoverOff) return;
+    const release = () => setHoverOff(false);
+    document.addEventListener("mousemove", release, { once: true });
+    document.addEventListener("touchstart", release, { once: true });
+    return () => {
+      document.removeEventListener("mousemove", release);
+      document.removeEventListener("touchstart", release);
+    };
+  }, [hoverOff]);
 
   // clicking away from the nav closes it, as navigation.js used to do
   useEffect(() => {
@@ -95,7 +115,7 @@ export default function Header() {
       <div className="menu_wrap">
       <div className="menu_box">
       <nav id="site-navigation" ref={navRef} onClick={onNavClick}
-           className={"main-navigation" + (menuOpen ? " toggled" : "")}>
+           className={"main-navigation" + (menuOpen ? " toggled" : "") + (hoverOff ? " hover-suppressed" : "")}>
       <button className="menu-toggle" aria-controls="primary-menu"
               aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" /></button>
       <div className="menu-menu-1-container"><ul id="primary-menu" className="menu"><li id="menu-item-47" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47", "/")}><Link to="/">Home</Link></li>

@@ -163,7 +163,8 @@ def make_header_jsx(header_html):
     jsx = jsx.replace(
         '<nav id="site-navigation" className="main-navigation">',
         '<nav id="site-navigation" ref={navRef} onClick={onNavClick}\n'
-        '     className={"main-navigation" + (menuOpen ? " toggled" : "")}>',
+        '     className={"main-navigation" + (menuOpen ? " toggled" : "")'
+        ' + (hoverOff ? " hover-suppressed" : "")}>',
         1,
     )
 
@@ -203,12 +204,32 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSub, setOpenSub] = useState(null);
 
+  // On WordPress a click reloaded the page, so the hovered sub-menu vanished.
+  // Here the cursor is still sitting on the parent after navigating and CSS
+  // :hover keeps the panel open over the new page. Suppress hover until the
+  // pointer actually moves again.
+  const [hoverOff, setHoverOff] = useState(false);
+
   const close = () => {
     setMenuOpen(false);
     setOpenSub(null);
   };
 
-  useEffect(close, [pathname]);
+  useEffect(() => {
+    close();
+    setHoverOff(true);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!hoverOff) return;
+    const release = () => setHoverOff(false);
+    document.addEventListener("mousemove", release, { once: true });
+    document.addEventListener("touchstart", release, { once: true });
+    return () => {
+      document.removeEventListener("mousemove", release);
+      document.removeEventListener("touchstart", release);
+    };
+  }, [hoverOff]);
 
   // clicking away from the nav closes it, as navigation.js used to do
   useEffect(() => {

@@ -7,27 +7,22 @@
   "cleanUrls": false,
   "redirects": [
     {
-      "source": "/tag/:slug*",
+      "source": "/tag/(.*)",
       "destination": "/blogs/",
       "permanent": true
     },
     {
-      "source": "/author/:slug*",
+      "source": "/author/(.*)",
       "destination": "/blogs/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:month(\\d{2})",
+      "source": "/(\\d{4})/(.*)",
       "destination": "/blogs/",
       "permanent": true
     },
     {
-      "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})",
-      "destination": "/blogs/",
-      "permanent": true
-    },
-    {
-      "source": "/wp-admin/:path*",
+      "source": "/wp-admin/(.*)",
       "destination": "/",
       "permanent": true
     },

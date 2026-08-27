@@ -108,6 +108,35 @@ delete process.env.RESEND_API_KEY;
 r = await call(valid, { ip: "10.0.0.8" });
 check("missing RESEND_API_KEY returns 500", r.statusCode === 500, r.body.error);
 
+
+// the domain-not-verified fallback: Resend refuses the custom sender, so the
+// lead must still go out through the shared sender rather than 502
+let attempts = [];
+globalThis.fetch = async (url, opts) => {
+  if (String(url).includes("recaptcha")) {
+    recaptchaCalls++;
+    return { ok: true, json: async () => ({ success: true, score: 0.9 }) };
+  }
+  const payload = JSON.parse(opts.body);
+  attempts.push(payload.from);
+  if (payload.from.includes("alsinantransport.com")) {
+    return { ok: false, status: 403, text: async () => "domain is not verified" };
+  }
+  sentPayload = payload;
+  return { ok: true, text: async () => "", json: async () => ({ id: "test" }) };
+};
+
+process.env.RESEND_API_KEY = "test-key-not-real";
+attempts = [];
+sentPayload = null;
+r = await call(valid, { ip: "10.0.0.9" });
+check("unverified domain falls back instead of failing",
+  r.statusCode === 200 && r.body.ok === true, `attempts: ${attempts.length}`);
+check("fallback used the shared sender",
+  attempts.length === 2 && attempts[1].includes("resend.dev"), attempts.join(" -> "));
+check("fallback still replies to the customer", sentPayload?.reply_to === valid.email);
+check("degraded flag set so it is visible", r.body.degraded === true);
+
 const failed = results.filter((x) => !x.ok);
 console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
 process.exit(failed.length ? 1 : 0);

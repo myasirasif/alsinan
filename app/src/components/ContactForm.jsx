@@ -47,7 +47,9 @@ export default function ContactForm({ variant = "contact" }) {
     setNotice("");
 
     try {
-      const res = await fetch("/api/contact", {
+      // trailing slash on purpose: vercel.json sets trailingSlash, so
+      // "/api/contact" answers with a 308 and costs an extra round trip
+      const res = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...values, page: pathname }),

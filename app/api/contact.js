@@ -128,22 +128,45 @@ export default async function handler(req, res) {
 
   const text = rows.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\nMessage:\n${message}`;
 
-  try {
-    const resend = await fetch(RESEND_ENDPOINT, {
+  const send = (from, to = toAddress()) =>
+    fetch(RESEND_ENDPOINT, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: fromAddress(),
-        to: [toAddress()],
+        from,
+        to: [to],
         reply_to: email, // replying in Gmail goes straight to the customer
         subject: `New enquiry from ${fullName}`,
         html,
         text,
       }),
     });
+
+  try {
+    let resend = await send(fromAddress());
+
+    // Until the domain is verified in Resend, sending from it is refused and
+    // every lead would be lost. Resend's shared sender always works, so fall
+    // back to it rather than dropping the enquiry. reply_to still points at the
+    // customer, so replying works either way.
+    if (!resend.ok && (resend.status === 403 || resend.status === 422)) {
+      const detail = await resend.text();
+      console.error(
+        `Resend refused ${fromAddress()} (${resend.status}): ${detail}. ` +
+          "Verify the domain in Resend. Retrying via onboarding@resend.dev."
+      );
+      // Resend's shared sender will only deliver to the address the account was
+      // registered with, so allow that to be set separately from the real
+      // recipient. Without it the fallback bounces too.
+      resend = await send("Alsinan Website <onboarding@resend.dev>",
+                          process.env.CONTACT_FALLBACK_TO || toAddress());
+      if (resend.ok) {
+        return res.status(200).json({ ok: true, degraded: true });
+      }
+    }
 
     if (!resend.ok) {
       const detail = await resend.text();

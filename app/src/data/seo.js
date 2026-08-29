@@ -38,7 +38,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -140,7 +140,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -234,7 +234,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -328,7 +328,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -422,7 +422,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -516,7 +516,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -610,7 +610,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -704,7 +704,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -798,7 +798,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -884,7 +884,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -970,7 +970,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -1056,7 +1056,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -1142,7 +1142,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -1228,7 +1228,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:updated_time",
@@ -1314,7 +1314,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1428,7 +1428,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1542,7 +1542,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1656,7 +1656,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1770,7 +1770,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1884,7 +1884,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:section",
@@ -1998,7 +1998,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "article:tag",
@@ -2096,7 +2096,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/how-visitors-move-around-dubai-without-stress/"
   },
   "/category/cars/": {
-    "title": "Cars Archives - Alsinan Transportation",
+    "title": "Cars Archives - Alsinan Transport",
     "meta": [
       {
         "name": "google-site-verification",
@@ -2116,7 +2116,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Cars Archives - Alsinan Transportation"
+        "content": "Cars Archives - Alsinan Transport"
       },
       {
         "property": "og:url",
@@ -2124,7 +2124,7 @@ export const seo = {
       },
       {
         "property": "og:site_name",
-        "content": "Alsinan Transportation"
+        "content": "Alsinan Transport"
       },
       {
         "property": "og:image",
@@ -2156,7 +2156,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Cars Archives - Alsinan Transportation"
+        "content": "Cars Archives - Alsinan Transport"
       },
       {
         "name": "twitter:image",

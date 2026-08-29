@@ -3,6 +3,7 @@
 import os, sys, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build import read, body_parts, indent
+from fixes import BRAND
 from convert import html_to_jsx
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -17,7 +18,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page not found | Alsinan Transportation</title>
+        <title>Page not found | BRAND_NAME</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 %s
@@ -27,5 +28,6 @@ export default function NotFound() {
 '''
 
 out = os.path.join(ROOT, "app", "src", "pages", "NotFound.jsx")
-open(out, "w", encoding="utf-8").write(tpl % indent(jsx.strip(), "      "))
+open(out, "w", encoding="utf-8").write(
+    (tpl % indent(jsx.strip(), "      ")).replace("BRAND_NAME", BRAND))
 print("wrote NotFound.jsx (%d chars)" % len(jsx))

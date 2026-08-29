@@ -5,7 +5,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from convert import html_to_jsx, abs_url
 from fixes import (fix_alts, patch_seo, add_internal_links,
                    add_image_dimensions, fix_lazy_hero, fix_list_in_paragraph,
-                   add_credit, fix_phone, add_service_form, sync_faq_schema)
+                   add_credit, fix_phone, add_service_form, sync_faq_schema,
+                   fix_dead_links, add_service_areas,
+                   fix_fleet_capacities)
 from sections import componentise
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -102,12 +104,12 @@ def body_parts(html):
         "bodyclass": bodyclass.group(1) if bodyclass else "",
         # fix_phone runs last on each part so it also normalises numbers that
         # the other fixes moved or rewrote.
-        "header": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
-            fix_list_in_paragraph(unnest_logo(header)))))),
-        "content": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
-            fix_list_in_paragraph(content))))),
-        "footer": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
-            fix_list_in_paragraph(add_credit(unnest_logo(footer))))))),
+        "header": fix_dead_links(fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(unnest_logo(header))))))),
+        "content": fix_dead_links(fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(content)))))),
+        "footer": fix_dead_links(fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(add_credit(unnest_logo(footer)))))))),
         "tail": tail,
     }
 
@@ -313,6 +315,10 @@ def main():
         # the FAQ schema is synced against the rendered copy, so it runs after
         # the content fixes that could still change that copy
         seo_map[path] = sync_faq_schema(patch_seo(path, seo), parts["content"])
+        # areas first, then the form: both anchor on the closing CTA band, so
+        # inserting in this order leaves them in this order on the page
+        parts["content"] = fix_fleet_capacities(parts["content"])
+        parts["content"] = add_service_areas(parts["content"], path)
         parts["content"] = add_service_form(parts["content"], path)
         parts["content"] = add_internal_links(parts["content"], path)
         parts["content"], form_variants = replace_forms(parts["content"])

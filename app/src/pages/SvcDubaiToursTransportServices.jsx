@@ -180,7 +180,51 @@ export default function SvcDubaiToursTransportServices() {
       </section>
 
 
-      <section className="needbox_section svc_enquiry">
+      <section className="services_area_section svc_areas">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <h2>Areas We Cover</h2>
+      <p>Trips set off from anywhere in Dubai, including:</p>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Jabal Ali Industrial Area 1 &amp; 2</h3>
+      <p>Factories, warehouses and business parks across both zones.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Jabal Ali Free Zone (JAFZA)</h3>
+      <p>One of the region’s largest free zones, on Dubai’s western edge.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Dubai Industrial City (DIC)</h3>
+      <p>Manufacturing and logistics sites in Dubai’s south, with staff accommodation close by.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Across Dubai and the wider UAE</h3>
+      <p>Intercity runs and long-distance work beyond the emirate.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
+      </div>
+      </div>
+      </div>
+      <div className="row">
+      <div className="col-12">
+      <p className="svc_areas_note">Somewhere else in the UAE? Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
+      </div>
+      </div>
+      </div>
+      </section><section className="needbox_section svc_enquiry">
       <div className="form_section_inner">
       <div className="container">
       <div className="row">
@@ -189,7 +233,7 @@ export default function SvcDubaiToursTransportServices() {
       <div className="content_middle_contact_form">
       <span className="sub_head">Tours & Excursions</span>
       <h2>Plan your group trip</h2>
-      <p>Tell us the destinations, the group size and the dates, and we will build an itinerary around the right vehicle.</p>
+      <p>Tell us the destinations, the group size and the dates, and we will build an itinerary around the right vehicle - anything from a 7 seater to a 67 seater coach.</p>
       </div>
       </div>
       </div>

@@ -82,10 +82,10 @@ export default function OurFleet() {
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Executive & Standard Cars
       </h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold"></span>
       </div>
       <p className="card-text">Great for business trips, airport transfers, or when you just need to get across the city with zero fuss.</p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -96,10 +96,10 @@ export default function OurFleet() {
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">SUVs & Family Cars</h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold">7 Seater</span>
       </div>
-      <p className="card-text">With our SUVs for rent in Dubai you get extra space for families, luggage, or those longer drives when comfort matters most.</p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <p className="card-text">With our SUVs for rent in Dubai you get extra space for families, luggage, or those longer drives when comfort matters most. Seven seats for families, luggage, or the longer drives where comfort matters.</p>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -110,10 +110,10 @@ export default function OurFleet() {
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Vans & Hiace Models</h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold">14 Seater</span>
       </div>
-      <p className="card-text">Reliable workhorses for medium groups, hotel shuttles, and project runs. Need flexibility? Choose our van rentals. (We recommend going with a Hiace van for rent in Dubai when you need something sturdy and practical.)</p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <p className="card-text">Reliable workhorses for medium groups, hotel shuttles, and project runs. Need flexibility? Choose our van rentals. (We recommend going with a Hiace van for rent in Dubai when you need something sturdy and practical.) Our 14 seater Hiace vans handle medium groups, hotel shuttles and project runs.</p>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -124,10 +124,10 @@ export default function OurFleet() {
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Minibuses</h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold">30 &amp; 34 Seater</span>
       </div>
-      <p className="card-text">Perfect for school runs, mid-sized corporate groups, or local tours. Our minibus rentals in Dubai strike the right balance between cost and comfort.</p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <p className="card-text">Perfect for school runs, mid-sized corporate groups, or local tours. Our minibus rentals in Dubai strike the right balance between cost and comfort. Available as 30 seater and 34 seater buses, both air conditioned.</p>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -138,11 +138,10 @@ export default function OurFleet() {
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Full-Size Coaches</h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold">50 &amp; 67 Seater</span>
       </div>
-      <p className="card-text">Designed for large groups, long distances, or big events. From company outings to conferences, our coach and charter bus rentals in Dubai keep everyone traveling together, smoothly.
-      </p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <p className="card-text">Designed for large groups, long distances, or big events. From company outings to conferences, our coach and charter bus rentals in Dubai keep everyone traveling together, smoothly. Our 50 seater and 67 seater coaches carry luggage and recline for long routes.</p>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -153,10 +152,10 @@ export default function OurFleet() {
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Toyota Hiace</h5>
-      <span className="fleet-subtitle text-danger fw-bold">12-Passenger</span>
+      <span className="fleet-subtitle text-danger fw-bold">14 Seater</span>
       </div>
-      <p className="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus.</p>
-      <a href="#" className="btn btn-danger w-100 mt-3">BOOK NOW</a>
+      <p className="card-text">Fourteen comfortable seats, air conditioning, and room to spread out. The one we send when a small group is travelling together.</p>
+      <Link className="btn btn-danger w-100 mt-3" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>

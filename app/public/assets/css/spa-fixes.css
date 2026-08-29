@@ -748,3 +748,22 @@ section.svc_enquiry .contact_frm_content .btn { margin-top: 8px; }
    Balancing applies to the enquiry headings only - the theme's other h2s were
    written to the widths they already wrap at. */
 section.svc_enquiry .content_middle_contact_form h2 { text-wrap: balance; }
+
+/* The service-area block added to the six service pages reuses the homepage's
+   card shell, which has no room built in for a closing line - the note sat
+   flush against the bottom card. */
+section.svc_areas .svc_areas_note { margin-top: 34px; }
+
+section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
+
+/* The fleet cards have a slot beside each vehicle name for its capacity. It was
+   filled with "12-Passenger" on all six cards and then hidden in
+   site-overrides.css (`.card-body .title span { display:none }`) rather than
+   corrected, so the site never stated a seat count anywhere. The labels are now
+   right per vehicle, so they are shown again. The one card with no capacity
+   supplied renders an empty span, which stays invisible on its own. */
+.fleet-card .card-body .title span.fleet-subtitle {
+  display: inline;
+  white-space: nowrap;
+  margin-left: 12px;
+}

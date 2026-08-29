@@ -221,13 +221,15 @@ SERVICE_FORM_COPY = {
         "School Transport",
         "Tell us about your school run",
         "Share the route, how many students travel and the pickup and drop timings, "
-        "and we will come back with a plan for the term.",
+        "and we will come back with a plan for the term. Our buses run from "
+        "14 seaters up to 67 seater coaches.",
     ),
     "/services/staff-transport-in-dubai/": (
         "Staff Transport",
         "Plan your staff routes with us",
         "Send us your shift timings, pickup points and headcount, and we will put "
-        "together a monthly plan for your team.",
+        "together a monthly plan for your team. We run 14, 30, 34, 50 and "
+        "67 seater vehicles.",
     ),
     "/services/airport-transport-in-dubai/": (
         "Airport Transport",
@@ -251,7 +253,8 @@ SERVICE_FORM_COPY = {
         "Tours & Excursions",
         "Plan your group trip",
         "Tell us the destinations, the group size and the dates, and we will build "
-        "an itinerary around the right vehicle.",
+        "an itinerary around the right vehicle - anything from a 7 seater to "
+        "a 67 seater coach.",
     ),
 }
 
@@ -296,6 +299,171 @@ SERVICE_FORM_TPL = """<section class="needbox_section svc_enquiry">
 
 FINAL_NEEDBOX = re.compile(r'<section class="needbox_section"[^>]*>')
 
+# ---------------------------------------------------------------------------
+# Service areas on the service pages
+# ---------------------------------------------------------------------------
+# The schema's areaServed has always listed Jabal Ali Industrial Area 1 & 2,
+# Jabal Ali Free Zone, Dubai Industrial City and UAE-wide coverage. The only
+# page that said any of it in words was the homepage, so five of the six
+# service pages claimed areas in their markup that their copy never mentioned -
+# the same schema/page mismatch class as the FAQ.
+#
+# This puts the names on the pages. The area lines are deliberately geographic
+# rather than promises about service in each district: the client confirmed the
+# areas, not a per-district service level, and a claim they did not make is not
+# ours to publish. The lead sentence differs per page so the block is not six
+# identical paragraphs.
+#
+# It reuses the homepage's own services_area_section / service_area_box shell,
+# so it needs no new styling.
+SERVICE_AREAS = [
+    ("Jabal Ali Industrial Area 1 &amp; 2",
+     "Factories, warehouses and business parks across both zones."),
+    ("Jabal Ali Free Zone (JAFZA)",
+     "One of the region\u2019s largest free zones, on Dubai\u2019s western edge."),
+    ("Dubai Industrial City (DIC)",
+     "Manufacturing and logistics sites in Dubai\u2019s south, with staff accommodation close by."),
+    ("Across Dubai and the wider UAE",
+     "Intercity runs and long-distance work beyond the emirate."),
+]
+
+AREA_LEAD = {
+    "/services/school-transport-in-dubai/":
+        "School routes run across Dubai. These are the areas we cover most often:",
+    "/services/staff-transport-in-dubai/":
+        "Staff routes are the bulk of our daily work, and these are the areas we run them in:",
+    "/services/airport-transport-in-dubai/":
+        "We collect from and drop to the airports from anywhere in the emirate, including:",
+    "/services/hotel-transport-service-in-dubai/":
+        "Guest transfers start from anywhere in Dubai. The areas we cover most often are:",
+    "/services/private-car-rental-in-dubai/":
+        "Private hires can start from anywhere in Dubai, including:",
+    "/services/dubai-tours-transport-services/":
+        "Trips set off from anywhere in Dubai, including:",
+}
+
+AREAS_TPL = """<section class="services_area_section svc_areas">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h2>Areas We Cover</h2>
+<p>%(lead)s</p>
+</div>
+</div>
+<div class="row justify-content-between g-4">
+%(boxes)s</div>
+<div class="row">
+<div class="col-12">
+<p class="svc_areas_note">Somewhere else in the UAE? Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
+</div>
+</div>
+</div>
+</section>"""
+
+AREA_BOX_TPL = """<div class="col-lg-6">
+<div class="service_area_box">
+<h3>%(name)s</h3>
+<p>%(line)s</p>
+<a href="/contact-us/" class="btn btn-secondary">Book Now</a>
+</div>
+</div>
+"""
+
+# ---------------------------------------------------------------------------
+# Fleet capacities
+# ---------------------------------------------------------------------------
+# Two problems in the same six cards on /our-fleet/.
+#
+# 1. Every card carried the same hidden label, "12-Passenger". The theme has a
+#    slot for capacity beside each vehicle name; it was filled in once, copied
+#    to all six, and then hidden with `.card-body .title span { display:none }`
+#    rather than corrected. So the site never stated a single seat count -
+#    "seater" appeared zero times across 26,000 words - while "14 seater van
+#    rental dubai" and "30 seater bus rental" are among the most common searches
+#    in this category.
+#
+# 2. The Toyota Hiace card still held lorem ipsum, visible, beside real copy.
+#
+# Capacities are the client's own, from their marketing material: 7, 14 (Hiace),
+# 30 (Coaster), 34, 50 and 67 (Ashok Leyland). The Executive & Standard Cars
+# card gets no number - none was given for it, and a guess in a specification is
+# worse than a blank.
+FLEET_CARDS = {
+    "SUVs & Family Cars": (
+        "7 Seater",
+        "Seven seats for families, luggage, or the longer drives where comfort matters.",
+    ),
+    "Vans & Hiace Models": (
+        "14 Seater",
+        "Our 14 seater Hiace vans handle medium groups, hotel shuttles and project runs.",
+    ),
+    "Minibuses": (
+        "30 &amp; 34 Seater",
+        "Available as 30 seater and 34 seater buses, both air conditioned.",
+    ),
+    "Full-Size Coaches": (
+        "50 &amp; 67 Seater",
+        "Our 50 seater and 67 seater coaches carry luggage and recline for long routes.",
+    ),
+    "Toyota Hiace": (
+        "14 Seater",
+        "Fourteen comfortable seats, air conditioning, and room to spread out. "
+        "The one we send when a small group is travelling together.",
+    ),
+}
+
+FLEET_CARD = re.compile(r'<div class="fleet-card.*?</a>\s*</div>\s*</div>', re.S)
+FLEET_TITLE = re.compile(r'<h5 class="card-title[^"]*"[^>]*>(.*?)</h5>', re.S)
+FLEET_SUB = re.compile(r'(<span class="fleet-subtitle[^"]*"[^>]*>)(.*?)(</span>)', re.S)
+FLEET_BODY = re.compile(r'(<p class="card-text">)(.*?)(</p>)', re.S)
+LOREM = re.compile(r"Sed ut perspiciatis[^<]*")
+
+
+def fix_fleet_capacities(html):
+    """Give each fleet card its real seat count, and replace the placeholder."""
+
+    def card(m):
+        block = m.group(0)
+        t = FLEET_TITLE.search(block)
+        title = htmlmod.unescape(t.group(1)).strip() if t else ""
+        entry = FLEET_CARDS.get(title)
+        if not entry:
+            # no capacity supplied for this vehicle; drop the wrong label rather
+            # than leave "12-Passenger" sitting there
+            return FLEET_SUB.sub(lambda s: s.group(1) + s.group(3), block)
+
+        seats, line = entry
+        block = FLEET_SUB.sub(lambda s: s.group(1) + seats + s.group(3), block)
+
+        def body(bm):
+            text = bm.group(2).strip()
+            if LOREM.search(text):
+                return bm.group(1) + line + bm.group(3)
+            return bm.group(1) + text + " " + line + bm.group(3)
+
+        return FLEET_BODY.sub(body, block, count=1)
+
+    return FLEET_CARD.sub(card, html)
+
+
+
+def add_service_areas(html, path):
+    """Name the service areas on a service page, above its enquiry form."""
+    lead = AREA_LEAD.get(path)
+    if not lead or "svc_areas" in html:
+        return html
+
+    boxes = "".join(
+        AREA_BOX_TPL % {"name": name, "line": line} for name, line in SERVICE_AREAS
+    )
+    section = AREAS_TPL % {"lead": lead, "boxes": boxes}
+
+    m = FINAL_NEEDBOX.search(html)
+    if not m:
+        return html + section
+    return html[: m.start()] + section + html[m.start() :]
+
+
 
 def add_service_form(html, path):
     """Put an enquiry form on a service page, above its closing CTA band."""
@@ -319,6 +487,37 @@ def add_service_form(html, path):
     if not m:
         return html + section  # layout moved; append rather than lose the form
     return html[: m.start()] + section + html[m.start() :]
+
+
+# ---------------------------------------------------------------------------
+# Links that went nowhere
+# ---------------------------------------------------------------------------
+# Two of these render on the live site:
+#
+#   1. The address in the header and footer is wrapped in <a href="">, which
+#      reloads the current page. It appears on all 22 routes, twice each. The
+#      schema already carries a hasMap URL built from the business coordinates,
+#      so the address now points at the same place - which is also the link
+#      Google likes to see beside a local business's NAP block.
+#
+#   2. All six BOOK NOW buttons on /our-fleet/ are href="#". They are the
+#      primary call to action on that page and they do nothing.
+#
+# A third set - LinkedIn and X icons - is href="#" but sits inside HTML
+# comments, so it never renders. Left alone.
+MAP_URL = "https://www.google.com/maps/search/?api=1&amp;query=25.0760224,55.2274879"
+
+ADDRESS_LINK = re.compile(r'<a href="">(\s*<img[^>]*icon_pin_map[^>]*>)')
+BOOK_NOW = re.compile(r'<a href="#"(\s+class="btn btn-danger[^"]*")>')
+
+
+def fix_dead_links(html):
+    """Point the address at the map and BOOK NOW at the contact page."""
+    html = ADDRESS_LINK.sub(
+        lambda m: '<a href="%s" target="_blank" rel="noopener">%s' % (MAP_URL, m.group(1)),
+        html,
+    )
+    return BOOK_NOW.sub(lambda m: '<a href="/contact-us/"%s>' % m.group(1), html)
 
 
 
@@ -503,6 +702,30 @@ def sync_faq_schema(seo, content_html):
     return seo
 
 
+# ---------------------------------------------------------------------------
+# One business name
+# ---------------------------------------------------------------------------
+# The site called itself five things: "Alsinan Transportation" in the schema and
+# og:site_name, "Alsinan Transport" in the page titles and footer, and
+# "transportalsinan" - a URL slug, not a name - in schema legalName. The
+# marketing material adds "Al Sinan Passengers Transport by Rented Buses L.L.C".
+#
+# Google matches a local business on the name it uses in the real world, not on
+# its company registration, so a single trading name used everywhere is what
+# counts. "Alsinan Transport" is the client's choice and is what the footer and
+# titles already said.
+#
+# legalName is a different field and should hold the registered entity name. We
+# do not know it yet, and a wrong value is worse than none, so it is dropped
+# until the client confirms it from the documents.
+BRAND = "Alsinan Transport"
+BRAND_OLD = re.compile(r"Alsinan Transportation")
+
+
+def fix_brand_name(text):
+    return BRAND_OLD.sub(BRAND, text)
+
+
 def patch_seo(path, seo):
     """Apply the head-level fixes for one route."""
     meta = seo["meta"]
@@ -536,11 +759,13 @@ def patch_seo(path, seo):
     # The phone is also written into meta descriptions and the schema, neither of
     # which passes through the markup pipeline where fix_phone runs.
     for m in meta:
-        if "content" in m and "2397" in m["content"]:
-            m["content"] = TEL_TEXT.sub(TEL_DISPLAY, m["content"])
-    seo["title"] = TEL_TEXT.sub(TEL_DISPLAY, seo.get("title", ""))
+        if "content" in m:
+            if "2397" in m["content"]:
+                m["content"] = TEL_TEXT.sub(TEL_DISPLAY, m["content"])
+            m["content"] = fix_brand_name(m["content"])
+    seo["title"] = fix_brand_name(TEL_TEXT.sub(TEL_DISPLAY, seo.get("title", "")))
 
-    seo["jsonld"] = [fix_phone(patch_jsonld(b)) for b in seo["jsonld"]]
+    seo["jsonld"] = [fix_brand_name(fix_phone(patch_jsonld(b))) for b in seo["jsonld"]]
     return seo
 
 
@@ -557,6 +782,12 @@ OPENING_SPEC = [{
 
 
 def _patch_node(node):
+    # legalName held "transportalsinan", a slug rather than a company name.
+    # Dropping it is better than publishing a wrong one; it goes back in when
+    # the registered name is confirmed.
+    if isinstance(node, dict) and node.get("legalName") in ("transportalsinan", ""):
+        node = {k: v for k, v in node.items() if k != "legalName"}
+
     if not isinstance(node, dict):
         return node
     if "openingHours" in node or "openingHoursSpecification" in node:

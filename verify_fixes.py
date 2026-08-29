@@ -204,5 +204,49 @@ check("the /services/ hub is linked from body copy", hub_links > 0,
       "%d inbound body links" % hub_links)
 
 
+# 14. one business name, everywhere
+name_variants = {}
+for route, h in html_by_route.items():
+    body = h[h.find("<body"):]
+    found = [v for v in ("Alsinan Transportation", "transportalsinan") if v in h]
+    if found:
+        name_variants[route] = found
+check("the business is called one thing sitewide", not name_variants,
+      str(list(name_variants.items())[:3]))
+
+# 15. no link that renders but goes nowhere. Commented-out markup is stripped
+# first: the LinkedIn and X icons are href="#" but sit inside <!-- -->, so they
+# never reach the page.
+dead = {}
+for route, h in html_by_route.items():
+    live = re.sub(r"<!--.*?-->", "", h[h.find("<body"):], flags=re.S)
+    n = len(re.findall(r'<a[^>]*href="(?:#|)"', live))
+    if n:
+        dead[route] = n
+check("no rendered link points at nothing", not dead,
+      "%d pages with dead links" % len(dead))
+
+# 16. the areas in areaServed are named in the copy of the pages that claim them
+missing_areas = []
+for route in SERVICE_ROUTES:
+    h = html_by_route.get(route, "")
+    body = h[h.find("<body"):]
+    for area in ("Jabal Ali Industrial Area", "Jabal Ali Free Zone", "Dubai Industrial City"):
+        if area not in body:
+            missing_areas.append((route.split("/")[2][:22], area))
+check("service pages name the areas their schema claims", not missing_areas,
+      str(missing_areas[:3]))
+
+
+# 17. the fleet states capacities, and no placeholder survives
+fleet = html_by_route.get("/our-fleet/", "")
+body = fleet[fleet.find("<body"):]
+placeholders = [t for t in ("perspiciatis", "12-Passenger", "Lorem ipsum") if t in body]
+seats = [t for t in ("7 Seater", "14 Seater", "34 Seater", "67 Seater") if t in body]
+check("the fleet page states seat counts and carries no placeholder text",
+      not placeholders and len(seats) == 4,
+      "placeholders: %s | capacities found: %d/4" % (placeholders or "none", len(seats)))
+
+
 print("\n%d checks failed" % len(fails))
 sys.exit(1 if fails else 0)

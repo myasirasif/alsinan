@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page not found | Alsinan Transportation</title>
+        <title>Page not found | Alsinan Transport</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       <main id="primary" className="site-main">

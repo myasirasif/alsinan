@@ -2,7 +2,7 @@
 // Head tags only - the structured data lives in jsonld.js.
 export const seo = {
   "/": {
-    "title": "Trusted Transport Services in Dubai | Safe & Affordable Travel",
+    "title": "Transport Services in Dubai | Safe, Affordable Travel",
     "meta": [
       {
         "name": "google-site-verification",
@@ -26,7 +26,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Trusted Transport Services in Dubai | Safe & Affordable Travel"
+        "content": "Transport Services in Dubai | Safe, Affordable Travel"
       },
       {
         "property": "og:description",
@@ -74,7 +74,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Trusted Transport Services in Dubai | Safe & Affordable Travel"
+        "content": "Transport Services in Dubai | Safe, Affordable Travel"
       },
       {
         "name": "twitter:description",
@@ -104,7 +104,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/"
   },
   "/about/": {
-    "title": "About Alsinan Transport Dubai | Professional Transport Company",
+    "title": "About Alsinan Transport | Dubai Transport Company",
     "meta": [
       {
         "name": "google-site-verification",
@@ -128,7 +128,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "About Alsinan Transport Dubai | Professional Transport Company"
+        "content": "About Alsinan Transport | Dubai Transport Company"
       },
       {
         "property": "og:description",
@@ -176,7 +176,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "About Alsinan Transport Dubai | Professional Transport Company"
+        "content": "About Alsinan Transport | Dubai Transport Company"
       },
       {
         "name": "twitter:description",
@@ -198,7 +198,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/about/"
   },
   "/services/": {
-    "title": "Transport Services We Offer in Dubai | Comfort, Safety & Trust",
+    "title": "Transport Services We Offer in Dubai | Alsinan",
     "meta": [
       {
         "name": "google-site-verification",
@@ -222,7 +222,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Transport Services We Offer in Dubai | Comfort, Safety & Trust"
+        "content": "Transport Services We Offer in Dubai | Alsinan"
       },
       {
         "property": "og:description",
@@ -270,7 +270,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Transport Services We Offer in Dubai | Comfort, Safety & Trust"
+        "content": "Transport Services We Offer in Dubai | Alsinan"
       },
       {
         "name": "twitter:description",
@@ -300,7 +300,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +97155 525 2397."
+        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +971 55 525 2397."
       },
       {
         "name": "robots",
@@ -320,7 +320,7 @@ export const seo = {
       },
       {
         "property": "og:description",
-        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +97155 525 2397."
+        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +971 55 525 2397."
       },
       {
         "property": "og:url",
@@ -368,7 +368,7 @@ export const seo = {
       },
       {
         "name": "twitter:description",
-        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +97155 525 2397."
+        "content": "Comfortable, safe, and affordable transport in Dubai. Modern vehicles with skilled drivers. Book now at +971 55 525 2397."
       },
       {
         "name": "twitter:image",
@@ -394,7 +394,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +97155 525 2397 or message us for quick assistance."
+        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
       },
       {
         "name": "robots",
@@ -414,7 +414,7 @@ export const seo = {
       },
       {
         "property": "og:description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +97155 525 2397 or message us for quick assistance."
+        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
       },
       {
         "property": "og:url",
@@ -462,7 +462,7 @@ export const seo = {
       },
       {
         "name": "twitter:description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +97155 525 2397 or message us for quick assistance."
+        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
       },
       {
         "name": "twitter:image",
@@ -1106,7 +1106,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/services/staff-transport-in-dubai/"
   },
   "/services/hotel-transport-service-in-dubai/": {
-    "title": "Hotel Transport Service in Dubai | 24/7 Premium Guest Transfers",
+    "title": "Hotel Transport Service in Dubai | 24/7 Transfers",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1130,7 +1130,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Hotel Transport Service in Dubai | 24/7 Premium Guest Transfers"
+        "content": "Hotel Transport Service in Dubai | 24/7 Transfers"
       },
       {
         "property": "og:description",
@@ -1178,7 +1178,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Hotel Transport Service in Dubai | 24/7 Premium Guest Transfers"
+        "content": "Hotel Transport Service in Dubai | 24/7 Transfers"
       },
       {
         "name": "twitter:description",
@@ -1506,7 +1506,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/transport-service-options-for-airport-transfers-uae/"
   },
   "/ride-service-for-daily-commuting-in-dubai/": {
-    "title": "Ride Service for Daily Commuting in Dubai | Alsinan Transport",
+    "title": "Daily Commuting Ride Service in Dubai",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1530,7 +1530,7 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Ride Service for Daily Commuting in Dubai | Alsinan Transport"
+        "content": "Daily Commuting Ride Service in Dubai"
       },
       {
         "property": "og:description",
@@ -1590,7 +1590,7 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Ride Service for Daily Commuting in Dubai | Alsinan Transport"
+        "content": "Daily Commuting Ride Service in Dubai"
       },
       {
         "name": "twitter:description",

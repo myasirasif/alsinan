@@ -47,7 +47,7 @@ export default function Home() {
       <span className="sub_head">About Us</span>
       <h2>We Make Your Trips Comfortable; Every Time</h2>
       <p>Alsinan Transport is based in Dubai, and that matters because timing is everything here. In this city, the biggest challenge is not finding a vehicle. It is making sure it arrives on time. One traffic issue, a delayed flight or a late school pickup can easily affect an entire day.</p>
-      <p>That is where we come in. People come to us because they want Transport Services in Dubai that work the right way. They want staff routes that leave on time. School buses that follow fixed routines. Airport pickups that adjust to real flight timings. Private trips that do not require constant calling and chasing drivers.</p>
+      <p>That is where we come in. People come to us because they want <Link to="/services/">Transport Services in Dubai</Link> that work the right way. They want staff routes that leave on time. School buses that follow fixed routines. Airport pickups that adjust to real flight timings. Private trips that do not require constant calling and chasing drivers.</p>
       <p>We operate cars, Hiace vans, minibuses and full size coaches. Every vehicle is cleaned, checked and kept ready for daily use. Our drivers understand the areas they handle including industrial zones, residential communities, airports, hotels and schools. For us, school schedules, airport transfers and staff commutes are not occasional work. They are our everyday responsibility.</p>
       <p>Where many operators focus on short term jobs, our Transport Rental Services in Dubai are built for long term dependability. We manage ongoing staff transport, regular school routes and consistent group travel requirements. Routes can be refined when your needs change. Pricing stays clear and practical. And when plans shift, someone from our team supports you instead of leaving you stuck.</p>
       <p>If you want rental transport in Dubai that grows with your requirements, Alsinan Transport is ready to support you.</p>
@@ -402,7 +402,7 @@ export default function Home() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
+      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

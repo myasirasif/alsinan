@@ -4,7 +4,7 @@
 Kept separate from convert.py/build.py so the whole site can be re-scraped and
 regenerated without losing them.
 """
-import json, os, re
+import json, os, re, html as htmlmod
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LIVE = "https://alsinantransport.com"
@@ -175,6 +175,152 @@ def add_credit(html):
         count=1,
     )
 
+# ---------------------------------------------------------------------------
+# NAP consistency
+# ---------------------------------------------------------------------------
+# The number was written three ways: "+97155 525 2397" in the footer and most
+# links, "+971 55 525 2397" on the airport page, and the same string with a
+# space inside the tel: href, which is not a valid tel URI. Local ranking leans
+# on name/address/phone matching exactly across the site and the Google
+# Business Profile, so all three are normalised here:
+#   displayed  ->  +971 55 525 2397   (correct UAE grouping)
+#   tel: href  ->  +971555252397      (E.164, no spaces)
+TEL_DISPLAY = "+971 55 525 2397"
+TEL_URI = "+971555252397"
+
+TEL_HREF = re.compile(r'href="tel:[^"]*"')
+TEL_TEXT = re.compile(r"\+971\s*55\s*525\s*2397")
+
+
+def fix_phone(text):
+    """Normalise every rendering of the phone number.
+
+    Order matters. TEL_TEXT's \s* matches zero characters, so it happily
+    rewrites the digits inside a tel: URI as well; running it first and the href
+    rule second means the href always ends up in E.164 regardless.
+    """
+    text = TEL_TEXT.sub(TEL_DISPLAY, text)
+    return TEL_HREF.sub('href="tel:%s"' % TEL_URI, text)
+
+
+# ---------------------------------------------------------------------------
+# Enquiry form on the service pages
+# ---------------------------------------------------------------------------
+# The form was on all seven blog posts and the contact page, and on none of the
+# six service pages - backwards, because a reader on a service page is the one
+# ready to buy. The wrapper below reuses the theme's own needbox_section /
+# form_section_inner classes, the same ones the contact page uses, so no new
+# styling is needed.
+#
+# The copy differs per page on purpose. Identical boilerplate on six pages would
+# have deepened the vocabulary overlap the content audit already flags between
+# the airport and hotel pages, and each version asks for the details that page's
+# reader actually has to hand.
+SERVICE_FORM_COPY = {
+    "/services/school-transport-in-dubai/": (
+        "School Transport",
+        "Tell us about your school run",
+        "Share the route, how many students travel and the pickup and drop timings, "
+        "and we will come back with a plan for the term.",
+    ),
+    "/services/staff-transport-in-dubai/": (
+        "Staff Transport",
+        "Plan your staff routes with us",
+        "Send us your shift timings, pickup points and headcount, and we will put "
+        "together a monthly plan for your team.",
+    ),
+    "/services/airport-transport-in-dubai/": (
+        "Airport Transport",
+        "Book an airport transfer",
+        "Give us the flight number, the terminal and how many passengers are "
+        "travelling, and we will confirm the driver and the pickup point.",
+    ),
+    "/services/hotel-transport-service-in-dubai/": (
+        "Hotel Transport",
+        "Arrange transport for your guests",
+        "Tell us the pickup schedule and how many guests you move in a typical "
+        "week, and we will set up a standing arrangement.",
+    ),
+    "/services/private-car-rental-in-dubai/": (
+        "Private Car Rental",
+        "Book a private car",
+        "Let us know the dates, the pickup area and whether you need a chauffeur, "
+        "and we will send you the options that fit.",
+    ),
+    "/services/dubai-tours-transport-services/": (
+        "Tours & Excursions",
+        "Plan your group trip",
+        "Tell us the destinations, the group size and the dates, and we will build "
+        "an itinerary around the right vehicle.",
+    ),
+}
+
+SERVICE_FORM_TPL = """<section class="needbox_section svc_enquiry">
+<div class="form_section_inner">
+<div class="container">
+<div class="row">
+<div class="col-lg-7">
+<div class="form_top_row">
+<div class="content_middle_contact_form">
+<span class="sub_head">%(eyebrow)s</span>
+<h2>%(heading)s</h2>
+<p>%(intro)s</p>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-7">
+<div class="form_middle_row">
+<div class="contact_form">
+<contactform variant="compact"></contactform>
+</div>
+</div>
+</div>
+<div class="col-lg-5">
+<div class="form_middle_row">
+<div class="contact_frm_content">
+<h3>Rather talk to us?</h3>
+<ul>
+<li><a href="tel:%(tel_uri)s"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> %(tel)s</a></li>
+<li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+</ul>
+<a href="https://wa.me/971555252397?text=I%%20want%%20to%%20know%%20more%%20about%%20Alsinan" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>"""
+
+FINAL_NEEDBOX = re.compile(r'<section class="needbox_section"[^>]*>')
+
+
+def add_service_form(html, path):
+    """Put an enquiry form on a service page, above its closing CTA band."""
+    copy = SERVICE_FORM_COPY.get(path)
+    if not copy or "svc_enquiry" in html:
+        return html
+
+    eyebrow, heading, intro = copy
+    section = SERVICE_FORM_TPL % {
+        "eyebrow": eyebrow,
+        "heading": heading,
+        "intro": intro,
+        "tel": TEL_DISPLAY,
+        "tel_uri": TEL_URI,
+    }
+
+    # The page closes with the red "contact us today" band. The form belongs
+    # just before it, so the reader meets the form while still in the service
+    # copy and the band stays the page's closing note.
+    m = FINAL_NEEDBOX.search(html)
+    if not m:
+        return html + section  # layout moved; append rather than lose the form
+    return html[: m.start()] + section + html[m.start() :]
+
+
 
 def fix_lazy_hero(html):
     """A hero image marked fetchpriority=high must not also be lazy.
@@ -256,6 +402,21 @@ BLOG_PATHS = {
 # Keep it crawlable so it still passes link equity, but out of the index.
 CATEGORY_PATH = "/category/cars/"
 
+# Google truncates a title around 60 characters. These five ran over, and on
+# three of them the part that fell off the end was the brand name. Rewritten to
+# keep the head term first and land under the limit; measured lengths in
+# comments so a later edit can see the budget it is working inside.
+TITLE_OVERRIDES = {
+    "/": "Transport Services in Dubai | Safe, Affordable Travel",          # 52
+    "/about/": "About Alsinan Transport | Dubai Transport Company",        # 49
+    "/services/": "Transport Services We Offer in Dubai | Alsinan",        # 46
+    "/services/hotel-transport-service-in-dubai/":
+        "Hotel Transport Service in Dubai | 24/7 Transfers",               # 49
+    "/ride-service-for-daily-commuting-in-dubai/":
+        "Daily Commuting Ride Service in Dubai",                           # 37
+}
+
+
 DESCRIPTION_OVERRIDES = {
     # trimmed to stay inside the ~158 character snippet limit
     "/services/hotel-transport-service-in-dubai/":
@@ -268,6 +429,78 @@ DESCRIPTION_OVERRIDES = {
         "Articles from Alsinan Transport on cars, vans and buses for travel "
         "around Dubai and the wider UAE.",
 }
+
+
+# ---------------------------------------------------------------------------
+# FAQ schema / page mismatch
+# ---------------------------------------------------------------------------
+# The homepage renders nine FAQs and marks up nine FAQs, and not one of the
+# eighteen strings matches. The markup was written separately from the copy, so
+# it says "How can I book a vehicle with you?" where the page says "How do I
+# book a vehicle?", and paraphrases every answer the same way.
+#
+# Google's structured data policy is that marked-up content has to be present on
+# the page. Same topic, different words does not satisfy that, and a mismatch is
+# what manual actions for structured data are issued over. The page copy is the
+# thing people read, so the schema is rewritten to mirror it exactly rather than
+# the other way round.
+FAQ_SECTION = re.compile(r'<section class="faqs_section">(.*?)</section>', re.S)
+FAQ_ITEM = re.compile(r"<h2[^>]*>(.*?)</h2>(.*?)(?=<h2|\Z)", re.S)
+TAGS = re.compile(r"<[^>]+>")
+
+
+def _text(fragment):
+    return re.sub(r"\s+", " ", htmlmod.unescape(TAGS.sub(" ", fragment))).strip()
+
+
+def visible_faq(content_html):
+    """Return the [(question, answer)] a reader actually sees, in page order."""
+    sec = FAQ_SECTION.search(content_html)
+    if not sec:
+        return []
+    pairs = []
+    for q, a in FAQ_ITEM.findall(sec.group(1)):
+        question, answer = _text(q), _text(a)
+        # the section's own title is an h2 too, and has no answer under it
+        if question and answer:
+            pairs.append((question, answer))
+    return pairs
+
+
+def sync_faq_schema(seo, content_html):
+    """Rewrite any FAQPage block so its questions match the rendered page."""
+    pairs = visible_faq(content_html)
+    if not pairs:
+        return seo
+
+    def rewrite(node):
+        if isinstance(node, list):
+            return [rewrite(x) for x in node]
+        if not isinstance(node, dict):
+            return node
+        if node.get("@type") == "FAQPage":
+            node = dict(node)
+            node["mainEntity"] = [
+                {
+                    "@type": "Question",
+                    "name": q,
+                    "acceptedAnswer": {"@type": "Answer", "text": a},
+                }
+                for q, a in pairs
+            ]
+            return node
+        return {k: rewrite(v) for k, v in node.items()}
+
+    out = []
+    for block in seo["jsonld"]:
+        try:
+            data = json.loads(block)
+        except ValueError:
+            out.append(block)
+            continue
+        out.append(json.dumps(rewrite(data), ensure_ascii=False))
+    seo["jsonld"] = out
+    return seo
 
 
 def patch_seo(path, seo):
@@ -285,6 +518,12 @@ def patch_seo(path, seo):
     if path not in BLOG_PATHS:
         set_meta("og:type", "website" if path != CATEGORY_PATH else "website", attr="property")
 
+    if path in TITLE_OVERRIDES:
+        title = TITLE_OVERRIDES[path]
+        seo["title"] = title
+        set_meta("og:title", title, attr="property")
+        set_meta("twitter:title", title)
+
     if path in DESCRIPTION_OVERRIDES:
         desc = DESCRIPTION_OVERRIDES[path]
         set_meta("description", desc)
@@ -294,7 +533,14 @@ def patch_seo(path, seo):
     if path == CATEGORY_PATH:
         set_meta("robots", "noindex, follow, max-image-preview:large")
 
-    seo["jsonld"] = [patch_jsonld(b) for b in seo["jsonld"]]
+    # The phone is also written into meta descriptions and the schema, neither of
+    # which passes through the markup pipeline where fix_phone runs.
+    for m in meta:
+        if "content" in m and "2397" in m["content"]:
+            m["content"] = TEL_TEXT.sub(TEL_DISPLAY, m["content"])
+    seo["title"] = TEL_TEXT.sub(TEL_DISPLAY, seo.get("title", ""))
+
+    seo["jsonld"] = [fix_phone(patch_jsonld(b)) for b in seo["jsonld"]]
     return seo
 
 
@@ -349,15 +595,47 @@ LINK_PHRASES = [
     ("car rental", "/services/private-car-rental-in-dubai/"),
 ]
 
+# The /services/ hub had no inbound links from body copy anywhere on the site -
+# only the navigation pointed at it, which tells Google nothing about what it is
+# for. These phrases already appear in the existing prose, so the links read as
+# sentences rather than as SEO plumbing.
+HUB_PHRASES = [
+    ("transport services in Dubai", "/services/"),
+    ("transport services", "/services/"),
+    ("rental services", "/services/"),
+]
+
+# Pages that should link up to the hub. Deliberately not /services/ itself, and
+# not the blog posts, which already spend their link budget pointing at the six
+# service pages - a more valuable destination than the hub.
+HUB_SOURCES = {
+    "/",
+    "/about/",
+    "/our-fleet/",
+    "/services/school-transport-in-dubai/",
+    "/services/staff-transport-in-dubai/",
+    "/services/airport-transport-in-dubai/",
+    "/services/hotel-transport-service-in-dubai/",
+    "/services/private-car-rental-in-dubai/",
+    "/services/dubai-tours-transport-services/",
+}
+
 # only link inside body paragraphs, never headings, links or attributes
 PARA = re.compile(r"(<p\b[^>]*>)(.*?)(</p>)", re.S)
 
 
 def add_internal_links(html, path, max_links=3):
-    """Link the first mention of each service phrase in a blog post's paragraphs."""
+    """Link the first mention of each service phrase in a page's paragraphs."""
+    if path in HUB_SOURCES:
+        # one link per page: the hub is worth pointing at, not worth shouting at
+        return _link(html, HUB_PHRASES, max_links=1)
     if path not in BLOG_PATHS:
         return html
+    return _link(html, LINK_PHRASES, max_links)
 
+
+def _link(html, phrases, max_links):
+    """Link the first mention of each phrase, at most max_links times."""
     used = set()
     added = [0]
 
@@ -365,7 +643,7 @@ def add_internal_links(html, path, max_links=3):
         open_tag, body, close_tag = m.groups()
         if added[0] >= max_links or "<a " in body:
             return m.group(0)
-        for phrase, target in LINK_PHRASES:
+        for phrase, target in phrases:
             if target in used or added[0] >= max_links:
                 continue
             pattern = re.compile(r"(?<![\w>])(" + re.escape(phrase) + r")(?![\w<])", re.I)

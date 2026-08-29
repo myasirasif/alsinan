@@ -50,7 +50,7 @@ export default function ContactUs() {
       <h3>Get in Touch</h3>
 
       <ul>
-      <li><a href="tel:+97155 525 2397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +97155 525 2397</a></li>
+      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
       <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       <li><a href=""><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
       </ul>
@@ -119,7 +119,7 @@ export default function ContactUs() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
+      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

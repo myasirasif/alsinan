@@ -729,3 +729,22 @@ a.post-thumbnail { display: block; }
   footer#colophon .list_col { margin-top: 34px; }
   footer#colophon .copyright_line .list_col { margin-top: 0; }
 }
+
+/* The enquiry section added to the six service pages. It reuses the contact
+   page's needbox_section / form_section_inner shell, but that shell was built
+   for a page whose whole job is the form: its intro row leaves ~130px before
+   the fields, which reads as a hole when the section sits mid-page. */
+section.svc_enquiry .form_top_row { padding-bottom: 0; }
+
+section.svc_enquiry .content_middle_contact_form { margin-bottom: 28px; }
+
+/* Line the "Rather talk to us?" column up with the top of the form rather than
+   letting it float against the middle of the fields. */
+section.svc_enquiry .contact_frm_content { padding-top: 4px; }
+
+section.svc_enquiry .contact_frm_content .btn { margin-top: 8px; }
+
+/* "Plan your staff routes with us" broke with a single word on the last line.
+   Balancing applies to the enquiry headings only - the theme's other h2s were
+   written to the widths they already wrap at. */
+section.svc_enquiry .content_middle_contact_form h2 { text-wrap: balance; }

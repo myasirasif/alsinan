@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from convert import html_to_jsx, abs_url
 from fixes import (fix_alts, patch_seo, add_internal_links,
                    add_image_dimensions, fix_lazy_hero, fix_list_in_paragraph,
-                   add_credit)
+                   add_credit, fix_phone, add_service_form, sync_faq_schema)
 from sections import componentise
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -100,10 +100,14 @@ def body_parts(html):
     tail = body[fm.end():]
     return {
         "bodyclass": bodyclass.group(1) if bodyclass else "",
-        "header": fix_lazy_hero(add_image_dimensions(fix_alts(fix_list_in_paragraph(unnest_logo(header))))),
-        "content": fix_lazy_hero(add_image_dimensions(fix_alts(fix_list_in_paragraph(content)))),
-        "footer": fix_lazy_hero(add_image_dimensions(fix_alts(
-            fix_list_in_paragraph(add_credit(unnest_logo(footer)))))),
+        # fix_phone runs last on each part so it also normalises numbers that
+        # the other fixes moved or rewrote.
+        "header": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(unnest_logo(header)))))),
+        "content": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(content))))),
+        "footer": fix_phone(fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(add_credit(unnest_logo(footer))))))),
         "tail": tail,
     }
 
@@ -123,7 +127,12 @@ def replace_forms(html):
         variants.append(variant)
         return '<contactform variant="%s"></contactform>' % variant
 
-    return CF7_FORM.sub(repl, html), variants
+    html = CF7_FORM.sub(repl, html)
+    # add_service_form() writes the placeholder straight into the markup, so
+    # count every placeholder present rather than only the ones swapped here -
+    # otherwise the page renders <ContactForm> without importing it.
+    variants += re.findall(r'<contactform variant="(\w+)">', html)
+    return html, variants
 
 
 CORE_SCRIPT_MARKERS = ("_wpemojiSettings", "wp.i18n.setLocaleData", "wpcf7 =", "wpcf7_recaptcha",
@@ -301,7 +310,10 @@ def main():
         parts = body_parts(html)
         parts["header"], header_ld = split_jsonld(parts["header"])
         seo["jsonld"].extend(header_ld)
-        seo_map[path] = patch_seo(path, seo)
+        # the FAQ schema is synced against the rendered copy, so it runs after
+        # the content fixes that could still change that copy
+        seo_map[path] = sync_faq_schema(patch_seo(path, seo), parts["content"])
+        parts["content"] = add_service_form(parts["content"], path)
         parts["content"] = add_internal_links(parts["content"], path)
         parts["content"], form_variants = replace_forms(parts["content"])
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
@@ -76,7 +77,7 @@ export default function SvcPrivateCarRentalInDubai() {
       <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>A Fleet for Every Journey</h3>
       </div>
-      <p><span style={{ fontWeight: "400" }}>Different journeys need different vehicles. Compact cars make city movement simple, sedans are ideal for business use and SUVs are perfect for families, friends and extra luggage. Whether your plan involves business travel, city tours, beach trips or relaxed exploration, our car rental services in Dubai provide a suitable option.</span></p>
+      <p><span style={{ fontWeight: "400" }}>Different journeys need different vehicles. Compact cars make city movement simple, sedans are ideal for business use and SUVs are perfect for families, friends and extra luggage. Whether your plan involves business travel, city tours, beach trips or relaxed exploration, our car <Link to="/services/">rental services</Link> in Dubai provide a suitable option.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
@@ -167,7 +168,44 @@ export default function SvcPrivateCarRentalInDubai() {
       </section>
 
 
-      <section className="needbox_section">
+      <section className="needbox_section svc_enquiry">
+      <div className="form_section_inner">
+      <div className="container">
+      <div className="row">
+      <div className="col-lg-7">
+      <div className="form_top_row">
+      <div className="content_middle_contact_form">
+      <span className="sub_head">Private Car Rental</span>
+      <h2>Book a private car</h2>
+      <p>Let us know the dates, the pickup area and whether you need a chauffeur, and we will send you the options that fit.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div className="row">
+      <div className="col-lg-7">
+      <div className="form_middle_row">
+      <div className="contact_form">
+      <ContactForm variant="compact" />
+      </div>
+      </div>
+      </div>
+      <div className="col-lg-5">
+      <div className="form_middle_row">
+      <div className="contact_frm_content">
+      <h3>Rather talk to us?</h3>
+      <ul>
+      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      </ul>
+      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section><section className="needbox_section">
       <div className="container">
       <div className="row">
       <div className="col-12">
@@ -186,7 +224,7 @@ export default function SvcPrivateCarRentalInDubai() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
+      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

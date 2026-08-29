@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// the breakpoint where styles.css swaps the nav for the hamburger
-const MOBILE = "(max-width: 1024px)";
-
 export default function Header() {
   const { pathname } = useLocation();
   const here = pathname.endsWith("/") ? pathname : pathname + "/";
@@ -12,7 +9,6 @@ export default function Header() {
   // WordPress reloaded the page on every click, which closed the menu for free.
   // Client-side routing does not, so the menu has to close itself.
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openSub, setOpenSub] = useState(null);
 
   // On WordPress a click reloaded the page, so the hovered sub-menu vanished.
   // Here the cursor is still sitting on the parent after navigating and CSS
@@ -20,10 +16,7 @@ export default function Header() {
   // pointer actually moves again.
   const [hoverOff, setHoverOff] = useState(false);
 
-  const close = () => {
-    setMenuOpen(false);
-    setOpenSub(null);
-  };
+  const close = () => setMenuOpen(false);
 
   useEffect(() => {
     close();
@@ -58,23 +51,13 @@ export default function Header() {
     let cls = base;
     if (here === target) cls += " current-menu-item current_page_item";
     else if (target !== "/" && here.startsWith(target)) cls += " current-menu-ancestor current-menu-parent";
-    if (openSub === to) cls += " focus";
     return cls;
-  };
-
-  // On mobile a parent item opens its sub-menu instead of navigating, matching
-  // the theme's touchstart behaviour. On desktop the CSS hover still applies.
-  const onParentClick = (e, to) => {
-    if (typeof window === "undefined" || !window.matchMedia(MOBILE).matches) return;
-    e.preventDefault();
-    setOpenSub((cur) => (cur === to ? null : to));
   };
 
   // any ordinary menu link closes the whole thing, including same-page links
   const onNavClick = (e) => {
     const link = e.target.closest("a");
     if (!link || !navRef.current?.contains(link)) return;
-    if (link.parentElement?.classList.contains("menu-item-has-children")) return;
     close();
   };
 
@@ -86,16 +69,16 @@ export default function Header() {
       <div className="col-lg-9">
       <div className="contact_top_details">
       <ul>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" />alsinantransport@gmail.com</a></li>
-      <li><a href=""><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" />P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" />alsinantransport@gmail.com</a></li>
+      <li><a href=""><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" />P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
       </ul>
       </div>
       </div>
       <div className="col-lg-3 text-end">
       <div className="social_icons">
       <ul>
-      <li><a href="https://www.facebook.com/share/17Kka81PY8/?mibextid=wwXIfr" target="_blank"><img src="/wp-content/uploads/2025/09/icon_fb.svg" alt="Alsinan Transport on Facebook" /></a></li>
-      <li><a href="https://www.instagram.com/al_sinan_passengers_tranaport?igsh=MW4xaTU1NmFueHhibA%3D%3D&utm_source=qr" target="_blank"><img src="/wp-content/uploads/2025/09/icon_insta.svg" alt="Alsinan Transport on Instagram" /></a></li>
+      <li><a href="https://www.facebook.com/share/17Kka81PY8/?mibextid=wwXIfr" target="_blank"><img src="/wp-content/uploads/2025/09/icon_fb.svg" alt="Alsinan Transport on Facebook" width="8" height="14" /></a></li>
+      <li><a href="https://www.instagram.com/al_sinan_passengers_tranaport?igsh=MW4xaTU1NmFueHhibA%3D%3D&utm_source=qr" target="_blank"><img src="/wp-content/uploads/2025/09/icon_insta.svg" alt="Alsinan Transport on Instagram" width="15" height="14" /></a></li>
 
       </ul>
       </div>
@@ -108,7 +91,7 @@ export default function Header() {
       <div className="row">
       <div className="col-lg-2 col-5 col-logo">
       <div className="site-branding">
-      <Link className="custom-logo-link" rel="home" to="/"><img src="/wp-content/uploads/2025/09/logo.svg" className="custom-logo" alt="Alsinan Transport Dubai company logo" decoding="async" /></Link>
+      <Link className="custom-logo-link" rel="home" to="/"><img src="/wp-content/uploads/2025/09/logo.svg" className="custom-logo" alt="Alsinan Transport Dubai company logo" decoding="async" width="209" height="75" /></Link>
       </div>
       </div>
       <div className="col-lg-10 col-7 col-menu">
@@ -117,10 +100,10 @@ export default function Header() {
       <nav id="site-navigation" ref={navRef} onClick={onNavClick}
            className={"main-navigation" + (menuOpen ? " toggled" : "") + (hoverOff ? " hover-suppressed" : "")}>
       <button className="menu-toggle" aria-controls="primary-menu"
-              aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" /></button>
+              aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" width="638" height="540" /></button>
       <div className="menu-menu-1-container"><ul id="primary-menu" className="menu"><li id="menu-item-47" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47", "/")}><Link to="/">Home</Link></li>
       <li id="menu-item-48" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-48", "/about/")}><Link to="/about/">About</Link></li>
-      <li id="menu-item-52" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52", "/services/")}><Link to="/services/" onClick={(e) => onParentClick(e, "/services/")}>Services</Link>
+      <li id="menu-item-52" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52", "/services/")}><Link to="/services/">Services</Link>
       <ul className="sub-menu">
       <li id="menu-item-258" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-258", "/services/dubai-tours-transport-services/")}><Link to="/services/dubai-tours-transport-services/">For Tours &#038; Excursions</Link></li>
       <li id="menu-item-259" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-259", "/services/private-car-rental-in-dubai/")}><Link to="/services/private-car-rental-in-dubai/">For Private Travellers</Link></li>
@@ -138,7 +121,7 @@ export default function Header() {
       <div className="whatsapp_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whasapp</span>

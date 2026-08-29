@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -47,55 +49,12 @@ export default function SvcStaffTransportInDubai() {
       </div>
       </div>
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">Why Choose Us</span>
-      <h2>Why Choose Alsinan for Staff Transport in Dubai</h2>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Always On Time</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Delays during a workday can easily affect productivity. That is why our team plans pickup and drop schedules carefully by considering real traffic conditions, known busy routes and your company timings. This ensures staff reach offices, work locations and events on time. HR and administration face less pressure and daily operations become more predictable. Consistent and punctual staff transport in Dubai helps your business start every working day in a steady and organised way.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Trusted Drivers</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Who drives your team matters a lot. Our drivers are fully licensed, carefully screened and experienced in handling staff and corporate routes. They understand professional environments, manage traffic calmly and support passengers when needed. Their approach remains disciplined, respectful and consistent, so your employees travel with drivers they trust every day.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Flexible Vehicles for Any Team</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Different companies require different transport arrangements. That is why our fleet includes vans, minibuses and buses so every need is handled correctly. Small teams benefit from dedicated van rental in Dubai. Medium sized groups travelling between offices or worksites move comfortably in minibuses. Larger workforces, corporate events and structured corporate transport in Dubai are handled with suitable buses so staff travel together without crowding. We match vehicle size and route planning to your staffing needs so travel remains smooth and practical.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Stress-Free and Efficient</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Reliable staff transport has a direct effect on morale and performance. Employees face less commuting stress. HR teams spend less energy arranging last minute movement. Company travel becomes organised instead of uncertain. When the commute is predictable and comfortable, employees reach focused and ready to start their day positively.</span></p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">Why Choose Us</span>
+      <h2>Why Choose Alsinan for Staff Transport in Dubai</h2></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -104,70 +63,58 @@ export default function SvcStaffTransportInDubai() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Always On Time</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Delays during a workday can easily affect productivity. That is why our team plans pickup and drop schedules carefully by considering real traffic conditions, known busy routes and your company timings. This ensures staff reach offices, work locations and events on time. HR and administration face less pressure and daily operations become more predictable. Consistent and punctual staff transport in Dubai helps your business start every working day in a steady and organised way.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Trusted Drivers</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Who drives your team matters a lot. Our drivers are fully licensed, carefully screened and experienced in handling staff and corporate routes. They understand professional environments, manage traffic calmly and support passengers when needed. Their approach remains disciplined, respectful and consistent, so your employees travel with drivers they trust every day.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Flexible Vehicles for Any Team</h3>
       </div>
-      </section>
+      <p><span style={{ fontWeight: "400" }}>Different companies require different transport arrangements. That is why our fleet includes vans, minibuses and buses so every need is handled correctly. Small teams benefit from dedicated van rental in Dubai. Medium sized groups travelling between offices or worksites move comfortably in minibuses. Larger workforces, corporate events and structured corporate transport in Dubai are handled with suitable buses so staff travel together without crowding. We match vehicle size and route planning to your staffing needs so travel remains smooth and practical.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Stress-Free and Efficient</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Reliable staff transport has a direct effect on morale and performance. Employees face less commuting stress. HR teams spend less energy arranging last minute movement. Company travel becomes organised instead of uncertain. When the commute is predictable and comfortable, employees reach focused and ready to start their day positively.</span></p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Fleet</span>
-      <h2>Our Fleet for Staff Transport</h2>
-
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        heading={<><span className="sub_head">Our Fleet</span>
+      <h2>Our Fleet for Staff Transport</h2></>}>
+        <ServiceBox col="6">
       <h3>Vans for Small Teams</h3>
       <p><span style={{ fontWeight: "400" }}>Our vans are suitable for smaller teams and fixed shuttle routes. They provide comfortable seating, space for personal belongings and a calm start and end to the workday. These vans work especially well for field teams, project staff and companies starting structured staff transport in Dubai.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Minibuses for Medium Groups</h3>
       <p><span style={{ fontWeight: "400" }}>Minibuses suit medium sized teams and regular inter office movement. They offer additional seating, easy boarding and a practical option for routine travel. Employees arrive together and do not need to depend on separate rides which keeps coordination simple.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Buses for Large Teams</h3>
       <p><span style={{ fontWeight: "400" }}>For bigger departments, large offices or full company travel, our buses are an ideal solution. They provide fully air conditioned interiors, comfortable seating and a safe, stable journey for daily movement, events or company gatherings. For businesses needing dependable high capacity corporate transport in Dubai, these vehicles keep travel organised and comfortable. Every vehicle is cleaned, serviced and inspected regularly so staff can rely on it every single day.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Safety Standards and Compliance</h3>
       <p><span style={{ fontWeight: "400" }}>Safety remains central to our operations. We follow Dubai transport regulations closely and apply strict internal standards. Vehicles go through routine inspections and preventive maintenance. Drivers receive training focused on safety, courtesy and professional behaviour. Approved routes and traffic rules are followed responsibly. Clear communication is maintained with company coordinators to align timing and planning correctly. These steps ensure every journey remains secure, dependable and calm.</span></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -212,7 +159,7 @@ export default function SvcStaffTransportInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -221,7 +168,7 @@ export default function SvcStaffTransportInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

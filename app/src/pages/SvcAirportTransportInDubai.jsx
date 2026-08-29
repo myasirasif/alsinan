@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -48,56 +50,13 @@ export default function SvcAirportTransportInDubai() {
       </div>
       </div>
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">Why Choose Us</span>
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">Why Choose Us</span>
       <h2>Why Choose Alsinan for Airport Transport in Dubai?</h2>
-      <p>Once your flight is booked, your bags are packed and your plans are set, you should not have to worry about how you are reaching the airport. Alsinan Transport combines reliability, planning, experience and comfort to deliver airport transport in Dubai that feels genuinely trustworthy.</p>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>On Time and Reliable</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Airports run strictly on time and punctuality matters. We plan every pickup based on flight schedules and real road conditions. Traffic, peak hours and expected delays are considered carefully so you do not rush through check in and you do not end up waiting endlessly on arrival either. We track departures and arrivals, adjust when needed and focus on delivering a consistently timely airport transfer experience. Being on time is not an extra benefit for us, it is part of the service standard.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Safe and Friendly Drivers</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>A comfortable transfer begins with a capable, professional and polite driver. Our chauffeurs understand Dubai roads, airport layouts, best drop off locations and smooth exit routes. They handle luggage respectfully, drive steadily, remain calm in traffic and communicate clearly with passengers. Whether you have just completed a long flight or you are heading out on an important journey, they help create a peaceful and reassuring travel experience from the very first moment.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Spacious and Comfortable Vehicles</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Different travel plans require different types of vehicles, and we arrange transport according to your needs, not the other way around. Solo travelers and couples can enjoy quiet, uninterrupted direct transfers in comfortable cars. Families and small groups benefit from vans and minibuses that provide proper seating space and enough room for luggage without inconvenience. For larger groups, teams and organized travelers, bigger vehicles ensure everyone travels together in comfort with strong air conditioning and relaxed seating. Whether you prefer a simple transfer or a more premium style Airport car rental in Dubai with driver, we match the suitable option for you.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Available Around the Clock</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Flights in Dubai operate throughout the day and night, so your Airport transport in Dubai must be just as flexible. Early morning flights, late night arrivals and odd hour airport transfers are all handled smoothly. You choose the time and we are there, prepared and ready.</span></p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <p>Once your flight is booked, your bags are packed and your plans are set, you should not have to worry about how you are reaching the airport. Alsinan Transport combines reliability, planning, experience and comfort to deliver airport transport in Dubai that feels genuinely trustworthy.</p></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -106,72 +65,60 @@ export default function SvcAirportTransportInDubai() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>On Time and Reliable</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Airports run strictly on time and punctuality matters. We plan every pickup based on flight schedules and real road conditions. Traffic, peak hours and expected delays are considered carefully so you do not rush through check in and you do not end up waiting endlessly on arrival either. We track departures and arrivals, adjust when needed and focus on delivering a consistently timely airport transfer experience. Being on time is not an extra benefit for us, it is part of the service standard.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Safe and Friendly Drivers</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>A comfortable transfer begins with a capable, professional and polite driver. Our chauffeurs understand Dubai roads, airport layouts, best drop off locations and smooth exit routes. They handle luggage respectfully, drive steadily, remain calm in traffic and communicate clearly with passengers. Whether you have just completed a long flight or you are heading out on an important journey, they help create a peaceful and reassuring travel experience from the very first moment.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Spacious and Comfortable Vehicles</h3>
       </div>
-      </section>
+      <p><span style={{ fontWeight: "400" }}>Different travel plans require different types of vehicles, and we arrange transport according to your needs, not the other way around. Solo travelers and couples can enjoy quiet, uninterrupted direct transfers in comfortable cars. Families and small groups benefit from vans and minibuses that provide proper seating space and enough room for luggage without inconvenience. For larger groups, teams and organized travelers, bigger vehicles ensure everyone travels together in comfort with strong air conditioning and relaxed seating. Whether you prefer a simple transfer or a more premium style Airport car rental in Dubai with driver, we match the suitable option for you.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Available Around the Clock</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Flights in Dubai operate throughout the day and night, so your Airport transport in Dubai must be just as flexible. Early morning flights, late night arrivals and odd hour airport transfers are all handled smoothly. You choose the time and we are there, prepared and ready.</span></p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Fleet</span>
-      <h2>Our Fleet for Airport Travel</h2>
-
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <h4 className="sub_head_right">Our fleet is designed to handle quick transfers, group travel, family journeys and large organized airport runs. Whatever Rental transport in Dubai you need for airport movement, we have a suitable and dependable solution available.</h4>
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        heading={<><span className="sub_head">Our Fleet</span>
+      <h2>Our Fleet for Airport Travel</h2></>}
+        intro={<><h4 className="sub_head_right">Our fleet is designed to handle quick transfers, group travel, family journeys and large organized airport runs. Whatever Rental transport in Dubai you need for airport movement, we have a suitable and dependable solution available.</h4></>}>
+        <ServiceBox col="6">
       <h3>Cars for Solo Travelers or Couples</h3>
       <p><span style={{ fontWeight: "400" }}>Business travelers, individuals and couples benefit from comfortable cars that offer direct, uninterrupted airport transfers. These rides remain private, smooth and efficient with enough space for standard luggage, ensuring a calm journey.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Vans and Minibuses</h3>
       <p><span style={{ fontWeight: "400" }}>For friends, families or work colleagues traveling together, vans and minibuses provide the right balance of comfort and practicality. Seating remains comfortable and luggage space remains organised so bags do not become a problem. This is ideal for families with children, small corporate teams and travel groups that prefer to arrive together without coordination hassles.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Buses and Coaches</h3>
       <p><span style={{ fontWeight: "400" }}>For much larger groups, buses and coaches make airport travel organised, cost effective and simple. Tour groups, delegations, school teams and institutional travelers benefit from moving together in one structured journey. Comfortable interiors, air conditioning and steady movement keep everyone relaxed from pickup to terminal entrance.</span></p>
       <p><span style={{ fontWeight: "400" }}>All vehicles are serviced regularly, inspected carefully and maintained to a high standard so reliability becomes a natural part of every journey.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Safety Standards and Compliance</h3>
       <p><span style={{ fontWeight: "400" }}>We place strong importance on safety and compliance across all services including Airport transport in Dubai. Our work follows local regulations and airport guidelines with structured processes designed to protect passengers. Vehicles are checked regularly, drivers receive ongoing training and approved routes and rules are followed carefully. This combination makes every trip safe, controlled and professional.</span></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -216,7 +163,7 @@ export default function SvcAirportTransportInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -225,7 +172,7 @@ export default function SvcAirportTransportInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

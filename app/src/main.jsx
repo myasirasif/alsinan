@@ -16,8 +16,10 @@ const tree = (
   </React.StrictMode>
 );
 
-// production serves prerendered markup, the dev server does not
-if (root.hasChildNodes()) {
+// Production serves prerendered markup, the dev server does not. Test for an
+// element child, not any child: index.html carries an <!--app-html--> comment
+// placeholder, which hasChildNodes() counts, so dev tried to hydrate nothing.
+if (root.firstElementChild) {
   hydrateRoot(root, tree);
 } else {
   createRoot(root).render(tree);

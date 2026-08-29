@@ -1,0 +1,19 @@
+{
+  "name": "alsinan-tooling",
+  "private": true,
+  "type": "module",
+  "description": "Build and verification tooling for the Alsinan React replica. The site itself lives in app/.",
+  "scripts": {
+    "verify:redirects": "node test-redirects.mjs",
+    "verify:seo": "python verify_fixes.py",
+    "compare": "node compare.mjs",
+    "snapshot": "node snapshot-layout.mjs",
+    "images:webp": "node optimize_images.mjs",
+    "images:sizes": "node image_sizes.mjs"
+  },
+  "devDependencies": {
+    "path-to-regexp": "^6.3.0",
+    "playwright": "^1.49.0",
+    "sharp": "^0.33.5"
+  }
+}

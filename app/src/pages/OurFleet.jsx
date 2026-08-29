@@ -92,7 +92,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Toyota Hiace" width="946" height="1178" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">SUVs & Family Cars</h5>
@@ -120,7 +120,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Hiace" width="1600" height="1067" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Minibuses</h5>
@@ -134,7 +134,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Toyota Hiace" width="1280" height="960" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Full-Size Coaches</h5>
@@ -179,10 +179,10 @@ export default function OurFleet() {
       <div className="col-lg-4">
       <div className="service_area_box">
       <h3>Why Travel With Us?</h3>
-      <p><li>Vehicles that are checked, cleaned, and cared for.</li>
+      <ul><li>Vehicles that are checked, cleaned, and cared for.</li>
       <li>Interiors that keep passengers cool and comfortable.</li>
       <li>Drivers who know the roads and take safety seriously.</li>
-      <li>Flexible plans and real support, day or night.</li></p>
+      <li>Flexible plans and real support, day or night.</li></ul>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
@@ -204,7 +204,7 @@ export default function OurFleet() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">If you need any car in rental</span>
@@ -213,7 +213,7 @@ export default function OurFleet() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

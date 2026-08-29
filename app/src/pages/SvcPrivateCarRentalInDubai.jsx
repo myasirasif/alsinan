@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -47,64 +49,12 @@ export default function SvcPrivateCarRentalInDubai() {
       </div>
       </div>
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">Why Choose Us</span>
-      <h2>Why Choose Alsinan for Private Car Hire in Dubai?</h2>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Flexible Rentals</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Every trip is different and not everyone fits into a fixed rental plan. Whether you need a car for a few hours, a day, weekend or a longer stay, we structure rentals around your timing. If plans change, we assist wherever possible so your travel remains convenient instead of stressful.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>A Fleet for Every Journey</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Different journeys need different vehicles. Compact cars make city movement simple, sedans are ideal for business use and SUVs are perfect for families, friends and extra luggage. Whether your plan involves business travel, city tours, beach trips or relaxed exploration, our car rental services in Dubai provide a suitable option.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Drive Yourself or Relax with a Chauffeur</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>If independence matters to you, choose self drive and enjoy complete freedom. If comfort and ease matter more, select a chauffeur driven option and travel with a licensed professional driver who manages routes, traffic and parking while you focus on work, conversations or simply the view.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Clean, Safe and Reliable</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Every vehicle is carefully serviced, fully insured and thoroughly cleaned before rental. Air conditioning, safety features, tyres and brakes are checked properly so your focus remains on your journey, not on the vehicle.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Always Available</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Dubai operates day and night and our service supports that lifestyle. Early morning departures, late night arrivals and urgent travel needs are all handled with dependable private car rental in Dubai whenever you need it.</span></p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">Why Choose Us</span>
+      <h2>Why Choose Alsinan for Private Car Hire in Dubai?</h2></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -113,78 +63,70 @@ export default function SvcPrivateCarRentalInDubai() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Flexible Rentals</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Every trip is different and not everyone fits into a fixed rental plan. Whether you need a car for a few hours, a day, weekend or a longer stay, we structure rentals around your timing. If plans change, we assist wherever possible so your travel remains convenient instead of stressful.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>A Fleet for Every Journey</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Different journeys need different vehicles. Compact cars make city movement simple, sedans are ideal for business use and SUVs are perfect for families, friends and extra luggage. Whether your plan involves business travel, city tours, beach trips or relaxed exploration, our car rental services in Dubai provide a suitable option.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Drive Yourself or Relax with a Chauffeur</h3>
       </div>
-      </section>
+      <p><span style={{ fontWeight: "400" }}>If independence matters to you, choose self drive and enjoy complete freedom. If comfort and ease matter more, select a chauffeur driven option and travel with a licensed professional driver who manages routes, traffic and parking while you focus on work, conversations or simply the view.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Clean, Safe and Reliable</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Every vehicle is carefully serviced, fully insured and thoroughly cleaned before rental. Air conditioning, safety features, tyres and brakes are checked properly so your focus remains on your journey, not on the vehicle.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Always Available</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Dubai operates day and night and our service supports that lifestyle. Early morning departures, late night arrivals and urgent travel needs are all handled with dependable private car rental in Dubai whenever you need it.</span></p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Fleet</span>
-      <h2>For Private Travellers</h2>
-
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <h4 className="sub_head_right">All cars are air-conditioned, well-maintained, and available with optional extras.</h4>
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        heading={<><span className="sub_head">Our Fleet</span>
+      <h2>For Private Travellers</h2></>}
+        intro={<><h4 className="sub_head_right">All cars are air-conditioned, well-maintained, and available with optional extras.</h4></>}>
+        <ServiceBox col="6">
       <h3>Compact and Standard Cars</h3>
       <p><span style={{ fontWeight: "400" }}>Perfect for solo travellers and couples, these cars offer easy city driving, simple parking and comfortable daily travel. They work well for mall visits, business areas, hotel transfers and everyday movement.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Luxury Cars</h3>
       <p><span style={{ fontWeight: "400" }}>When style and impression matter, our luxury car rental in Dubai becomes the right choice. These vehicles bring elegance, comfort and a premium feel to business meetings, special dinners, hotel arrivals and city exploration with guests.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>SUVs and Family Cars</h3>
       <p><span style={{ fontWeight: "400" }}>Families and small groups benefit from the space and comfort of SUVs and family vehicles. Extra storage, added legroom and smoother long drives make city exploration and day trips much easier.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Extras Available</h3>
       <p><span style={{ fontWeight: "400" }}>You can customise your rental with useful add ons such as navigation support, child seats, available WiFi and other helpful options so the vehicle matches your practical needs. Our car rental services in Dubai are built around your requirements so your ride feels personally suited to you.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-12">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="12">
       <h3>Safety Standards and Compliance</h3>
       <p><span style={{ fontWeight: "400" }}>Safety remains an essential part of every rental. Vehicles are regularly inspected and maintained. Chauffeurs receive training in safe driving, respectful service and luggage handling. UAE traffic laws and approved travel guidelines are followed carefully. Communication stays clear so booking details, timing and requests are always properly confirmed. These measures make every journey safe, confident and worry free.</span></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -231,7 +173,7 @@ export default function SvcPrivateCarRentalInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -240,7 +182,7 @@ export default function SvcPrivateCarRentalInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

@@ -1,10 +1,14 @@
 import { Helmet } from "react-helmet-async";
 
 /**
- * Renders the exact head markup Rank Math produced for each WordPress page:
- * title, description, robots, canonical, Open Graph, Twitter cards and JSON-LD.
+ * Renders the head markup Rank Math produced for each WordPress page: title,
+ * description, robots, canonical, Open Graph and Twitter cards.
+ *
+ * JSON-LD is deliberately absent. prerender.mjs writes it straight into the
+ * static HTML, so crawlers still see it on every URL while the ~155 KB of
+ * structured data stays out of the browser bundle.
  */
-export default function Seo({ title, meta = [], canonical, jsonld = [] }) {
+export default function Seo({ title, meta = [], canonical }) {
   return (
     <Helmet>
       {title ? <title>{title}</title> : null}
@@ -16,11 +20,6 @@ export default function Seo({ title, meta = [], canonical, jsonld = [] }) {
         )
       )}
       {canonical ? <link rel="canonical" href={canonical} /> : null}
-      {jsonld.map((block, i) => (
-        <script key={i} type="application/ld+json">
-          {block}
-        </script>
-      ))}
     </Helmet>
   );
 }

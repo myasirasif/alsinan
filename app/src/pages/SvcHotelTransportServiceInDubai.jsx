@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -47,55 +49,12 @@ export default function SvcHotelTransportServiceInDubai() {
       </div>
       </div>
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">Why Choose Us</span>
-      <h2>Why Choose Alsinan for Hotel Transport in Dubai</h2>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Always on Time</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Your flights, meetings, reservations and plans all follow time. Our service does as well. Our team reaches your hotel on time so there is no waiting, rushing or unnecessary stress. With punctual hotel transport in Dubai, your day can begin and end smoothly without delays.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Friendly, Safe Drivers</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>A comfortable ride starts with a responsible and skilled driver. Our drivers are licensed, experienced and familiar with Dubai roads, hotel zones and key city locations. They handle luggage carefully, stay calm in traffic and maintain a respectful and reassuring attitude throughout the ride. You simply take your seat and relax while they handle the journey.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Vehicles for Every Group</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>No matter how many people are travelling, we provide the right transport option. Individuals and couples enjoy comfortable cars that are ideal for quick and private transfers around the city or between hotel and airport. Families, friends and small corporate teams can travel together in vans and minibuses that offer proper seating space and convenience. For large groups, our buses and coaches provide steady, safe and well organised travel for events, city tours or conference movement. You choose your need and we match the best option to your schedule.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Comfort You Can Depend On</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Every vehicle is air conditioned, clean and designed for comfortable city travel. Seating remains pleasant, space is well planned and the ride stays smooth whether it is a short nearby transfer or a longer cross city journey. If you want more flexibility beyond hotel transfers, we can also assist with longer arrangements and car rental in Dubai so you can explore with comfort and confidence.</span></p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">Why Choose Us</span>
+      <h2>Why Choose Alsinan for Hotel Transport in Dubai</h2></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -104,70 +63,58 @@ export default function SvcHotelTransportServiceInDubai() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Always on Time</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Your flights, meetings, reservations and plans all follow time. Our service does as well. Our team reaches your hotel on time so there is no waiting, rushing or unnecessary stress. With punctual hotel transport in Dubai, your day can begin and end smoothly without delays.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Friendly, Safe Drivers</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>A comfortable ride starts with a responsible and skilled driver. Our drivers are licensed, experienced and familiar with Dubai roads, hotel zones and key city locations. They handle luggage carefully, stay calm in traffic and maintain a respectful and reassuring attitude throughout the ride. You simply take your seat and relax while they handle the journey.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Vehicles for Every Group</h3>
       </div>
-      </section>
+      <p><span style={{ fontWeight: "400" }}>No matter how many people are travelling, we provide the right transport option. Individuals and couples enjoy comfortable cars that are ideal for quick and private transfers around the city or between hotel and airport. Families, friends and small corporate teams can travel together in vans and minibuses that offer proper seating space and convenience. For large groups, our buses and coaches provide steady, safe and well organised travel for events, city tours or conference movement. You choose your need and we match the best option to your schedule.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Comfort You Can Depend On</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Every vehicle is air conditioned, clean and designed for comfortable city travel. Seating remains pleasant, space is well planned and the ride stays smooth whether it is a short nearby transfer or a longer cross city journey. If you want more flexibility beyond hotel transfers, we can also assist with longer arrangements and car rental in Dubai so you can explore with comfort and confidence.</span></p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Fleet</span>
-      <h2>Our Fleet for Hotel Transport in Dubai</h2>
-
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        heading={<><span className="sub_head">Our Fleet</span>
+      <h2>Our Fleet for Hotel Transport in Dubai</h2></>}>
+        <ServiceBox col="6">
       <h3>Cars for Solo Travelers or Couples</h3>
       <p><span style={{ fontWeight: "400" }}>For solo guests, couples and business travellers, our cars are ideal for quick and direct transport. There is enough room for luggage, interiors remain cool and the ride is focused on comfort and convenience. These are perfect for airport transfers, city travel, meetings and visits to malls, restaurants and attractions. You enjoy a direct and simple ride without hassle.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Vans and Minibuses</h3>
       <p><span style={{ fontWeight: "400" }}>For families, groups of friends and business teams who want to stay together, our vans and minibuses are a practical choice. There is comfortable seating, extra legroom and sufficient space for bags, strollers or equipment. This option works especially well for Guest transport Dubai when everyone prefers to travel together on the same schedule without splitting into multiple vehicles.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Buses and Coaches</h3>
       <p><span style={{ fontWeight: "400" }}>For larger groups, our buses and coaches make transport organised and smooth. These are great for corporate events, large travel groups, conference movements and group city tours. The ride remains steady, safe and relaxed whether it is a city transfer or a longer journey to key destinations. Every vehicle in our fleet is regularly maintained, cleaned and inspected so you can rely on it confidently.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Safety Standards and Compliance</h3>
       <p><span style={{ fontWeight: "400" }}>We follow Dubai transport safety regulations carefully across every hotel journey. Our vehicles go through regular inspections and preventive maintenance. Drivers receive training focused on passenger safety, comfort and luggage handling. Approved routes and rules are followed responsibly and coordination remains clear so communication always stays smooth. These practices ensure every ride stays secure and comfortable for hotels and guests.</span></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -212,7 +159,7 @@ export default function SvcHotelTransportServiceInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -221,7 +168,7 @@ export default function SvcHotelTransportServiceInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

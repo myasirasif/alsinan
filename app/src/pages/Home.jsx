@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
+import AboutPanel from "../components/sections/AboutPanel";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -12,7 +15,7 @@ export default function Home() {
       <section className="banner_home" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
       <div className="banner_shadow"></div>
       <div className="banner_bottm_img">
-      <img src="/wp-content/uploads/2025/10/vehcle_banner.webp" alt="Alsinan Transport coach bus and car against the Dubai skyline" style={{ aspectRatio: "3 / 2.675" }} loading="lazy" fetchPriority="high" />
+      <img src="/wp-content/uploads/2025/10/vehcle_banner.webp" alt="Alsinan Transport coach bus and car against the Dubai skyline" style={{ aspectRatio: "3 / 2.675" }} loading="eager" fetchPriority="high" width="1058" height="944" />
       </div>
       <div className="container h-100">
       <div className="row h-100">
@@ -36,24 +39,11 @@ export default function Home() {
       </section>
 
 
-      <section className="about_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="about_img_section">
-      <div className="about_small_icon">
-      <img src="/wp-content/uploads/2025/09/icon_about.svg" alt="" loading="lazy" fetchPriority="high" />
-      </div>
-      <div className="about_lg_img">
-      <img src="/wp-content/uploads/2025/10/about_large.webp" alt="Grey Mercedes Sprinter passenger van with its side door open" loading="lazy" fetchPriority="high" />
-      </div>
-      <div className="about_mid_img">
-      <img src="/wp-content/uploads/2025/10/about_small.webp" alt="Red BMW coupe available for private car rental" loading="lazy" fetchPriority="high" />
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6 content-section">
-      <div className="about_content">
+      <AboutPanel
+        image="/wp-content/uploads/2025/10/about_large.webp"
+        alt="Grey Mercedes Sprinter passenger van with its side door open"
+        mirrored>
+        <div className="about_content">
       <span className="sub_head">About Us</span>
       <h2>We Make Your Trips Comfortable; Every Time</h2>
       <p>Alsinan Transport is based in Dubai, and that matters because timing is everything here. In this city, the biggest challenge is not finding a vehicle. It is making sure it arrives on time. One traffic issue, a delayed flight or a late school pickup can easily affect an entire day.</p>
@@ -62,94 +52,51 @@ export default function Home() {
       <p>Where many operators focus on short term jobs, our Transport Rental Services in Dubai are built for long term dependability. We manage ongoing staff transport, regular school routes and consistent group travel requirements. Routes can be refined when your needs change. Pricing stays clear and practical. And when plans shift, someone from our team supports you instead of leaving you stuck.</p>
       <p>If you want rental transport in Dubai that grows with your requirements, Alsinan Transport is ready to support you.</p>
       <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </div>
+      </AboutPanel>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Services</span>
+      <ServicesSection
+        heading={<><span className="sub_head">Our Services</span>
       <h2>Top Quality Transport Rental Services in Dubai</h2>
-      <p>Getting around Dubai should not feel like managing a project. Whether you are moving a small group or a large number of people, occasionally or daily, the goal is simple. Your Transport Services in Dubai should run smoothly without constant follow ups or confusion about where the vehicle is. Our services are structured exactly for that.</p>
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <p>Getting around Dubai should not feel like managing a project. Whether you are moving a small group or a large number of people, occasionally or daily, the goal is simple. Your Transport Services in Dubai should run smoothly without constant follow ups or confusion about where the vehicle is. Our services are structured exactly for that.</p></>}>
+        <ServiceBox col="6">
       <h3>School Bus Rental in Dubai</h3>
       <p>School transport depends on routine. Routes are planned, timings are fixed and punctuality matters. <b><Link target="_blank" to="/services/school-transport-in-dubai/">Our school bus rental in Dubai</Link></b> is built around organised schedules, reliable pickup and drop timings and trained drivers who understand school safety expectations. For smaller setups, we also arrange minibuses with drivers so you get what suits your student numbers.
       </p>
       <Link to="/services/school-transport-in-dubai/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Airport Car Rental in Dubai</h3>
       <p>Flights do not always follow fixed timing. Delays and changes happen. Our <Link target="_blank" to="/services/airport-transport-in-dubai/">airport related rental transport in Dubai</Link> supports pickups and drop offs across the UAE including early mornings and late nights. Drivers monitor flight updates and adjust where possible so passengers are not left waiting.
       </p>
       <Link to="/services/airport-transport-in-dubai/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Hotel Transfers</h3>
       <p>Hotels run continuously. Guests arrive and leave at all hours. Our <Link target="_blank" to="/services/hotel-transport-service-in-dubai/">hotel transfer services</Link> blend naturally with that routine. Vehicles reach on time, luggage is handled carefully and guests travel comfortably between airports, hotels, venues and attractions. Transport supports hotel operations instead of complicating them.</p>
       <Link to="/services/hotel-transport-service-in-dubai/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Staff Transport Services</h3>
       <p>Different businesses need different staff movement solutions. Offices, factories, construction sites and shifting workforce schedules all require planning. We handle small teams to large groups using cars, vans, minibuses and buses. Routes are created using real traffic understanding. For companies seeking <Link target="_blank" to="/services/staff-transport-in-dubai/">reliable corporate Transport Rental Services in Dubai</Link>, we manage fixed monthly systems that keep running smoothly.</p>
       <Link to="/services/staff-transport-in-dubai/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Car Rental in Dubai for Private Travellers</h3>
       <p>Some travellers want premium comfort while others need something simple and dependable. We provide both luxury and budget friendly options with clear pricing. Whether it is personal travel, a family outing or business meetings, you get the vehicle suited to your plan with or without a driver.</p>
       <Link to="/services/private-car-rental-in-dubai/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Car Booking in Dubai for Tours & Excursions</h3>
       <p>Tours do not always stay rigid. Plans often change. Our tour friendly transport services in Dubai provide flexibility so your day flows at your pace instead of forcing you to follow strict timings.</p>
       <Link to="/services/dubai-tours-transport-services/">Read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Flexible Packages</h3>
       <p>Some clients need Transport Services in Dubai for one day. Others need long term arrangements. Staff transport often works best monthly while long projects need vehicles positioned in specific areas. Pricing remains straightforward. Terms stay clear. Whether short or ongoing rental transport in Dubai, you know exactly what is included.</p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section">
@@ -213,7 +160,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>hiace</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.09_51e9ed5f.webp" alt="Toyota Hiace vans parked as part of the Alsinan Transport fleet in Dubai" />
+      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.09_51e9ed5f.webp" alt="Toyota Hiace vans parked as part of the Alsinan Transport fleet in Dubai" width="960" height="1280" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -222,7 +169,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>Buses</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.11_24296a51.jpg" alt="White Ashok Leyland bus from the Alsinan Transport fleet parked in Dubai" />
+      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.11_24296a51.jpg" alt="White Ashok Leyland bus from the Alsinan Transport fleet parked in Dubai" width="1280" height="960" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -253,58 +200,15 @@ export default function Home() {
       </section>
 
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">
                               Reliable and Stress-Free Rides
                           </span>
       <h2>Why Choose Alsinan Transport Services in Dubai</h2>
-      <p>When we agree on a pickup time, that’s the time the vehicle shows up. Routes are followed, and trips stay predictable. No chasing drivers. No wondering where the bus is. If something changes along the way, it’s handled quickly so your day doesn’t start slipping behind schedule.</p>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Plans That Fit Your Schedule</h3>
-      </div>
-      <p>Some clients need Transport Services in Dubai for one day. Others rely on us every month. Shifts change. Flights change. Plans evolve. Our rental transport in Dubai is designed to support these changes smoothly.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Always On Time</h3>
-      </div>
-      <p>Being late causes problems fast, especially for schools, hotels, and staff routes. Our drivers plan around traffic patterns and peak hours so arrivals and drop-offs happen when they should. Even in busy industrial areas, sticking to the schedule is treated as part of the job, not a bonus.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Friendly and Professional Drivers</h3>
-      </div>
-      <p>Drivers are licensed, experienced and familiar with roads, school routes, airport work and industrial areas. They stay calm, helpful and professional.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>A Fleet You Can Count On</h3>
-      </div>
-      <p>Vehicles are clean, air-conditioned, and checked regularly. Whether it’s a car for a private trip or a full-size bus for staff transport, everything is kept ready for daily use. No last-minute issues, no uncomfortable rides.</p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <p>When we agree on a pickup time, that’s the time the vehicle shows up. Routes are followed, and trips stay predictable. No chasing drivers. No wondering where the bus is. If something changes along the way, it’s handled quickly so your day doesn’t start slipping behind schedule.</p></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -313,10 +217,36 @@ export default function Home() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Plans That Fit Your Schedule</h3>
       </div>
+      <p>Some clients need Transport Services in Dubai for one day. Others rely on us every month. Shifts change. Flights change. Plans evolve. Our rental transport in Dubai is designed to support these changes smoothly.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Always On Time</h3>
       </div>
+      <p>Being late causes problems fast, especially for schools, hotels, and staff routes. Our drivers plan around traffic patterns and peak hours so arrivals and drop-offs happen when they should. Even in busy industrial areas, sticking to the schedule is treated as part of the job, not a bonus.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Friendly and Professional Drivers</h3>
       </div>
-      </section>
+      <p>Drivers are licensed, experienced and familiar with roads, school routes, airport work and industrial areas. They stay calm, helpful and professional.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>A Fleet You Can Count On</h3>
+      </div>
+      <p>Vehicles are clean, air-conditioned, and checked regularly. Whether it’s a car for a private trip or a full-size bus for staff transport, everything is kept ready for daily use. No last-minute issues, no uncomfortable rides.</p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
       <section className="faqs_section">
@@ -459,7 +389,7 @@ export default function Home() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -468,7 +398,7 @@ export default function Home() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

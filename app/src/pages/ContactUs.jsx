@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import ContactForm from "../components/ContactForm";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -49,9 +50,9 @@ export default function ContactUs() {
       <h3>Get in Touch</h3>
 
       <ul>
-      <li><a href="tel:+97155 525 2397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" /> +97155 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" /> alsinantransport@gmail.com</a></li>
-      <li><a href=""><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" /> P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
+      <li><a href="tel:+97155 525 2397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +97155 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href=""><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
       </ul>
       </div>
       </div>
@@ -77,58 +78,25 @@ export default function ContactUs() {
 
 
 
-      <section className="services_section why-we-offer-sec">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-
-      <h2>What We Offer</h2>
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="servies_fields">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        className="services_section why-we-offer-sec"
+        rowClass="row"
+        heading={<><h2>What We Offer</h2></>}>
+        <ServiceBox col="6">
       <h3>Available 24/7</h3>
       <p>Day or night, bookings and support are always open.</p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Let’s Get You Moving</h3>
       <p>Drop us a call or message anytime, and we’ll make sure you’re on the road in no time.
       </p>
-
-      </div>
-      </div>
-      <div className="col-lg-12">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="12">
       <h3>Serving Dubai & Across the UAE
       </h3>
       <p>Need a private car for a quick trip or a <b>bus rental in Dubai</b> for your team? Just drop us a message and we’ll sort it out.</p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
 
@@ -138,7 +106,7 @@ export default function ContactUs() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -147,7 +115,7 @@ export default function ContactUs() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

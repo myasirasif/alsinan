@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
+import AboutPanel from "../components/sections/AboutPanel";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -41,90 +44,30 @@ export default function About() {
       </div>
       </section>
 
-      <section className="about_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="about_img_section">
-      <div className="about_small_icon">
-      <img src="/wp-content/uploads/2025/09/icon_about.svg" alt="" />
-      </div>
-      <div className="about_lg_img">
-      <img src="/wp-content/uploads/2025/09/about_large.webp" alt="Grey Mercedes Sprinter passenger van with its side door open" />
-      </div>
-      <div className="about_mid_img">
-      <img src="/wp-content/uploads/2025/09/about_small.webp" alt="Red BMW coupe available for private car rental" />
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6 content-section">
-      <div className="about_content">
-
+      <AboutPanel
+        image="/wp-content/uploads/2025/09/about_large.webp"
+        alt="Grey Mercedes Sprinter passenger van with its side door open">
+        <div className="about_content">
       <h2>Who We Are</h2>
       <p>Alsinan Transport supports individuals, families, educational institutions and businesses with dependable movement across Dubai and the UAE. We provide vehicles and professional driving support that match real schedules, real situations and everyday requirements.</p>
       <p>We are trusted for more than occasional bookings. Daily movement, routine travel needs, organised trips and well structured commuting support, this is our everyday work, and our operations are built around it.</p>
       <p>With sensible planning, reliable coordination and experienced drivers, every journey is designed to feel steady, organised and reassuring, whether it is a one time need or an ongoing requirement.</p>
 
       <Link className="btn btn-primary" to="/contact-us/">Contact Us</Link>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </div>
+      </AboutPanel>
 
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">
+      <WhyChoose
+        variant="ledger"
+        tone="plain"
+        heading={<><span className="sub_head">
                               Our Values
                           </span>
       <h2>Our Mission & Values</h2>
-      <p>Alsinan Transport works with one simple commitment. Every ride should feel safe, comfortable and confidently on time. A few core principles guide how we operate every day.</p>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Safety and Professionalism</h3>
-      </div>
-      <p>Passengers travel with trained, licensed drivers in vehicles that go through proper checks and follow local regulations.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Reliability and Timing</h3>
-      </div>
-      <p>We understand how delays affect everything. That is why routes and timings are planned carefully so journeys remain predictable.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Flexibility and Practical Support</h3>
-      </div>
-      <p>Short journeys, routine movement, schedules or extended arrangements, we shape our service around your situation instead of forcing fixed patterns.</p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Customer-First Mindset</h3>
-      </div>
-      <p>Clear communication, honest handling and focus on comfort remain at the centre of how we work.</p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/contact-us/">Contact Us</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <p>Alsinan Transport works with one simple commitment. Every ride should feel safe, comfortable and confidently on time. A few core principles guide how we operate every day.</p></>}
+        footer={<><Link className="btn btn-primary" to="/contact-us/">Contact Us</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -133,79 +76,65 @@ export default function About() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Safety and Professionalism</h3>
       </div>
+      <p>Passengers travel with trained, licensed drivers in vehicles that go through proper checks and follow local regulations.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Reliability and Timing</h3>
       </div>
+      <p>We understand how delays affect everything. That is why routes and timings are planned carefully so journeys remain predictable.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Flexibility and Practical Support</h3>
       </div>
-      </section>
+      <p>Short journeys, routine movement, schedules or extended arrangements, we shape our service around your situation instead of forcing fixed patterns.</p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Customer-First Mindset</h3>
+      </div>
+      <p>Clear communication, honest handling and focus on comfort remain at the centre of how we work.</p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section why-we-offer-sec">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-
-      <h2>What We Offer</h2>
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <p>Travel across the city and between emirates becomes easier when planning is thoughtful. Our services are designed to support organised, dependable movement.</p>
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        className="services_section why-we-offer-sec"
+        heading={<><h2>What We Offer</h2></>}
+        intro={<><p>Travel across the city and between emirates becomes easier when planning is thoughtful. Our services are designed to support organised, dependable movement.</p></>}>
+        <ServiceBox col="6">
       <h3>Staff Transport and School Runs</h3>
       <p>Regular and well-structured <Link target="_blank" to="/services/staff-transport-in-dubai/">staff transport service</Link> solutions with planned movement and consistent timing, so daily routines remain stable.</p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Airport Transfers</h3>
       <p>Comfortable rides supported with sensible timing management for early departures, late arrivals and changing plans through our 
       <Link target="_blank" to="/services/airport-transport-in-dubai/">airport transfer service</Link>.</p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Car, Van and Bus Rentals</h3>
       <p>Whatever your journey calls for, we have the right vehicle. Cars for individuals, vans for small groups, and buses for larger groups. We also provide 
       <Link target="_blank" to="/services/dubai-tours-transport-services/">tour and trip transport</Link> so your travel becomes easier, organised and comfortable.</p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Corporate and Group Support</h3>
       <p>Arrangements tailored for organisations with clear pricing and dependable planning.</p>
-
-      </div>
-      </div>
-      <div className="col-lg-12">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="12">
       <h3>Day Trips and Excursions</h3>
       <p>Travel support for private plans, tours and inter emirate journeys. From planning to execution, everything is designed to make travel simple, organised and stress free.</p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
       <section className="why-choose-us-infographic">
       <div className="container">
@@ -301,7 +230,7 @@ export default function About() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -310,7 +239,7 @@ export default function About() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

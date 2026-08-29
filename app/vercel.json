@@ -54,6 +54,10 @@
         {
           "type": "host",
           "value": "alsinantransport.com"
+        },
+        {
+          "type": "host",
+          "value": "www.alsinantransport.com"
         }
       ],
       "headers": [

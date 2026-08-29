@@ -29,7 +29,7 @@ export default function NotFound() {
       <div className="container h-100">
       <div className="row h-100 justify-content-center">
       <div className="col-xl-7 my-auto">
-      <img src="/wp-content/uploads/2025/10/img_404.jpg" alt="Illustration for a page that could not be found" />
+      <img src="/wp-content/uploads/2025/10/img_404.jpg" alt="Illustration for a page that could not be found" width="1280" height="720" />
       </div>
       </div>
       </div>

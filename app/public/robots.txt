@@ -1,25 +1,7 @@
-# Wordpress Default
+# Static React site. The WordPress admin, REST API, search and cart
+# rules that used to live here have no targets any more.
 User-agent: *
-Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
-Disallow: *add-to-cart=*
-
-# Prevent Crawling of WordPress JSON API Endpoints
-User-agent: *
-Disallow: /wp-json/
-Disallow: /?rest_route=
-
-# Block Search URLs /search/ and /?s=
-User-agent: *
-Disallow: /search/
-Disallow: /?s=
-
-#Block Parameters
-User-agent: *
-Disallow: *?s=*
-Disallow: *?p=*
-Disallow: *&p=*
-Disallow: *&preview=*
+Allow: /
 
 # Sitemap Link 1
 Sitemap: https://alsinantransport.com/sitemap.xml

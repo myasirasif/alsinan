@@ -3,7 +3,10 @@
 import re, os, json, sys, html as htmlmod
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from convert import html_to_jsx, abs_url
-from fixes import fix_alts, patch_seo, add_internal_links
+from fixes import (fix_alts, patch_seo, add_internal_links,
+                   add_image_dimensions, fix_lazy_hero, fix_list_in_paragraph,
+                   add_credit)
+from sections import componentise
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SCRAPE = os.path.join(ROOT, "scrape")
@@ -97,9 +100,10 @@ def body_parts(html):
     tail = body[fm.end():]
     return {
         "bodyclass": bodyclass.group(1) if bodyclass else "",
-        "header": fix_alts(unnest_logo(header)),
-        "content": fix_alts(content),
-        "footer": fix_alts(unnest_logo(footer)),
+        "header": fix_lazy_hero(add_image_dimensions(fix_alts(fix_list_in_paragraph(unnest_logo(header))))),
+        "content": fix_lazy_hero(add_image_dimensions(fix_alts(fix_list_in_paragraph(content)))),
+        "footer": fix_lazy_hero(add_image_dimensions(fix_alts(
+            fix_list_in_paragraph(add_credit(unnest_logo(footer)))))),
         "tail": tail,
     }
 
@@ -176,23 +180,11 @@ def make_header_jsx(header_html):
         jsx, count=1,
     )
 
-    # a parent item toggles its sub-menu on mobile rather than navigating
-    jsx = re.sub(
-        r'(<li id="menu-item-\d+" className=\{mi\("[^"]*menu-item-has-children[^"]*", '
-        r'"([^"]*)"\)\}>\s*)<Link to="\2">',
-        lambda m: '%s<Link to="%s" onClick={(e) => onParentClick(e, "%s")}>'
-                  % (m.group(1), m.group(2), m.group(2)),
-        jsx,
-    )
-
     return jsx
 
 
 HEADER_TPL = '''import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-// the breakpoint where styles.css swaps the nav for the hamburger
-const MOBILE = "(max-width: 1024px)";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -202,7 +194,6 @@ export default function Header() {
   // WordPress reloaded the page on every click, which closed the menu for free.
   // Client-side routing does not, so the menu has to close itself.
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openSub, setOpenSub] = useState(null);
 
   // On WordPress a click reloaded the page, so the hovered sub-menu vanished.
   // Here the cursor is still sitting on the parent after navigating and CSS
@@ -210,10 +201,7 @@ export default function Header() {
   // pointer actually moves again.
   const [hoverOff, setHoverOff] = useState(false);
 
-  const close = () => {
-    setMenuOpen(false);
-    setOpenSub(null);
-  };
+  const close = () => setMenuOpen(false);
 
   useEffect(() => {
     close();
@@ -248,23 +236,13 @@ export default function Header() {
     let cls = base;
     if (here === target) cls += " current-menu-item current_page_item";
     else if (target !== "/" && here.startsWith(target)) cls += " current-menu-ancestor current-menu-parent";
-    if (openSub === to) cls += " focus";
     return cls;
-  };
-
-  // On mobile a parent item opens its sub-menu instead of navigating, matching
-  // the theme's touchstart behaviour. On desktop the CSS hover still applies.
-  const onParentClick = (e, to) => {
-    if (typeof window === "undefined" || !window.matchMedia(MOBILE).matches) return;
-    e.preventDefault();
-    setOpenSub((cur) => (cur === to ? null : to));
   };
 
   // any ordinary menu link closes the whole thing, including same-page links
   const onNavClick = (e) => {
     const link = e.target.closest("a");
     if (!link || !navRef.current?.contains(link)) return;
-    if (link.parentElement?.classList.contains("menu-item-has-children")) return;
     close();
   };
 
@@ -341,23 +319,47 @@ def main():
         body_jsx, _, _ = html_to_jsx(parts["content"])
         body_jsx = re.sub(r'<contactform variant="(\w+)"></contactform>',
                           lambda m: '<ContactForm variant="%s" />' % m.group(1), body_jsx)
+        body_jsx, section_uses = componentise(body_jsx, path)
         scripts = page_scripts(parts["tail"], parts["content"])
         comp = comp_name(name)
         code = PAGE_TPL % {
             "comp": comp,
             "key": json.dumps(path),
             "scripts": json.dumps(scripts, ensure_ascii=False),
-            "form_import": ('\nimport ContactForm from "../components/ContactForm";'
-                            if form_variants else ""),
+            # only import what the page actually renders
+            "form_import": (
+                ('\nimport ContactForm from "../components/ContactForm";'
+                 if form_variants else "")
+                + ('\nimport { ServicesSection, ServiceBox }'
+                   ' from "../components/sections/ServicesSection";'
+                   if section_uses.get("services_section") else "")
+                + ('\nimport { WhyChoose, ChoosePoint }'
+                   ' from "../components/sections/WhyChoose";'
+                   if section_uses.get("why_choose") else "")
+                + ('\nimport AboutPanel from "../components/sections/AboutPanel";'
+                   if section_uses.get("about_section") else "")
+            ),
             "body": indent(body_jsx.strip(), "      "),
         }
         with open(os.path.join(SRC, "pages", comp + ".jsx"), "w", encoding="utf-8") as f:
             f.write(code)
         routes.append((path, comp, parts["bodyclass"]))
 
+    # JSON-LD is two thirds of this data and is dead weight on the client: the
+    # prerendered HTML already carries it, and a crawler fetches every URL fresh
+    # rather than navigating the SPA. Split it out so prerender.mjs can inject it
+    # at build time and it never reaches the browser bundle.
+    jsonld_map = {p: v.pop("jsonld", []) for p, v in seo_map.items()}
+
     with open(os.path.join(SRC, "data", "seo.js"), "w", encoding="utf-8") as f:
         f.write("// Extracted verbatim from the live WordPress site (Rank Math output).\n")
+        f.write("// Head tags only - the structured data lives in jsonld.js.\n")
         f.write("export const seo = " + json.dumps(seo_map, indent=2, ensure_ascii=False) + ";\n")
+
+    with open(os.path.join(SRC, "data", "jsonld.js"), "w", encoding="utf-8") as f:
+        f.write("// Structured data per route. Imported only by prerender.mjs at build\n")
+        f.write("// time, never by a page component, so it stays out of the client bundle.\n")
+        f.write("export const jsonld = " + json.dumps(jsonld_map, indent=1, ensure_ascii=False) + ";\n")
 
     body_classes = {p: bc for p, comp, bc in routes}
     with open(os.path.join(SRC, "data", "bodyClasses.js"), "w", encoding="utf-8") as f:

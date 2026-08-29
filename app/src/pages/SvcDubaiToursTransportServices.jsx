@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
+import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 
@@ -48,64 +50,12 @@ export default function SvcDubaiToursTransportServices() {
       </div>
       </div>
 
-      <section className="why_choose">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="content_why_choose">
-      <span className="sub_head">Why Choose Us</span>
-      <h2>Why Ride With Us Across Dubai?</h2>
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" />
-      <h3>Stay Together</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Instead of splitting your group into multiple taxis and private cars, everyone travels together. Arrivals stay coordinated, headcounts become easier and the entire tour feels organised rather than stressful. Your Dubai tours transport remains unified and manageable.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Experienced Drivers Who Know the City</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Our drivers handle tours and group travel every day. They understand practical drop off areas, sensible pickup locations, useful shortcuts and how to manage busy attractions without wasting time. This local knowledge helps your itinerary stay on track, even on days filled with multiple activities.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" />
-      <h3>Comfort All Day</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Tours are often long, so comfort matters. Our vehicles offer cool air conditioning, wide supportive seating and enough space to store bags and equipment. Between stops, your guests can relax, refresh and prepare comfortably for the next experience.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" />
-      <h3>Vehicles for Every Group Size</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>Your group does not need to adjust to the vehicle. We adjust our vehicles to your group size. Whether you need a compact solution for a small outing or a larger option for big groups, we match capacity and transport type to your needs.</span></p>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="choose_list">
-      <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" />
-      <h3>Customizable Travel Plans</h3>
-      </div>
-      <p><span style={{ fontWeight: "400" }}>If you already know the places you want to visit, share your list and timing. Every Dubai tours transport booking is shaped around your group size, travel time and type of journey, whether it is within Dubai, to the desert or between emirates. Your schedule is the priority and we manage the logistics.</span></p>
-      </div>
-      </div>
-      </div>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-      </div>
-      </div>
-      <div className="col-lg-6">
+      <WhyChoose
+        variant="ledger"
+        heading={<><span className="sub_head">Why Choose Us</span>
+      <h2>Why Ride With Us Across Dubai?</h2></>}
+        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
       <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
@@ -114,80 +64,74 @@ export default function SvcDubaiToursTransportServices() {
       <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
+      </div></>}>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <h3>Stay Together</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Instead of splitting your group into multiple taxis and private cars, everyone travels together. Arrivals stay coordinated, headcounts become easier and the entire tour feels organised rather than stressful. Your Dubai tours transport remains unified and manageable.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Experienced Drivers Who Know the City</h3>
       </div>
+      <p><span style={{ fontWeight: "400" }}>Our drivers handle tours and group travel every day. They understand practical drop off areas, sensible pickup locations, useful shortcuts and how to manage busy attractions without wasting time. This local knowledge helps your itinerary stay on track, even on days filled with multiple activities.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <h3>Comfort All Day</h3>
       </div>
-      </section>
+      <p><span style={{ fontWeight: "400" }}>Tours are often long, so comfort matters. Our vehicles offer cool air conditioning, wide supportive seating and enough space to store bags and equipment. Between stops, your guests can relax, refresh and prepare comfortably for the next experience.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <h3>Vehicles for Every Group Size</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>Your group does not need to adjust to the vehicle. We adjust our vehicles to your group size. Whether you need a compact solution for a small outing or a larger option for big groups, we match capacity and transport type to your needs.</span></p>
+        </ChoosePoint>
+        <ChoosePoint col="6">
+      <div className="choose_list_icon">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <h3>Customizable Travel Plans</h3>
+      </div>
+      <p><span style={{ fontWeight: "400" }}>If you already know the places you want to visit, share your list and timing. Every Dubai tours transport booking is shaped around your group size, travel time and type of journey, whether it is within Dubai, to the desert or between emirates. Your schedule is the priority and we manage the logistics.</span></p>
+        </ChoosePoint>
+      </WhyChoose>
 
 
-      <section className="services_section">
-      <div className="container">
-      <div className="row">
-      <div className="col-lg-6">
-      <div className="servcies_content">
-      <span className="sub_head">Our Fleet</span>
-      <h2>Our Fleet for Dubai Tours Transport Services</h2>
-
-      <div className="whatsapp_num">
-      <div className="whatsapp_box">
-      <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
-      </div>
-      <div className="num_wp">
-      <span>Whasapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+97155 525 2397</a>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <h4 className="sub_head_right">Every vehicle is clean, air-conditioned, and driven by a vetted professional. Choose the right ride for your trip:</h4>
-      <div className="servies_fields">
-      <div className="row justify-content-center">
-      <div className="col-lg-6">
-      <div className="services_box">
+      <ServicesSection
+        heading={<><span className="sub_head">Our Fleet</span>
+      <h2>Our Fleet for Dubai Tours Transport Services</h2></>}
+        intro={<><h4 className="sub_head_right">Every vehicle is clean, air-conditioned, and driven by a vetted professional. Choose the right ride for your trip:</h4></>}>
+        <ServiceBox col="6">
       <h3>Mini Vans and Hiace</h3>
       <p><span style={{ fontWeight: "400" }}>Ideal for smaller groups and shorter excursions. These vehicles suit family sightseeing, small school groups and compact corporate visits. They are easy to move through the city, simple to board and practical for tours with frequent stops.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Minibuses </h3>
       <p><span style={{ fontWeight: "400" }}>Minibuses are suitable for mid sized groups with fuller schedules. They balance capacity and convenience, making them perfect for city tours, cultural routes and both half and full day plans. Everyone rides comfortably together and stays coordinated throughout the day.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Buses for Schools and Large Groups</h3>
       <p data-start="275" data-end="644">For larger groups, our buses provide structured and safe group travel. These work well for school outings, community trips, big family tours and corporate events, making them an excellent choice for <Link to="/services/school-transport-in-dubai/"><strong>school transport Dubai</strong> </Link>needs as well. If you are looking for reliable bus rental in Dubai that remains comfortable while staying cost effective, this option is ideal.</p>
       <p data-start="646" data-end="704" data-is-last-node="" data-is-only-node="">
 
-      </p></div>
-      </div>
-      <div className="col-lg-6">
-      <div className="services_box">
+      </p>
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Coaches for VIP Groups</h3>
       <p><span style={{ fontWeight: "400" }}>When you need a premium travel experience, our coaches deliver extra comfort, space and presentation. They suit VIP delegations, executive programs and multi day corporate or travel itineraries. If you need a refined coach for hire in Dubai for high importance travel, this category provides the right standard.</span></p>
       <p><span style={{ fontWeight: "400" }}>Every vehicle is air conditioned, regularly cleaned and driven by licensed and experienced professionals. On request, we can arrange helpful extras depending on the group requirement.</span></p>
-
-      </div>
-      </div>
-      <div className="col-lg-12">
-      <div className="services_box">
+        </ServiceBox>
+        <ServiceBox col="12">
       <h3>Safety and Compliance</h3>
       <p><span style={{ fontWeight: "400" }}>Safety sits at the centre of our Dubai tours transport services. Vehicles are inspected regularly and maintained carefully. Drivers are trained in safe driving, passenger care and responsible luggage handling. Approved routes, UAE regulations and sensible driving standards are followed throughout each journey. We also coordinate clearly with organisers to confirm timing, pickup points and special needs so the entire experience remains steady and controlled.</span></p>
-
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+        </ServiceBox>
+      </ServicesSection>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -241,7 +185,7 @@ export default function SvcDubaiToursTransportServices() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" />
+      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -250,7 +194,7 @@ export default function SvcDubaiToursTransportServices() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" />
+      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

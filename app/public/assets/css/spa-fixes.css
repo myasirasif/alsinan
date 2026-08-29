@@ -1,6 +1,18 @@
 /* Small corrections that only exist because the site is a SPA now.
    Everything else in assets/css is the WordPress theme, untouched. */
 
+/* The generator writes real width/height onto every raster image so the browser
+   reserves the right space and the page stops shifting as images load. The
+   theme has no global `img { height: auto }`, so without this the attributes
+   would force images to their intrinsic size. Wrapped in :where() so it carries
+   zero specificity: every theme rule that sizes an image (.service_thumbnail img
+   { height: 575px } and friends) still wins, and this only fills the gap where
+   the theme says nothing. */
+:where(img[width][height]) {
+  max-width: 100%;
+  height: auto;
+}
+
 /* navigation.js used to open a sub-menu for keyboard users. Restoring that with
    :focus-within was wrong: a mouse click also leaves focus on the link, so the
    sub-menu stayed pinned open on desktop after every click. :focus-visible only
@@ -42,6 +54,123 @@ a:focus:not(:focus-visible) {
   outline: none;
 }
 
+/* Links written inside page copy had no styling of their own, so they fell back
+   to Bootstrap's default blue (#0d6efd) - off-brand next to the site's red, and
+   they read as unstyled. Scoped to section/article so the nav (inside <header>)
+   and the footer keep their own colours. */
+:where(section, article) :where(p, li, td, .accordion-body) a:not([class]) {
+  color: #dd0a1b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:where(section, article) :where(p, li, td, .accordion-body) a:not([class]):hover {
+  color: #b00816;
+}
+
+/* Vertical rhythm. Measured across seven pages, nine sections sit on 100/100
+   and the rest drift: about_section alone renders as 115/115, 0/115 and
+   100/115 depending on the page, and .about-us-sec forces 115 with
+   !important. Nothing depends on 115 - it is just an odd number - so the
+   stragglers are pulled onto the 100 the rest of the site already uses. */
+section.about_section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* .about-us-sec forces padding-top:115px !important and is used on both
+   about_section and why_choose, so it needs matching specificity. */
+section.about-us-sec {
+  padding-top: 100px !important;
+}
+
+/* The about section pairs a fixed-size image composition with a long column of
+   copy. Bootstrap stretches both columns to the taller one, so the images ended
+   1044px down a 1044px column with 346px of dead space under them (measured
+   including the absolutely positioned images that hang past their container).
+   Centring splits that space above and below, which balances the composition
+   against the text. Desktop only - the columns stack on mobile and there is no
+   gap to fix. */
+@media screen and (min-width: 1025px) {
+  .about_section > .container > .row {
+    align-items: center;
+  }
+}
+
+/* Mobile sub-menu. The theme parks it at `position: absolute; left: -999em` and
+   slides it back on tap, so when open it covered the menu items underneath it,
+   and nothing on screen hinted that "Services" could expand at all. On a phone
+   there is no hover, so the whole toggle is friction for six links: lay them out
+   in the flow, always visible, indented under the parent. The pure-red #f00 the
+   theme gives the panel also clashed with the menu's own #DD0A1B, so on mobile
+   the sub-menu just sits on the parent background. */
+@media screen and (max-width: 1024px) {
+  .main-navigation .menu-menu-1-container .sub-menu {
+    position: static;
+    left: auto;
+    float: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 4px 0 4px 18px;
+    gap: 10px;
+    border-left: 2px solid rgba(255, 255, 255, 0.35);
+    margin: 8px 0 4px 4px;
+  }
+
+  .main-navigation .menu-menu-1-container .sub-menu a {
+    font-size: 0.92em;
+    opacity: 0.92;
+  }
+}
+
+/* Tap targets. Thirteen links on a phone were under the 24x24 CSS pixels WCAG
+   2.2 asks for - "Read more" at 77x20, the footer's inline links at 38x20, the
+   social icons at 17x17. Padding them out would move the layout, so the hit
+   area is extended with a pseudo-element instead: nothing shifts, the finger
+   just gets more room. The skip link is excluded; it is meant to be 1x1 until
+   focused. */
+.services_box a,
+.social_icons ul li a,
+.list_col ul li a,
+.contact_top_details ul li a {
+  position: relative;
+}
+
+.services_box a::after,
+.social_icons ul li a::after,
+.list_col ul li a::after,
+.contact_top_details ul li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 24px);
+  height: max(100%, 24px);
+  transform: translate(-50%, -50%);
+}
+
+/* Mobile horizontal scroll. On a 390px screen the page was 432px wide, so every
+   page could be dragged sideways - Search Console reports this as "content wider
+   than screen". Two causes, both measured:
+
+   1. .whatsapp_num.white_num carries `min-width: 350px` plus `margin-left: 50px`,
+      which needs 400px before it starts. Same rule the theme uses, so the
+      selector is repeated verbatim to win on source order.
+   2. Bootstrap's .row has -12px gutters that the container is meant to cancel
+      with padding, but this one is .p-0, so the row hangs 12px off each edge. */
+@media screen and (max-width: 1024px) {
+  .needbox_section .need_box_wrap .whatsapp_num.white_num {
+    min-width: 0;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .container-fluid.p-0 > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 /* The hamburger is a real toggle button now, so give it a pointer and a focus
    ring the theme never styled. */
 header#masthead button.menu-toggle {
@@ -55,4 +184,548 @@ header#masthead button.menu-toggle:focus:not(:focus-visible) {
 header#masthead button.menu-toggle:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   About panel — the homepage About section rebuilt as a full-bleed panel.
+
+   Two tones. The page rhythm, measured off the live build, is why:
+     01 banner        dark photograph
+     02 about         <- here
+     03 services      white
+     04 service areas white
+     05 fleet         dark
+     06-08            white
+   A dark About would sit directly against the dark banner and would also take
+   the fleet section's job. The day tone is a warm sand band, which reads as a
+   distinct stop precisely because everything around it is pure white.
+--------------------------------------------------------------------------- */
+.about_panel {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.about_panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: stretch;
+}
+
+.about_panel--mirrored .about_panel__grid {
+  grid-template-columns: 0.92fr 1fr;
+}
+
+.about_panel__copy {
+  align-self: center;
+  padding: 100px 92px 88px 120px;
+}
+
+.about_panel--mirrored .about_panel__copy {
+  padding: 100px 120px 88px 92px;
+}
+
+.about_panel__media {
+  position: relative;
+  min-height: 780px;
+  /* the photograph itself comes from the page, via an inline style */
+  background-size: cover;
+  background-position: center;
+}
+
+/* the photograph dissolves into the panel's own ground rather than stopping at an edge */
+.about_panel__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.about_panel__badge {
+  position: absolute;
+  left: -62px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: #dd0a1b url("/wp-content/uploads/2025/09/icon_about.svg") no-repeat center / 58px;
+  z-index: 3;
+}
+
+.about_panel--mirrored .about_panel__badge {
+  left: auto;
+  right: -62px;
+}
+
+
+/* ---------- day: warm sand band ---------- */
+.about_panel--day { background: #f1ebe7; }
+.about_panel--day .about_panel__media::after {
+  background: linear-gradient(90deg, #f1ebe7 0%, rgba(241, 235, 231, 0.2) 38%, rgba(241, 235, 231, 0) 100%);
+}
+.about_panel--mirrored.about_panel--day .about_panel__media::after {
+  background: linear-gradient(270deg, #f1ebe7 0%, rgba(241, 235, 231, 0.2) 38%, rgba(241, 235, 231, 0) 100%);
+}
+.about_panel--day .about_panel__badge { box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14); }
+
+/* ---------- night: near-black band ---------- */
+.about_panel--night { background: #141110; }
+.about_panel--night .about_panel__media::after {
+  background: linear-gradient(90deg, #141110 0%, rgba(20, 17, 16, 0.25) 42%, rgba(20, 17, 16, 0) 100%);
+}
+.about_panel--mirrored.about_panel--night .about_panel__media::after {
+  background: linear-gradient(270deg, #141110 0%, rgba(20, 17, 16, 0.25) 42%, rgba(20, 17, 16, 0) 100%);
+}
+.about_panel--night .about_content h2 { color: #f5f1ef; }
+.about_panel--night .about_content p { color: #b6aca7; }
+/* brand red fails contrast on near-black, so the kicker lifts to a tint of it */
+.about_panel--night .about_content .sub_head { color: #ff5566; }
+
+@media screen and (max-width: 1024px) {
+  .about_panel__grid,
+  .about_panel--mirrored .about_panel__grid { grid-template-columns: 1fr; }
+  .about_panel__copy,
+  .about_panel--mirrored .about_panel__copy { padding: 64px 24px 56px; }
+  .about_panel__media { min-height: 340px; order: 2; }
+  .about_panel__badge,
+  .about_panel--mirrored .about_panel__badge {
+    left: 50%; right: auto; top: -50px;
+    transform: translateX(-50%); width: 96px; height: 96px; background-size: 44px;
+  }
+}
+
+/* section.services_section carries margin-top:100px on top of its own
+   padding-top:100px. While the section above it was white the margin merged
+   into the page and nobody saw it; against a tinted band it becomes a 100px
+   white stripe belonging to neither band, and with the sand band's own
+   padding-bottom it put 300px of dead space before the next heading. Measured
+   on the seven service pages and /about/ at 1280px and up. The following
+   section's own padding is enough. */
+.about_panel + section,
+.why_ledger + section {
+  margin-top: 0;
+}
+
+/* Vertical rhythm on /about/ below the desktop breakpoint. Two seams there run past 340px of blank - roughly a
+   whole phone screen of nothing between one heading and the next - because the
+   theme's 100/150px section padding is a desktop measurement applied at every
+   width. Only these two pairs exceeded 260px anywhere on the site, so they are
+   corrected individually rather than by rescaling every section. The panel is
+   stacked all the way to 1024px - the gap measures the same 354px at 390, 768
+   and 1024 - so the correction covers the same range. */
+@media screen and (max-width: 1024px) {
+  section.why_choose.about-us-sec { padding-bottom: 56px; }
+  section.why-choose-us-infographic { padding-bottom: 56px; }
+  section.about_section.meet-our-team { padding-top: 56px !important; }
+  .about_panel__copy { padding-top: 48px; }
+}
+
+/* On a wide screen the copy column is nearly 800px, which puts well over 100
+   characters on a line. Capping the text and the fact strip to the same width
+   keeps them aligned and the measure readable; below about 1600px the column is
+   already narrower than the cap, so nothing moves. */
+.about_panel__copy .about_content,
+.about_panel__copy .about_panel__facts {
+  max-width: 640px;
+}
+
+/* The three proof points. The first attempt set them as a bordered three-column
+   table with 19px serif labels, which read as a fragment of a spreadsheet parked
+   under the copy - and it was undersized next to everything around it. The theme
+   states its own small features as an icon, a heading and a line of text, so this
+   follows that: a short brand rule instead of an icon, the body face at a size
+   that belongs, and no table rules at all. Flex-wrap means it reflows on narrow
+   screens without a media query. */
+.about_panel__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 32px;
+  margin: 52px 0 0;
+}
+
+/* 145px keeps all three on one row inside the 538px column a 1440 screen gives,
+   which a wider basis did not - it dropped to 2 + 1. */
+.about_panel__facts > div { flex: 1 1 145px; }
+
+/* one per row on a phone: three 17px labels side by side are unreadable there */
+@media screen and (max-width: 560px) {
+  .about_panel__facts > div { flex-basis: 100%; }
+}
+
+.about_panel__facts dt::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 15px;
+  background: #dd0a1b;
+}
+
+.about_panel__facts dt {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-bottom: 7px;
+}
+
+.about_panel__facts dd {
+  /* dd inherits a serif from the theme without this */
+  font-family: "Poppins", system-ui, sans-serif;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.about_panel--day .about_panel__facts dt { color: #1b1b1b; }
+.about_panel--day .about_panel__facts dd { color: #5f5955; }
+.about_panel--night .about_panel__facts dt::before { background: #ff5566; }
+.about_panel--night .about_panel__facts dt { color: #f5f1ef; }
+.about_panel--night .about_panel__facts dd { color: #a49a95; }
+
+/* ---------------------------------------------------------------------------
+   Why Choose, ledger layout.
+
+   The section carries roughly 300 words: a heading, an intro, and four points
+   with a real paragraph each. The theme puts all of it in one half-width column,
+   so every point became a tall 250px ribbon of text. Here the heading and the
+   photographs take the top, and the points list full width beneath - icon, title
+   and copy in their own columns, hairlines between.
+
+   Two tones. Sand matches the About panel and gives the page two tinted bands
+   bracketing the white middle. On /about/ the section sits directly under the
+   sand About panel, so it runs plain there instead - two tinted bands touching
+   would merge into one, the same trap the dark panel hit under the banner.
+--------------------------------------------------------------------------- */
+.why_ledger { padding: 100px 0 !important; }
+.why_ledger--sand { background: #f1ebe7; }
+.why_ledger--plain { background: transparent; }
+
+.why_ledger__top {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 76px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.why_ledger__intro { max-width: 62ch; }
+.why_ledger__intro h2 { margin-bottom: 24px; }
+.why_ledger__intro p:last-child { margin-bottom: 0; }
+
+/* the theme's own photograph pair, re-seated as a single composed block */
+.why_ledger__media > [class*="col-"] { width: 100%; padding: 0; }
+.why_ledger__media .why_choose_img { position: relative; padding-bottom: 54px; }
+.why_ledger__media .why_choose_img_lg img,
+.why_ledger__media .choose_img_small img {
+  border-radius: 4px 130px 4px 130px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.why_ledger__media .why_choose_img_lg { width: 76%; margin-left: auto; }
+.why_ledger__media .choose_img_small {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 46%;
+  z-index: 2;
+  box-shadow: 0 18px 42px rgba(26, 22, 20, 0.18);
+  border-radius: 4px 130px 4px 130px;
+  overflow: hidden;
+}
+
+.why_ledger__list { border-top: 1px solid; }
+
+.why_ledger__list > [class*="col-"] {
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid;
+}
+
+/* The theme puts the icon and the h3 together inside .choose_list_icon, so
+   .choose_list has two children, not three. A three-column grid stacked the
+   title under the icon and wrapped it one word per line. */
+.why_ledger__list .choose_list {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) 1.5fr;
+  gap: 48px;
+  padding: 30px 0;
+  align-items: start;
+}
+
+.why_ledger__list .choose_list_icon {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+}
+
+.why_ledger__list .choose_list_icon img { width: 44px; height: auto; flex: none; }
+
+.why_ledger__list .choose_list h3 {
+  font-size: 25px !important;
+  line-height: 1.24;
+  margin: 0;
+}
+
+.why_ledger__list .choose_list p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 25px;
+}
+
+.why_ledger__foot { margin-top: 46px; }
+
+.why_ledger--sand .why_ledger__list,
+.why_ledger--sand .why_ledger__list > [class*="col-"] { border-color: #ddd3cd; }
+.why_ledger--plain .why_ledger__list,
+.why_ledger--plain .why_ledger__list > [class*="col-"] { border-color: #e6dfdb; }
+
+@media screen and (max-width: 1024px) {
+  .why_ledger { padding: 64px 0 !important; }
+  .why_ledger__top { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+  .why_ledger__list .choose_list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 26px 0;
+  }
+}
+
+/* Sections that follow a tinted band need their own headroom. faqs_section and
+   needbox_section carry padding-top: 0 and relied on the previous section's
+   bottom padding to keep their headings off the boundary. That worked while
+   every section was white and the two whites merged; against a sand band the
+   heading now sits flush on the seam. Scoped to the tinted variants, so the
+   plain ledger on /about/ does not gain space it does not need. */
+.about_panel + section,
+.why_ledger--sand + section {
+  padding-top: 100px;
+}
+
+/* The footer's bottom bar. The copyright and the Blogs/Terms/Privacy links
+   share the left-hand side on one line; the credit has the right-hand side to
+   itself, level with them. Its own space is what makes it readable - dropped
+   under the links it was crowded and got skipped. */
+footer#colophon .copyright_line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 6px;
+}
+
+footer#colophon .copyright_line .list_col ul {
+  gap: 16px !important;
+}
+
+/* Full white and the same size as the copyright opposite it - a credit that is
+   dimmed to 60% at 13px is not a credit, it is a watermark. */
+footer#colophon .copyright_wrap p.site_credit {
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.2px;
+}
+
+footer#colophon .site_credit__heart {
+  color: #DD0A1B;
+  font-size: 15px;
+  line-height: 1;
+  margin: 0 2px;
+}
+
+footer#colophon .site_credit a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+
+footer#colophon .site_credit a:hover {
+  color: #DD0A1B;
+  text-decoration-color: currentColor;
+}
+
+/* Below the lg breakpoint the columns stack and the theme centres the row, so
+   the credit is centred with everything else rather than pinned right. */
+@media screen and (max-width: 991px) {
+  footer#colophon .copyright_line { justify-content: center; }
+  footer#colophon .copyright_wrap p.site_credit {
+    text-align: center;
+    margin-top: 12px;
+  }
+}
+
+/* Reading measure. Measured across every breakpoint, three places let a line run
+   past 100 characters, which is where the eye starts losing its place:
+     - the ledger's point paragraphs: ~121 characters at 1024px, ~101 at 1440
+     - .entry-content on the policy pages: ~107 at 1440
+     - .post-content on the blog posts: ~107 at 1440
+   A cap only bites on wide screens; narrower viewports are already under it. */
+.why_ledger__list .choose_list p,
+.why_ledger__intro p {
+  max-width: 68ch;
+}
+
+.entry-content > p,
+.post-content > p,
+.entry-content > ul,
+.post-content > ul {
+  max-width: 74ch;
+}
+
+/* services_area_section drops its top padding below 1025px, so on a phone the
+   heading sat flush against the section above it. */
+@media screen and (max-width: 1024px) {
+  section.services_area_section {
+    padding-top: 50px;
+  }
+}
+
+/* The site header is position:absolute and occupies the top 175px. Every normal
+   page opens with a tall banner section that sits behind it by design. The
+   category archive has no banner, so its <main> starts at y=0 and the page title
+   rendered underneath the header. Scoped to a page-header that is the very first
+   thing in main, which is exactly that case. */
+main#primary > .page-header:first-child {
+  padding-top: 200px;
+}
+
+/* The main navigation links are 20px tall, which is under the 24px WCAG 2.2 asks
+   for. Same pseudo-element trick as the other links: the hit area grows, the
+   layout does not move. */
+#primary-menu a {
+  position: relative;
+}
+
+#primary-menu a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: max(100%, 26px);
+  transform: translate(-50%, -50%);
+}
+
+/* The archive listing's post meta - dates, category links - are small inline
+   links repeated dozens of times per page. Same hit-area treatment. */
+.entry-meta a,
+.entry-footer a,
+.cat-links a,
+.posted-on a {
+  position: relative;
+}
+
+.entry-meta a::after,
+.entry-footer a::after,
+.cat-links a::after,
+.posted-on a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: max(100%, 26px);
+  transform: translate(-50%, -50%);
+}
+
+/* Two sections carry a zero on one side and relied on their neighbour's padding,
+   which no longer holds now that bands are tinted. Measured at every breakpoint:
+   .why_choose.meet-our-journey opens with 0 headroom, and the fleet page's
+   needbox closes with 0 footroom.
+
+   These need !important, which nothing else in this file does. site-overrides.css
+   is the live site's own Additional CSS, scraped verbatim, and it forces both
+   paddings to 0 with !important:
+     .meet-our-journey            { padding-top: 0 !important }
+     .needbox_section.out-fleet-needbox { padding-bottom: 0 !important }
+   That file is a build artefact - editing it would be undone by the next scrape -
+   so the override has to match its weight rather than outrank its selector. */
+section.why_choose.meet-our-journey { padding-top: 100px !important; }
+section.needbox_section.out-fleet-needbox { padding-bottom: 100px !important; }
+
+@media screen and (max-width: 1024px) {
+  section.why_choose.meet-our-journey { padding-top: 50px !important; }
+  section.needbox_section.out-fleet-needbox { padding-bottom: 50px !important; }
+}
+
+/* The archive's thumbnail link wraps a full-width image but is display:inline,
+   so its own box is only a text line tall. Clicking the image works either way;
+   making it a block means the link is the size it appears to be. */
+a.post-thumbnail { display: block; }
+
+/* The archive sidebar's recent-post links, and the fleet page's form intro,
+   were the last two items the responsive sweep flagged. */
+.wp-block-latest-posts__post-title,
+.wp-block-latest-posts__post-date,
+.widget a {
+  position: relative;
+}
+
+.wp-block-latest-posts__post-title::after,
+.wp-block-latest-posts__post-date::after,
+.widget a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: max(100%, 26px);
+  transform: translate(-50%, -50%);
+}
+
+.content_middle_contact_form p { max-width: 68ch; }
+
+/* Between 992px and 1199px the services grid splits the container in half - the
+   intro on the left, the cards on the right - and then puts two cards inside
+   that half. The cards end up 216px wide, which is 26 characters a line: a
+   six-line paragraph becomes fifteen. Above 1200px the same layout is fine, and
+   below 992px Bootstrap stacks it already, so this is the one awkward band.
+   Stacking the intro above the cards there gives each card ~456px instead. */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  section.services_section > .container > .row > .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* The intro is sticky so it can trail the card column while it scrolls. Once
+     it sits above the cards instead of beside them, sticky would pin it over
+     them on the way down. */
+  section.services_section .servcies_content {
+    position: static;
+    margin-bottom: 40px;
+  }
+
+  /* Full width, the intro runs to 117 characters a line - the opposite problem
+     to the one above. Capping the whole stacked column rather than just
+     .servcies_content, because /about/ and /contact-us/ put their intro copy
+     straight in the column. The card column's paragraphs are ~57ch already, so
+     the cap never bites there. */
+  section.services_section > .container > .row > .col-lg-6 p {
+    max-width: 68ch;
+  }
+}
+
+/* The fleet page's card grid is three across from 992px up, which at 1024px
+   makes each card 296px - 26 characters a line, the same stutter the services
+   grid had. Two across in that band gives ~456px; at 1200px and up three across
+   is comfortable again and is left alone. */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  section.services_area_section > .container > .row > .col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Below the lg breakpoint the footer's three columns stack, and the theme gives
+   them no top spacing - "Our Services" sat exactly 0px under the WhatsApp
+   number, measured at 390px and 768px. The section-gap audit does not see this
+   because it compares whole bands, not columns inside one. The bottom bar's
+   list_col is excluded: it is beside the copyright, not stacked under anything. */
+@media screen and (max-width: 991px) {
+  footer#colophon .list_col { margin-top: 34px; }
+  footer#colophon .copyright_line .list_col { margin-top: 0; }
 }

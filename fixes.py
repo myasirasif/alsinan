@@ -85,6 +85,137 @@ def fix_alts(html):
     return re.sub(r"<img\b[^>]*>", repl, html)
 
 
+# -------------------------------------------------------- image dimensions
+def _load_sizes():
+    p = os.path.join(ROOT, "image_sizes.json")
+    if not os.path.exists(p):
+        return {}
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+IMAGE_SIZES = _load_sizes()
+
+
+def _normalise_src(src):
+    s = (src or "").split("?")[0].strip()
+    for prefix in (LIVE, "http://alsinantransport.com",
+                   "https://alsinan-2026.local", "http://alsinan-2026.local"):
+        if s.startswith(prefix):
+            s = s[len(prefix):]
+            break
+    if s.startswith("./"):
+        s = s[1:]
+    if not s.startswith("/"):
+        s = "/" + s
+    return s
+
+
+P_WRAPPING_LI = re.compile(r"<p(\s[^>]*)?>(\s*<li\b.*?</li>\s*)</p>", re.S)
+
+
+def fix_list_in_paragraph(html):
+    """Turn a <p> that wraps bare <li> elements into the <ul> it should be.
+
+    The fleet page had four <li> inside a <p>. A browser's parser closes the <p>
+    before the first <li>, so the DOM never matched what React rendered and
+    hydration failed - React threw away the whole prerendered page and rebuilt
+    it, which is exactly what prerendering exists to avoid.
+    """
+    return P_WRAPPING_LI.sub(lambda m: "<ul%s>%s</ul>" % (m.group(1) or "", m.group(2)), html)
+
+
+
+
+COPYRIGHT = re.compile(r'(<p class="mb-0">Copyright[^<]*</p>)')
+
+# The bottom bar's link list, as the theme emits it in the right-hand column.
+# Anchored on the d-inline-flex list: .list_col is also the class on the "Our
+# Services" column higher up the footer, and matching that one moved the wrong
+# block. Only the bottom bar's ul carries d-inline-flex.
+LIST_COL = re.compile(
+    r'\s*<div class="list_col">\s*<ul class="d-inline-flex[^>]*>.*?</ul>\s*</div>', re.S
+)
+
+# A text heart rather than an inline SVG. The HTML-to-JSX converter lowercases
+# attribute names, which is right for HTML but breaks SVG: viewBox became
+# viewbox, the browser ignored it, and the path drew clipped against a 13px
+# viewport. A character has no attributes to mangle and scales with the text.
+HEART = '<span class="site_credit__heart">&#9829;</span>'
+
+
+def add_credit(html):
+    """Rearrange the footer's bottom bar and add the build credit.
+
+    The theme puts the copyright on the left and the Blogs/Terms/Privacy links
+    on the right. Dropping the credit under those links left it crowded and easy
+    to miss. Moving the links up beside the copyright frees the whole right-hand
+    side for the credit, on the same line as the copyright rather than below it.
+    The links stay in the footer - they are the only route to those pages.
+    """
+    if "site_credit" in html:
+        return html
+
+    found = LIST_COL.search(html)
+    if not found:
+        return html  # markup moved; leave the footer alone rather than mangle it
+    links = found.group(0).strip()
+
+    credit = (
+        '<p class="mb-0 site_credit">Design and developed with '
+        + HEART
+        + ' by <a href="https://yasirafridi.dev/" target="_blank" rel="noopener">Yasir</a></p>'
+    )
+
+    # the credit takes the place the links vacate, so it lands in the right column
+    html = LIST_COL.sub(lambda m: credit, html, count=1)
+    return COPYRIGHT.sub(
+        lambda m: '<div class="copyright_line">' + m.group(1) + links + "</div>",
+        html,
+        count=1,
+    )
+
+
+def fix_lazy_hero(html):
+    """A hero image marked fetchpriority=high must not also be lazy.
+
+    WordPress emitted both on the banner images, which cancel out: the browser
+    is told the image is urgent and then told to defer it. Since these are the
+    LCP element, drop the lazy attribute and load them eagerly.
+    """
+    def repl(m):
+        tag = m.group(0)
+        if 'fetchpriority="high"' not in tag.lower():
+            return tag
+        return re.sub(r'\sloading="lazy"', ' loading="eager"', tag, flags=re.I)
+
+    return re.sub(r"<img\b[^>]*>", repl, html)
+
+
+def add_image_dimensions(html):
+    """Give every raster <img> its real width/height.
+
+    Browsers derive an aspect ratio from these attributes and reserve the space
+    before the file arrives, which is what stops the page shifting (CLS). The
+    theme has no global `img { height: auto }`, so spa-fixes.css adds one scoped
+    to `img[width][height]` - only the images touched here are affected.
+    """
+    def repl(m):
+        tag = m.group(0)
+        if re.search(r"\b(width|height)=", tag):
+            return tag
+        src = re.search(r'\bsrc="([^"]*)"', tag)
+        if not src:
+            return tag
+        # the raw markup uses absolute, root-relative and bare forms
+        dims = IMAGE_SIZES.get(_normalise_src(src.group(1)))
+        if not dims:
+            return tag
+        return '%s width="%d" height="%d">' % (tag[:-1].rstrip().rstrip("/"), dims[0], dims[1])
+
+    return re.sub(r"<img\b[^>]*>", repl, html)
+
+
 # ------------------------------------------------------------- WebP swapping
 def _load_swaps():
     p = os.path.join(ROOT, "image_swaps.json")

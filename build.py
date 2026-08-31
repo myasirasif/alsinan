@@ -240,6 +240,77 @@ export default function Header() {
     return () => document.removeEventListener("click", onDocClick);
   }, [menuOpen]);
 
+// Scroll-up reveal for the header.
+  //
+  // The header is position:absolute at top:55px, sitting over the banner, so it
+  // scrolls away with the page. The client wanted it to come back on the way up
+  // - and only on the way up - without the jump that usually comes with
+  // switching an element to fixed.
+  //
+  // The jump is avoided by never showing the switch. The moment the page is
+  // scrolled past the header, it becomes fixed *while translated fully out of
+  // view*, so there is nothing to see. From then on it only slides: down out of
+  // frame when the reader scrolls down, back in when they scroll up. At the top
+  // of the page it returns to absolute, and because its natural position there
+  // is the same place the fixed one occupies, that swap is invisible too.
+  //
+  // Being absolute means it is out of flow, so nothing below it ever reflows.
+  useEffect(() => {
+    const header = document.getElementById("masthead");
+    if (!header) return;
+
+    const REVEAL_AFTER = 260;   // clear of the header's own height at every width
+    const DEADZONE = 6;         // ignore trackpad jitter and rubber-banding
+
+    let last = window.scrollY;
+    let ticking = false;
+
+    const apply = () => {
+      ticking = false;
+      const y = window.scrollY;
+      const dy = y - last;
+
+      if (Math.abs(dy) < DEADZONE) return;
+      last = y;
+
+      if (y <= REVEAL_AFTER) {
+        header.classList.remove("hdr-fixed", "hdr-shown");
+        return;
+      }
+
+      // fixed from here on, but hidden until the reader asks for it
+      header.classList.add("hdr-fixed");
+
+      // keep it visible while the mobile menu is open - hiding the panel's own
+      // header out from under it would close the menu on the reader
+      if (header.classList.contains("menu-is-open")) return;
+
+      if (dy < 0) header.classList.add("hdr-shown");
+      else header.classList.remove("hdr-shown");
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(apply);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      header.classList.remove("hdr-fixed", "hdr-shown");
+    };
+  }, []);
+
+  // the reveal effect needs to know when the menu is open, and it reads the DOM
+  // rather than React state because it runs outside the render cycle
+  useEffect(() => {
+    const header = document.getElementById("masthead");
+    if (!header) return;
+    header.classList.toggle("menu-is-open", menuOpen);
+  }, [menuOpen]);
+
   // Rebuilds the active-state classes WordPress renders server-side, plus the
   // .focus class the theme uses to reveal a sub-menu.
   const mi = (base, to) => {

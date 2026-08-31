@@ -767,3 +767,192 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
   white-space: nowrap;
   margin-left: 12px;
 }
+
+/* The mobile menu panel is absolutely positioned at a fixed top:70px inside the
+   header, but the logo grows with the viewport - 50px tall at 390px, 75px at
+   768px - so from about 430px up the panel's top edge cut across the bottom of
+   the logo. Measured overlap: 1px at 430, 17px at 540, 30px from 768 to 991.
+   Anchoring to the header's own height instead of a constant tracks the logo at
+   every width. Scoped to the range where the panel is a dropdown at all; from
+   1025px the menu is inline and this container is not positioned. */
+@media screen and (max-width: 1024px) {
+  header#masthead .menu-menu-1-container,
+  header.site-header .menu-menu-1-container {
+    top: 100%;
+  }
+}
+
+/* ===========================================================================
+   Vertical rhythm on touch widths
+   ===========================================================================
+   Measured at 390px and 768px: nearly every band carried 100px top and 100px
+   bottom padding - 200px of empty space between one heading and the next, on a
+   screen 390px wide. That is half a phone screen per seam, and it is the
+   desktop value never being scaled down.
+
+   Two sources. The theme ships 100px paddings and only reduces a couple of them
+   below 1024px. And several rules earlier in this file - the about panel, the
+   ledger, the section following them - set 100px with no media query at all, so
+   they beat the theme's own mobile reductions. The client's DevTools screenshot
+   showed exactly that: styles.css asking for 50px at <=1024px, struck through
+   by an unscoped rule from this file.
+
+   The rhythm is therefore defined once, here:
+       <= 1024px  ->  64px
+       <=  767px  ->  48px
+
+   Notes on the selectors:
+   - Named sections rather than a bare `section` rule, so the sticky blog
+     sidebar and the full-bleed banner keep the spacing they were built with.
+   - Prefixed with #page. The theme scopes some spacing per page with a body
+     class - .page-id-45 section.services_section carries margin-bottom:100px
+     !important - which outweighs a bare class selector even with !important.
+   - Margins are zeroed alongside padding: several of these sections carry a
+     100px margin as well, so setting padding alone left a 278px seam on
+     /contact-us/.
+   - .about_panel is excluded. It is full-bleed by design (padding:0) and its
+     copy column supplies the inset; including it doubled the two. */
+
+@media screen and (max-width: 1024px) {
+  #page section.about_section:not(.about_panel),
+  #page section.about-us-sec,
+  #page section.why_choose,
+  #page section.services_section,
+  #page section.services_area_section,
+  #page section.fleet_section,
+  #page section.faqs_section,
+  #page section.needbox_section,
+  #page section.why-choose-us-infographic,
+  #page section.svc_areas,
+  #page section.svc_enquiry,
+  #page .why_ledger {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #page section.why_choose.meet-our-journey { padding-top: 64px !important; }
+  #page section.needbox_section.out-fleet-needbox { padding-bottom: 64px !important; }
+
+  #page .about_panel + section,
+  #page .why_ledger--sand + section { padding-top: 64px; }
+
+  /* the panel's copy column: 100px/120px insets are a desktop measurement */
+  #page .about_panel__copy,
+  #page .about_panel--mirrored .about_panel__copy {
+    padding: 48px 24px 44px !important;
+  }
+
+  /* .about_content carries padding-top:140px so the copy lines up with the
+     photograph beside it. Once the two stack that is 140px of nothing above the
+     heading - 204px from the section's top edge down to its h2 on /about/, and
+     180px inside the panel, whose copy column already supplies its own inset. */
+  #page .about_content {
+    padding-top: 0 !important;
+  }
+
+  /* .form_top_row adds 85px of its own above the contact heading, on top of the
+     section padding - measured 169px from the band's top edge to its h2. The
+     section's own padding is the inset now. */
+  #page .form_top_row {
+    padding-top: 0 !important;
+  }
+
+  #page .why_ledger__top { margin-bottom: 34px; }
+  #page .why_ledger__foot { margin-top: 30px; }
+  #page .about_panel__facts { margin-top: 34px; }
+
+  /* the archive title clears an absolutely positioned header; the header is
+     shorter at these widths, so 200px was overshooting */
+  main#primary > .page-header:first-child { padding-top: 150px; }
+
+  footer#colophon { padding-top: 64px !important; }
+}
+
+@media screen and (max-width: 767px) {
+  #page section.about_section:not(.about_panel),
+  #page section.about-us-sec,
+  #page section.why_choose,
+  #page section.services_section,
+  #page section.services_area_section,
+  #page section.fleet_section,
+  #page section.faqs_section,
+  #page section.needbox_section,
+  #page section.why-choose-us-infographic,
+  #page section.svc_areas,
+  #page section.svc_enquiry,
+  #page .why_ledger {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #page section.why_choose.meet-our-journey { padding-top: 48px !important; }
+  #page section.needbox_section.out-fleet-needbox { padding-bottom: 48px !important; }
+
+  #page .about_panel + section,
+  #page .why_ledger--sand + section { padding-top: 48px; }
+
+  #page .about_panel__copy,
+  #page .about_panel--mirrored .about_panel__copy {
+    padding: 40px 20px 36px !important;
+  }
+
+  #page .about_content {
+    padding-top: 0 !important;
+  }
+
+  /* .form_top_row adds 85px of its own above the contact heading, on top of the
+     section padding - measured 169px from the band's top edge to its h2. The
+     section's own padding is the inset now. */
+  #page .form_top_row {
+    padding-top: 0 !important;
+  }
+
+  main#primary > .page-header:first-child { padding-top: 130px; }
+
+  footer#colophon { padding-top: 48px !important; }
+}
+
+
+/* ===========================================================================
+   Header: reveal on scroll up
+   ===========================================================================
+   The header is absolute at top:55px over the banner and scrolls away with the
+   page. Past 260px it becomes fixed while translated out of frame - so the
+   switch itself is never visible - and from then on it only slides: out when
+   the reader scrolls down, back in when they scroll up. Being out of flow, it
+   never reflows the page, which is where the jump would otherwise come from.
+
+   Fixed, it sits over ordinary page content rather than the dark banner, so it
+   takes the footer's background to stay legible. It keeps the header's own
+   top:55px offset only in its resting state; once fixed it goes flush. */
+#masthead.hdr-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  background: #1B1B1B;
+  padding: 10px 0;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 0.34s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+
+#masthead.hdr-fixed.hdr-shown {
+  transform: translateY(0);
+}
+
+/* the logo is sized for a 120px-tall header; the fixed bar is tighter */
+#masthead.hdr-fixed .site-branding img,
+#masthead.hdr-fixed .custom-logo {
+  max-height: 54px;
+  width: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #masthead.hdr-fixed { transition: none; }
+}

@@ -196,10 +196,75 @@ const audit = () => {
     const gap = Math.round(first.edge - last.edge);
     if (gap < 0) continue;  // bands that overlap by design (cards straddling a seam)
     const pair = `${label(a)} -> ${label(b)}`;
+    // What reads as generous on a 1440px screen reads as a hole on a 390px one,
+    // so the ceiling scales with the viewport. A flat 260px passed gaps that
+    // took up half a phone screen.
+    const ceiling = vw < 768 ? 170 : vw < 1200 ? 220 : 260;
     if (gap < 28) add("cramped", `only ${gap}px between ${pair}`);
-    else if (gap > 260) add("cavernous", `${gap}px of empty space between ${pair}`);
+    else if (gap > ceiling) add("cavernous", `${gap}px of empty space between ${pair} (limit ${ceiling})`);
   }
 
+  return out;
+};
+
+// The audit above only ever saw pages with the navigation closed, so the mobile
+// menu - the thing every phone visitor touches first - was never checked. This
+// opens it wherever the hamburger is visible and audits the open state: the
+// panel colliding with the logo, links running off-screen, and hit areas.
+const auditMenu = () => {
+  const out = [];
+  const toggle = document.querySelector(".menu-toggle");
+  if (!toggle) return out;
+  const tr = toggle.getBoundingClientRect();
+  if (tr.width < 2 || getComputedStyle(toggle).display === "none") return out;
+
+  const menu = document.querySelector("#primary-menu");
+  if (!menu) return out;
+  const panel = menu.closest(".menu-menu-1-container") || menu;
+  const pr = panel.getBoundingClientRect();
+  if (pr.height < 20) {
+    out.push({ kind: "menu", detail: "hamburger is visible but the panel did not open" });
+    return out;
+  }
+
+  const logo = document.querySelector("header img");
+  if (logo) {
+    const lr = logo.getBoundingClientRect();
+    const oy = Math.min(lr.bottom, pr.bottom) - Math.max(lr.top, pr.top);
+    const ox = Math.min(lr.right, pr.right) - Math.max(lr.left, pr.left);
+    if (oy > 2 && ox > 2)
+      out.push({ kind: "menu", detail: `panel covers ${Math.round(oy)}px of the logo` });
+  }
+
+  if (pr.right > window.innerWidth + 1 || pr.left < -1)
+    out.push({ kind: "menu", detail: `panel runs off-screen (${Math.round(pr.left)} to ${Math.round(pr.right)} in ${window.innerWidth}px)` });
+
+  const links = [...menu.querySelectorAll("a")].filter((a) => a.getBoundingClientRect().height > 2);
+  if (!links.length) out.push({ kind: "menu", detail: "panel opened but has no visible links" });
+
+  const tiny = links.filter((a) => {
+    const r = a.getBoundingClientRect();
+    const af = getComputedStyle(a, "::after");
+    const h = af.content !== "none" ? Math.max(r.height, parseFloat(af.height) || 0) : r.height;
+    return h < 24;
+  });
+  if (tiny.length)
+    out.push({ kind: "menu", detail: `${tiny.length} menu links under 24px, e.g. "${tiny[0].textContent.trim().slice(0, 18)}"` });
+
+  const off = links.filter((a) => {
+    const r = a.getBoundingClientRect();
+    return r.right > window.innerWidth + 1 || r.bottom > document.documentElement.scrollHeight + 1;
+  });
+  if (off.length)
+    out.push({ kind: "menu", detail: `${off.length} menu links sit outside the viewport` });
+
+  // the submenu is meant to stay open on touch widths - it was asked for
+  const sub = menu.querySelector(".sub-menu");
+  if (sub) {
+    const sr = sub.getBoundingClientRect();
+    if (sr.height < 10)
+      out.push({ kind: "menu", detail: "the services submenu is collapsed" });
+  }
   return out;
 };
 
@@ -220,6 +285,23 @@ for (const screen of SCREENS) {
     const found = await page.evaluate(audit);
     checks++;
     found.forEach((f) => findings.push({ screen: screen.name, width: screen.width, route, ...f }));
+
+    // and again with the navigation open, on the one route per width that needs
+    // it - the header is identical everywhere, so checking it 22 times a width
+    // would only repeat the same finding
+    if (route === "/") {
+      const opened = await page.evaluate(() => {
+        const t = document.querySelector(".menu-toggle");
+        if (!t || t.getBoundingClientRect().width < 2) return false;
+        t.click();
+        return true;
+      });
+      if (opened) {
+        await page.waitForTimeout(450);
+        const menuFound = await page.evaluate(auditMenu);
+        menuFound.forEach((f) => findings.push({ screen: screen.name, width: screen.width, route: "/ (menu open)", ...f }));
+      }
+    }
     errors.forEach((e) => findings.push({ screen: screen.name, width: screen.width, route, kind: "js-error", detail: e }));
   }
   await ctx.close();
@@ -232,7 +314,7 @@ console.log(`\n\n${checks} page/screen combinations checked, ${findings.length} 
 const byKind = {};
 findings.forEach((f) => (byKind[f.kind] = byKind[f.kind] || []).push(f));
 
-const ORDER = ["js-error", "overflow", "overlap", "image-spill", "tiny-text", "tap-target", "long-lines", "short-lines", "cramped", "cavernous"];
+const ORDER = ["js-error", "menu", "overflow", "overlap", "image-spill", "tiny-text", "tap-target", "long-lines", "short-lines", "cramped", "cavernous"];
 for (const kind of ORDER) {
   const rows = byKind[kind];
   if (!rows) continue;

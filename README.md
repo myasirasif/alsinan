@@ -336,9 +336,18 @@ field). `build.py` picks the variant automatically from the original markup.
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `RESEND_API_KEY` | yes | Resend sending key. Scope it to this domain. |
-| `CONTACT_TO_EMAIL` | no | Where leads land. Defaults to `alsinantransport@gmail.com`. |
+| `CONTACT_TO_EMAIL` | no | Where leads land. **Temporarily defaults to `yasirasif222@gmail.com` for Resend testing — see below.** |
 | `CONTACT_FROM_EMAIL` | no | Defaults to `Alsinan Website <noreply@alsinantransport.com>`. The domain must be verified in Resend. |
 | `RECAPTCHA_SECRET_KEY` | no | Enables server-side reCAPTCHA v3 checks. Without it the honeypot and rate limit still apply. |
+
+> **TEMP — revert after testing.** While the `alsinantransport.com` domain is
+> being verified end to end in Resend, the default recipient in
+> `app/api/contact.js` is `yasirasif222@gmail.com` so test submissions land in a
+> personal inbox. To go back to live, change `toAddress()` in
+> `app/api/contact.js` and the matching assertion in `app/test-contact.mjs` back
+> to `alsinantransport@gmail.com`. If `CONTACT_TO_EMAIL` is set in Vercel it
+> overrides this default, so unset it (or point it at the test inbox) for the
+> temporary routing to take effect.
 
 ### What the endpoint does
 

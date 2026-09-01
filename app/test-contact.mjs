@@ -139,6 +139,26 @@ check("fallback used the shared sender",
 check("fallback still replies to the customer", sentPayload?.reply_to === valid.email);
 check("degraded flag set so it is visible", r.body.degraded === true);
 
+// ---- the phone field's input filter -------------------------------------
+// It runs in the browser, but the rules are pure, so they are checked here
+// rather than left to be verified by typing into the form.
+const { cleanPhone } = await import("./src/lib/phone.js");
+
+const phoneCases = [
+  ["abc123def", "123", "letters are dropped"],
+  ["+971 55 525 2397", "+971555252397", "spaces go, a leading plus stays"],
+  ["(055) 525-2397", "0555252397", "brackets and dashes go"],
+  ["++++55", "+55", "only one plus survives"],
+  ["55+2397", "552397", "a plus that is not leading is dropped"],
+  ["e", "", "the exponent character browsers allow in number fields"],
+  ["12345678901234567890", "123456789012345", "capped at 15 digits (E.164)"],
+  ["", "", "empty stays empty"],
+];
+for (const [input, want, label] of phoneCases) {
+  const got = cleanPhone(input);
+  check(`phone filter: ${label}`, got === want, `${JSON.stringify(input)} -> ${JSON.stringify(got)}`);
+}
+
 const failed = results.filter((x) => !x.ok);
 console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
 process.exit(failed.length ? 1 : 0);

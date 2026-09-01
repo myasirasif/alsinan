@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { cleanPhone } from "../lib/phone";
 
 /**
  * Replaces the Contact Form 7 markup with a working form.
@@ -10,6 +11,7 @@ import { useLocation } from "react-router-dom";
  *   "compact" - the shorter form in the blog sidebar (single name, 1 column)
  */
 const EMPTY = { firstName: "", lastName: "", email: "", phone: "", message: "", company: "" };
+
 
 export default function ContactForm({ variant = "contact" }) {
   const { pathname } = useLocation();
@@ -33,8 +35,14 @@ export default function ContactForm({ variant = "contact" }) {
       ? (Object.keys(errors).length ? "invalid" : "failed")
       : "init";
 
+  // A phone field that accepts letters collects unusable leads. Anything that
+  // is not a digit is dropped as it is typed, except a "+", which is kept only
+  // in the first position - the one place it means anything in a phone number.
+  // Filtering on input rather than validating on submit means the field simply
+  // cannot hold a wrong character, so there is no error state to explain.
   const set = (field) => (e) => {
-    setValues((v) => ({ ...v, [field]: e.target.value }));
+    const value = field === "phone" ? cleanPhone(e.target.value) : e.target.value;
+    setValues((v) => ({ ...v, [field]: value }));
     setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
   };
 
@@ -80,7 +88,11 @@ export default function ContactForm({ variant = "contact" }) {
         <span className="wpcf7-form-control-wrap" data-name={name}>
           <input
             size="40"
-            maxLength="400"
+            maxLength={name === "phone" ? 16 : 400}
+            {...(name === "phone"
+              ? { inputMode: "tel", autoComplete: "tel", pattern: "[+]?[0-9]*" }
+              : {})}
+            {...(name === "email" ? { autoComplete: "email" } : {})}
             className={`wpcf7-form-control wpcf7-text${extraClass ? " " + extraClass : ""}${
               errors[name] ? " wpcf7-not-valid" : ""
             }`}

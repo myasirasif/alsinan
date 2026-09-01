@@ -73,7 +73,7 @@ check("valid submission succeeds", r.statusCode === 200 && r.body.ok === true);
 check("email addressed correctly",
   // TEMP (testing): matches the temporary default in api/contact.js. Revert to
   // "alsinantransport@gmail.com" alongside it.
-  sentPayload?.to?.[0] === "yasirasif222@gmail.com",
+  sentPayload?.to?.[0] === "alsinantransport@gmail.com",
   String(sentPayload?.to));
 check("reply_to is the customer", sentPayload?.reply_to === valid.email);
 check("subject names the sender", sentPayload?.subject?.includes("Yasir Asif"), sentPayload?.subject);

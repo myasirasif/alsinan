@@ -4,10 +4,10 @@
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
 // read lazily so the module can be exercised without a cold start
-// TEMP (testing): leads are being routed to a personal inbox while the Resend
-// domain is checked end to end. Revert this default to
-// "alsinantransport@gmail.com" once testing is done. See README > Contact form.
-const toAddress = () => process.env.CONTACT_TO_EMAIL || "yasirasif222@gmail.com";
+// The default is the business's own inbox, the same address shown in the footer
+// and in the LocalBusiness schema. CONTACT_TO_EMAIL overrides it in Vercel if
+// leads should go somewhere else.
+const toAddress = () => process.env.CONTACT_TO_EMAIL || "alsinantransport@gmail.com";
 const fromAddress = () =>
   process.env.CONTACT_FROM_EMAIL || "Alsinan Website <noreply@alsinantransport.com>";
 const recaptchaSecret = () => process.env.RECAPTCHA_SECRET_KEY;

@@ -336,18 +336,18 @@ field). `build.py` picks the variant automatically from the original markup.
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `RESEND_API_KEY` | yes | Resend sending key. Scope it to this domain. |
-| `CONTACT_TO_EMAIL` | no | Where leads land. **Temporarily defaults to `yasirasif222@gmail.com` for Resend testing — see below.** |
+| `CONTACT_TO_EMAIL` | no | Where leads land. Defaults to `alsinantransport@gmail.com`, the address on the site. |
 | `CONTACT_FROM_EMAIL` | no | Defaults to `Alsinan Website <noreply@alsinantransport.com>`. The domain must be verified in Resend. |
 | `RECAPTCHA_SECRET_KEY` | no | Enables server-side reCAPTCHA v3 checks. Without it the honeypot and rate limit still apply. |
 
-> **TEMP — revert after testing.** While the `alsinantransport.com` domain is
-> being verified end to end in Resend, the default recipient in
-> `app/api/contact.js` is `yasirasif222@gmail.com` so test submissions land in a
-> personal inbox. To go back to live, change `toAddress()` in
-> `app/api/contact.js` and the matching assertion in `app/test-contact.mjs` back
-> to `alsinantransport@gmail.com`. If `CONTACT_TO_EMAIL` is set in Vercel it
-> overrides this default, so unset it (or point it at the test inbox) for the
-> temporary routing to take effect.
+> **If the form returns 502.** Resend is refusing the send. The usual cause is
+> that `alsinantransport.com` is not verified in Resend, so the sender in
+> `CONTACT_FROM_EMAIL` is rejected. The handler then retries through Resend's
+> shared sender, `onboarding@resend.dev` — but that only ever delivers to the
+> address the Resend account itself was registered with. Set
+> `CONTACT_FALLBACK_TO` to that address to keep leads flowing, and verify the
+> domain in Resend to fix it properly. The exact rejection is logged in the
+> Vercel function log for `/api/contact`.
 
 ### What the endpoint does
 

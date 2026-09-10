@@ -52,7 +52,7 @@ export default function ContactUs() {
       <ul>
       <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
       <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&query=25.0760224,55.2274879" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=25.2959791,55.3797901" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> Office C-72, Saeed Bin Jumaa Bin Saeed Al Hinai Building, Al Nahda 2, Deira, Dubai - United Arab Emirates</a></li>
       </ul>
       </div>
       </div>
@@ -72,7 +72,7 @@ export default function ContactUs() {
       </div>
       </div>
       <div className="map-section">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462563.03270743275!2d54.897829829826904!3d25.075658397988125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai!5e0!3m2!1sen!2sae!4v1767152903040!5m2!1sen!2sae" style={{ width: "100%", maxWidth: "100%", height: "450px", border: "0" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Alsinan Passengers Transport office location in Al Nahda 2, Dubai" src="https://www.google.com/maps?q=25.2959791,55.3797901&hl=en&z=16&output=embed" style={{ width: "100%", maxWidth: "100%", height: "450px", border: "0" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
       </section>
 

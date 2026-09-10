@@ -141,7 +141,7 @@ export default function Header() {
       <div className="contact_top_details">
       <ul>
       <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" />alsinantransport@gmail.com</a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&query=25.0760224,55.2274879" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" />P2AG-L03, Bur Dubai - United Arab Emirates</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=25.2959791,55.3797901" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" />Office C-72, Saeed Bin Jumaa Bin Saeed Al Hinai Building, Al Nahda 2, Deira, Dubai - United Arab Emirates</a></li>
       </ul>
       </div>
       </div>

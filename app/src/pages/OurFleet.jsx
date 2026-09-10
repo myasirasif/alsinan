@@ -77,7 +77,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Red BMW coupe from the executive car range" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Executive & Standard Cars
@@ -92,7 +92,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Toyota Hiace" width="946" height="1178" />
+      <img src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Mercedes-Benz Sprinter van with the side door open" width="946" height="1178" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">SUVs & Family Cars</h5>
@@ -106,7 +106,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Alsinan Passengers Transport high-roof Toyota Hiace van parked on a Dubai street" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Vans & Hiace Models</h5>
@@ -120,7 +120,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Hiace" width="1600" height="1067" />
+      <img src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Coaster minibus on a palm-lined road in Dubai" width="1600" height="1067" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Minibuses</h5>
@@ -134,7 +134,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Toyota Hiace" width="1280" height="960" />
+      <img src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Full-size coach with Dubai plates parked at a depot" width="1280" height="960" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Full-Size Coaches</h5>
@@ -148,7 +148,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Toyota Hiace" />
+      <img src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Toyota Hiace</h5>

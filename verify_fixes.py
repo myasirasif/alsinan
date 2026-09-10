@@ -226,16 +226,35 @@ for route, h in html_by_route.items():
 check("no rendered link points at nothing", not dead,
       "%d pages with dead links" % len(dead))
 
-# 16. the areas in areaServed are named in the copy of the pages that claim them
-missing_areas = []
-for route in SERVICE_ROUTES:
-    h = html_by_route.get(route, "")
+# 16. the areas areaServed claims are named somewhere in the visible copy.
+# The claimed areas are read out of the built JSON-LD rather than hardcoded:
+# a hardcoded list keeps passing after the schema changes underneath it, which
+# is what happened when areaServed still named the Jabal Ali zones.
+claimed = set()
+for h in html_by_route.values():
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S):
+        try:
+            data = json.loads(block)
+        except ValueError:
+            continue
+        for node in (data.get("@graph") or [data]):
+            if "LocalBusiness" not in json.dumps(node.get("@type", "")):
+                continue
+            for area in node.get("areaServed") or []:
+                name = area.get("name") if isinstance(area, dict) else area
+                if name:
+                    claimed.add(name)
+
+# Visible copy only - the schema itself must not count as evidence for itself.
+copy_text = ""
+for h in html_by_route.values():
     body = h[h.find("<body"):]
-    for area in ("Jabal Ali Industrial Area", "Jabal Ali Free Zone", "Dubai Industrial City"):
-        if area not in body:
-            missing_areas.append((route.split("/")[2][:22], area))
-check("service pages name the areas their schema claims", not missing_areas,
-      str(missing_areas[:3]))
+    copy_text += re.sub(r"<script\b.*?</script>", " ", body, flags=re.S)
+
+unsupported = sorted(a for a in claimed if a.lower() not in copy_text.lower())
+check("areaServed names appear in the visible copy", not unsupported,
+      "claims %d areas, %d never written on the site: %s"
+      % (len(claimed), len(unsupported), ", ".join(unsupported) or "none"))
 
 
 # 17. the fleet states capacities, and no placeholder survives

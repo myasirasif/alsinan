@@ -26,6 +26,7 @@ import PostTheDailyTransportChallengesBusinessesFaceInDubai from "./pages/PostTh
 import PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai from "./pages/PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai";
 import PostHowVisitorsMoveAroundDubaiWithoutStress from "./pages/PostHowVisitorsMoveAroundDubaiWithoutStress";
 import CategoryCars from "./pages/CategoryCars";
+import ThankYou from "./pages/ThankYou";
 
 function BodyClass() {
   const { pathname } = useLocation();
@@ -96,6 +97,7 @@ export default function App() {
         <Route path="/why-many-families-prefer-dedicated-transport-services-in-dubai/" element={<PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai />} />
         <Route path="/how-visitors-move-around-dubai-without-stress/" element={<PostHowVisitorsMoveAroundDubaiWithoutStress />} />
         <Route path="/category/cars/" element={<CategoryCars />} />
+        <Route path="/thank-you/" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

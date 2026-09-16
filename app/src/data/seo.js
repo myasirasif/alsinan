@@ -385,6 +385,16 @@ export const seo = {
     ],
     "canonical": "https://alsinantransport.com/our-fleet/"
   },
+  "/thank-you/": {
+    "title": "Thank You | Alsinan Transport",
+    "meta": [
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/thank-you/"
+  },
   "/contact-us/": {
     "title": "Contact Alsinan Transport | Book Reliable Transport in Dubai",
     "meta": [

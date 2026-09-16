@@ -45,6 +45,46 @@
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
       "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact-us/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/(.*)",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/thankyou/",
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks/",
+      "destination": "/thank-you/",
+      "permanent": true
     }
   ],
   "headers": [

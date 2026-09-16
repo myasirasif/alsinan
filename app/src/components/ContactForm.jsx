@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { cleanPhone } from "../lib/phone";
 
 /**
@@ -15,6 +15,7 @@ const EMPTY = { firstName: "", lastName: "", email: "", phone: "", message: "", 
 
 export default function ContactForm({ variant = "contact" }) {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [values, setValues] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("init"); // init | sending | sent | error
@@ -67,9 +68,10 @@ export default function ContactForm({ variant = "contact" }) {
       if (res.ok && data.ok) {
         setStatus("sent");
         setValues(EMPTY);
-        setNotice("Thank you. We have your message and will get back to you shortly.");
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: "generate_lead", form_variant: variant, page_path: pathname });
+        // a URL of its own gives GA4 and Google Ads a conversion page to count
+        navigate("/thank-you/");
         return;
       }
 

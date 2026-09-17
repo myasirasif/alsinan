@@ -3,6 +3,8 @@ export const bodyClasses = {
   "/about/": "wp-singular page-template page-template-temp_about_us page-template-temp_about_us-php page page-id-39 wp-custom-logo wp-theme-alsinan",
   "/services/": "wp-singular page-template page-template-temp_services page-template-temp_services-php page page-id-41 wp-custom-logo wp-theme-alsinan",
   "/our-fleet/": "wp-singular page-template page-template-temp_fleet page-template-temp_fleet-php page page-id-43 wp-custom-logo wp-theme-alsinan",
+  "/how-to-choose-a-staff-transport-company-in-dubai/": "wp-singular post-template-default single single-post single-format-standard wp-custom-logo wp-theme-alsinan",
+  "/bus-rental-in-dubai-what-to-check-before-you-book/": "wp-singular post-template-default single single-post single-format-standard wp-custom-logo wp-theme-alsinan",
   "/thank-you/": "wp-singular page page-thank-you wp-custom-logo wp-theme-alsinan",
   "/contact-us/": "wp-singular page-template page-template-temp_contact page-template-temp_contact-php page page-id-45 wp-custom-logo wp-theme-alsinan",
   "/blogs/": "wp-singular page-template page-template-all-blogs page-template-all-blogs-php page page-id-329 wp-custom-logo wp-theme-alsinan",

@@ -385,6 +385,34 @@ export const seo = {
     ],
     "canonical": "https://alsinantransport.com/our-fleet/"
   },
+  "/how-to-choose-a-staff-transport-company-in-dubai/": {
+    "title": "How to Choose a Staff Transport Company in Dubai | Checklist",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Comparing staff transport companies in Dubai? Use this checklist on licensing, vehicles, punctuality and pricing before you sign a contract."
+      },
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/how-to-choose-a-staff-transport-company-in-dubai/"
+  },
+  "/bus-rental-in-dubai-what-to-check-before-you-book/": {
+    "title": "Bus Rental in Dubai: What to Check Before You Book",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Planning a bus rental in Dubai? Check vehicle size, driver, itinerary, pricing and backup plans with this practical guide before you book."
+      },
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/bus-rental-in-dubai-what-to-check-before-you-book/"
+  },
   "/thank-you/": {
     "title": "Thank You | Alsinan Transport",
     "meta": [

@@ -27,6 +27,8 @@ import PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai from "./pages/
 import PostHowVisitorsMoveAroundDubaiWithoutStress from "./pages/PostHowVisitorsMoveAroundDubaiWithoutStress";
 import CategoryCars from "./pages/CategoryCars";
 import ThankYou from "./pages/ThankYou";
+import PostBusRentalInDubaiWhatToCheckBeforeYouBook from "./pages/PostBusRentalInDubaiWhatToCheckBeforeYouBook";
+import PostHowToChooseAStaffTransportCompanyInDubai from "./pages/PostHowToChooseAStaffTransportCompanyInDubai";
 
 function BodyClass() {
   const { pathname } = useLocation();
@@ -97,6 +99,8 @@ export default function App() {
         <Route path="/why-many-families-prefer-dedicated-transport-services-in-dubai/" element={<PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai />} />
         <Route path="/how-visitors-move-around-dubai-without-stress/" element={<PostHowVisitorsMoveAroundDubaiWithoutStress />} />
         <Route path="/category/cars/" element={<CategoryCars />} />
+        <Route path="/how-to-choose-a-staff-transport-company-in-dubai/" element={<PostHowToChooseAStaffTransportCompanyInDubai />} />
+        <Route path="/bus-rental-in-dubai-what-to-check-before-you-book/" element={<PostBusRentalInDubaiWhatToCheckBeforeYouBook />} />
         <Route path="/thank-you/" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -85,6 +85,11 @@
       "source": "/thanks/",
       "destination": "/thank-you/",
       "permanent": true
+    },
+    {
+      "source": "/services/bus/",
+      "destination": "/services/",
+      "permanent": true
     }
   ],
   "headers": [

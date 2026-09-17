@@ -90,6 +90,11 @@
       "source": "/services/bus/",
       "destination": "/services/",
       "permanent": true
+    },
+    {
+      "source": "/services/for-staff/",
+      "destination": "/services/staff-transport-in-dubai/",
+      "permanent": true
     }
   ],
   "headers": [

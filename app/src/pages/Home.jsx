@@ -151,7 +151,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>cars</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -160,7 +160,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>hiace</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.09_51e9ed5f.webp" alt="Toyota Hiace vans parked as part of the Alsinan Transport fleet in Dubai" width="960" height="1280" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.09_51e9ed5f.webp" alt="Toyota Hiace vans parked as part of the Alsinan Transport fleet in Dubai" width="960" height="1280" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -169,7 +169,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>Buses</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.11_24296a51.jpg" alt="White Ashok Leyland bus from the Alsinan Transport fleet parked in Dubai" width="1280" height="960" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.11_24296a51.jpg" alt="White Ashok Leyland bus from the Alsinan Transport fleet parked in Dubai" width="1280" height="960" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -178,7 +178,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>cars</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -187,7 +187,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>hiace</h3>
       <div className="img_fleet">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" alt="White Toyota Hiace high-roof van with Alsinan Passengers Transport branding, parked in Dubai" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" alt="White Toyota Hiace high-roof van with Alsinan Passengers Transport branding, parked in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -211,37 +211,37 @@ export default function Home() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>Plans That Fit Your Schedule</h3>
       </div>
       <p>Some clients need Transport Services in Dubai for one day. Others rely on us every month. Shifts change. Flights change. Plans evolve. Our rental transport in Dubai is designed to support these changes smoothly.</p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Always On Time</h3>
       </div>
       <p>Being late causes problems fast, especially for schools, hotels, and staff routes. Our drivers plan around traffic patterns and peak hours so arrivals and drop-offs happen when they should. Even in busy industrial areas, sticking to the schedule is treated as part of the job, not a bonus.</p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Friendly and Professional Drivers</h3>
       </div>
       <p>Drivers are licensed, experienced and familiar with roads, school routes, airport work and industrial areas. They stay calm, helpful and professional.</p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>A Fleet You Can Count On</h3>
       </div>
       <p>Vehicles are clean, air-conditioned, and checked regularly. Whether it’s a car for a private trip or a full-size bus for staff transport, everything is kept ready for daily use. No last-minute issues, no uncomfortable rides.</p>
@@ -389,7 +389,7 @@ export default function Home() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -398,7 +398,7 @@ export default function Home() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

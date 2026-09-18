@@ -60,37 +60,37 @@ export default function SvcAirportTransportInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>On Time and Reliable</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Airports run strictly on time and punctuality matters. We plan every pickup based on flight schedules and real road conditions. Traffic, peak hours and expected delays are considered carefully so you do not rush through check in and you do not end up waiting endlessly on arrival either. We track departures and arrivals, adjust when needed and focus on delivering a consistently timely airport transfer experience. Being on time is not an extra benefit for us, it is part of the service standard.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Safe and Friendly Drivers</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>A comfortable transfer begins with a capable, professional and polite driver. Our chauffeurs understand Dubai roads, airport layouts, best drop off locations and smooth exit routes. They handle luggage respectfully, drive steadily, remain calm in traffic and communicate clearly with passengers. Whether you have just completed a long flight or you are heading out on an important journey, they help create a peaceful and reassuring travel experience from the very first moment.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Spacious and Comfortable Vehicles</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Different travel plans require different types of vehicles, and we arrange transport according to your needs, not the other way around. Solo travelers and couples can enjoy quiet, uninterrupted direct transfers in comfortable cars. Families and small groups benefit from vans and minibuses that provide proper seating space and enough room for luggage without inconvenience. For larger groups, teams and organized travelers, bigger vehicles ensure everyone travels together in comfort with strong air conditioning and relaxed seating. Whether you prefer a simple transfer or a more premium style Airport car rental in Dubai with driver, we match the suitable option for you.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>Available Around the Clock</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Flights in Dubai operate throughout the day and night, so your Airport transport in Dubai must be just as flexible. Early morning flights, late night arrivals and odd hour airport transfers are all handled smoothly. You choose the time and we are there, prepared and ready.</span></p>
@@ -229,8 +229,8 @@ export default function SvcAirportTransportInDubai() {
       <div className="contact_frm_content">
       <h3>Rather talk to us?</h3>
       <ul>
-      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
@@ -245,7 +245,7 @@ export default function SvcAirportTransportInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -254,7 +254,7 @@ export default function SvcAirportTransportInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

@@ -59,37 +59,37 @@ export default function SvcSchoolTransportInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>Safety Always Comes First</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Student safety guides every step of our work. Every driver is licensed, carefully screened and trained to handle students of different age groups with patience and respect. Our vehicles are equipped and prepared for safe School transport in Dubai, and every journey follows controlled boarding, seating and drop off procedures. In case of any delay or unexpected situation, our team responds sensibly and keeps schools and parents informed when necessary. The goal is simple. Every child should feel safe, supervised and secure.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Reliable and Punctual Service</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>A late bus can easily disturb a whole school day. That is why we plan routes using real Dubai traffic patterns and practical time margins. Our team monitors timing carefully and adjusts when needed so students reach before school starts, not afterward. For parents this means less hurry and more peace of mind. For schools it means schedules run smoothly and students are already present when the day begins.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Flexible and Convenient Scheduling</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Every school operates differently, so our transport service is designed to adjust instead of forcing you to fit a rigid system. We coordinate closely with school management to create routes and timings that match your real needs. Morning pickups, afternoon returns, after school activities, events, competitions, special classes or occasional educational trips, everything can be arranged in a well planned manner so daily School transport in Dubai remains simple and convenient.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>Friendly and Professional Drivers</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Driving students requires more than skill behind the wheel. It also needs patience, awareness and a positive attitude. Our drivers are experienced on Dubai roads, respectful with students and calm even during busy mornings. Many students begin to feel comfortable seeing the same trusted driver every day, which turns the journey into a familiar and pleasant part of their routine.</span></p>
@@ -228,8 +228,8 @@ export default function SvcSchoolTransportInDubai() {
       <div className="contact_frm_content">
       <h3>Rather talk to us?</h3>
       <ul>
-      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
@@ -244,7 +244,7 @@ export default function SvcSchoolTransportInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -253,7 +253,7 @@ export default function SvcSchoolTransportInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

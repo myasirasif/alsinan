@@ -26,9 +26,11 @@ for (const route of routes) {
   // so hydration failed and React threw the whole prerendered tree away and
   // re-rendered it. Lifting them into <head> fixes that and is where a preload
   // belongs anyway.
+  // React preloads every eager image; only the fetchPriority="high" hero needs
+  // it, the rest just compete with it for bandwidth.
   const preloads = [];
   const body = html.replace(/<link\b[^>]*\brel="preload"[^>]*>/g, (tag) => {
-    preloads.push(tag);
+    if (!/as="image"/.test(tag) || /fetchPriority="high"/i.test(tag)) preloads.push(tag);
     return "";
   });
 

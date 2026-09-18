@@ -92,7 +92,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Mercedes-Benz Sprinter van with the side door open" width="946" height="1178" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Mercedes-Benz Sprinter van with the side door open" width="946" height="1178" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">SUVs & Family Cars</h5>
@@ -106,7 +106,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Alsinan Passengers Transport high-roof Toyota Hiace van parked on a Dubai street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Alsinan Passengers Transport high-roof Toyota Hiace van parked on a Dubai street" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Vans & Hiace Models</h5>
@@ -120,7 +120,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Coaster minibus on a palm-lined road in Dubai" width="1600" height="1067" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/staff-transport-op.webp" className="card-img-top fleet-img" alt="Toyota Coaster minibus on a palm-lined road in Dubai" width="1600" height="1067" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Minibuses</h5>
@@ -134,7 +134,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Full-size coach with Dubai plates parked at a depot" width="1280" height="960" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/coaster.jpg" className="card-img-top fleet-img" alt="Full-size coach with Dubai plates parked at a depot" width="1280" height="960" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Full-Size Coaches</h5>
@@ -148,7 +148,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Toyota Hiace</h5>
@@ -163,7 +163,8 @@ export default function OurFleet() {
       </div>
       </section>
 
-      <section className="services_area_section">
+      <section className="services_area_section fleet_extras">
+      <style>{`.fleet_extras .row>[class*=col-]{display:flex}.fleet_extras .service_area_box{display:flex;flex-direction:column;width:100%;height:100%;padding:40px 36px}.fleet_extras .service_area_box h3{margin:0 0 16px!important;padding:0!important;min-height:0}.fleet_extras .service_area_box p,.fleet_extras .service_area_box ul{margin-top:0!important}.fleet_extras .service_area_box p{margin-bottom:24px}.fleet_extras .service_area_box ul{margin:0 0 24px;padding-left:20px}.fleet_extras .service_area_box li{margin-bottom:8px;padding-left:4px}.fleet_extras .service_area_box .btn{margin-top:auto;align-self:flex-start}`}</style>
       <div className="container">
       <div className="row">
       </div>
@@ -188,7 +189,7 @@ export default function OurFleet() {
       <div className="col-lg-4">
       <div className="service_area_box">
       <h3>Ready to Roll?</h3>
-      <p>Scroll down to see the fleet in detail, or drop us a message for a quote. With Alsinan, transport in Dubai feels easy, safe, and hassle-free.</p>
+      <p>Browse the fleet above, or drop us a message for a quote. With Alsinan, transport in Dubai feels easy, safe, and hassle-free.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
@@ -203,7 +204,7 @@ export default function OurFleet() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">If you need any car in rental</span>
@@ -212,7 +213,7 @@ export default function OurFleet() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

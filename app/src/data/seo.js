@@ -413,6 +413,20 @@ export const seo = {
     ],
     "canonical": "https://alsinantransport.com/bus-rental-in-dubai-what-to-check-before-you-book/"
   },
+  "/services/bus-rental-dubai/": {
+    "title": "Bus Rental Dubai with Driver | 14 to 50 Seater | Alsinan",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Bus rental in Dubai with driver for staff, schools, events and airport trips. Minibus, Coaster and 50 seater coaches, 24/7 across all UAE emirates."
+      },
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/services/bus-rental-dubai/"
+  },
   "/thank-you/": {
     "title": "Thank You | Alsinan Transport",
     "meta": [

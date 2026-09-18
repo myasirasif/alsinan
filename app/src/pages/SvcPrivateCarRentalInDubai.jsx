@@ -58,44 +58,44 @@ export default function SvcPrivateCarRentalInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>Flexible Rentals</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Every trip is different and not everyone fits into a fixed rental plan. Whether you need a car for a few hours, a day, weekend or a longer stay, we structure rentals around your timing. If plans change, we assist wherever possible so your travel remains convenient instead of stressful.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>A Fleet for Every Journey</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Different journeys need different vehicles. Compact cars make city movement simple, sedans are ideal for business use and SUVs are perfect for families, friends and extra luggage. Whether your plan involves business travel, city tours, beach trips or relaxed exploration, our car <Link to="/services/">rental services</Link> in Dubai provide a suitable option.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Drive Yourself or Relax with a Chauffeur</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>If independence matters to you, choose self drive and enjoy complete freedom. If comfort and ease matter more, select a chauffeur driven option and travel with a licensed professional driver who manages routes, traffic and parking while you focus on work, conversations or simply the view.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>Clean, Safe and Reliable</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Every vehicle is carefully serviced, fully insured and thoroughly cleaned before rental. Air conditioning, safety features, tyres and brakes are checked properly so your focus remains on your journey, not on the vehicle.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Always Available</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Dubai operates day and night and our service supports that lifestyle. Early morning departures, late night arrivals and urgent travel needs are all handled with dependable private car rental in Dubai whenever you need it.</span></p>
@@ -239,8 +239,8 @@ export default function SvcPrivateCarRentalInDubai() {
       <div className="contact_frm_content">
       <h3>Rather talk to us?</h3>
       <ul>
-      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
@@ -255,7 +255,7 @@ export default function SvcPrivateCarRentalInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -264,7 +264,7 @@ export default function SvcPrivateCarRentalInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

@@ -58,37 +58,37 @@ export default function SvcStaffTransportInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>Always On Time</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Delays during a workday can easily affect productivity. That is why our team plans pickup and drop schedules carefully by considering real traffic conditions, known busy routes and your company timings. This ensures staff reach offices, work locations and events on time. HR and administration face less pressure and daily operations become more predictable. Consistent and punctual staff transport in Dubai helps your business start every working day in a steady and organised way.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Trusted Drivers</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Who drives your team matters a lot. Our drivers are fully licensed, carefully screened and experienced in handling staff and corporate routes. They understand professional environments, manage traffic calmly and support passengers when needed. Their approach remains disciplined, respectful and consistent, so your employees travel with drivers they trust every day.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Flexible Vehicles for Any Team</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Different companies require different transport arrangements. That is why our fleet includes vans, minibuses and buses so every need is handled correctly. Small teams benefit from dedicated van rental in Dubai. Medium sized groups travelling between offices or worksites move comfortably in minibuses. Larger workforces, corporate events and structured corporate transport in Dubai are handled with suitable buses so staff travel together without crowding. We match vehicle size and route planning to your staffing needs so travel remains smooth and practical.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>Stress-Free and Efficient</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Reliable staff transport has a direct effect on morale and performance. Employees face less commuting stress. HR teams spend less energy arranging last minute movement. Company travel becomes organised instead of uncertain. When the commute is predictable and comfortable, employees reach focused and ready to start their day positively.</span></p>
@@ -225,8 +225,8 @@ export default function SvcStaffTransportInDubai() {
       <div className="contact_frm_content">
       <h3>Rather talk to us?</h3>
       <ul>
-      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
@@ -241,7 +241,7 @@ export default function SvcStaffTransportInDubai() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -250,7 +250,7 @@ export default function SvcStaffTransportInDubai() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

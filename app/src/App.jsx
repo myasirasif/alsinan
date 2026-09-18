@@ -27,6 +27,7 @@ import PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai from "./pages/
 import PostHowVisitorsMoveAroundDubaiWithoutStress from "./pages/PostHowVisitorsMoveAroundDubaiWithoutStress";
 import CategoryCars from "./pages/CategoryCars";
 import ThankYou from "./pages/ThankYou";
+import SvcBusRentalDubai from "./pages/SvcBusRentalDubai";
 import PostBusRentalInDubaiWhatToCheckBeforeYouBook from "./pages/PostBusRentalInDubaiWhatToCheckBeforeYouBook";
 import PostHowToChooseAStaffTransportCompanyInDubai from "./pages/PostHowToChooseAStaffTransportCompanyInDubai";
 
@@ -101,6 +102,7 @@ export default function App() {
         <Route path="/category/cars/" element={<CategoryCars />} />
         <Route path="/how-to-choose-a-staff-transport-company-in-dubai/" element={<PostHowToChooseAStaffTransportCompanyInDubai />} />
         <Route path="/bus-rental-in-dubai-what-to-check-before-you-book/" element={<PostBusRentalInDubaiWhatToCheckBeforeYouBook />} />
+        <Route path="/services/bus-rental-dubai/" element={<SvcBusRentalDubai />} />
         <Route path="/thank-you/" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

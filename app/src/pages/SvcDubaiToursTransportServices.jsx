@@ -59,44 +59,44 @@ export default function SvcDubaiToursTransportServices() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_safety_security.svg" alt="" width="61" height="61" />
       <h3>Stay Together</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Instead of splitting your group into multiple taxis and private cars, everyone travels together. Arrivals stay coordinated, headcounts become easier and the entire tour feels organised rather than stressful. Your Dubai tours transport remains unified and manageable.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Experienced Drivers Who Know the City</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Our drivers handle tours and group travel every day. They understand practical drop off areas, sensible pickup locations, useful shortcuts and how to manage busy attractions without wasting time. This local knowledge helps your itinerary stay on track, even on days filled with multiple activities.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="65" height="61" />
       <h3>Comfort All Day</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Tours are often long, so comfort matters. Our vehicles offer cool air conditioning, wide supportive seating and enough space to store bags and equipment. Between stops, your guests can relax, refresh and prepare comfortably for the next experience.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="64" height="60" />
       <h3>Vehicles for Every Group Size</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>Your group does not need to adjust to the vehicle. We adjust our vehicles to your group size. Whether you need a compact solution for a small outing or a larger option for big groups, we match capacity and transport type to your needs.</span></p>
         </ChoosePoint>
         <ChoosePoint col="6">
       <div className="choose_list_icon">
-      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="67" height="61" />
       <h3>Customizable Travel Plans</h3>
       </div>
       <p><span style={{ fontWeight: "400" }}>If you already know the places you want to visit, share your list and timing. Every Dubai tours transport booking is shaped around your group size, travel time and type of journey, whether it is within Dubai, to the desert or between emirates. Your schedule is the priority and we manage the logistics.</span></p>
@@ -251,8 +251,8 @@ export default function SvcDubaiToursTransportServices() {
       <div className="contact_frm_content">
       <h3>Rather talk to us?</h3>
       <ul>
-      <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
@@ -267,7 +267,7 @@ export default function SvcDubaiToursTransportServices() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -276,7 +276,7 @@ export default function SvcDubaiToursTransportServices() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

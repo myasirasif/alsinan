@@ -51,8 +51,8 @@ export default function ContactUs() {
 
       <ul>
       <li><a href="tel:+971555252397"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
-      <li><a href="mailto:alsinantransport@gmail.com"><img src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&query=25.2959791,55.3797901" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> Office C-72, Saeed Bin Jumaa Bin Saeed Al Hinai Building, Al Nahda 2, Deira, Dubai - United Arab Emirates</a></li>
+      <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=25.2959791,55.3797901" target="_blank" rel="noopener"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="15" height="19" /> Office C-72, Saeed Bin Jumaa Bin Saeed Al Hinai Building, Al Nahda 2, Deira, Dubai - United Arab Emirates</a></li>
       </ul>
       </div>
       </div>
@@ -106,7 +106,7 @@ export default function ContactUs() {
       <div className="col-12">
       <div className="need_box_wrap" style={{ backgroundImage: "url('/wp-content/uploads/2025/09/banner_bg.webp')" }}>
       <div className="img_car">
-      <img src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/red_area.png" alt="" width="980" height="652" />
       </div>
       <div className="content_middle">
       <span className="sub_head">Looking for a safe and reliable transport services in Dubai?</span>
@@ -115,7 +115,7 @@ export default function ContactUs() {
       <div className="whatsapp_num white_num">
       <div className="whatsapp_box">
       <div className="icon_wp">
-      <img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>

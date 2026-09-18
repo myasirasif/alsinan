@@ -5,6 +5,7 @@ import { ServicesSection, ServiceBox } from "../components/sections/ServicesSect
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { staffFaqs } from "../data/staffFaqs";
 
 export default function SvcStaffTransportInDubai() {
   useThemeScripts([]);
@@ -195,6 +196,36 @@ export default function SvcStaffTransportInDubai() {
       <div className="row">
       <div className="col-12">
       <p className="svc_areas_note">Somewhere else in the UAE? Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
+      </div>
+      </div>
+      </div>
+      </section>
+
+      <section className="py-5 staff_extra">
+      <style>{`.staff_extra h2{font-size:clamp(26px,3vw,34px);margin:0 0 16px}.staff_extra h3{font-size:20px;font-weight:600;margin:24px 0 8px}.staff_extra ul{padding-left:22px;margin-bottom:20px}.staff_extra li{font-family:Poppins,sans-serif;margin-bottom:8px}.staff_extra li::marker{color:#dd0a1b}`}</style>
+      <div className="container">
+      <div className="row g-5">
+      <div className="col-lg-6">
+      <h2>Monthly Staff Transport Contracts</h2>
+      <p>Most companies we work with book staff transport on a monthly contract. The route, the vehicle and the rate are agreed once, and your team is picked up and dropped off every working day without you having to arrange it again.</p>
+      <ul>
+      <li>Fixed routes planned around your shift timings</li>
+      <li>One rate for the month, agreed in advance</li>
+      <li>Vehicle size matched to your headcount</li>
+      <li>Daily bookings available when you need extra trips</li>
+      </ul>
+      <h2>Shifts and Labour Routes</h2>
+      <p>Construction sites, warehouses, hotels and restaurants rarely work nine to five. We cover day, night and rotating shifts, and run daily labour transport between staff accommodation and work sites in Jebel Ali, JAFZA, Dubai Industrial City and across the UAE.</p>
+      <p>Tell us where your staff live and where they work, and we will plan the route. Need a bigger vehicle for a larger team? See our <Link to="/our-fleet/">fleet</Link>.</p>
+      </div>
+      <div className="col-lg-6">
+      <h2>Staff Transport FAQs</h2>
+      {staffFaqs.map(([q, a]) => (
+        <div key={q}>
+        <h3>{q}</h3>
+        <p>{a}</p>
+        </div>
+      ))}
       </div>
       </div>
       </div>

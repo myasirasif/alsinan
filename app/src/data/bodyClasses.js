@@ -6,6 +6,7 @@ export const bodyClasses = {
   "/how-to-choose-a-staff-transport-company-in-dubai/": "wp-singular post-template-default single single-post single-format-standard wp-custom-logo wp-theme-alsinan",
   "/bus-rental-in-dubai-what-to-check-before-you-book/": "wp-singular post-template-default single single-post single-format-standard wp-custom-logo wp-theme-alsinan",
   "/services/bus-rental-dubai/": "wp-singular services-template-default single single-services wp-custom-logo wp-theme-alsinan",
+  "/services/labour-transport-in-dubai/": "wp-singular services-template-default single single-services wp-custom-logo wp-theme-alsinan",
   "/thank-you/": "wp-singular page page-thank-you wp-custom-logo wp-theme-alsinan",
   "/contact-us/": "wp-singular page-template page-template-temp_contact page-template-temp_contact-php page page-id-45 wp-custom-logo wp-theme-alsinan",
   "/blogs/": "wp-singular page-template page-template-all-blogs page-template-all-blogs-php page page-id-329 wp-custom-logo wp-theme-alsinan",

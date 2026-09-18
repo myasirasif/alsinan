@@ -427,6 +427,20 @@ export const seo = {
     ],
     "canonical": "https://alsinantransport.com/services/bus-rental-dubai/"
   },
+  "/services/labour-transport-in-dubai/": {
+    "title": "Labour Transport in Dubai | Daily & Monthly | Alsinan",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Daily labour transport in Dubai from accommodation to site. Air-conditioned buses and vans with licensed drivers, monthly contracts, 24/7, all UAE."
+      },
+      {
+        "name": "robots",
+        "content": "noindex, nofollow"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/services/labour-transport-in-dubai/"
+  },
   "/thank-you/": {
     "title": "Thank You | Alsinan Transport",
     "meta": [

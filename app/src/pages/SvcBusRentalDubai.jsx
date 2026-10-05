@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 // DRAFT: noindex and not linked from anywhere. Prices are left out until the
 // client confirms them.
@@ -28,7 +29,7 @@ const faqs = [
 
 const Cta = () => (
   <div className="d-flex flex-wrap gap-3 my-4">
-    <a className="btn btn-secondary btn-whatsapp" href="https://wa.me/971555252397" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i> Get a Quote on WhatsApp</a>
+    <a className="btn btn-secondary btn-whatsapp" href={waLink("/services/bus-rental-dubai/")} target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i> Get a Quote on WhatsApp</a>
     <a className="btn btn-primary" href="tel:+971555252397">Call 055 525 2397</a>
   </div>
 );

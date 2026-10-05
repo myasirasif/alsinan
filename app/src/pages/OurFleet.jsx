@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 export default function OurFleet() {
   useThemeScripts(["jQuery(document).ready(function($){\n  $('.fleet_carousel').owlCarousel({\n    loop: true,\n    margin: 10,\n    responsiveClass: true,\n    responsive: {\n      0: {\n        items: 1,\n        center: false\n      },\n      1024: {\n        items: 2,\n        center: false\n      },\n      1200: {\n        items: 3,\n        center: true\n      }\n    }\n  });\n});"]);
@@ -217,7 +218,7 @@ export default function OurFleet() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan">+971 55 525 2397</a>
+      <a href={waLink("/our-fleet/")}>+971 55 525 2397</a>
       </div>
       </div>
       </div>

@@ -5,6 +5,7 @@ import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import AboutPanel from "../components/sections/AboutPanel";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 export default function Home() {
   useThemeScripts(["jQuery(document).ready(function($){\n  $('.fleet_carousel').owlCarousel({\n    loop: true,\n    margin: 10,\n    responsiveClass: true,\n    responsive: {\n      0: {\n        items: 1,\n        center: false\n      },\n      1024: {\n        items: 2,\n        center: false\n      },\n      1200: {\n        items: 3,\n        center: true\n      }\n    }\n  });\n});"]);
@@ -407,7 +408,7 @@ export default function Home() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
+      <a href={waLink("/")} target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

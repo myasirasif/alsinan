@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { waLink } from "../lib/whatsapp";
 
 export default function Footer() {
+  const { pathname } = useLocation();
   return (
     <footer id="colophon" className="site-footer">
     <div className="container">
@@ -18,7 +20,7 @@ export default function Footer() {
     </div>
     <div className="num_wp">
     <span>Whasapp</span>
-    <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
+    <a href={waLink(pathname)} target="_blank">+971 55 525 2397</a>
     </div>
     </div>
     </div>
@@ -83,7 +85,7 @@ export default function Footer() {
     <a href="tel:+971555252397" className="btn btn-primary" target="_blank"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /></a>
     </div>
     <div className="footer_btn">
-    <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" className="btn btn-primary" target="_blank"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /></a>
+    <a href={waLink(pathname)} className="btn btn-primary" target="_blank"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /></a>
     </div>
     </div>
     </div>

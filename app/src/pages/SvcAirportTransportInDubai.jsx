@@ -5,6 +5,7 @@ import { ServicesSection, ServiceBox } from "../components/sections/ServicesSect
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 export default function SvcAirportTransportInDubai() {
   useThemeScripts([]);
@@ -232,7 +233,7 @@ export default function SvcAirportTransportInDubai() {
       <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
       <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
+      <a href={waLink("/services/airport-transport-in-dubai/")} target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
       </div>
       </div>
@@ -258,7 +259,7 @@ export default function SvcAirportTransportInDubai() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
+      <a href={waLink("/services/airport-transport-in-dubai/")} target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

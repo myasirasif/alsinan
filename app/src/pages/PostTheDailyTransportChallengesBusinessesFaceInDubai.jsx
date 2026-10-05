@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 import PostDate from "../components/PostDate";
+import { waLink } from "../lib/whatsapp";
 
 export default function PostTheDailyTransportChallengesBusinessesFaceInDubai() {
   useThemeScripts([]);
@@ -78,7 +79,7 @@ export default function PostTheDailyTransportChallengesBusinessesFaceInDubai() {
       <section className="services_area_section sticky-top p-0 bg-transparent" style={{ top: "40px" }}>
       <div className="service_area_box">
 
-      <a href="https://wa.me/971555252397" target="_blank" className="btn btn-secondary btn-whatsapp mb-4">
+      <a href={waLink("/the-daily-transport-challenges-businesses-face-in-dubai/")} target="_blank" className="btn btn-secondary btn-whatsapp mb-4">
       <i className="fab fa-whatsapp"></i> WhatsApp Us
       </a>
       <h3 className="mb-0">Get in Touch</h3>

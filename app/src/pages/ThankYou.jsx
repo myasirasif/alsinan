@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 // Where ContactForm sends people after a successful submit. Its URL is what
 // GA4 and Google Ads count as a conversion, so it is kept out of the index.
@@ -38,7 +39,7 @@ export default function ThankYou() {
       <div className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
       <Link className="btn btn-primary" style={{ width: "230px", height: "50px", padding: 0, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }} to="/">Back to Home</Link>
       <Link className="btn btn-primary" style={{ width: "230px", height: "50px", padding: 0, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px", background: "#1d1d1b", borderColor: "#1d1d1b", color: "#fff" }} to="/services/">Our Services</Link>
-      <a className="btn btn-secondary btn-whatsapp" style={{ width: "230px", height: "50px", padding: 0, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }} href="https://wa.me/971555252397" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i> WhatsApp Us</a>
+      <a className="btn btn-secondary btn-whatsapp" style={{ width: "230px", height: "50px", padding: 0, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px" }} href={waLink("/thank-you/")} target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i> WhatsApp Us</a>
       </div>
       </div>
       </div>

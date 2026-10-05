@@ -5,6 +5,7 @@ import { ServicesSection, ServiceBox } from "../components/sections/ServicesSect
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { waLink } from "../lib/whatsapp";
 
 export default function SvcSchoolTransportInDubai() {
   useThemeScripts([]);
@@ -21,7 +22,7 @@ export default function SvcSchoolTransportInDubai() {
       <span className="h1_head">School Transport in Dubai</span>
       <h2>Daily School Runs with Licensed, Screened Drivers</h2>
       <p>Fixed routes across Dubai and the wider UAE. The same trusted driver every day, supervised boarding, and vehicles prepared for students.</p>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" className="btn btn-primary" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /> WhatsApp Us</a>
+      <a href={waLink("/services/school-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /> WhatsApp Us</a>
       <Link className="btn btn-danger" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
@@ -234,7 +235,7 @@ export default function SvcSchoolTransportInDubai() {
       <li><a href="tel:+971555252397"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /> +971 55 525 2397</a></li>
       <li><a href="mailto:alsinantransport@gmail.com"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_mail.svg" alt="" width="19" height="14" /> alsinantransport@gmail.com</a></li>
       </ul>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
+      <a href={waLink("/services/school-transport-in-dubai/")} target="_blank" rel="noopener" className="btn btn-secondary">WhatsApp Us</a>
       </div>
       </div>
       </div>
@@ -260,7 +261,7 @@ export default function SvcSchoolTransportInDubai() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
+      <a href={waLink("/services/school-transport-in-dubai/")} target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 import PostDate from "../components/PostDate";
+import { waLink } from "../lib/whatsapp";
 
 export default function Blogs() {
   useThemeScripts([]);
@@ -182,7 +183,7 @@ export default function Blogs() {
       </div>
       <div className="num_wp">
       <span>Whatsapp</span>
-      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" target="_blank">+971 55 525 2397</a>
+      <a href={waLink("/blogs/")} target="_blank">+971 55 525 2397</a>
       </div>
       </div>
       </div>

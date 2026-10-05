@@ -8,6 +8,8 @@
  * survives untouched. The markup reproduces the theme's output exactly,
  * including its own `servcies_content` spelling, because styles.css targets it.
  */
+import { useLocation } from "react-router-dom";
+import { waLink } from "../../lib/whatsapp";
 export function ServicesSection({
   className = "services_section",
   rowClass = "row justify-content-center",
@@ -15,6 +17,7 @@ export function ServicesSection({
   intro,
   children,
 }) {
+  const { pathname } = useLocation();
   return (
     <section className={className}>
       <div className="container">
@@ -35,7 +38,7 @@ export function ServicesSection({
                   <div className="num_wp">
                     <span>Whasapp</span>
                     <a
-                      href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan"
+                      href={waLink(pathname)}
                       target="_blank"
                     >
                       +971 55 525 2397

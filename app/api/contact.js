@@ -4,10 +4,15 @@
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
 // read lazily so the module can be exercised without a cold start
-// The default is the business's own inbox, the same address shown in the footer
-// and in the LocalBusiness schema. CONTACT_TO_EMAIL overrides it in Vercel if
-// leads should go somewhere else.
-const toAddress = () => process.env.CONTACT_TO_EMAIL || "alsinantransport@gmail.com";
+// The defaults are the business's own inboxes; the first is the address shown
+// in the footer and in the LocalBusiness schema. CONTACT_TO_EMAIL overrides
+// them in Vercel and accepts a comma-separated list.
+const splitAddresses = (v) => v.split(",").map((s) => s.trim()).filter(Boolean);
+const toAddresses = () =>
+  splitAddresses(
+    process.env.CONTACT_TO_EMAIL ||
+      "alsinantransport@gmail.com, alsinantransport055@gmail.com"
+  );
 const fromAddress = () =>
   process.env.CONTACT_FROM_EMAIL || "Alsinan Website <noreply@alsinantransport.com>";
 const recaptchaSecret = () => process.env.RECAPTCHA_SECRET_KEY;
@@ -131,7 +136,7 @@ export default async function handler(req, res) {
 
   const text = rows.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\nMessage:\n${message}`;
 
-  const send = (from, to = toAddress()) =>
+  const send = (from, to = toAddresses()) =>
     fetch(RESEND_ENDPOINT, {
       method: "POST",
       headers: {
@@ -140,7 +145,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from,
-        to: [to],
+        to: Array.isArray(to) ? to : [to],
         reply_to: email, // replying in Gmail goes straight to the customer
         subject: `New enquiry from ${fullName}`,
         html,
@@ -164,8 +169,12 @@ export default async function handler(req, res) {
       // Resend's shared sender will only deliver to the address the account was
       // registered with, so allow that to be set separately from the real
       // recipient. Without it the fallback bounces too.
-      resend = await send("Alsinan Website <onboarding@resend.dev>",
-                          process.env.CONTACT_FALLBACK_TO || toAddress());
+      resend = await send(
+        "Alsinan Website <onboarding@resend.dev>",
+        process.env.CONTACT_FALLBACK_TO
+          ? splitAddresses(process.env.CONTACT_FALLBACK_TO)
+          : toAddresses()
+      );
       if (resend.ok) {
         return res.status(200).json({ ok: true, degraded: true });
       }

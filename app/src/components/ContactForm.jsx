@@ -69,7 +69,12 @@ export default function ContactForm({ variant = "contact" }) {
         setStatus("sent");
         setValues(EMPTY);
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "generate_lead", form_variant: variant, page_path: pathname });
+        window.dataLayer.push({
+          event: "generate_lead",
+          form_name: variant,
+          form_variant: variant,
+          page_path: pathname,
+        });
         // a URL of its own gives GA4 and Google Ads a conversion page to count
         navigate("/thank-you/");
         return;

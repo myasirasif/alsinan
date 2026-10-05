@@ -18,8 +18,11 @@ export default function SvcSchoolTransportInDubai() {
       <div className="row h-100 justify-content-center">
       <div className="col-xl-6 my-auto">
       <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For School</h2>
+      <span className="h1_head">School Transport in Dubai</span>
+      <h2>Daily School Runs with Licensed, Screened Drivers</h2>
+      <p>Fixed routes across Dubai and the wider UAE. The same trusted driver every day, supervised boarding, and vehicles prepared for students.</p>
+      <a href="https://wa.me/971555252397?text=I%20want%20to%20know%20more%20about%20Alsinan" className="btn btn-primary" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /> WhatsApp Us</a>
+      <Link className="btn btn-danger" to="/contact-us/">BOOK NOW</Link>
       </div>
       </div>
       </div>
@@ -33,7 +36,7 @@ export default function SvcSchoolTransportInDubai() {
 
       <div className="col-lg-6">
       <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="613" src="/wp-content/uploads/2025/09/foor_school-1024x981.webp" className="attachment-large size-large wp-post-image" alt="Students walking safely in school corridor representing reliable school transport in Dubai" decoding="async" fetchPriority="high" srcSet="/wp-content/uploads/2025/09/foor_school-1024x981.webp 1024w, /wp-content/uploads/2025/09/foor_school-300x287.png 300w, /wp-content/uploads/2025/09/foor_school-768x736.webp 768w, /wp-content/uploads/2025/09/foor_school.webp 1230w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
+      <img width="640" height="613" src="/wp-content/uploads/2025/09/foor_school-1024x981.webp" className="attachment-large size-large wp-post-image" alt="Students walking safely in school corridor representing reliable school transport in Dubai" decoding="async" srcSet="/wp-content/uploads/2025/09/foor_school-1024x981.webp 1024w, /wp-content/uploads/2025/09/foor_school-300x287.png 300w, /wp-content/uploads/2025/09/foor_school-768x736.webp 768w, /wp-content/uploads/2025/09/foor_school.webp 1230w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
       </div>
 
       <div className="col-lg-6 my-auto">
@@ -59,7 +62,7 @@ export default function SvcSchoolTransportInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 available for private car rental in Dubai, parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
       <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />

@@ -36,6 +36,8 @@ export default function Footer() {
     <li><Link to="/services/staff-transport-in-dubai/">For Staff</Link></li>
     <li><Link to="/services/private-car-rental-in-dubai/">Private Travelers</Link></li>
     <li><Link to="/services/dubai-tours-transport-services/">Tours & Excursion</Link></li>
+    <li><Link to="/services/labour-transport-in-dubai/">Labour Transport</Link></li>
+    <li><Link to="/services/bus-rental-dubai/">Bus Rental</Link></li>
     </ul>
     </div>
     </div>

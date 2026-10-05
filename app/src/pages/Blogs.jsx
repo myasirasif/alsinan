@@ -35,7 +35,7 @@ export default function Blogs() {
       <Link className="text-decoration-none d-block h-100" to="/compare-different-hotel-transport-options-dubai/">
       <div className="card h-100">
       <div className="card-img-top">
-      <img width="640" height="303" src="/wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-768x364.webp" className="img-fluid wp-post-image" alt="Compare different hotel transport options for visitors traveling between city areas in Dubai" decoding="async" fetchPriority="high" srcSet="/wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-768x364.webp 768w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-300x142.webp 300w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-1024x485.webp 1024w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <img width="640" height="303" src="/wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-768x364.webp" className="img-fluid wp-post-image" alt="Compare different hotel transport options for visitors traveling between city areas in Dubai" decoding="async" srcSet="/wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-768x364.webp 768w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-300x142.webp 300w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182-1024x485.webp 1024w, /wp-content/uploads/2026/02/compare-different-hotel-transport-options-dubai-1-6982c6e08e182.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
       <div className="card-body">
       <h5 className="card-title">Compare Different Hotel Transport Options for Visitors Traveling Between City Areas</h5>
       <p className="card-text">
@@ -118,6 +118,32 @@ export default function Blogs() {
       <h5 className="card-title">How Visitors Move Around Dubai Without Stress</h5>
       <p className="card-text">
                           Dubai is exciting, but moving around it for the first time can feel confusing. This guide helps visitors travel confidently.                  </p>
+      </div>
+      </div>
+      </Link>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+      <Link className="text-decoration-none d-block h-100" to="/bus-rental-in-dubai-what-to-check-before-you-book/">
+      <div className="card h-100">
+      <div className="card-img-top">
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-768x364.webp" className="img-fluid wp-post-image" alt="Group bus rental with driver in Dubai" decoding="async" srcSet="/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-768x364.webp 768w, /wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-300x142.webp 300w, /wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-1024x485.webp 1024w, /wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <div className="card-body">
+      <h5 className="card-title">Bus Rental in Dubai: What to Check Before You Book</h5>
+      <p className="card-text">
+                          Vehicle size, driver, itinerary, pricing and backup plans. The details that decide whether a group trip runs smoothly.                  </p>
+      </div>
+      </div>
+      </Link>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+      <Link className="text-decoration-none d-block h-100" to="/how-to-choose-a-staff-transport-company-in-dubai/">
+      <div className="card h-100">
+      <div className="card-img-top">
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/01/Untitled-design-8-768x364.webp" className="img-fluid wp-post-image" alt="Staff transport bus for employees in Dubai" decoding="async" srcSet="/wp-content/uploads/2026/01/Untitled-design-8-768x364.webp 768w, /wp-content/uploads/2026/01/Untitled-design-8-1024x485.webp 1024w, /wp-content/uploads/2026/01/Untitled-design-8.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <div className="card-body">
+      <h5 className="card-title">How to Choose a Staff Transport Company in Dubai</h5>
+      <p className="card-text">
+                          Licensing, vehicles, punctuality and pricing. A practical checklist to work through before you sign a transport contract.                  </p>
       </div>
       </div>
       </Link>

@@ -33,7 +33,7 @@ export default function PostHowToChooseAStaffTransportCompanyInDubai() {
       <article className="post type-post status-publish format-standard has-post-thumbnail hentry category-cars">
 
       <div className="mb-4 post_title">
-      <img width="640" height="303" src="/wp-content/uploads/2026/01/Untitled-design-8-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Staff transport bus for employees in Dubai" decoding="async" fetchPriority="high" />
+      <img width="640" height="303" src="/wp-content/uploads/2026/01/Untitled-design-8-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Staff transport bus for employees in Dubai" decoding="async" />
       </div>
       <div className="post-content">
       <p>Staff transport is one of those things nobody notices when it works. When it fails, everybody notices. A bus arrives twenty minutes late, a shift starts short, a site supervisor spends the morning on the phone, and the cost of that one delay is far higher than the monthly transport bill.</p>

@@ -394,7 +394,92 @@ export const seo = {
       },
       {
         "name": "robots",
-        "content": "noindex, nofollow"
+        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      }
+,
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "og:title",
+        "content": "How to Choose a Staff Transport Company in Dubai | Checklist"
+      },
+      {
+        "property": "og:description",
+        "content": "Comparing staff transport companies in Dubai? Use this checklist on licensing, vehicles, punctuality and pricing before you sign a contract."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/how-to-choose-a-staff-transport-company-in-dubai/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "article:section",
+        "content": "Staff Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1408"
+      },
+      {
+        "property": "og:image:height",
+        "content": "667"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Staff transport bus for employees in Dubai"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/png"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-09-17T08:13:48+00:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "How to Choose a Staff Transport Company in Dubai | Checklist"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Comparing staff transport companies in Dubai? Use this checklist on licensing, vehicles, punctuality and pricing before you sign a contract."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
       }
     ],
     "canonical": "https://alsinantransport.com/how-to-choose-a-staff-transport-company-in-dubai/"
@@ -408,7 +493,92 @@ export const seo = {
       },
       {
         "name": "robots",
-        "content": "noindex, nofollow"
+        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      }
+,
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "og:title",
+        "content": "Bus Rental in Dubai: What to Check Before You Book"
+      },
+      {
+        "property": "og:description",
+        "content": "Planning a bus rental in Dubai? Check vehicle size, driver, itinerary, pricing and backup plans with this practical guide before you book."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/bus-rental-in-dubai-what-to-check-before-you-book/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "article:section",
+        "content": "Buses"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1408"
+      },
+      {
+        "property": "og:image:height",
+        "content": "667"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Group bus rental with driver in Dubai"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/webp"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-09-17T08:13:48+00:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Bus Rental in Dubai: What to Check Before You Book"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Planning a bus rental in Dubai? Check vehicle size, driver, itinerary, pricing and backup plans with this practical guide before you book."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
       }
     ],
     "canonical": "https://alsinantransport.com/bus-rental-in-dubai-what-to-check-before-you-book/"
@@ -422,7 +592,80 @@ export const seo = {
       },
       {
         "name": "robots",
-        "content": "noindex, nofollow"
+        "content": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      }
+,
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:title",
+        "content": "Bus Rental Dubai with Driver | 14 to 50 Seater | Alsinan"
+      },
+      {
+        "property": "og:description",
+        "content": "Bus rental in Dubai with driver for staff, schools, events and airport trips. Minibus, Coaster and 50 seater coaches, 24/7 across all UAE emirates."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/services/bus-rental-dubai/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/coaster.jpg"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/coaster.jpg"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1280"
+      },
+      {
+        "property": "og:image:height",
+        "content": "960"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Coaster bus used for group and staff bus rental in Dubai"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/jpeg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Bus Rental Dubai with Driver | 14 to 50 Seater | Alsinan"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Bus rental in Dubai with driver for staff, schools, events and airport trips. Minibus, Coaster and 50 seater coaches, 24/7 across all UAE emirates."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/coaster.jpg"
       }
     ],
     "canonical": "https://alsinantransport.com/services/bus-rental-dubai/"
@@ -436,7 +679,80 @@ export const seo = {
       },
       {
         "name": "robots",
-        "content": "noindex, nofollow"
+        "content": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      }
+,
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:title",
+        "content": "Labour Transport in Dubai | Daily & Monthly | Alsinan"
+      },
+      {
+        "property": "og:description",
+        "content": "Daily labour transport in Dubai from accommodation to site. Air-conditioned buses and vans with licensed drivers, monthly contracts, 24/7, all UAE."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/services/labour-transport-in-dubai/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-09-25T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/staff-transport-op.webp"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/staff-transport-op.webp"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1600"
+      },
+      {
+        "property": "og:image:height",
+        "content": "1067"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Air-conditioned bus used for daily labour transport in Dubai"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/webp"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Labour Transport in Dubai | Daily & Monthly | Alsinan"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Daily labour transport in Dubai from accommodation to site. Air-conditioned buses and vans with licensed drivers, monthly contracts, 24/7, all UAE."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2025/10/staff-transport-op.webp"
       }
     ],
     "canonical": "https://alsinantransport.com/services/labour-transport-in-dubai/"
@@ -828,7 +1144,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/terms-and-conditions/"
   },
   "/services/school-transport-in-dubai/": {
-    "title": "Safe School Transport in Dubai | Alsinan Transport Services",
+    "title": "School Transport Dubai | Licensed Drivers, On-Time Runs",
     "meta": [
       {
         "name": "google-site-verification",
@@ -836,7 +1152,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Give parents peace of mind with our safe, punctual school transport in Dubai. Licensed drivers, modern buses & GPS tracking."
+        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "robots",
@@ -852,11 +1168,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Safe School Transport in Dubai | Alsinan Transport Services"
+        "content": "School Transport Dubai | Licensed Drivers, On-Time Runs"
       },
       {
         "property": "og:description",
-        "content": "Give parents peace of mind with our safe, punctual school transport in Dubai. Licensed drivers, modern buses & GPS tracking."
+        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
       },
       {
         "property": "og:url",
@@ -900,11 +1216,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Safe School Transport in Dubai | Alsinan Transport Services"
+        "content": "School Transport Dubai | Licensed Drivers, On-Time Runs"
       },
       {
         "name": "twitter:description",
-        "content": "Give parents peace of mind with our safe, punctual school transport in Dubai. Licensed drivers, modern buses & GPS tracking."
+        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "twitter:image",
@@ -1086,7 +1402,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/services/private-car-rental-in-dubai/"
   },
   "/services/staff-transport-in-dubai/": {
-    "title": "Van Rental & Staff Transport in Dubai | 24/7 Trusted",
+    "title": "Staff Transport Dubai | Fixed Routes for Your Shift Times",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1094,7 +1410,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Hire modern vans and experienced drivers for staff transport in Dubai. Flexible monthly rental plans and corporate contracts."
+        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "robots",
@@ -1110,11 +1426,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Van Rental & Staff Transport in Dubai | 24/7 Trusted"
+        "content": "Staff Transport Dubai | Fixed Routes for Your Shift Times"
       },
       {
         "property": "og:description",
-        "content": "Hire modern vans and experienced drivers for staff transport in Dubai. Flexible monthly rental plans and corporate contracts."
+        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
       },
       {
         "property": "og:url",
@@ -1158,11 +1474,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Van Rental & Staff Transport in Dubai | 24/7 Trusted"
+        "content": "Staff Transport Dubai | Fixed Routes for Your Shift Times"
       },
       {
         "name": "twitter:description",
-        "content": "Hire modern vans and experienced drivers for staff transport in Dubai. Flexible monthly rental plans and corporate contracts."
+        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "twitter:image",

@@ -33,7 +33,7 @@ export default function PostBusRentalInDubaiWhatToCheckBeforeYouBook() {
       <article className="post type-post status-publish format-standard has-post-thumbnail hentry category-cars">
 
       <div className="mb-4 post_title">
-      <img width="640" height="303" src="/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Group bus rental with driver in Dubai" decoding="async" fetchPriority="high" />
+      <img width="640" height="303" src="/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Group bus rental with driver in Dubai" decoding="async" />
       </div>
       <div className="post-content">
       <p>Renting a bus in Dubai sounds simple: pick a size, pick a date, pay. In practice, the booking details decide whether your group arrives relaxed and on time or stands outside a hotel lobby wondering where the driver is.</p>

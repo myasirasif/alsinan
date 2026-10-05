@@ -77,7 +77,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Red BMW coupe from the executive car range" />
+      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Red BMW coupe from the executive car rental range in Dubai" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Executive & Standard Cars
@@ -92,7 +92,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img loading="lazy" src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Mercedes-Benz Sprinter van with the side door open" width="946" height="1178" />
+      <img loading="lazy" src="/wp-content/uploads/2025/10/about_large.webp" className="card-img-top fleet-img" alt="Mercedes-Benz Sprinter van with the side door open, used for group transport in Dubai" width="946" height="1178" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">SUVs & Family Cars</h5>

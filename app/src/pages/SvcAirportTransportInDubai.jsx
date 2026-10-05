@@ -33,7 +33,7 @@ export default function SvcAirportTransportInDubai() {
 
       <div className="col-lg-6">
       <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="427" src="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg" className="attachment-large size-large wp-post-image" alt="Airport terminal with aircraft and passengers representing reliable airport transport service in Dubai by Alsinan Transport" decoding="async" fetchPriority="high" srcSet="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg 1024w, /wp-content/uploads/2025/10/For-Airport-300x200.jpg 300w, /wp-content/uploads/2025/10/For-Airport-768x512.jpg 768w, /wp-content/uploads/2025/10/For-Airport-1536x1024.webp 1536w, /wp-content/uploads/2025/10/For-Airport.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
+      <img width="640" height="427" src="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg" className="attachment-large size-large wp-post-image" alt="Airport terminal with aircraft and passengers representing reliable airport transport service in Dubai by Alsinan Transport" decoding="async" srcSet="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg 1024w, /wp-content/uploads/2025/10/For-Airport-300x200.jpg 300w, /wp-content/uploads/2025/10/For-Airport-768x512.jpg 768w, /wp-content/uploads/2025/10/For-Airport-1536x1024.webp 1536w, /wp-content/uploads/2025/10/For-Airport.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
       </div>
 
       <div className="col-lg-6 my-auto">
@@ -60,7 +60,7 @@ export default function SvcAirportTransportInDubai() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 parked on a palm-lined street" />
+      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 available for private car rental in Dubai, parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
       <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />

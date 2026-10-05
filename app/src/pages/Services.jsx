@@ -63,6 +63,16 @@ export default function Services() {
       <Link to="/services/dubai-tours-transport-services/">Read more</Link>
         </ServiceBox>
         <ServiceBox col="6">
+      <h3>Bus Rental in Dubai with Driver</h3>
+      <p>Moving 15 people or 150? Minibuses, Coasters and 50 seater coaches come with a licensed driver, fuel and insurance included. Tell us the headcount and we will suggest the right size — usually cheaper than booking two smaller vans.</p>
+      <Link to="/services/bus-rental-dubai/">Read more</Link>
+        </ServiceBox>
+        <ServiceBox col="6">
+      <h3>Labour Transport in Dubai</h3>
+      <p>Daily runs between labour accommodation and site, planned around shift changes and site access rules. Air-conditioned buses and vans with licensed drivers, on monthly contracts for contractors and facilities teams.</p>
+      <Link to="/services/labour-transport-in-dubai/">Read more</Link>
+        </ServiceBox>
+        <ServiceBox col="6">
       <h3>Flexible Packages</h3>
       <p>Pick what suits you — daily hires, monthly contracts, or one-off trips. Need regular staff shuttles? Our monthly car rentals in Dubai are a solid choice. Long-term project? Go with van rentals in Dubai for ongoing needs. Pricing is simple. No extras or hidden fees.</p>
         </ServiceBox>

@@ -170,8 +170,8 @@ export default function Header() {
       <div className="menu_box">
       <nav id="site-navigation" ref={navRef} onClick={onNavClick}
            className={"main-navigation" + (menuOpen ? " toggled" : "") + (hoverOff ? " hover-suppressed" : "")}>
-      <button className="menu-toggle" aria-controls="primary-menu"
-              aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="icon menu" width="638" height="540" /></button>
+      <button className="menu-toggle" aria-controls="primary-menu" aria-label="Open navigation menu"
+              aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="" width="638" height="540" /></button>
       <div className="menu-menu-1-container"><ul id="primary-menu" className="menu"><li id="menu-item-47" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47", "/")}><Link to="/">Home</Link></li>
       <li id="menu-item-48" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-48", "/about/")}><Link to="/about/">About</Link></li>
       <li id="menu-item-52" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52", "/services/")}><Link to="/services/">Services</Link>
@@ -182,6 +182,8 @@ export default function Header() {
       <li id="menu-item-261" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-261", "/services/hotel-transport-service-in-dubai/")}><Link to="/services/hotel-transport-service-in-dubai/">For Hotel</Link></li>
       <li id="menu-item-262" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-262", "/services/airport-transport-in-dubai/")}><Link to="/services/airport-transport-in-dubai/">For Airport</Link></li>
       <li id="menu-item-263" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-263", "/services/school-transport-in-dubai/")}><Link to="/services/school-transport-in-dubai/">For School</Link></li>
+      <li id="menu-item-264" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-264", "/services/labour-transport-in-dubai/")}><Link to="/services/labour-transport-in-dubai/">For Labour</Link></li>
+      <li id="menu-item-265" className={mi("menu-item menu-item-type-custom menu-item-object-custom menu-item-265", "/services/bus-rental-dubai/")}><Link to="/services/bus-rental-dubai/">Bus Rental</Link></li>
       </ul>
       </li>
       <li id="menu-item-50" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-50", "/our-fleet/")}><Link to="/our-fleet/">Our Fleet</Link></li>

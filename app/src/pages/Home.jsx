@@ -22,7 +22,12 @@ export default function Home() {
       <div className="col-xl-7 col-lg-9 my-auto">
       <div className="content_banner">
       <span className="sub_head">Reliable Transport Services in Dubai for Daily, Monthly and Trip Based Travel</span>
-      <h1>Alsinan Rental Transport Services in Dubai for Businesses, Schools and Travellers</h1>
+      <h1>Rental Transport in Dubai for Businesses, Schools and Travellers</h1>
+      <ul className="hero_trust">
+      <li><img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="24" height="24" /> 24/7 Service</li>
+      <li><img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="24" height="24" /> Licensed Drivers</li>
+      <li><img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="24" height="24" /> All 7 Emirates</li>
+      </ul>
       <div className="banner_list_cont">
       <span>Flexible Rental Transport In Dubai:</span>
       <ul>

@@ -170,6 +170,7 @@ export default function Header() {
       <div className="menu_box">
       <nav id="site-navigation" ref={navRef} onClick={onNavClick}
            className={"main-navigation" + (menuOpen ? " toggled" : "") + (hoverOff ? " hover-suppressed" : "")}>
+      <a className="header_call" href="tel:+971555252397" aria-label="Call Alsinan Transport"><img src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /></a>
       <button className="menu-toggle" aria-controls="primary-menu" aria-label="Open navigation menu"
               aria-expanded={menuOpen} onClick={() => setMenuOpen((o) => !o)}><img src="/wp-content/uploads/2025/09/icon_hamburger.png" alt="" width="638" height="540" /></button>
       <div className="menu-menu-1-container"><ul id="primary-menu" className="menu"><li id="menu-item-47" className={mi("menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-47", "/")}><Link to="/">Home</Link></li>

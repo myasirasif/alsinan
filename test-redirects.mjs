@@ -14,22 +14,30 @@ const cfg = JSON.parse(fs.readFileSync(path.join(dir, "app", "vercel.json"), "ut
 // Vercel normalises to, and the bare form as well
 const MUST_REDIRECT = [
   "/tag/dubai-travel/", "/tag/dubai-travel",
+  "/category/cars/", "/category/buses/", "/category/uncategorized/",
   "/tag/dubai-transport-tips/",
   "/author/yaserr/", "/author/yaserr",
   "/2026/01/", "/2026/01",
   "/2026/02/",
-  "/feed/",
+  "/feed/", "/comments/feed/", "/services/feed/", "/our-fleet/feed/",
+  "/blogs/page/2/", "/page/2/",
   "/wp-admin/", "/wp-admin/options.php",
   "/wp-login.php",
   "/sitemap_index.xml",
   "/wp-sitemap.xml",
+  "/services/for-staff/", "/services/for-staff",
+  "/services/for-hotel/", "/services/for-hotel",
+  "/services/for-airport/", "/services/for-school/",
+  "/services/for-tours/", "/services/for-private/",
+  "/services/bus/",
+  "/thankyou/", "/thanks/",
 ];
 
 // real routes that must NOT be swallowed by any redirect
 const MUST_NOT_REDIRECT = [
   "/", "/about/", "/services/", "/services/airport-transport-in-dubai/",
   "/our-fleet/", "/blogs/", "/contact-us/", "/privacy-policy/",
-  "/terms-and-conditions/", "/category/cars/",
+  "/terms-and-conditions/",
   "/how-visitors-move-around-dubai-without-stress/",
   "/sitemap.xml", "/robots.txt",
 ];
@@ -41,7 +49,11 @@ const compiled = cfg.redirects.map((r) => ({
   src: r.source,
   re: pathToRegexp(r.source, [], { strict: true }),
 }));
-const match = (p) => compiled.find((c) => c.re.test(p));
+// trailingSlash:true means Vercel normalises a bare path to its slashed form
+// before any redirect rule runs, so a bare path is covered when the slashed
+// form matches. Paths that end in a file extension are not normalised.
+const normalised = (p) => (p.endsWith("/") || /\.[a-z0-9]+$/i.test(p) ? p : p + "/");
+const match = (p) => compiled.find((c) => c.re.test(p) || c.re.test(normalised(p)));
 
 const results = [];
 const check = (name, ok, detail = "") => {

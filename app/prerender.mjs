@@ -34,6 +34,20 @@ for (const route of routes) {
     return "";
   });
 
+  // The hero on every inner page is a CSS background applied through an inline
+  // style, so React cannot preload it the way it preloads an <img>. The browser
+  // discovers it only after the stylesheet parses, which delays the very element
+  // that decides LCP. Preload the first background-image the document declares.
+  // The homepage is the one route whose hero is a real <img>, which React already
+  // preloads; a second high-priority preload there would only compete with it.
+  // Everywhere else the banner background is the largest element above the fold.
+  const hero = route === "/" ? null : body.match(/background-image:url\(&#x27;([^&]+)&#x27;\)/);
+  if (hero) {
+    preloads.unshift(
+      `<link rel="preload" as="image" href="${hero[1]}" fetchpriority="high" />`
+    );
+  }
+
   // Structured data is written straight into the HTML rather than rendered by
   // React, so every crawler still sees it while the ~155 KB of JSON-LD stays
   // out of the client bundle.

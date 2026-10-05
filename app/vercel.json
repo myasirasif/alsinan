@@ -12,6 +12,11 @@
       "permanent": true
     },
     {
+      "source": "/category/(.*)",
+      "destination": "/blogs/",
+      "statusCode": 301
+    },
+    {
       "source": "/author/(.*)",
       "destination": "/blogs/",
       "permanent": true
@@ -35,6 +40,16 @@
       "source": "/feed/",
       "destination": "/blogs/",
       "permanent": true
+    },
+    {
+      "source": "/(.*)/feed/",
+      "destination": "/blogs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/page/(.*)",
+      "destination": "/blogs/",
+      "statusCode": 301
     },
     {
       "source": "/wp-sitemap.xml",
@@ -94,7 +109,32 @@
     {
       "source": "/services/for-staff/",
       "destination": "/services/staff-transport-in-dubai/",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/services/for-hotel/",
+      "destination": "/services/hotel-transport-service-in-dubai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/for-airport/",
+      "destination": "/services/airport-transport-in-dubai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/for-school/",
+      "destination": "/services/school-transport-in-dubai/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/for-tours/",
+      "destination": "/services/dubai-tours-transport-services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/for-private/",
+      "destination": "/services/private-car-rental-in-dubai/",
+      "statusCode": 301
     }
   ],
   "headers": [

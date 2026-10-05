@@ -435,11 +435,11 @@ export const seo = {
       },
       {
         "property": "og:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/staff-transport-company-dubai.webp"
       },
       {
         "property": "og:image:secure_url",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/staff-transport-company-dubai.webp"
       },
       {
         "property": "og:image:width",
@@ -451,11 +451,11 @@ export const seo = {
       },
       {
         "property": "og:image:alt",
-        "content": "Staff transport bus for employees in Dubai"
+        "content": "Toyota Coaster carrying staff on a Dubai road, used by staff transport companies for daily employee runs"
       },
       {
         "property": "og:image:type",
-        "content": "image/png"
+        "content": "image/webp"
       },
       {
         "property": "article:published_time",
@@ -479,7 +479,7 @@ export const seo = {
       },
       {
         "name": "twitter:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/staff-transport-company-dubai.webp"
       }
     ],
     "canonical": "https://alsinantransport.com/how-to-choose-a-staff-transport-company-in-dubai/"
@@ -534,11 +534,11 @@ export const seo = {
       },
       {
         "property": "og:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/bus-rental-dubai-fleet.webp"
       },
       {
         "property": "og:image:secure_url",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/bus-rental-dubai-fleet.webp"
       },
       {
         "property": "og:image:width",
@@ -550,7 +550,7 @@ export const seo = {
       },
       {
         "property": "og:image:alt",
-        "content": "Group bus rental with driver in Dubai"
+        "content": "Two Toyota Coaster buses with Dubai number plates parked at the Alsinan Transport depot"
       },
       {
         "property": "og:image:type",
@@ -578,7 +578,7 @@ export const seo = {
       },
       {
         "name": "twitter:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/bus-rental-dubai-fleet.webp"
       }
     ],
     "canonical": "https://alsinantransport.com/bus-rental-in-dubai-what-to-check-before-you-book/"
@@ -645,7 +645,7 @@ export const seo = {
       },
       {
         "property": "og:image:alt",
-        "content": "Coaster bus used for group and staff bus rental in Dubai"
+        "content": "Ashok Leyland coach with a Dubai number plate from the Alsinan Transport bus rental fleet"
       },
       {
         "property": "og:image:type",

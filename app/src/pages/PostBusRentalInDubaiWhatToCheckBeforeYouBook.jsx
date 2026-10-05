@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import PostDate from "../components/PostDate";
 
 export default function PostBusRentalInDubaiWhatToCheckBeforeYouBook() {
   useThemeScripts([]);
@@ -20,6 +21,7 @@ export default function PostBusRentalInDubaiWhatToCheckBeforeYouBook() {
       <div className="content_banner text-center">
       <span className="h1_head">Blogs</span>
       <h1>Bus Rental in Dubai: What to Check Before You Book</h1>
+      <PostDate route="/bus-rental-in-dubai-what-to-check-before-you-book/" />
       </div>
       </div>
       </div>
@@ -33,7 +35,7 @@ export default function PostBusRentalInDubaiWhatToCheckBeforeYouBook() {
       <article className="post type-post status-publish format-standard has-post-thumbnail hentry category-cars">
 
       <div className="mb-4 post_title">
-      <img width="640" height="303" src="/wp-content/uploads/2026/01/untitled-design-12-69633a3b6bbc3-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Group bus rental with driver in Dubai" decoding="async" />
+      <img width="640" height="303" src="/wp-content/uploads/2026/01/bus-rental-dubai-fleet-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Two Toyota Coaster buses with Dubai number plates parked at the Alsinan Transport depot" decoding="async" />
       </div>
       <div className="post-content">
       <p>Renting a bus in Dubai sounds simple: pick a size, pick a date, pay. In practice, the booking details decide whether your group arrives relaxed and on time or stands outside a hotel lobby wondering where the driver is.</p>

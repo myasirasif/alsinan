@@ -1091,3 +1091,17 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
     filter: brightness(0) invert(1);
   }
 }
+
+/* Publish date on a post and on its card in the blog index. */
+.post_date {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+.card-body .post_date {
+  font-size: 13px;
+  margin-bottom: 6px;
+}

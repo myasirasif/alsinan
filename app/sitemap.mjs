@@ -21,7 +21,7 @@ const { seo } = await load("src", "data", "seo.js");
 // Pages whose structured data has no dateModified. Bump the date here when
 // one of these pages changes, or the sitemap keeps telling Google it has not.
 const LASTMOD = {
-  "/services/": "2025-10-22T03:00:34+00:00",
+  "/services/": "2026-10-05T00:00:00+00:00",
   "/our-fleet/": "2025-10-23T06:42:40+00:00",
   "/blogs/": "2026-01-08T01:48:07+00:00",
   "/privacy-policy/": "2026-01-30T03:10:09+00:00",

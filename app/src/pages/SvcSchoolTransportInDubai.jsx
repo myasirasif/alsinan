@@ -171,36 +171,36 @@ export default function SvcSchoolTransportInDubai() {
       <div className="row justify-content-between g-4">
       <div className="col-lg-6">
       <div className="service_area_box">
-      <h3>Jabal Ali Industrial Area 1 &amp; 2</h3>
-      <p>Factories, warehouses and business parks across both zones.</p>
+      <h3>Across Dubai</h3>
+      <p>Home-to-school routes with fixed pickup points, planned around each school’s start and finish times.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
       <div className="col-lg-6">
       <div className="service_area_box">
-      <h3>Jabal Ali Free Zone (JAFZA)</h3>
-      <p>One of the region’s largest free zones, on Dubai’s western edge.</p>
+      <h3>Sharjah and the Northern Emirates</h3>
+      <p>Cross-emirate runs for families living outside Dubai, with earlier pickups built into the schedule.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
       <div className="col-lg-6">
       <div className="service_area_box">
-      <h3>Dubai Industrial City (DIC)</h3>
-      <p>Manufacturing and logistics sites in Dubai’s south, with staff accommodation close by.</p>
+      <h3>Abu Dhabi and intercity</h3>
+      <p>Longer daily routes and transfers between emirates for boarding and campus schedules.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
       <div className="col-lg-6">
       <div className="service_area_box">
-      <h3>Across Dubai and the wider UAE</h3>
-      <p>Intercity runs and long-distance work beyond the emirate.</p>
+      <h3>Trips and excursions</h3>
+      <p>One-off buses for school events, sports fixtures and day trips, separate from the daily route.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
       </div>
       <div className="row">
       <div className="col-12">
-      <p className="svc_areas_note">Somewhere else in the UAE? Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
+      <p className="svc_areas_note">Somewhere else? Tell us the school and the pickup area, and we will confirm whether we already run a route nearby.</p>
       </div>
       </div>
       </div>

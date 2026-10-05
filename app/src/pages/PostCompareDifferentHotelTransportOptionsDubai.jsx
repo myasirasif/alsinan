@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import PostDate from "../components/PostDate";
 
 export default function PostCompareDifferentHotelTransportOptionsDubai() {
   useThemeScripts([]);
@@ -20,6 +21,7 @@ export default function PostCompareDifferentHotelTransportOptionsDubai() {
       <div className="content_banner text-center">
       <span className="h1_head">Blogs</span>
       <h1>Compare Different Hotel Transport Options for Visitors Traveling Between City Areas</h1>
+      <PostDate route="/compare-different-hotel-transport-options-dubai/" />
       </div>
       </div>
       </div>

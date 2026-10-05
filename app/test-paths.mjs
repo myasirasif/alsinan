@@ -56,6 +56,32 @@ const buildSrc = fs.readFileSync(path.join(dir, "build.mjs"), "utf8");
 check("build.mjs uses the Vite JS API, not a spawned path",
   buildSrc.includes('from "vite"') && !buildSrc.includes("vite/bin/vite.js"));
 
+// 4. postDates.js duplicates datePublished from jsonld.js, because jsonld.js is
+// deliberately kept out of the client bundle and the pages need the date at
+// render time. Two copies drift, so the build fails when they disagree.
+const { jsonld } = await import("./src/data/jsonld.js");
+const { bodyClasses } = await import("./src/data/bodyClasses.js");
+const { postDates } = await import("./src/data/postDates.js");
+
+const schemaDates = {};
+for (const [route, classes] of Object.entries(bodyClasses)) {
+  if (!classes.split(/\s+/).includes("single-post")) continue;
+  for (const block of jsonld[route] || []) {
+    for (const node of JSON.parse(block)["@graph"] || []) {
+      if (node["@type"] === "BlogPosting" && node.datePublished) schemaDates[route] = node.datePublished;
+    }
+  }
+}
+
+check("every post has a date in postDates.js",
+  Object.keys(schemaDates).every((r) => postDates[r]),
+  `${Object.keys(schemaDates).length} posts, ${Object.keys(postDates).length} dates`);
+
+for (const [route, iso] of Object.entries(schemaDates)) {
+  check(`postDates matches schema: ${route}`, postDates[route] === iso,
+    postDates[route] === iso ? iso : `${postDates[route]} vs ${iso}`);
+}
+
 const failed = results.filter((r) => !r.ok);
 console.log(`\n${results.length - failed.length}/${results.length} checks passed`);
 process.exit(failed.length ? 1 : 0);

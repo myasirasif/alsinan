@@ -56,6 +56,9 @@ export default function SvcBusRentalDubai() {
       <div className="container py-5">
       <div className="row">
       <div className="col-lg-8">
+      <div className="post-thumbnail service_thumbnail mb-4">
+      <img width="1280" height="960" src="/wp-content/uploads/2025/10/coaster.jpg" className="img-fluid rounded wp-post-image" alt="Ashok Leyland coach with a Dubai number plate from the Alsinan Transport bus rental fleet" decoding="async" sizes="(max-width: 960px) 100vw, 960px" />
+      </div>
       <div className="post-content bus-rental-content">
       <style>{`.bus-rental-content h2{font-size:clamp(26px,3vw,34px);line-height:1.25;margin:44px 0 16px}.bus-rental-content h3{font-size:22px;font-weight:600;margin:26px 0 8px}.bus-rental-content .h5{font-size:19px}.bus-rental-content ul,.bus-rental-content ol{margin:0 0 20px;padding-left:22px}.bus-rental-content li,.bus-rental-content td,.bus-rental-content th{font-family:Poppins,sans-serif;font-size:16px;line-height:26px}.bus-rental-content li{margin-bottom:10px;padding-left:4px}.bus-rental-content li::marker{color:#dd0a1b;font-weight:700}.bus-rental-content th,.bus-rental-content td{padding:12px 14px}.bus-rental-content th{font-weight:600}.bus-rental-content p a:not(.btn){color:#dd0a1b;font-weight:600;text-decoration:none;white-space:nowrap}.bus-rental-content p a:not(.btn):hover{text-decoration:underline}`}</style>
       <p>Need to move 15 people or 150? Alsinan Passengers Transport offers bus rental in Dubai with a licensed driver, fuel and insurance included. Book a minibus for a family trip, a Coaster for daily staff runs, or a 50 seater coach for a company event. We run 24/7, and one call or WhatsApp is enough to get a quote.</p>

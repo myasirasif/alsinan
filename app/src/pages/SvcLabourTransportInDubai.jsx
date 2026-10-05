@@ -46,6 +46,9 @@ export default function SvcLabourTransportInDubai() {
       <div className="container py-5">
       <div className="row">
       <div className="col-lg-8">
+      <div className="post-thumbnail service_thumbnail mb-4">
+      <img width="1024" height="683" src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" className="img-fluid rounded wp-post-image" alt="Toyota Coaster carrying workers on a Dubai road during a daily labour transport run" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-300x200.jpg 300w, /wp-content/uploads/2025/10/staff-transport-op-768x512.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />
+      </div>
       <div className="post-content bus-rental-content">
       <style>{`.bus-rental-content h2{font-size:clamp(26px,3vw,34px);line-height:1.25;margin:44px 0 16px}.bus-rental-content h3{font-size:22px;font-weight:600;margin:26px 0 8px}.bus-rental-content .h5{font-size:19px}.bus-rental-content ul,.bus-rental-content ol{margin:0 0 20px;padding-left:22px}.bus-rental-content li{font-family:Poppins,sans-serif;font-size:16px;line-height:26px;margin-bottom:10px;padding-left:4px}.bus-rental-content li::marker{color:#dd0a1b;font-weight:700}.bus-rental-content p a:not(.btn){color:#dd0a1b;font-weight:600;text-decoration:none;white-space:nowrap}.bus-rental-content p a:not(.btn):hover{text-decoration:underline}`}</style>
       <p>Getting a crew from the accommodation to the site on time, every day, is one of the hardest parts of running a project in Dubai. Alsinan Passengers Transport runs daily labour transport for construction companies, contractors, facilities firms and factories, with licensed drivers and air-conditioned vehicles, so your workers arrive on time and your supervisors stop chasing transport.</p>

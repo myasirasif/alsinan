@@ -3,6 +3,7 @@ import Seo from "../components/Seo";
 import ContactForm from "../components/ContactForm";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import PostDate from "../components/PostDate";
 
 export default function PostWhatToThinkAboutBeforeTravelingToDubai() {
   useThemeScripts([]);
@@ -20,6 +21,7 @@ export default function PostWhatToThinkAboutBeforeTravelingToDubai() {
       <div className="content_banner text-center">
       <span className="h1_head">Blogs</span>
       <h1>What to Think About Before Traveling to Dubai</h1>
+      <PostDate route="/what-to-think-about-before-traveling-to-dubai/" />
       </div>
       </div>
       </div>

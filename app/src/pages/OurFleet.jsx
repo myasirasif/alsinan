@@ -35,7 +35,7 @@ export default function OurFleet() {
                               Our Fleet
                           </span>
       <h2>Fleet for Every Kind of Trip</h2>
-      <p>Need a transport service in Dubai? From quick airport runs to school drops, hotel pickups, or moving a whole team for an event — we’ve got you covered.
+      <p>Need a transport service in Dubai? From quick airport runs to school drops, hotel pickups, or moving a whole team for an event, we’ve got you covered.
       </p>
       </div>
       </div>
@@ -55,7 +55,7 @@ export default function OurFleet() {
       </div>
       <div className="col-lg-6">
       <div className="about_content">
-      <p>Our fleet really does have it all — from compact city cars to roomy Hiace vans for rent in Dubai and full-size coaches. Every ride comes with cool air-conditioning, regular servicing, and a driver who’s licensed and carefully vetted.
+      <p>Our fleet really does have it all, from compact city cars to roomy Hiace vans for rent in Dubai and full-size coaches. Every ride comes with cool air-conditioning, regular servicing, and a driver who’s licensed and carefully vetted.
       </p>
       <p>Looking for something specific? Maybe it’s a simple car rental for a short trip, a passenger van to move your staff, or a bus big enough for a conference crowd. Whatever the plan, we’ll set you up with the right vehicle.
       </p>
@@ -173,7 +173,7 @@ export default function OurFleet() {
       <div className="col-lg-4">
       <div className="service_area_box">
       <h3>Extras That Make Life Easier</h3>
-      <p>Want a little more on the ride? Ask for a chauffeur, GPS, child seats, Wi-Fi, or even a custom route. Hiring is simple — take it by the day, for the month, or just a single trip.</p>
+      <p>Want a little more on the ride? Ask for a chauffeur, GPS, child seats, Wi-Fi, or even a custom route. Hiring is simple: take it by the day, for the month, or just a single trip.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>

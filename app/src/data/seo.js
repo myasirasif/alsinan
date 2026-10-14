@@ -2,7 +2,7 @@
 // Head tags only - the structured data lives in jsonld.js.
 export const seo = {
   "/": {
-    "title": "Transport Services in Dubai | Safe, Affordable Travel",
+    "title": "Transport Company in Dubai | Staff Transport & Bus Rental",
     "meta": [
       {
         "name": "google-site-verification",
@@ -10,7 +10,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Travel Dubai in comfort. Alsinan Transport Services in Dubai provides modern vehicles and expert drivers for staff, private, and tour rentals across the city."
+        "content": "Licensed transport company in Dubai offering staff, school and bus rental transport services with drivers, 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "name": "robots",
@@ -26,11 +26,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Transport Services in Dubai | Safe, Affordable Travel"
+        "content": "Transport Company in Dubai | Staff Transport & Bus Rental"
       },
       {
         "property": "og:description",
-        "content": "Travel Dubai in comfort. Alsinan Transport Services in Dubai provides modern vehicles and expert drivers for staff, private, and tour rentals across the city."
+        "content": "Licensed transport company in Dubai offering staff, school and bus rental transport services with drivers, 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "property": "og:url",
@@ -74,11 +74,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Transport Services in Dubai | Safe, Affordable Travel"
+        "content": "Transport Company in Dubai | Staff Transport & Bus Rental"
       },
       {
         "name": "twitter:description",
-        "content": "Travel Dubai in comfort. Alsinan Transport Services in Dubai provides modern vehicles and expert drivers for staff, private, and tour rentals across the city."
+        "content": "Licensed transport company in Dubai offering staff, school and bus rental transport services with drivers, 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "name": "twitter:image",
@@ -198,7 +198,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/about/"
   },
   "/services/": {
-    "title": "Transport Services We Offer in Dubai | Alsinan",
+    "title": "Transport Services in Dubai | Staff, School & Bus Rental",
     "meta": [
       {
         "name": "google-site-verification",
@@ -206,7 +206,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "From business trips to daily commutes, our modern fleet and skilled drivers make every journey safe, convenient, and reliable."
+        "content": "Licensed transport services in Dubai for staff, schools, hotels and airports. Buses, vans and cars with drivers, 24/7 across all 7 emirates."
       },
       {
         "name": "robots",
@@ -222,11 +222,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Transport Services We Offer in Dubai | Alsinan"
+        "content": "Transport Services in Dubai | Staff, School & Bus Rental"
       },
       {
         "property": "og:description",
-        "content": "From business trips to daily commutes, our modern fleet and skilled drivers make every journey safe, convenient, and reliable."
+        "content": "Licensed transport services in Dubai for staff, schools, hotels and airports. Buses, vans and cars with drivers, 24/7 across all 7 emirates."
       },
       {
         "property": "og:url",
@@ -270,11 +270,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Transport Services We Offer in Dubai | Alsinan"
+        "content": "Transport Services in Dubai | Staff, School & Bus Rental"
       },
       {
         "name": "twitter:description",
-        "content": "From business trips to daily commutes, our modern fleet and skilled drivers make every journey safe, convenient, and reliable."
+        "content": "Licensed transport services in Dubai for staff, schools, hotels and airports. Buses, vans and cars with drivers, 24/7 across all 7 emirates."
       },
       {
         "name": "twitter:image",
@@ -768,7 +768,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/thank-you/"
   },
   "/contact-us/": {
-    "title": "Contact Alsinan Transport | Book Reliable Transport in Dubai",
+    "title": "Contact Alsinan | Transport Company in Dubai",
     "meta": [
       {
         "name": "google-site-verification",
@@ -776,7 +776,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
+        "content": "Talk to a licensed transport company in Dubai about staff, school or bus rental. Available 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "name": "robots",
@@ -792,11 +792,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Contact Alsinan Transport | Book Reliable Transport in Dubai"
+        "content": "Contact Alsinan | Transport Company in Dubai"
       },
       {
         "property": "og:description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
+        "content": "Talk to a licensed transport company in Dubai about staff, school or bus rental. Available 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "property": "og:url",
@@ -840,11 +840,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Contact Alsinan Transport | Book Reliable Transport in Dubai"
+        "content": "Contact Alsinan | Transport Company in Dubai"
       },
       {
         "name": "twitter:description",
-        "content": "Need safe & comfortable transport in Dubai? Contact Alsinan Transport today. Call +971 55 525 2397 or message us for quick assistance."
+        "content": "Talk to a licensed transport company in Dubai about staff, school or bus rental. Available 24/7 across all 7 emirates. Call +971 55 525 2397."
       },
       {
         "name": "twitter:image",
@@ -1144,7 +1144,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/terms-and-conditions/"
   },
   "/services/school-transport-in-dubai/": {
-    "title": "School Transport Dubai | Licensed Drivers, On-Time Runs",
+    "title": "School Bus Transport in Dubai | Private School Transport",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1152,7 +1152,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
+        "content": "Private school bus transport in Dubai with licensed, screened drivers and fixed daily routes across all 7 emirates. Call +971 55 525 2397 for a free quote."
       },
       {
         "name": "robots",
@@ -1168,11 +1168,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "School Transport Dubai | Licensed Drivers, On-Time Runs"
+        "content": "School Bus Transport in Dubai | Private School Transport"
       },
       {
         "property": "og:description",
-        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
+        "content": "Private school bus transport in Dubai with licensed, screened drivers and fixed daily routes across all 7 emirates. Call +971 55 525 2397 for a free quote."
       },
       {
         "property": "og:url",
@@ -1216,11 +1216,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "School Transport Dubai | Licensed Drivers, On-Time Runs"
+        "content": "School Bus Transport in Dubai | Private School Transport"
       },
       {
         "name": "twitter:description",
-        "content": "Daily school transport in Dubai with licensed, screened drivers and fixed routes. Call +971 55 525 2397 for a quote."
+        "content": "Private school bus transport in Dubai with licensed, screened drivers and fixed daily routes across all 7 emirates. Call +971 55 525 2397 for a free quote."
       },
       {
         "name": "twitter:image",
@@ -1402,7 +1402,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/services/private-car-rental-in-dubai/"
   },
   "/services/staff-transport-in-dubai/": {
-    "title": "Staff Transport Dubai | Fixed Routes for Your Shift Times",
+    "title": "Staff Transport in Dubai | Employee & Office Bus Service",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1410,7 +1410,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
+        "content": "Licensed staff and employee transport in Dubai. Fixed routes around your shift timings, 24/7 across all 7 emirates. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "robots",
@@ -1426,11 +1426,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Staff Transport Dubai | Fixed Routes for Your Shift Times"
+        "content": "Staff Transport in Dubai | Employee & Office Bus Service"
       },
       {
         "property": "og:description",
-        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
+        "content": "Licensed staff and employee transport in Dubai. Fixed routes around your shift timings, 24/7 across all 7 emirates. Call +971 55 525 2397 for a quote."
       },
       {
         "property": "og:url",
@@ -1474,11 +1474,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Staff Transport Dubai | Fixed Routes for Your Shift Times"
+        "content": "Staff Transport in Dubai | Employee & Office Bus Service"
       },
       {
         "name": "twitter:description",
-        "content": "Staff transport in Dubai on monthly contracts, with routes planned around your shift timings. Call +971 55 525 2397 for a quote."
+        "content": "Licensed staff and employee transport in Dubai. Fixed routes around your shift timings, 24/7 across all 7 emirates. Call +971 55 525 2397 for a quote."
       },
       {
         "name": "twitter:image",

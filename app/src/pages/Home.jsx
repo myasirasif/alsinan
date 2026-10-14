@@ -52,7 +52,7 @@ export default function Home() {
         <div className="about_content">
       <span className="sub_head">About Us</span>
       <h2>We Make Your Trips Comfortable; Every Time</h2>
-      <p>Alsinan Transport is based in Dubai, and that matters because timing is everything here. In this city, the biggest challenge is not finding a vehicle. It is making sure it arrives on time. One traffic issue, a delayed flight or a late school pickup can easily affect an entire day.</p>
+      <p>Alsinan Transport is a licensed passenger transport company in Dubai, and being based here matters because timing is everything in this city. In this city, the biggest challenge is not finding a vehicle. It is making sure it arrives on time. One traffic issue, a delayed flight or a late school pickup can easily affect an entire day.</p>
       <p>That is where we come in. People come to us because they want <Link to="/services/">Transport Services in Dubai</Link> that work the right way. They want staff routes that leave on time. School buses that follow fixed routines. Airport pickups that adjust to real flight timings. Private trips that do not require constant calling and chasing drivers.</p>
       <p>We operate cars, Hiace vans, minibuses and full size coaches. Every vehicle is cleaned, checked and kept ready for daily use. Our drivers understand the areas they handle including industrial zones, residential communities, airports, hotels and schools. For us, school schedules, airport transfers and staff commutes are not occasional work. They are our everyday responsibility.</p>
       <p>Where many operators focus on short term jobs, our Transport Rental Services in Dubai are built for long term dependability. We manage ongoing staff transport, regular school routes and consistent group travel requirements. Routes can be refined when your needs change. Pricing stays clear and practical. And when plans shift, someone from our team supports you instead of leaving you stuck.</p>
@@ -70,33 +70,43 @@ export default function Home() {
       <h3>School Bus Rental in Dubai</h3>
       <p>School transport depends on routine. Routes are planned, timings are fixed and punctuality matters. <b><Link target="_blank" to="/services/school-transport-in-dubai/">Our school bus rental in Dubai</Link></b> is built around organised schedules, reliable pickup and drop timings and trained drivers who understand school safety expectations. For smaller setups, we also arrange minibuses with drivers so you get what suits your student numbers.
       </p>
-      <Link to="/services/school-transport-in-dubai/">Read more</Link>
+      <Link to="/services/school-transport-in-dubai/">More on school bus transport in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Airport Car Rental in Dubai</h3>
       <p>Flights do not always follow fixed timing. Delays and changes happen. Our <Link target="_blank" to="/services/airport-transport-in-dubai/">airport related rental transport in Dubai</Link> supports pickups and drop offs across the UAE including early mornings and late nights. Drivers monitor flight updates and adjust where possible so passengers are not left waiting.
       </p>
-      <Link to="/services/airport-transport-in-dubai/">Read more</Link>
+      <Link to="/services/airport-transport-in-dubai/">More on airport transport in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Hotel Transfers</h3>
       <p>Hotels run continuously. Guests arrive and leave at all hours. Our <Link target="_blank" to="/services/hotel-transport-service-in-dubai/">hotel transfer services</Link> blend naturally with that routine. Vehicles reach on time, luggage is handled carefully and guests travel comfortably between airports, hotels, venues and attractions. Transport supports hotel operations instead of complicating them.</p>
-      <Link to="/services/hotel-transport-service-in-dubai/">Read more</Link>
+      <Link to="/services/hotel-transport-service-in-dubai/">More on hotel transport in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Staff Transport Services</h3>
       <p>Different businesses need different staff movement solutions. Offices, factories, construction sites and shifting workforce schedules all require planning. We handle small teams to large groups using cars, vans, minibuses and buses. Routes are created using real traffic understanding. For companies seeking <Link target="_blank" to="/services/staff-transport-in-dubai/">reliable corporate Transport Rental Services in Dubai</Link>, we manage fixed monthly systems that keep running smoothly.</p>
-      <Link to="/services/staff-transport-in-dubai/">Read more</Link>
+      <Link to="/services/staff-transport-in-dubai/">More on staff transport in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Car Rental in Dubai for Private Travellers</h3>
       <p>Some travellers want premium comfort while others need something simple and dependable. We provide both luxury and budget friendly options with clear pricing. Whether it is personal travel, a family outing or business meetings, you get the vehicle suited to your plan with or without a driver.</p>
-      <Link to="/services/private-car-rental-in-dubai/">Read more</Link>
+      <Link to="/services/private-car-rental-in-dubai/">More on private car rental in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Car Booking in Dubai for Tours & Excursions</h3>
       <p>Tours do not always stay rigid. Plans often change. Our tour friendly transport services in Dubai provide flexibility so your day flows at your pace instead of forcing you to follow strict timings.</p>
-      <Link to="/services/dubai-tours-transport-services/">Read more</Link>
+      <Link to="/services/dubai-tours-transport-services/">More on tours and excursions transport</Link>
+        </ServiceBox>
+        <ServiceBox col="6">
+      <h3>Bus Rental in Dubai</h3>
+      <p>Minibuses, Coasters and full size coaches with a licensed driver, for staff runs, school events, conferences and airport groups. Tell us the headcount and we will suggest the right size.</p>
+      <Link to="/services/bus-rental-dubai/">More on bus rental in Dubai</Link>
+        </ServiceBox>
+        <ServiceBox col="6">
+      <h3>Labour Transport in Dubai</h3>
+      <p>Daily runs between labour accommodation and site, planned around shift changes and site access rules, on monthly contracts for contractors and facilities teams.</p>
+      <Link to="/services/labour-transport-in-dubai/">More on labour transport in Dubai</Link>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Flexible Packages</h3>
@@ -298,7 +308,7 @@ export default function Home() {
       </h2>
       <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
       <div className="accordion-body">
-                      Yes. All drivers are RTA-licensed and cleared to operate professionally. Most of them handle the same types of routes regularly—staff transport, school runs, airport pickups, so they’re familiar with how those trips usually go.
+                      Yes. All drivers are RTA-licensed and cleared to operate professionally. Most of them handle the same types of routes regularly: staff transport, school runs, airport pickups, so they’re familiar with how those trips usually go.
                     </div>
       </div>
       </div>

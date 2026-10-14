@@ -4,7 +4,7 @@
  * the seam between them.
  *
  * `tone` picks the ground. "day" is a warm sand band; "night" is near-black.
- * The page's own rhythm is the reason this is a choice rather than a constant —
+ * The page's own rhythm is the reason this is a choice rather than a constant.
  * the banner directly above is a dark photograph, and the fleet section further
  * down is already the page's dark moment.
  *

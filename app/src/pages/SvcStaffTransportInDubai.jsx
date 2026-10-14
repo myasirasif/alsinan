@@ -43,6 +43,7 @@ export default function SvcStaffTransportInDubai() {
       <h3>Services</h3>
       <h2>For Staff</h2>
       <h1 className="wp-block-heading"><strong><strong><strong>Dependable Staff Transport in Dubai</strong></strong></strong></h1>
+      <p>Alsinan Transport provides staff transport, employee transport and corporate transport in Dubai on fixed daily routes, with licensed drivers and vehicles sized to your headcount. We operate 24/7 across all seven emirates.</p>
       <p>Getting your employees to work on time should not feel like a daily struggle. At Alsinan Transport, we organise staff transport in Dubai in a way that keeps it safe, reliable and easy to manage. Whether it is daily office commuting, regular inter office movement, team travel for training sessions, corporate events or planned outings, we build transport plans that match how your company actually operates.</p>
       <p>If you need flexible van rental in Dubai for a small team or a structured corporate transport in Dubai for multiple departments, our focus remains simple. Your employees travel comfortably, reach safely and arrive on time. When commuting is managed properly, staff can focus on what truly matters, which is their work.</p>
       <Link className="btn btn-primary" to="/contact-us/">Book Now</Link>
@@ -51,6 +52,43 @@ export default function SvcStaffTransportInDubai() {
       </div>
       </div>
       </div>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <span className="sub_head">Who We Serve</span>
+      <h2>Who Our Staff Transport Is For</h2>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Corporate offices</h3>
+      <p>Office teams on fixed working hours, moving between residential areas and the workplace on one or two daily routes.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Construction and labour crews</h3>
+      <p>Daily runs between labour accommodation and site, planned around shift changes and site access rules. See our <Link to="/services/labour-transport-in-dubai/">labour transport in Dubai</Link> service.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Hotels and hospitality staff</h3>
+      <p>Round the clock shift cover for hotel teams, including late finishes and early starts that public transport does not reach.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Events and one off movements</h3>
+      <p>Conferences, company days and site visits where a group needs moving together. Larger groups can use our <Link to="/services/bus-rental-dubai/">bus rental in Dubai</Link>.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
 
       <WhyChoose
         variant="ledger"
@@ -103,14 +141,17 @@ export default function SvcStaffTransportInDubai() {
       <h2>Our Fleet for Staff Transport</h2></>}>
         <ServiceBox col="6">
       <h3>Vans for Small Teams</h3>
+      {/* HOLD: awaiting client confirmation: <p>Typically up to fourteen seats, suitable for small teams and fixed shuttle routes.</p> */}
       <p><span style={{ fontWeight: "400" }}>Our vans are suitable for smaller teams and fixed shuttle routes. They provide comfortable seating, space for personal belongings and a calm start and end to the workday. These vans work especially well for field teams, project staff and companies starting structured staff transport in Dubai.</span></p>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Minibuses for Medium Groups</h3>
+      <p>Coaster and minibus sizes for medium teams and regular inter office movement. </p>
       <p><span style={{ fontWeight: "400" }}>Minibuses suit medium sized teams and regular inter office movement. They offer additional seating, easy boarding and a practical option for routine travel. Employees arrive together and do not need to depend on separate rides which keeps coordination simple.</span></p>
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Buses for Large Teams</h3>
+      {/* HOLD: awaiting client confirmation: <p>Full size buses up to fifty seats for large departments and whole site movements.</p> */}
       <p><span style={{ fontWeight: "400" }}>For bigger departments, large offices or full company travel, our buses are an ideal solution. They provide fully air conditioned interiors, comfortable seating and a safe, stable journey for daily movement, events or company gatherings. For businesses needing dependable high capacity corporate transport in Dubai, these vehicles keep travel organised and comfortable. Every vehicle is cleaned, serviced and inspected regularly so staff can rely on it every single day.</span></p>
         </ServiceBox>
         <ServiceBox col="6">
@@ -118,6 +159,57 @@ export default function SvcStaffTransportInDubai() {
       <p><span style={{ fontWeight: "400" }}>Safety remains central to our operations. We follow Dubai transport regulations closely and apply strict internal standards. Vehicles go through routine inspections and preventive maintenance. Drivers receive training focused on safety, courtesy and professional behaviour. Approved routes and traffic rules are followed responsibly. Clear communication is maintained with company coordinators to align timing and planning correctly. These steps ensure every journey remains secure, dependable and calm.</span></p>
         </ServiceBox>
       </ServicesSection>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <span className="sub_head">Pricing</span>
+      <h2>What Affects Your Quote</h2>
+      <p>Every staff transport contract is priced on its own route, so there is no single rate. These are the things that move the number up or down.</p>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Number of employees</h3>
+      <p>How many people travel decides the vehicle size, and whether one route is enough or the group needs splitting.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Route distance</h3>
+      <p>How far the vehicle runs each day, and how far apart the pickup areas sit from the drop-off point.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Shift timings</h3>
+      <p>Night shifts, rotating shifts and split timings need different planning from a single morning and evening run.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Contract length</h3>
+      <p>A monthly or longer contract is planned differently from a short arrangement or a one off booking.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Vehicle type</h3>
+      <p>A van, a minibus and a full size bus each carry a different cost to run. See the <Link to="/our-fleet/">full fleet</Link> for what is available.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Get a quote</h3>
+      <p>Send us your headcount, pickup areas, drop-off location and shift timings and we will come back with a plan and a free quote.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Get a quote</Link>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
 
 
       <section className="services_area_section thre-epoints-section">
@@ -128,12 +220,14 @@ export default function SvcStaffTransportInDubai() {
       <div className="col-lg-4">
       <div className="service_area_box">
       <h3>How It Works</h3>
-      <h3><span style={{ fontWeight: "400" }}>Share Your Requirements</span></h3>
-      <p><span style={{ fontWeight: "400" }}>Tell us your pickup and drop locations, staff strength, work shifts and any special requirements such as multiple routes, separate timings or event related travel.</span></p>
-      <h3><span style={{ fontWeight: "400" }}>Choose Your Vehicle</span></h3>
-      <p><span style={{ fontWeight: "400" }}>Select from vans, minibuses or buses based on your staffing and travel needs. Our team helps you choose the most efficient and suitable option.</span></p>
-      <h3><span style={{ fontWeight: "400" }}>Confirm and Go</span></h3>
-      <p><span style={{ fontWeight: "400" }}>We confirm schedules and pricing clearly and put your routes into operation. From there, your daily commute runs according to a planned system rather than last minute arrangements.</span></p>
+      <h3><span style={{ fontWeight: "400" }}>1. Enquiry</span></h3>
+      <p><span style={{ fontWeight: "400" }}>Tell us your headcount, the areas your staff travel from, the drop-off location and your shift timings. A WhatsApp message or the contact form is enough to start.</span></p>
+      <h3><span style={{ fontWeight: "400" }}>2. Route planning</span></h3>
+      <p><span style={{ fontWeight: "400" }}>We build the route around those pickup points and timings, using real traffic patterns for the areas involved. Where staff live too far apart for one route, we plan more than one.</span></p>
+      <h3><span style={{ fontWeight: "400" }}>3. Vehicle allocation</span></h3>
+      <p><span style={{ fontWeight: "400" }}>We assign the vehicle size that fits the group, from a van to a full size bus, and allocate a licensed driver who stays on that route.</span></p>
+      <h3><span style={{ fontWeight: "400" }}>4. Daily operation</span></h3>
+      <p><span style={{ fontWeight: "400" }}>The route runs to the agreed schedule. When headcount, timings or pickup points change, tell us and we adjust rather than restart.</span></p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
       </div>
@@ -188,7 +282,7 @@ export default function SvcStaffTransportInDubai() {
       </div>
       <div className="col-lg-6">
       <div className="service_area_box">
-      <h3>Across Dubai and the wider UAE</h3>
+      <h3>All seven emirates</h3>
       <p>Intercity runs and long-distance work beyond the emirate.</p>
       <Link className="btn btn-secondary" to="/contact-us/">Book Now</Link>
       </div>
@@ -196,7 +290,7 @@ export default function SvcStaffTransportInDubai() {
       </div>
       <div className="row">
       <div className="col-12">
-      <p className="svc_areas_note">Somewhere else in the UAE? Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
+      <p className="svc_areas_note">We run staff routes in Dubai, Sharjah, Abu Dhabi, Ajman, Fujairah, Ras Al Khaimah and Umm Al Quwain. Tell us the pickup point and we will confirm whether we already run a route nearby.</p>
       </div>
       </div>
       </div>
@@ -227,6 +321,12 @@ export default function SvcStaffTransportInDubai() {
         <p>{a}</p>
         </div>
       ))}
+      <p>Still have a question about staff transport in Dubai? Call us, message us on WhatsApp or send the form and we will get back to you quickly.</p>
+      <a href="tel:+971555252397" className="btn btn-primary">Call +971 55 525 2397</a>
+      {" "}
+      <a href={waLink("/services/staff-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener">WhatsApp Us</a>
+      {" "}
+      <Link className="btn btn-secondary" to="/contact-us/">Get a quote</Link>
       </div>
       </div>
       </div>

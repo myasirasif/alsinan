@@ -42,7 +42,7 @@ export default function Services() {
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Hotel Transfers</h3>
-      <p>Guests, staff, luggage, corporate teams — we move them all. With our rental transport in Dubai, hotel pickups and staff commutes are straightforward. No delays. No hassle.</p>
+      <p>Guests, staff, luggage, corporate teams. We move them all. With our rental transport in Dubai, hotel pickups and staff commutes are straightforward. No delays. No hassle.</p>
       <Link to="/services/hotel-transport-service-in-dubai/">Read more</Link>
         </ServiceBox>
         <ServiceBox col="6">
@@ -65,7 +65,7 @@ export default function Services() {
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Bus Rental in Dubai with Driver</h3>
-      <p>Moving 15 people or 150? Minibuses, Coasters and 50 seater coaches come with a licensed driver, fuel and insurance included. Tell us the headcount and we will suggest the right size — usually cheaper than booking two smaller vans.</p>
+      <p>Moving 15 people or 150? Minibuses, Coasters and 50 seater coaches come with a licensed driver, fuel and insurance included. Tell us the headcount and we will suggest the right size, usually cheaper than booking two smaller vans.</p>
       <Link to="/services/bus-rental-dubai/">Read more</Link>
         </ServiceBox>
         <ServiceBox col="6">
@@ -75,7 +75,7 @@ export default function Services() {
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Flexible Packages</h3>
-      <p>Pick what suits you — daily hires, monthly contracts, or one-off trips. Need regular staff shuttles? Our monthly car rentals in Dubai are a solid choice. Long-term project? Go with van rentals in Dubai for ongoing needs. Pricing is simple. No extras or hidden fees.</p>
+      <p>Pick what suits you: daily hires, monthly contracts, or one-off trips. Need regular staff shuttles? Our monthly car rentals in Dubai are a solid choice. Long-term project? Go with van rentals in Dubai for ongoing needs. Pricing is simple. No extras or hidden fees.</p>
         </ServiceBox>
       </ServicesSection>
 

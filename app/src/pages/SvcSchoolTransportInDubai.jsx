@@ -5,6 +5,7 @@ import { ServicesSection, ServiceBox } from "../components/sections/ServicesSect
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
+import { schoolFaqs } from "../data/schoolFaqs";
 import { waLink } from "../lib/whatsapp";
 
 export default function SvcSchoolTransportInDubai() {
@@ -45,6 +46,7 @@ export default function SvcSchoolTransportInDubai() {
       <h3>Services</h3>
       <h2>For School</h2>
       <h1 className="wp-block-heading"><strong>Safe and Reliable School Transport in Dubai</strong></h1>
+      <p>Alsinan Transport runs school bus transport and private school transport in Dubai on fixed daily routes, with licensed, screened drivers. We operate 24/7 across all seven emirates.</p>
       <p>School mornings in Dubai already start early and get busy very fast. Different timings, changing traffic and constant responsibilities make the start of the day stressful for both parents and schools. This is exactly where Alsinan Transport becomes helpful. Whether daily pickups are required, a quick arrangement is needed, or a sudden school activity is planned, we make sure every child travels safely and comfortably. With our service, students reach school on time, relaxed and prepared for the day, while parents and schools feel confident that transport is fully handled.</p>
       <p>Parents feel more at ease knowing that daily school travel is managed responsibly. Schools feel assured that children and staff will arrive according to schedule. Our drivers do more than just drive. They stay calm, greet students warmly and maintain discipline in a friendly way. Our vehicles are well maintained and suited perfectly for school routes. We manage the difficult side of daily travel so mornings become smoother for everyone involved in School transport in Dubai.</p>
       <Link className="btn btn-primary" to="/contact-us/">Book Now</Link>
@@ -123,6 +125,148 @@ export default function SvcSchoolTransportInDubai() {
       <p><span style={{ fontWeight: "400" }}>Parents and schools deserve complete assurance, not just promises. Our operations follow Dubai school transport regulations and industry best practices. We maintain routine inspections, continuous driver training, approved route planning, sensible speed control and close coordination with school transport teams. These steps make every journey dependable, transparent and well managed.</span></p>
         </ServiceBox>
       </ServicesSection>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <span className="sub_head">Who It Is For</span>
+      <h2>Who We Run School Transport For</h2>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Private schools</h3>
+      <p>Full route coverage for a year group or a whole school, planned around the school's own start and finish times.</p>
+      </div>
+      </div>
+      {/* HOLD: awaiting client confirmation:
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Nurseries and early years</h3>
+      <p>Smaller vehicles and shorter routes for younger children, with supervised boarding and drop off at every stop.</p>
+      </div>
+      </div>
+      */}
+      {/* HOLD: awaiting client confirmation:
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Universities and colleges</h3>
+      <p>Campus runs and shuttle routes for students and staff, including timetables that change between terms.</p>
+      </div>
+      </div>
+      */}
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Parents and parent groups</h3>
+      <p>Families who want a reliable daily seat rather than a school wide contract, including small groups sharing one route.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <span className="sub_head">Routes and Timings</span>
+      <h2>How Routes and Timings Are Planned</h2>
+      <p>A school run only works if it is the same every day. Routes are built once, around your timings, and then left alone unless something changes.</p>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Fixed pickup points</h3>
+      <p>Each route has agreed stops and an agreed time at each one, so parents know when to be there and children are not left waiting.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Built around school hours</h3>
+      <p>Morning and afternoon runs are planned backwards from the school's start and finish times, with real traffic patterns for the areas involved.</p>
+      </div>
+      </div>
+      {/* HOLD: awaiting client confirmation:
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>The same driver each day</h3>
+      <p>Wherever possible a route keeps the same driver, so children travel with someone familiar and the school deals with one point of contact.</p>
+      </div>
+      </div>
+      */}
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Changes mid term</h3>
+      <p>New joiners, a changed finish time or an added stop are handled by adjusting the existing route rather than rebuilding it.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-12">
+      <span className="sub_head">Pricing</span>
+      <h2>What Affects Your Quote</h2>
+      <p>Every school route is priced on its own, so there is no single rate. These are the things that move the number up or down.</p>
+      </div>
+      </div>
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Number of children</h3>
+      <p>How many children travel decides the vehicle size, and whether one route is enough or the group needs splitting.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Route distance and stops</h3>
+      <p>How far the route runs each day and how many pickup points it takes in before reaching the school.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>School timings</h3>
+      <p>Staggered finish times, after school activities and split timings need different planning from a single morning and afternoon run.</p>
+      </div>
+      </div>
+      <div className="col-lg-6">
+      <div className="service_area_box">
+      <h3>Contract length and vehicle</h3>
+      <p>A full term arrangement is planned differently from a short one, and a van, a minibus and a full size bus each cost a different amount to run. See the <Link to="/our-fleet/">full fleet</Link>.</p>
+      <Link className="btn btn-secondary" to="/contact-us/">Get a quote</Link>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+
+      <section className="services_area_section">
+      <div className="container">
+      <div className="row">
+      <div className="col-lg-8">
+      <h2>School Transport FAQs</h2>
+      {schoolFaqs.map(([q, a]) => (
+        <div key={q}>
+        <h3>{q}</h3>
+        <p>{a}</p>
+        </div>
+      ))}
+      <p>Still have a question about school transport in Dubai? Call us, message us on WhatsApp or send the form and we will get back to you quickly.</p>
+      <a href="tel:+971555252397" className="btn btn-primary">Call +971 55 525 2397</a>
+      {" "}
+      <a href={waLink("/services/school-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener">WhatsApp Us</a>
+      {" "}
+      <Link className="btn btn-secondary" to="/contact-us/">Get a quote</Link>
+      </div>
+      </div>
+      </div>
+      </section>
 
 
       <section className="services_area_section thre-epoints-section">

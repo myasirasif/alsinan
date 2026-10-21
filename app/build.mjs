@@ -25,5 +25,8 @@ await build({
 console.log("\n> prerender");
 await import("./prerender.mjs");
 
+console.log("\n> hash assets");
+await import("./hash-assets.mjs");
+
 console.log("\n> sitemap");
 await import("./sitemap.mjs");

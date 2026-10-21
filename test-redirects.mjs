@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { pathToRegexp } from "path-to-regexp";
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
+const repoDist = path.join(dir, "app", "dist");
 const cfg = JSON.parse(fs.readFileSync(path.join(dir, "app", "vercel.json"), "utf8"));
 
 // every legacy URL that must end up redirected, in the trailing-slash form
@@ -69,6 +70,40 @@ for (const p of MUST_REDIRECT) {
 for (const p of MUST_NOT_REDIRECT) {
   const m = match(p);
   check(`left alone: ${p}`, !m, m ? `WRONGLY caught by ${m.src}` : "");
+}
+
+// Cache headers. The theme CSS and JS keep stable names in the repo and get a
+// content hash at build time, because they were served immutable for a year
+// under names that never changed and so no CSS change ever reached a returning
+// visitor. Two things have to stay true: every file the build emits matches the
+// hashed rule and is cached hard, and anything unhashed falls through to a rule
+// that revalidates.
+const headerRules = cfg.headers
+  .filter((h) => h.source.startsWith("/assets/"))
+  .map((h) => ({ src: h.source, value: h.headers[0].value, re: pathToRegexp(h.source, [], { strict: true }) }));
+const headerFor = (p) => headerRules.find((r) => r.re.test(p));
+
+const distAssets = (sub) => {
+  const dir = path.join(repoDist, "assets", sub);
+  return fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter((f) => f.endsWith("." + sub)).map((f) => `/assets/${sub}/${f}`)
+    : [];
+};
+
+const built = [...distAssets("css"), ...distAssets("js")];
+if (built.length) {
+  const unhashed = built.filter((p) => !/\.[0-9a-f]{8}\.(css|js)$/.test(p));
+  check("every built theme asset carries a content hash", unhashed.length === 0,
+    unhashed.length ? unhashed.join(", ") : `${built.length} files`);
+
+  const notImmutable = built.filter((p) => !(headerFor(p) || {}).value?.includes("immutable"));
+  check("hashed assets are cached immutably", notImmutable.length === 0, notImmutable.join(", "));
+}
+
+for (const p of ["/assets/css/styles.css", "/assets/js/script.js", "/assets/css/fonts/slick.woff"]) {
+  const h = headerFor(p);
+  check(`unhashed ${p} revalidates`, !!h && h.value.includes("must-revalidate"),
+    h ? h.value : "no rule matches");
 }
 
 const failed = results.filter((r) => !r).length;

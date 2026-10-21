@@ -82,10 +82,10 @@ export default function Footer() {
     </div>
     <div className="col-lg-6 text-end"><p className="mb-0 site_credit">Design and developed with <span className="site_credit__heart">&#9829;</span> by <a href="https://yasirafridi.dev/" target="_blank" rel="noopener">Yasir</a></p>
     <div className="footer_call_btn">
-    <a href="tel:+971555252397" className="btn btn-primary" target="_blank"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /></a>
+    <a href="tel:+971555252397" className="btn btn-primary" aria-label="Call Alsinan Transport"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_ph.svg" alt="" width="19" height="19" /></a>
     </div>
     <div className="footer_btn">
-    <a href={waLink(pathname)} className="btn btn-primary" target="_blank"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /></a>
+    <a href={waLink(pathname)} className="btn btn-primary" target="_blank" rel="noopener" aria-label="Message Alsinan Transport on WhatsApp"><img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /></a>
     </div>
     </div>
     </div>

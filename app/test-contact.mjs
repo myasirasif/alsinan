@@ -35,8 +35,7 @@ const check = (name, ok, detail = "") => {
 };
 
 const valid = {
-  firstName: "Yasir",
-  lastName: "Asif",
+  name: "Yasir Asif",
   email: "yasir@example.com",
   phone: "+971555252397",
   message: "Need a Hiace for staff transport, Jabal Ali route.",
@@ -52,7 +51,7 @@ check("GET is rejected", r.statusCode === 405, `got ${r.statusCode}`);
 // missing fields
 r = await call({}, { ip: "10.0.0.1" });
 check("empty submission returns field errors",
-  r.statusCode === 400 && r.body.errors.firstName && r.body.errors.email &&
+  r.statusCode === 400 && r.body.errors.name && r.body.errors.email &&
   r.body.errors.phone && r.body.errors.message,
   JSON.stringify(r.body.errors));
 
@@ -62,9 +61,23 @@ check("invalid email rejected", r.statusCode === 400 && !!r.body.errors.email);
 
 // honeypot
 sentPayload = null;
-r = await call({ ...valid, company: "spam-bot" }, { ip: "10.0.0.3" });
+r = await call({ ...valid, website: "spam-bot" }, { ip: "10.0.0.3" });
 check("honeypot silently accepted, nothing sent",
   r.statusCode === 200 && r.body.ok === true && sentPayload === null);
+
+// company is a real field now, not the trap: an enquiry naming one must go out
+sentPayload = null;
+r = await call({ ...valid, company: "Acme Contracting LLC" }, { ip: "10.0.0.31" });
+check("a named company is a real enquiry, not a bot",
+  r.statusCode === 200 && r.body.ok === true && sentPayload !== null &&
+  sentPayload.text.includes("Acme Contracting LLC"),
+  sentPayload ? "sent" : "DROPPED as spam");
+
+// company is optional
+sentPayload = null;
+const { company: _omit, ...noCompany } = { ...valid, company: "" };
+r = await call(noCompany, { ip: "10.0.0.32" });
+check("company is optional", r.statusCode === 200 && r.body.ok === true && sentPayload !== null);
 
 // happy path
 sentPayload = null;
@@ -82,7 +95,7 @@ check("message body included", sentPayload?.html?.includes("Jabal Ali"));
 
 // html injection must not survive into the email
 sentPayload = null;
-await call({ ...valid, firstName: "<script>alert(1)</script>", message: "<img onerror=x>" },
+await call({ ...valid, name: "<script>alert(1)</script>", message: "<img onerror=x>" },
   { ip: "10.0.0.5" });
 check("html in input is escaped",
   !sentPayload.html.includes("<script>") && !sentPayload.html.includes("<img onerror"),

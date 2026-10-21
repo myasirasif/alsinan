@@ -17,7 +17,7 @@ const fromAddress = () =>
   process.env.CONTACT_FROM_EMAIL || "Alsinan Website <noreply@alsinantransport.com>";
 const recaptchaSecret = () => process.env.RECAPTCHA_SECRET_KEY;
 
-const LIMITS = { name: 120, email: 200, phone: 40, message: 2000, page: 300 };
+const LIMITS = { name: 240, email: 200, phone: 40, company: 160, message: 2000, page: 300 };
 
 // Best-effort burst protection. Serverless instances are recycled, so this
 // slows down a hammering client rather than enforcing a hard global quota.
@@ -78,8 +78,9 @@ export default async function handler(req, res) {
     req.socket?.remoteAddress ||
     "unknown";
 
-  // hidden field a human never sees, so anything in it is a bot
-  if (clean(body.company, 50)) {
+  // hidden field a human never sees, so anything in it is a bot. It used to be
+  // called "company"; that is a real, optional field now, so the trap moved.
+  if (clean(body.website, 50)) {
     return res.status(200).json({ ok: true });
   }
 
@@ -87,15 +88,15 @@ export default async function handler(req, res) {
     return res.status(429).json({ ok: false, error: "Too many messages. Please try again later." });
   }
 
-  const firstName = clean(body.firstName, LIMITS.name);
-  const lastName = clean(body.lastName, LIMITS.name);
+  const name = clean(body.name, LIMITS.name);
   const email = clean(body.email, LIMITS.email);
   const phone = clean(body.phone, LIMITS.phone);
+  const company = clean(body.company, LIMITS.company);
   const message = clean(body.message, LIMITS.message);
   const page = clean(body.page, LIMITS.page);
 
   const errors = {};
-  if (!firstName) errors.firstName = "Please enter your name.";
+  if (!name) errors.name = "Please enter your name.";
   if (!email) errors.email = "Please enter your email.";
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) errors.email = "That email does not look right.";
   if (!phone) errors.phone = "Please enter your phone number.";
@@ -110,11 +111,12 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: "Could not verify you are human. Please try again." });
   }
 
-  const fullName = [firstName, lastName].filter(Boolean).join(" ");
+  const fullName = name;
   const rows = [
     ["Name", fullName],
     ["Email", email],
     ["Phone", phone],
+    ["Company", company || "not given"],
     ["Submitted from", page || "unknown"],
   ];
 

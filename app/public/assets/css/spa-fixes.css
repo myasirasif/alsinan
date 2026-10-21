@@ -1062,7 +1062,7 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
 /* Tap-to-call beside the hamburger. The header's WhatsApp block is hidden at
    this width, so a phone had no one-tap way to call from the top of the page.
    Desktop keeps the full WhatsApp number block and hides this. */
-.header_call {
+#masthead .header_call {
   display: none;
 }
 
@@ -1073,7 +1073,7 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
     justify-content: flex-end;
   }
 
-  .header_call {
+  #masthead .header_call {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1085,7 +1085,7 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
     vertical-align: middle;
   }
 
-  .header_call img {
+  #masthead .header_call img {
     width: 17px;
     height: 17px;
     filter: brightness(0) invert(1);
@@ -1104,4 +1104,61 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
 .card-body .post_date {
   font-size: 13px;
   margin-bottom: 6px;
+}
+
+/* Contact hero actions. A visitor who lands on /contact-us/ from search should
+   be able to call or message without scrolling, which at 375px means the two
+   buttons have to sit inside the banner next to the H1. */
+/* the banner image is dark, and the theme's body colour is not */
+.banner_contact .content_banner p {
+  color: #fff;
+  opacity: 0.92;
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact_hero_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .contact_hero_actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact_hero_actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* The inner banner is a fixed 250px on mobile, which is enough for a heading
+   alone. With a line of copy and two buttons the content runs to 282px and
+   spills up under the absolutely positioned header, so this one banner grows
+   and starts below it. */
+section.banner_home.banner_inner.banner_contact {
+  min-height: 400px;
+  height: auto;
+}
+
+.banner_contact .content_banner {
+  padding-top: 170px;
+  padding-bottom: 44px;
+}
+
+@media screen and (max-width: 767px) {
+  section.banner_home.banner_inner.banner_contact {
+    min-height: 0;
+  }
+
+  .banner_contact .content_banner {
+    padding-top: 110px;
+    padding-bottom: 28px;
+  }
 }

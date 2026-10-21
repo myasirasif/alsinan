@@ -10,7 +10,7 @@ import { cleanPhone } from "../lib/phone";
  *   "contact" - the full form on /contact-us/ (split first/last name, 2 columns)
  *   "compact" - the shorter form in the blog sidebar (single name, 1 column)
  */
-const EMPTY = { firstName: "", lastName: "", email: "", phone: "", message: "", company: "" };
+const EMPTY = { name: "", email: "", phone: "", company: "", message: "", website: "" };
 
 
 export default function ContactForm({ variant = "contact" }) {
@@ -89,6 +89,8 @@ export default function ContactForm({ variant = "contact" }) {
     }
   }
 
+  const OPTIONAL = new Set(["company"]);
+
   const field = (name, type, placeholder, extraClass) => (
     <div className={col}>
       <p>
@@ -103,7 +105,7 @@ export default function ContactForm({ variant = "contact" }) {
             className={`wpcf7-form-control wpcf7-text${extraClass ? " " + extraClass : ""}${
               errors[name] ? " wpcf7-not-valid" : ""
             }`}
-            aria-required="true"
+            aria-required={OPTIONAL.has(name) ? "false" : "true"}
             aria-invalid={errors[name] ? "true" : "false"}
             placeholder={placeholder}
             type={type}
@@ -127,28 +129,25 @@ export default function ContactForm({ variant = "contact" }) {
       onSubmit={onSubmit}
       data-status={cf7Status}
     >
-      {/* bots fill this in, people never see it */}
+      {/* bots fill this in, people never see it. It cannot be called "company":
+          that is a real field now, and a bot trap sharing its name would drop
+          every enquiry that named one. */}
       <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
         <label>
-          Company
-          <input type="text" name="company" tabIndex="-1" autoComplete="off"
-                 value={values.company} onChange={set("company")} />
+          Website
+          <input type="text" name="website" tabIndex="-1" autoComplete="off"
+                 value={values.website} onChange={set("website")} />
         </label>
       </div>
 
       <div className="row">
-        {split ? (
-          <>
-            {field("firstName", "text", "First Name")}
-            {field("lastName", "text", "Last Name")}
-          </>
-        ) : (
-          field("firstName", "text", "Full Name")
-        )}
-        {field("email", "email", "Email", "wpcf7-email wpcf7-validates-as-email")}
+        {field("name", "text", "Name")}
         {field("phone", "tel", "Phone", "wpcf7-tel wpcf7-validates-as-tel")}
+        {field("email", "email", "Email", "wpcf7-email wpcf7-validates-as-email")}
+        {field("company", "text", "Company (optional)")}
 
         <div className="col-lg-12">
+          <p className="form_hint">Tell us your headcount, pickup area, drop-off location and timings.</p>
           <p>
             <span className="wpcf7-form-control-wrap" data-name="message">
               <textarea

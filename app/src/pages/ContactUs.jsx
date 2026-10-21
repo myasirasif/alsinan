@@ -12,13 +12,18 @@ export default function ContactUs() {
   return (
     <>
       <Seo {...seo["/contact-us/"]} />
-      <section className="banner_home banner_inner" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
+      <section className="banner_home banner_inner banner_contact" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
       <div className="banner_shadow"></div>
       <div className="container h-100">
       <div className="row h-100 justify-content-center">
       <div className="col-xl-6 my-auto">
       <div className="content_banner text-center">
-      <h1>Contact us</h1>
+      <h1>Get a Transport Quote in Dubai</h1>
+      <p>Tell us what you need and we will come back with a plan and a free quote.</p>
+      <div className="contact_hero_actions">
+      <a href="tel:+971555252397" className="btn btn-primary">Call +971 55 525 2397</a>
+      <a href={waLink("/contact-us/")} className="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
       </div>
       </div>
       </div>

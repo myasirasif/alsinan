@@ -2,6 +2,9 @@
 // recent a post is. The values mirror datePublished in jsonld.js, which stays
 // out of the client bundle; test-paths.mjs fails the build if the two drift.
 export const postDates = {
+  "/what-affects-the-cost-of-staff-transport-in-dubai/": "2026-10-21T00:00:00+00:00",
+  "/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/": "2026-10-21T00:00:00+00:00",
+  "/school-bus-transport-in-dubai-what-schools-and-parents-should-check/": "2026-10-21T00:00:00+00:00",
   "/how-to-choose-a-staff-transport-company-in-dubai/": "2026-09-17T08:13:48+00:00",
   "/bus-rental-in-dubai-what-to-check-before-you-book/": "2026-09-17T08:13:48+00:00",
   "/compare-different-hotel-transport-options-dubai/": "2026-02-04T04:11:40+00:00",

@@ -385,6 +385,300 @@ export const seo = {
     ],
     "canonical": "https://alsinantransport.com/our-fleet/"
   },
+  "/what-affects-the-cost-of-staff-transport-in-dubai/": {
+    "title": "What Affects the Cost of Staff Transport in Dubai",
+    "meta": [
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "name": "description",
+        "content": "Staff transport in Dubai is priced by the route, not per employee. Here is what moves the number and what to send for an accurate free quote."
+      },
+      {
+        "name": "robots",
+        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "og:title",
+        "content": "What Affects the Cost of Staff Transport in Dubai"
+      },
+      {
+        "property": "og:description",
+        "content": "Staff transport in Dubai is priced by the route, not per employee. Here is what moves the number and what to send for an accurate free quote."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/what-affects-the-cost-of-staff-transport-in-dubai/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "article:section",
+        "content": "Staff Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/staff-transport-cost-dubai.webp"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/staff-transport-cost-dubai.webp"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1408"
+      },
+      {
+        "property": "og:image:height",
+        "content": "667"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Ashok Leyland bus with a Dubai number plate parked at the Alsinan Transport yard"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/webp"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "What Affects the Cost of Staff Transport in Dubai"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Staff transport in Dubai is priced by the route, not per employee. Here is what moves the number and what to send for an accurate free quote."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/staff-transport-cost-dubai.webp"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/what-affects-the-cost-of-staff-transport-in-dubai/"
+  },
+  "/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/": {
+    "title": "Secure Transport for a VIP Guest at a Dubai Hotel",
+    "meta": [
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "name": "description",
+        "content": "A practical guide for Dubai hotel teams on arranging secure transport for a VIP guest, from flight tracking to entrances, discretion and backup."
+      },
+      {
+        "name": "robots",
+        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "og:title",
+        "content": "Secure Transport for a VIP Guest at a Dubai Hotel"
+      },
+      {
+        "property": "og:description",
+        "content": "A practical guide for Dubai hotel teams on arranging secure transport for a VIP guest, from flight tracking to entrances, discretion and backup."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "article:section",
+        "content": "Hotel Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/vip-hotel-transport-dubai.webp"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/vip-hotel-transport-dubai.webp"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1408"
+      },
+      {
+        "property": "og:image:height",
+        "content": "667"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Saloon car from the Alsinan Transport private car rental fleet parked on a palm-lined road"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/webp"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Secure Transport for a VIP Guest at a Dubai Hotel"
+      },
+      {
+        "name": "twitter:description",
+        "content": "A practical guide for Dubai hotel teams on arranging secure transport for a VIP guest, from flight tracking to entrances, discretion and backup."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/vip-hotel-transport-dubai.webp"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/"
+  },
+  "/school-bus-transport-in-dubai-what-schools-and-parents-should-check/": {
+    "title": "School Bus Transport in Dubai: What to Check",
+    "meta": [
+      {
+        "name": "google-site-verification",
+        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
+      },
+      {
+        "name": "description",
+        "content": "What schools and parents should check before agreeing a school bus route in Dubai: licensing, driver screening, route planning and who to call."
+      },
+      {
+        "name": "robots",
+        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+      },
+      {
+        "property": "og:locale",
+        "content": "en_US"
+      },
+      {
+        "property": "og:type",
+        "content": "article"
+      },
+      {
+        "property": "og:title",
+        "content": "School Bus Transport in Dubai: What to Check"
+      },
+      {
+        "property": "og:description",
+        "content": "What schools and parents should check before agreeing a school bus route in Dubai: licensing, driver screening, route planning and who to call."
+      },
+      {
+        "property": "og:url",
+        "content": "https://alsinantransport.com/school-bus-transport-in-dubai-what-schools-and-parents-should-check/"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Alsinan Transport"
+      },
+      {
+        "property": "article:section",
+        "content": "School Transport"
+      },
+      {
+        "property": "og:updated_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "og:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+      },
+      {
+        "property": "og:image:secure_url",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+      },
+      {
+        "property": "og:image:width",
+        "content": "1408"
+      },
+      {
+        "property": "og:image:height",
+        "content": "667"
+      },
+      {
+        "property": "og:image:alt",
+        "content": "Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai"
+      },
+      {
+        "property": "og:image:type",
+        "content": "image/webp"
+      },
+      {
+        "property": "article:published_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "property": "article:modified_time",
+        "content": "2026-10-21T00:00:00+00:00"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "School Bus Transport in Dubai: What to Check"
+      },
+      {
+        "name": "twitter:description",
+        "content": "What schools and parents should check before agreeing a school bus route in Dubai: licensing, driver screening, route planning and who to call."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+      }
+    ],
+    "canonical": "https://alsinantransport.com/school-bus-transport-in-dubai-what-schools-and-parents-should-check/"
+  },
   "/how-to-choose-a-staff-transport-company-in-dubai/": {
     "title": "How to Choose a Staff Transport Company in Dubai | Checklist",
     "meta": [

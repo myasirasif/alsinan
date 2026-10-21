@@ -34,6 +34,48 @@ export default function Blogs() {
       </div>
       <div className="row">
       <div className="col-lg-4 col-md-6 mb-4">
+      <Link className="text-decoration-none d-block h-100" to="/what-affects-the-cost-of-staff-transport-in-dubai/">
+      <div className="card h-100">
+      <div className="card-img-top">
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/staff-transport-cost-dubai-768x364.webp" className="img-fluid wp-post-image" alt="Ashok Leyland bus with a Dubai number plate parked at the Alsinan Transport yard" decoding="async" srcSet="/wp-content/uploads/2026/10/staff-transport-cost-dubai-768x364.webp 768w, /wp-content/uploads/2026/10/staff-transport-cost-dubai-300x142.webp 300w, /wp-content/uploads/2026/10/staff-transport-cost-dubai-1024x485.webp 1024w, /wp-content/uploads/2026/10/staff-transport-cost-dubai.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <div className="card-body">
+      <PostDate route="/what-affects-the-cost-of-staff-transport-in-dubai/" />
+      <h5 className="card-title">What Affects the Cost of Staff Transport in Dubai</h5>
+      <p className="card-text">
+                          Staff transport is priced by the route, not per employee. What actually moves the number, and what to send for a comparable quote.                  </p>
+      </div>
+      </div>
+      </Link>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+      <Link className="text-decoration-none d-block h-100" to="/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/">
+      <div className="card h-100">
+      <div className="card-img-top">
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/vip-hotel-transport-dubai-768x364.webp" className="img-fluid wp-post-image" alt="Saloon car from the Alsinan Transport private car rental fleet parked on a palm-lined road" decoding="async" srcSet="/wp-content/uploads/2026/10/vip-hotel-transport-dubai-768x364.webp 768w, /wp-content/uploads/2026/10/vip-hotel-transport-dubai-300x142.webp 300w, /wp-content/uploads/2026/10/vip-hotel-transport-dubai-1024x485.webp 1024w, /wp-content/uploads/2026/10/vip-hotel-transport-dubai.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <div className="card-body">
+      <PostDate route="/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/" />
+      <h5 className="card-title">Secure Transport for a VIP Guest at a Dubai Hotel</h5>
+      <p className="card-text">
+                          Flight tracking, entrances, discretion and backup. A practical guide for hotel teams arranging transport for a guest with a profile.                  </p>
+      </div>
+      </div>
+      </Link>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4">
+      <Link className="text-decoration-none d-block h-100" to="/school-bus-transport-in-dubai-what-schools-and-parents-should-check/">
+      <div className="card h-100">
+      <div className="card-img-top">
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-transport-dubai-768x364.webp" className="img-fluid wp-post-image" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" decoding="async" srcSet="/wp-content/uploads/2026/10/school-bus-transport-dubai-768x364.webp 768w, /wp-content/uploads/2026/10/school-bus-transport-dubai-300x142.webp 300w, /wp-content/uploads/2026/10/school-bus-transport-dubai-1024x485.webp 1024w, /wp-content/uploads/2026/10/school-bus-transport-dubai.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <div className="card-body">
+      <PostDate route="/school-bus-transport-in-dubai-what-schools-and-parents-should-check/" />
+      <h5 className="card-title">School Bus Transport in Dubai: What Schools and Parents Should Check</h5>
+      <p className="card-text">
+                          Licensing, driver screening, how the route is planned and who you actually call on the morning it goes wrong.                  </p>
+      </div>
+      </div>
+      </Link>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4">
       <Link className="text-decoration-none d-block h-100" to="/bus-rental-in-dubai-what-to-check-before-you-book/">
       <div className="card h-100">
       <div className="card-img-top">

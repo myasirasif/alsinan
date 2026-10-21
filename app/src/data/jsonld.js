@@ -2,6 +2,7 @@
 // time, never by a page component, so it stays out of the client bundle.
 import { staffFaqs } from "./staffFaqs.js";
 import { schoolFaqs } from "./schoolFaqs.js";
+import { postFaqs } from "./postFaqs.js";
 
 export const jsonld = {
  "/": [
@@ -223,3 +224,51 @@ derive("/how-visitors-move-around-dubai-without-stress/", {
   published: "2026-09-17T08:13:48+00:00",
   modified: OPENED,
 });
+
+// The posts written after the WordPress export, derived from a sibling post the
+// same way the service pages are, then given their own FAQPage from postFaqs.js.
+
+derive("/how-visitors-move-around-dubai-without-stress/", {
+  route: "/what-affects-the-cost-of-staff-transport-in-dubai/",
+  name: "What Affects the Cost of Staff Transport in Dubai",
+  description:
+    "Staff transport in Dubai is priced by the route, not per employee. Here is what moves the number and what to send for an accurate free quote.",
+  keywords: "Staff Transport Cost Dubai",
+  crumb: "What Affects the Cost of Staff Transport in Dubai",
+  image: "/wp-content/uploads/2026/10/staff-transport-cost-dubai.webp",
+  imageSize: [1408, 667],
+  imageAlt: "Ashok Leyland bus with a Dubai number plate parked at the Alsinan Transport yard",
+  published: "2026-10-21T00:00:00+00:00",
+  modified: "2026-10-21T00:00:00+00:00",
+});
+jsonld["/what-affects-the-cost-of-staff-transport-in-dubai/"].push(faqPage(postFaqs["/what-affects-the-cost-of-staff-transport-in-dubai/"]));
+
+derive("/how-visitors-move-around-dubai-without-stress/", {
+  route: "/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/",
+  name: "Secure Transport for a VIP Guest at a Dubai Hotel",
+  description:
+    "A practical guide for Dubai hotel teams on arranging secure transport for a VIP guest, from flight tracking to entrances, discretion and backup.",
+  keywords: "VIP Transport Dubai Hotel",
+  crumb: "Secure Transport for a VIP Guest at a Dubai Hotel",
+  image: "/wp-content/uploads/2026/10/vip-hotel-transport-dubai.webp",
+  imageSize: [1408, 667],
+  imageAlt: "Saloon car from the Alsinan Transport private car rental fleet parked on a palm-lined road",
+  published: "2026-10-21T00:00:00+00:00",
+  modified: "2026-10-21T00:00:00+00:00",
+});
+jsonld["/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/"].push(faqPage(postFaqs["/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/"]));
+
+derive("/how-visitors-move-around-dubai-without-stress/", {
+  route: "/school-bus-transport-in-dubai-what-schools-and-parents-should-check/",
+  name: "School Bus Transport in Dubai: What to Check",
+  description:
+    "What schools and parents should check before agreeing a school bus route in Dubai: licensing, driver screening, route planning and who to call.",
+  keywords: "School Bus Transport Dubai",
+  crumb: "School Bus Transport in Dubai: What to Check",
+  image: "/wp-content/uploads/2026/10/school-bus-transport-dubai.webp",
+  imageSize: [1408, 667],
+  imageAlt: "Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai",
+  published: "2026-10-21T00:00:00+00:00",
+  modified: "2026-10-21T00:00:00+00:00",
+});
+jsonld["/school-bus-transport-in-dubai-what-schools-and-parents-should-check/"].push(faqPage(postFaqs["/school-bus-transport-in-dubai-what-schools-and-parents-should-check/"]));

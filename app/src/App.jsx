@@ -31,6 +31,9 @@ import SvcBusRentalDubai from "./pages/SvcBusRentalDubai";
 import SvcLabourTransportInDubai from "./pages/SvcLabourTransportInDubai";
 import PostBusRentalInDubaiWhatToCheckBeforeYouBook from "./pages/PostBusRentalInDubaiWhatToCheckBeforeYouBook";
 import PostHowToChooseAStaffTransportCompanyInDubai from "./pages/PostHowToChooseAStaffTransportCompanyInDubai";
+import PostWhatAffectsTheCostOfStaffTransportInDubai from "./pages/PostWhatAffectsTheCostOfStaffTransportInDubai";
+import PostHowToArrangeSecureTransportForAVipGuestAtADubaiHotel from "./pages/PostHowToArrangeSecureTransportForAVipGuestAtADubaiHotel";
+import PostSchoolBusTransportInDubaiWhatSchoolsAndParentsShouldCheck from "./pages/PostSchoolBusTransportInDubaiWhatSchoolsAndParentsShouldCheck";
 
 function BodyClass() {
   const { pathname } = useLocation();
@@ -106,6 +109,9 @@ export default function App() {
         <Route path="/services/bus-rental-dubai/" element={<SvcBusRentalDubai />} />
         <Route path="/services/labour-transport-in-dubai/" element={<SvcLabourTransportInDubai />} />
         <Route path="/thank-you/" element={<ThankYou />} />
+        <Route path="/what-affects-the-cost-of-staff-transport-in-dubai/" element={<PostWhatAffectsTheCostOfStaffTransportInDubai />} />
+        <Route path="/how-to-arrange-secure-transport-for-a-vip-guest-at-a-dubai-hotel/" element={<PostHowToArrangeSecureTransportForAVipGuestAtADubaiHotel />} />
+        <Route path="/school-bus-transport-in-dubai-what-schools-and-parents-should-check/" element={<PostSchoolBusTransportInDubaiWhatSchoolsAndParentsShouldCheck />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

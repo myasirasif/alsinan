@@ -81,7 +81,7 @@ for (const p of MUST_NOT_REDIRECT) {
 const headerRules = cfg.headers
   .filter((h) => h.source.startsWith("/assets/"))
   .map((h) => ({ src: h.source, value: h.headers[0].value, re: pathToRegexp(h.source, [], { strict: true }) }));
-const headerFor = (p) => headerRules.find((r) => r.re.test(p));
+const headerFor = (p) => [...headerRules].reverse().find((r) => r.re.test(p));
 
 const distAssets = (sub) => {
   const dir = path.join(repoDist, "assets", sub);

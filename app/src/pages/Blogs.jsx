@@ -65,7 +65,7 @@ export default function Blogs() {
       <Link className="text-decoration-none d-block h-100" to="/school-bus-transport-in-dubai-what-schools-and-parents-should-check/">
       <div className="card h-100">
       <div className="card-img-top">
-      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-transport-dubai-768x364.webp" className="img-fluid wp-post-image" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" decoding="async" srcSet="/wp-content/uploads/2026/10/school-bus-transport-dubai-768x364.webp 768w, /wp-content/uploads/2026/10/school-bus-transport-dubai-300x142.webp 300w, /wp-content/uploads/2026/10/school-bus-transport-dubai-1024x485.webp 1024w, /wp-content/uploads/2026/10/school-bus-transport-dubai.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-morning-768x364.webp" className="img-fluid wp-post-image" alt="Side view of a yellow school bus parked on a sunny day" decoding="async" srcSet="/wp-content/uploads/2026/10/school-bus-morning-768x364.webp 768w, /wp-content/uploads/2026/10/school-bus-morning-300x142.webp 300w, /wp-content/uploads/2026/10/school-bus-morning-1024x485.webp 1024w, /wp-content/uploads/2026/10/school-bus-morning.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
       <div className="card-body">
       <PostDate route="/school-bus-transport-in-dubai-what-schools-and-parents-should-check/" />
       <h5 className="card-title">School Bus Transport in Dubai: What Schools and Parents Should Check</h5>

@@ -39,7 +39,7 @@ export default function PostSchoolBusTransportInDubaiWhatSchoolsAndParentsShould
       <article className="post type-post status-publish format-standard has-post-thumbnail hentry">
 
       <div className="mb-4 post_title">
-      <img width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-transport-dubai-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" decoding="async" />
+      <img width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-morning-1024x485.webp" className="img-fluid rounded wp-post-image" alt="Side view of a yellow school bus parked on a sunny day" decoding="async" />
       </div>
       <div className="post-content">
 

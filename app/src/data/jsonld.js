@@ -265,9 +265,9 @@ derive("/how-visitors-move-around-dubai-without-stress/", {
     "What schools and parents should check before agreeing a school bus route in Dubai: licensing, driver screening, route planning and who to call.",
   keywords: "School Bus Transport Dubai",
   crumb: "School Bus Transport in Dubai: What to Check",
-  image: "/wp-content/uploads/2026/10/school-bus-transport-dubai.webp",
+  image: "/wp-content/uploads/2026/10/school-bus-morning.webp",
   imageSize: [1408, 667],
-  imageAlt: "Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai",
+  imageAlt: "Side view of a yellow school bus parked on a sunny day",
   published: "2026-10-21T00:00:00+00:00",
   modified: "2026-10-21T00:00:00+00:00",
 });

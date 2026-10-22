@@ -630,11 +630,11 @@ export const seo = {
       },
       {
         "property": "og:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-morning.webp"
       },
       {
         "property": "og:image:secure_url",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-morning.webp"
       },
       {
         "property": "og:image:width",
@@ -646,7 +646,7 @@ export const seo = {
       },
       {
         "property": "og:image:alt",
-        "content": "Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai"
+        "content": "Side view of a yellow school bus parked on a sunny day"
       },
       {
         "property": "og:image:type",
@@ -674,7 +674,7 @@ export const seo = {
       },
       {
         "name": "twitter:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-transport-dubai.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-morning.webp"
       }
     ],
     "canonical": "https://alsinantransport.com/school-bus-transport-in-dubai-what-schools-and-parents-should-check/"

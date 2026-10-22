@@ -78,7 +78,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Red BMW coupe from the executive car rental range in Dubai" />
+      <img loading="lazy" width="1600" height="2400" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" className="card-img-top fleet-img" alt="Red BMW coupe from the executive car rental range in Dubai" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Executive & Standard Cars
@@ -107,7 +107,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-5">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Alsinan Passengers Transport high-roof Toyota Hiace van parked on a Dubai street" />
+      <img width="960" height="1280" loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" className="card-img-top fleet-img" alt="Alsinan Passengers Transport high-roof Toyota Hiace van parked on a Dubai street" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Vans & Hiace Models</h5>
@@ -149,7 +149,7 @@ export default function OurFleet() {
 
       <div className="col-md-6 col-lg-4 mb-4 mt-4">
       <div className="fleet-card card h-100 border-0 shadow-sm">
-      <img loading="lazy" src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" />
+      <img width="960" height="1280" loading="lazy" src="/wp-content/uploads/2025/10/hiace.webp" className="card-img-top fleet-img" alt="Row of Toyota Hiace vans from the Alsinan Transport fleet parked in Dubai" />
       <div className="card-body">
       <div className="d-flex justify-content-between align-items-center title">
       <h5 className="card-title mb-0">Toyota Hiace</h5>

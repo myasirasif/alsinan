@@ -167,7 +167,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>cars</h3>
       <div className="img_fleet">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
+      <img width="1600" height="2400" loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -194,7 +194,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>cars</h3>
       <div className="img_fleet">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
+      <img width="1600" height="2400" loading="lazy" src="/wp-content/uploads/2025/09/e58f33d6b68636dd830cb3cede724d823788f6b3-scaled.webp" alt="Red BMW coupe available for private car rental in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -203,7 +203,7 @@ export default function Home() {
       <div className="content_service_provider">
       <h3>hiace</h3>
       <div className="img_fleet">
-      <img loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" alt="White Toyota Hiace high-roof van with Alsinan Passengers Transport branding, parked in Dubai" />
+      <img width="960" height="1280" loading="lazy" src="/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-18.33.10_41bbae53.webp" alt="White Toyota Hiace high-roof van with Alsinan Passengers Transport branding, parked in Dubai" />
       </div>
       <Link target="_blank" className="btn btn-primary" to="/our-fleet/">learn more</Link>
       </div>
@@ -227,10 +227,10 @@ export default function Home() {
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 available for private car rental in Dubai, parked on a palm-lined street" />
+      <img width="714" height="890" loading="lazy" src="/wp-content/uploads/2025/09/choose_small.webp" alt="Orange BMW M3 available for private car rental in Dubai, parked on a palm-lined street" />
       </div>
       <div className="why_choose_img_lg">
-      <img loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
+      <img width="946" height="1178" loading="lazy" src="/wp-content/uploads/2025/09/choose_large.webp" alt="Rear view of a white Toyota Hiace Premio passenger van" />
       </div>
       </div>
       </div></>}>

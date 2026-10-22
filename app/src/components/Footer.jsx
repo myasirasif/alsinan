@@ -19,7 +19,7 @@ export default function Footer() {
     <img loading="lazy" src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" />
     </div>
     <div className="num_wp">
-    <span>Whasapp</span>
+    <span>WhatsApp</span>
     <a href={waLink(pathname)} target="_blank">+971 55 525 2397</a>
     </div>
     </div>

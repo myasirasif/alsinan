@@ -36,7 +36,7 @@ export function ServicesSection({
                     />
                   </div>
                   <div className="num_wp">
-                    <span>Whasapp</span>
+                    <span>WhatsApp</span>
                     <a
                       href={waLink(pathname)}
                       target="_blank"

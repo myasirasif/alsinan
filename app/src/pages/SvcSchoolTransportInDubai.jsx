@@ -141,22 +141,18 @@ export default function SvcSchoolTransportInDubai() {
       <p>Full route coverage for a year group or a whole school, planned around the school's own start and finish times.</p>
       </div>
       </div>
-      {/* HOLD: awaiting client confirmation:
       <div className="col-lg-6">
       <div className="service_area_box">
       <h3>Nurseries and early years</h3>
       <p>Smaller vehicles and shorter routes for younger children, with supervised boarding and drop off at every stop.</p>
       </div>
       </div>
-      */}
-      {/* HOLD: awaiting client confirmation:
       <div className="col-lg-6">
       <div className="service_area_box">
       <h3>Universities and colleges</h3>
       <p>Campus runs and shuttle routes for students and staff, including timetables that change between terms.</p>
       </div>
       </div>
-      */}
       <div className="col-lg-6">
       <div className="service_area_box">
       <h3>Parents and parent groups</h3>
@@ -189,14 +185,12 @@ export default function SvcSchoolTransportInDubai() {
       <p>Morning and afternoon runs are planned backwards from the school's start and finish times, with real traffic patterns for the areas involved.</p>
       </div>
       </div>
-      {/* HOLD: awaiting client confirmation:
       <div className="col-lg-6">
       <div className="service_area_box">
       <h3>The same driver each day</h3>
       <p>Wherever possible a route keeps the same driver, so children travel with someone familiar and the school deals with one point of contact.</p>
       </div>
       </div>
-      */}
       <div className="col-lg-6">
       <div className="service_area_box">
       <h3>Changes mid term</h3>

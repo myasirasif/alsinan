@@ -141,7 +141,7 @@ export default function SvcStaffTransportInDubai() {
       <h2>Our Fleet for Staff Transport</h2></>}>
         <ServiceBox col="6">
       <h3>Vans for Small Teams</h3>
-      {/* HOLD: awaiting client confirmation: <p>Typically up to fourteen seats, suitable for small teams and fixed shuttle routes.</p> */}
+      <p>Typically up to fourteen seats, suitable for small teams and fixed shuttle routes. </p>
       <p><span style={{ fontWeight: "400" }}>Our vans are suitable for smaller teams and fixed shuttle routes. They provide comfortable seating, space for personal belongings and a calm start and end to the workday. These vans work especially well for field teams, project staff and companies starting structured staff transport in Dubai.</span></p>
         </ServiceBox>
         <ServiceBox col="6">
@@ -151,7 +151,7 @@ export default function SvcStaffTransportInDubai() {
         </ServiceBox>
         <ServiceBox col="6">
       <h3>Buses for Large Teams</h3>
-      {/* HOLD: awaiting client confirmation: <p>Full size buses up to fifty seats for large departments and whole site movements.</p> */}
+      <p>Full size buses up to fifty seats for large departments and whole site movements. </p>
       <p><span style={{ fontWeight: "400" }}>For bigger departments, large offices or full company travel, our buses are an ideal solution. They provide fully air conditioned interiors, comfortable seating and a safe, stable journey for daily movement, events or company gatherings. For businesses needing dependable high capacity corporate transport in Dubai, these vehicles keep travel organised and comfortable. Every vehicle is cleaned, serviced and inspected regularly so staff can rely on it every single day.</span></p>
         </ServiceBox>
         <ServiceBox col="6">

@@ -7,7 +7,7 @@
 export const schoolFaqs = [
   [
     "What does your school transport service in Dubai cover?",
-    "We run daily home to school routes with fixed pickup points, planned around each school's start and finish times. Vehicles range from vans for small groups to full size buses.",
+    "We run daily home to school routes with fixed pickup points, planned around each school's start and finish times. The same driver stays on a route wherever possible, so children travel with someone they know. Vehicles range from vans for small groups to full size buses.",
   ],
   [
     "How much does school transport in Dubai cost?",
@@ -26,7 +26,3 @@ export const schoolFaqs = [
     "Yes. Alongside the daily route we provide buses for school events, sports fixtures and day trips, booked separately from the regular schedule.",
   ],
 ];
-
-// HOLD: awaiting client confirmation. Restore these into the answers above once the client confirms them:
-//   schoolFaqs[0] answer: "The same driver stays on a route wherever possible,
-//   so children travel with someone they know."

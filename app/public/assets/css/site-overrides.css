@@ -222,4 +222,8 @@ section.services_area_section .service_area_box li{
     display: flex
 ;
 }
-		
+
+/* Lifted from wp-block-library.css, which was 113 KB of WordPress block editor
+   styling for a site that is no longer WordPress. This is the only rule from it
+   the pages actually use. */
+:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}

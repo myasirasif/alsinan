@@ -1162,3 +1162,27 @@ section.banner_home.banner_inner.banner_contact {
     padding-bottom: 28px;
   }
 }
+
+/* The homepage about block is copy only now, so the two column grid would
+   leave an empty half. */
+.about_panel--no-media .about_panel__grid {
+  grid-template-columns: 1fr;
+}
+
+/* Short trust strip under the services cards. */
+.trust_strip .service_area_box {
+  text-align: center;
+  height: 100%;
+}
+
+.trust_strip .service_area_box h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 575px) {
+  .trust_strip .service_area_box h3 {
+    font-size: 15px;
+  }
+}

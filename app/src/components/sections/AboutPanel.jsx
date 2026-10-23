@@ -18,7 +18,9 @@ export default function AboutPanel({
   mirrored = false,
   children,
 }) {
-  const media = (
+  // The homepage no longer passes an image, so the panel runs copy-only there
+  // rather than rendering a media box pointing at url("undefined").
+  const media = image ? (
     <div
       className="about_panel__media"
       style={{ backgroundImage: `url("${image}")` }}
@@ -27,10 +29,10 @@ export default function AboutPanel({
     >
       <span className="about_panel__badge" aria-hidden="true" />
     </div>
-  );
+  ) : null;
 
   return (
-    <section className={`about_section about_panel about_panel--${tone}${mirrored ? " about_panel--mirrored" : ""}`}>
+    <section className={`about_section about_panel about_panel--${tone}${mirrored ? " about_panel--mirrored" : ""}${image ? "" : " about_panel--no-media"}`}>
       <div className="about_panel__grid">
         {mirrored ? media : null}
         <div className="about_panel__copy">

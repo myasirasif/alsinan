@@ -16,7 +16,7 @@ export default function Home() {
       <section className="banner_home" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
       <div className="banner_shadow"></div>
       <div className="banner_bottm_img">
-      <img src="/wp-content/uploads/2025/10/vehcle_banner.webp" alt="Alsinan Transport coach bus and car against the Dubai skyline" style={{ aspectRatio: "3 / 2.675" }} loading="eager" fetchPriority="high" width="1058" height="944" />
+      <img src="/wp-content/uploads/2025/10/vehcle_banner.webp" srcSet="/wp-content/uploads/2025/10/vehcle_banner-800.webp 800w, /wp-content/uploads/2025/10/vehcle_banner.webp 1058w" sizes="(max-width: 800px) 100vw, 1058px" alt="Alsinan Transport coach bus and car against the Dubai skyline" style={{ aspectRatio: "3 / 2.675" }} loading="eager" fetchPriority="high" width="1058" height="944" />
       </div>
       <div className="container h-100">
       <div className="row h-100">
@@ -38,28 +38,13 @@ export default function Home() {
       </ul>
       </div>
       <Link className="btn btn-primary" to="/contact-us/">Book Now</Link>
+      {" "}
+      <a href={waLink("/")} className="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
       </div>
       </div>
       </div>
       </section>
-
-
-      <AboutPanel
-        image="/wp-content/uploads/2025/10/about_large.webp"
-        alt="Grey Mercedes Sprinter passenger van with its side door open"
-        mirrored>
-        <div className="about_content">
-      <span className="sub_head">About Us</span>
-      <h2>We Make Your Trips Comfortable; Every Time</h2>
-      <p>Alsinan Transport is a licensed passenger transport company in Dubai, and being based here matters because timing is everything in this city. In this city, the biggest challenge is not finding a vehicle. It is making sure it arrives on time. One traffic issue, a delayed flight or a late school pickup can easily affect an entire day.</p>
-      <p>That is where we come in. People come to us because they want <Link to="/services/">Transport Services in Dubai</Link> that work the right way. They want staff routes that leave on time. School buses that follow fixed routines. Airport pickups that adjust to real flight timings. Private trips that do not require constant calling and chasing drivers.</p>
-      <p>We operate cars, Hiace vans, minibuses and full size coaches. Every vehicle is cleaned, checked and kept ready for daily use. Our drivers understand the areas they handle including industrial zones, residential communities, airports, hotels and schools. For us, school schedules, airport transfers and staff commutes are not occasional work. They are our everyday responsibility.</p>
-      <p>Where many operators focus on short term jobs, our Transport Rental Services in Dubai are built for long term dependability. We manage ongoing staff transport, regular school routes and consistent group travel requirements. Routes can be refined when your needs change. Pricing stays clear and practical. And when plans shift, someone from our team supports you instead of leaving you stuck.</p>
-      <p>If you want rental transport in Dubai that grows with your requirements, Alsinan Transport is ready to support you.</p>
-      <Link className="btn btn-primary" to="/about/">read more</Link>
-        </div>
-      </AboutPanel>
 
 
       <ServicesSection
@@ -113,6 +98,44 @@ export default function Home() {
       <p>Some clients need Transport Services in Dubai for one day. Others need long term arrangements. Staff transport often works best monthly while long projects need vehicles positioned in specific areas. Pricing remains straightforward. Terms stay clear. Whether short or ongoing rental transport in Dubai, you know exactly what is included.</p>
         </ServiceBox>
       </ServicesSection>
+      <section className="services_area_section trust_strip">
+      <div className="container">
+      <div className="row justify-content-between g-4">
+      <div className="col-lg-3 col-6">
+      <div className="service_area_box">
+      <h3>RTA-licensed drivers</h3>
+      </div>
+      </div>
+      <div className="col-lg-3 col-6">
+      <div className="service_area_box">
+      <h3>24/7 operations</h3>
+      </div>
+      </div>
+      <div className="col-lg-3 col-6">
+      <div className="service_area_box">
+      <h3>All 7 emirates</h3>
+      </div>
+      </div>
+      <div className="col-lg-3 col-6">
+      <div className="service_area_box">
+      <h3>Cars to full-size coaches</h3>
+      </div>
+      </div>
+      </div>
+      {/* Google reviews block goes here once there are real reviews to show.
+          Nothing invented, nothing borrowed: only the live Google rating and
+          real review text, pulled from the Business Profile. */}
+      </div>
+      </section>
+
+      <AboutPanel
+        heading={<><span className="sub_head">About Us</span>
+      <h2>We Make Your Trips Comfortable; Every Time</h2></>}>
+      <p>Alsinan Transport is a licensed passenger transport company in Dubai, and being based here matters because timing is everything in this city. The hard part is not finding a vehicle. It is making sure it arrives on time.</p>
+      <p>We run <Link to="/services/staff-transport-in-dubai/">staff transport in Dubai</Link>, <Link to="/services/school-transport-in-dubai/">school bus transport</Link> and airport work as fixed daily routes rather than one-off jobs, with cars, vans, minibuses and full size coaches.</p>
+      <Link className="btn btn-primary" to="/about/">Read more about us</Link>
+      </AboutPanel>
+
 
 
       <section className="services_area_section">

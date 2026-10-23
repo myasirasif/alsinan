@@ -10,9 +10,25 @@ export default function useThemeScripts(scripts = []) {
   const key = scripts.join("\n\n");
 
   useEffect(() => {
-    const $ = window.jQuery;
-    if (!$) return;
+    // jQuery, bootstrap and owl are deferred now so they stop blocking the
+    // parser, which means they may not have run when React first mounts.
+    // Rather than assume an order the bundler is free to change, wait for
+    // jQuery to appear and run the snippets then.
+    let cancelled = false;
+    let teardown = null;
+    let timer = null;
 
+    const run = () => {
+      if (cancelled) return;
+      const $ = window.jQuery;
+      if (!$) {
+        timer = window.setTimeout(run, 50);
+        return;
+      }
+      teardown = start($);
+    };
+
+    const start = ($) => {
     scripts.forEach((code) => {
       try {
         // eslint-disable-next-line no-new-func
@@ -29,6 +45,14 @@ export default function useThemeScripts(scripts = []) {
           $(this).trigger("destroy.owl.carousel").removeClass("owl-loaded owl-hidden");
         }
       });
+    };
+    };
+
+    run();
+    return () => {
+      cancelled = true;
+      if (timer) window.clearTimeout(timer);
+      if (typeof teardown === "function") teardown();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);

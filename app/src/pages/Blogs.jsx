@@ -177,7 +177,7 @@ export default function Blogs() {
       <Link className="text-decoration-none d-block h-100" to="/why-many-families-prefer-dedicated-transport-services-in-dubai/">
       <div className="card h-100">
       <div className="card-img-top">
-      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722-768x364.webp" className="img-fluid wp-post-image" alt="Parent helping a child enter a comfortable vehicle in Dubai, showing calm and reliable daily family transport." decoding="async" srcSet="/wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722-768x364.webp 768w, /wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722-300x142.webp 300w, /wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722-1024x485.webp 1024w, /wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
+      <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/10/school-bus-stop-arm-768x364.webp" className="img-fluid wp-post-image" alt="Yellow school bus with its stop arm out on a quiet road" decoding="async" srcSet="/wp-content/uploads/2026/10/school-bus-stop-arm-768x364.webp 768w, /wp-content/uploads/2026/10/school-bus-stop-arm-300x142.webp 300w, /wp-content/uploads/2026/10/school-bus-stop-arm-1024x485.webp 1024w, /wp-content/uploads/2026/10/school-bus-stop-arm.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
       <div className="card-body">
       <PostDate route="/why-many-families-prefer-dedicated-transport-services-in-dubai/" />
       <h5 className="card-title">Why Many Families Prefer Dedicated Transport Services in Dubai</h5>

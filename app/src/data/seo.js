@@ -2572,11 +2572,11 @@ export const seo = {
       },
       {
         "property": "og:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-stop-arm.webp"
       },
       {
         "property": "og:image:secure_url",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-stop-arm.webp"
       },
       {
         "property": "og:image:width",
@@ -2616,7 +2616,7 @@ export const seo = {
       },
       {
         "name": "twitter:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/untitled-design-9-695f0a21e2722.webp"
+        "content": "https://alsinantransport.com/wp-content/uploads/2026/10/school-bus-stop-arm.webp"
       },
       {
         "name": "twitter:label1",

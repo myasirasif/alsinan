@@ -14,6 +14,7 @@
   "devDependencies": {
     "path-to-regexp": "^6.3.0",
     "playwright": "^1.49.0",
+    "purgecss": "^8.0.0",
     "sharp": "^0.33.5"
   }
 }

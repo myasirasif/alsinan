@@ -25,6 +25,9 @@ await build({
 console.log("\n> prerender");
 await import("./prerender.mjs");
 
+console.log("\n> purge bootstrap");
+await import("./purge-bootstrap.mjs");
+
 console.log("\n> hash assets");
 await import("./hash-assets.mjs");
 

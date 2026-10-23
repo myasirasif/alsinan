@@ -1001,10 +1001,14 @@ section.svc_areas > .container > .row:first-child { margin-bottom: 8px; }
 
   /* full width and centred, with room on the right so the text never sits
      under the floating button stack */
-  .banner_home .content_banner .btn-primary {
+  .banner_home .content_banner .btn {
     display: block;
     width: 100%;
     text-align: center;
+  }
+
+  .banner_home .content_banner .btn + .btn {
+    margin-top: 10px;
   }
 }
 

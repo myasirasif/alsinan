@@ -246,7 +246,7 @@ export default function Home() {
                           </span>
       <h2>Why Choose Alsinan Transport Services in Dubai</h2>
       <p>When we agree on a pickup time, that’s the time the vehicle shows up. Routes are followed, and trips stay predictable. No chasing drivers. No wondering where the bus is. If something changes along the way, it’s handled quickly so your day doesn’t start slipping behind schedule.</p></>}
-        footer={<><Link className="btn btn-primary" to="/about/">read more</Link></>}
+        footer={<><Link className="btn btn-primary" to="/about/">More about Alsinan Transport</Link></>}
         media={<><div className="col-lg-6">
       <div className="why_choose_img">
       <div className="choose_img_small">

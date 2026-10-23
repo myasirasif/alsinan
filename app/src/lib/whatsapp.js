@@ -11,7 +11,7 @@ const NUMBER = "971555252397";
 const DEFAULT = "Hi Alsinan, I would like to ask about your transport services in Dubai.";
 
 const MESSAGES = {
-  "/": DEFAULT,
+  "/": "Hi, I need transport in Dubai. Service: __, passengers: __, date: __",
   "/about/": DEFAULT,
   "/contact-us/": "Hi Alsinan, I would like to ask about your transport services in Dubai.",
   "/our-fleet/": "Hi Alsinan, I saw your fleet page. Could you tell me which vehicle suits my group?",

@@ -43,13 +43,14 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"><!--app-html--></div>
-    <!-- All three are deferred so they stop blocking the parser, and they sit
-         ahead of main.jsx because deferred scripts and modules run in document
-         order: jQuery, bootstrap and owl therefore still exist by the time
-         React mounts and the theme snippets look for them. -->
-    <script defer src="/assets/js/jquery.min.js"></script>
-    <script defer src="/assets/js/bootstrap.min.js"></script>
-    <script defer src="/assets/js/owl.carousel.min.js"></script>
+    <!-- Deferring these was tried and reverted. It unblocks the parser, but it
+         also lands jQuery, bootstrap, owl and React hydration on the main
+         thread together: measured on a throttled Pixel 7, LCP went 2588ms ->
+         3432ms and blocking time 1342ms -> 1713ms. Loading them during parsing
+         spreads the work out and paints sooner. -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
     <!-- navigation.js is intentionally not loaded: Header.jsx owns the menu now.
          The theme script ran once at load, so it could not close the menu on a

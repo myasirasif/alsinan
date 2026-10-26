@@ -38,7 +38,7 @@ export default function SvcStaffTransportInDubai() {
       </div>
 
       <div className="svc_hero__media">
-      <img src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" width="1024" height="683" alt="Toyota Coaster passenger bus used for staff transport in Dubai" fetchPriority="high" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-768x512.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w" sizes="(max-width: 991px) 100vw, 44vw" />
+      <img src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" width="1024" height="683" alt="Toyota Coaster passenger bus used for staff transport in Dubai" fetchPriority="high" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-768x512-v2.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w" sizes="(max-width: 991px) 100vw, 44vw" />
       </div>
 
       </div>

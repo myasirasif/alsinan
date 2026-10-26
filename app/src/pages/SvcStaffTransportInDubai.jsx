@@ -14,16 +14,33 @@ export default function SvcStaffTransportInDubai() {
   return (
     <>
       <Seo {...seo["/services/staff-transport-in-dubai/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For Staff</h2>
+      <section className="svc_hero" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
+      <div className="container">
+      <div className="svc_hero__grid">
+
+      <div className="svc_hero__copy">
+      <nav className="svc_hero__crumb" aria-label="Breadcrumb">
+      <Link to="/services/">Services</Link>
+      <span aria-hidden="true">/</span>
+      <span>Staff Transport</span>
+      </nav>
+      <h1>Staff Transport in Dubai, On Time for Every Shift</h1>
+      <p className="svc_hero__sub">Fixed daily routes for offices, labour camps, hotels and warehouses. Licensed drivers, vehicles sized to your headcount, 24/7 across all 7 emirates.</p>
+      <ul className="svc_hero__points">
+      <li>RTA-licensed drivers</li>
+      <li>Routes planned around your shift times</li>
+      <li>One contact for the whole contract</li>
+      </ul>
+      <div className="svc_hero__actions">
+      <a href={waLink("/services/staff-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
+      <a href="tel:+971555252397" className="btn btn-secondary">Call +971 55 525 2397</a>
       </div>
       </div>
+
+      <div className="svc_hero__media">
+      <img src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" width="1024" height="683" alt="Toyota Coaster passenger bus used for staff transport in Dubai" fetchPriority="high" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-768x512.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w" sizes="(max-width: 991px) 100vw, 44vw" />
+      </div>
+
       </div>
       </div>
       </section>
@@ -33,16 +50,9 @@ export default function SvcStaffTransportInDubai() {
       <div className="container">
       <div className="row">
 
-      <div className="col-lg-6">
-      <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="427" src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" className="attachment-large size-large wp-post-image" alt="Toyota Coaster passenger bus used for professional transport services in Dubai by Alsinan Transport" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-300x200.jpg 300w, /wp-content/uploads/2025/10/staff-transport-op-768x512.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w, /wp-content/uploads/2025/10/staff-transport-op.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
-      </div>
-
-      <div className="col-lg-6 my-auto">
+      <div className="col-lg-12">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For Staff</h2>
-      <h1 className="wp-block-heading"><strong><strong><strong>Dependable Staff Transport in Dubai</strong></strong></strong></h1>
+      <h2 className="wp-block-heading"><strong>Dependable Staff Transport in Dubai</strong></h2>
       <p>Alsinan Transport provides staff transport, employee transport and corporate transport in Dubai on fixed daily routes, with licensed drivers and vehicles sized to your headcount. We operate 24/7 across all seven emirates.</p>
       <p>Getting your employees to work on time should not feel like a daily struggle. At Alsinan Transport, we organise staff transport in Dubai in a way that keeps it safe, reliable and easy to manage. Whether it is daily office commuting, regular inter office movement, team travel for training sessions, corporate events or planned outings, we build transport plans that match how your company actually operates.</p>
       <p>If you need flexible van rental in Dubai for a small team or a structured corporate transport in Dubai for multiple departments, our focus remains simple. Your employees travel comfortably, reach safely and arrive on time. When commuting is managed properly, staff can focus on what truly matters, which is their work.</p>

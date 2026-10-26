@@ -1370,3 +1370,206 @@ section.banner_home.banner_inner.banner_contact {
 .about_panel--no-media .about_panel__facts > div > span:empty {
   display: none;
 }
+
+/* ---------------------------------------------------------------------------
+   Service page hero, first used on /services/staff-transport-in-dubai/.
+
+   The theme's inner banner carries a label and a heading and nothing else, so
+   a visitor arriving from a search for "staff transport dubai" saw the words
+   "Services / For Staff" on the whole first screen: no H1, no proof, nothing
+   to act on. The same two words then appeared again immediately below, and the
+   real H1 sat under those.
+
+   This replaces it with a hero that does the work: one H1, a subline, three
+   proof points and both contact actions, with the vehicle photo beside them.
+
+   It stays dark. #masthead is position:absolute over whatever renders first
+   and its links are white, so a light hero here would hide the navigation.
+   --------------------------------------------------------------------------- */
+.svc_hero {
+  position: relative;
+  background-color: #141417;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 186px 0 66px;
+  overflow: hidden;
+}
+
+/* the banner photograph is busy; the copy needs a floor to sit on */
+.svc_hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 14, 17, 0.94) 0%,
+    rgba(14, 14, 17, 0.84) 48%,
+    rgba(14, 14, 17, 0.62) 100%
+  );
+}
+
+.svc_hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.svc_hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.84fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.svc_hero__crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.svc_hero__crumb a {
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: none;
+}
+
+.svc_hero__crumb a:hover,
+.svc_hero__crumb a:focus-visible {
+  color: #fff;
+}
+
+.svc_hero h1 {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: clamp(29px, 3.6vw, 46px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.svc_hero__sub {
+  margin: 0 0 22px;
+  max-width: 34rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.svc_hero__points {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.svc_hero__points li {
+  position: relative;
+  padding-left: 31px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* a drawn tick, so the strip costs no extra request */
+.svc_hero__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #DD0A1B;
+}
+
+.svc_hero__points li::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.svc_hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* the theme paints .btn-secondary #1b1b1b, which on this hero is a hole */
+.svc_hero__actions .btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.svc_hero__actions .btn-secondary:hover,
+.svc_hero__actions .btn-secondary:focus-visible {
+  background: #fff;
+  border-color: #fff;
+  color: #1B1B1B;
+}
+
+.svc_hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+}
+
+@media screen and (max-width: 991px) {
+  .svc_hero {
+    padding: 150px 0 46px;
+  }
+
+  .svc_hero__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* the H1 and both buttons have to clear a 390x844 first screen, so the
+     photograph follows the actions rather than pushing them down */
+  .svc_hero__media {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .svc_hero {
+    padding: 122px 0 38px;
+  }
+
+  .svc_hero__sub {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .svc_hero__points {
+    margin-bottom: 22px;
+  }
+
+  .svc_hero__actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .svc_hero__actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .svc_hero__media img {
+    border-radius: 14px;
+  }
+}

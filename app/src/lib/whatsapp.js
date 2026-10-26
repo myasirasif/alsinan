@@ -22,7 +22,7 @@ const MESSAGES = {
   "/services/school-transport-in-dubai/":
     "Hi Alsinan, I am enquiring about school transport in Dubai. Could you share routes and pricing?",
   "/services/staff-transport-in-dubai/":
-    "Hi Alsinan, I am enquiring about staff transport in Dubai for our team. Could you share a quote?",
+    "Hi, I need staff transport in Dubai. Number of staff: __, pickup area: __, shift timings: __",
   "/services/labour-transport-in-dubai/":
     "Hi Alsinan, I am enquiring about daily labour transport in Dubai from accommodation to site.",
   "/services/bus-rental-dubai/":

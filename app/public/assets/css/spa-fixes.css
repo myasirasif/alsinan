@@ -1173,20 +1173,200 @@ section.banner_home.banner_inner.banner_contact {
   grid-template-columns: 1fr;
 }
 
-/* Short trust strip under the services cards. */
-.trust_strip .service_area_box {
-  text-align: center;
-  height: 100%;
+/* ---------------------------------------------------------------------------
+   Trust strip, under the services cards.
+
+   It first reused .service_area_box, which the theme paints solid red with a
+   50px radius and 45px of padding. That box is built for a heading, a
+   paragraph and a button; with four short labels in it the row read as four
+   heavy red slabs and shouted louder than the services above it. A proof strip
+   should be quiet. This is its own component: white cards, a red icon disc for
+   the brand note, and the weight carried by the type rather than the fill.
+   --------------------------------------------------------------------------- */
+.trust_strip {
+  padding: 46px 0 10px;
 }
 
-.trust_strip .service_area_box h3 {
+.trust_strip__list {
+  list-style: none;
   margin: 0;
-  font-size: 17px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.trust_strip__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #ececf0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 2px rgba(16, 16, 20, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.trust_strip__item:hover {
+  box-shadow: 0 10px 24px rgba(16, 16, 20, 0.08);
+  transform: translateY(-2px);
+}
+
+.trust_strip__icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #DD0A1B;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the theme ships these icons as dark glyphs; on the red disc they want to be white */
+.trust_strip__icon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.trust_strip__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.trust_strip__text strong {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #1B1B1B;
+  font-weight: 700;
+}
+
+.trust_strip__text span {
+  font-size: 13px;
   line-height: 1.3;
+  color: #6b6b74;
+}
+
+@media screen and (max-width: 991px) {
+  .trust_strip__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 575px) {
-  .trust_strip .service_area_box h3 {
-    font-size: 15px;
+  .trust_strip {
+    padding: 32px 0 4px;
   }
+
+  .trust_strip__item {
+    padding: 14px 15px;
+    gap: 11px;
+    border-radius: 12px;
+  }
+
+  .trust_strip__icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .trust_strip__icon img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .trust_strip__text strong {
+    font-size: 14px;
+  }
+
+  .trust_strip__text span {
+    font-size: 12px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   About block on the homepage, which runs without a photograph now.
+
+   Collapsing the two column grid to one left the copy in a 640px column with
+   the right half of the section empty, and the three proof points stranded
+   underneath as small grey text. The copy keeps its measure, the proof points
+   move alongside it as cards, and the section stops looking like something was
+   deleted from it.
+   --------------------------------------------------------------------------- */
+.about_panel--no-media .about_panel__grid {
+  grid-template-columns: 1fr;
+}
+
+.about_panel--no-media .about_panel__copy {
+  max-width: none;
+}
+
+/* Two columns were tried and dropped. The facts sat in the first grid row, so
+   that row grew to the height of the whole card stack and pushed the eyebrow
+   and the heading apart by three hundred pixels. The cards read better across
+   the full width anyway, and the section no longer has an empty right half. */
+.about_panel--no-media .about_panel__copy > :not(.about_panel__facts) {
+  max-width: 760px;
+}
+
+.about_panel--no-media .about_panel__copy .about_panel__facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0 0;
+  max-width: none;
+}
+
+.about_panel--no-media .about_panel__facts > div {
+  background: #fff;
+  border: 1px solid #e8e5e0;
+  border-radius: 14px;
+  padding: 20px 22px 20px 24px;
+  position: relative;
+}
+
+/* the brand rule the theme uses for small features, turned upright */
+.about_panel--no-media .about_panel__facts > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #DD0A1B;
+}
+
+.about_panel--no-media .about_panel__facts dt {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1B1B1B;
+  margin: 0 0 4px;
+}
+
+.about_panel--no-media .about_panel__facts dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #6b6b74;
+}
+
+@media screen and (max-width: 767px) {
+  .about_panel--no-media .about_panel__copy .about_panel__facts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 30px;
+  }
+}
+
+/* The theme marks each fact with a short horizontal rule above the label. The
+   card already carries an upright rule on its edge, so two brand marks on one
+   small card is one too many. */
+.about_panel--no-media .about_panel__facts dt::before,
+.about_panel--no-media .about_panel__facts > div > span:empty {
+  display: none;
 }

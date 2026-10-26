@@ -98,39 +98,55 @@ export default function Home() {
       <p>Some clients need Transport Services in Dubai for one day. Others need long term arrangements. Staff transport often works best monthly while long projects need vehicles positioned in specific areas. Pricing remains straightforward. Terms stay clear. Whether short or ongoing rental transport in Dubai, you know exactly what is included.</p>
         </ServiceBox>
       </ServicesSection>
-      <section className="services_area_section trust_strip">
+      <section className="trust_strip" aria-label="Why Alsinan">
       <div className="container">
-      <div className="row justify-content-between g-4">
-      <div className="col-lg-3 col-6">
-      <div className="service_area_box">
-      <h3>RTA-licensed drivers</h3>
-      </div>
-      </div>
-      <div className="col-lg-3 col-6">
-      <div className="service_area_box">
-      <h3>24/7 operations</h3>
-      </div>
-      </div>
-      <div className="col-lg-3 col-6">
-      <div className="service_area_box">
-      <h3>All 7 emirates</h3>
-      </div>
-      </div>
-      <div className="col-lg-3 col-6">
-      <div className="service_area_box">
-      <h3>Cars to full-size coaches</h3>
-      </div>
-      </div>
-      </div>
+      <ul className="trust_strip__list">
+      <li className="trust_strip__item">
+      <span className="trust_strip__icon" aria-hidden="true">
+      <img src="/wp-content/uploads/2025/09/iocn_professional_drivers.svg" alt="" width="28" height="28" loading="lazy" />
+      </span>
+      <span className="trust_strip__text">
+      <strong>RTA-licensed drivers</strong>
+      <span>Screened and trained</span>
+      </span>
+      </li>
+      <li className="trust_strip__item">
+      <span className="trust_strip__icon" aria-hidden="true">
+      <img src="/wp-content/uploads/2025/09/icon_ontime.svg" alt="" width="28" height="28" loading="lazy" />
+      </span>
+      <span className="trust_strip__text">
+      <strong>24/7 operations</strong>
+      <span>Nights and early starts</span>
+      </span>
+      </li>
+      <li className="trust_strip__item">
+      <span className="trust_strip__icon" aria-hidden="true">
+      <img src="/wp-content/uploads/2025/09/icon_pin_map.svg" alt="" width="28" height="28" loading="lazy" />
+      </span>
+      <span className="trust_strip__text">
+      <strong>All 7 emirates</strong>
+      <span>Cross-emirate routes</span>
+      </span>
+      </li>
+      <li className="trust_strip__item">
+      <span className="trust_strip__icon" aria-hidden="true">
+      <img src="/wp-content/uploads/2025/09/iocn_maintenance.svg" alt="" width="28" height="28" loading="lazy" />
+      </span>
+      <span className="trust_strip__text">
+      <strong>Cars to full-size coaches</strong>
+      <span>Sized to your headcount</span>
+      </span>
+      </li>
+      </ul>
       {/* Google reviews block goes here once there are real reviews to show.
           Nothing invented, nothing borrowed: only the live Google rating and
           real review text, pulled from the Business Profile. */}
       </div>
       </section>
 
-      <AboutPanel
-        heading={<><span className="sub_head">About Us</span>
-      <h2>We Make Your Trips Comfortable; Every Time</h2></>}>
+      <AboutPanel>
+      <span className="sub_head">About Us</span>
+      <h2>We Make Your Trips Comfortable; Every Time</h2>
       <p>Alsinan Transport is a licensed passenger transport company in Dubai, and being based here matters because timing is everything in this city. The hard part is not finding a vehicle. It is making sure it arrives on time.</p>
       <p>We run <Link to="/services/staff-transport-in-dubai/">staff transport in Dubai</Link>, <Link to="/services/school-transport-in-dubai/">school bus transport</Link> and airport work as fixed daily routes rather than one-off jobs, with cars, vans, minibuses and full size coaches.</p>
       <Link className="btn btn-primary" to="/about/">Read more about us</Link>

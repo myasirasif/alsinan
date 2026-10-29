@@ -27,6 +27,5 @@ export const bodyClasses = {
   "/what-to-think-about-before-traveling-to-dubai/": "wp-singular post-template-default single single-post postid-350 single-format-standard wp-custom-logo wp-theme-alsinan",
   "/the-daily-transport-challenges-businesses-face-in-dubai/": "wp-singular post-template-default single single-post postid-347 single-format-standard wp-custom-logo wp-theme-alsinan",
   "/why-many-families-prefer-dedicated-transport-services-in-dubai/": "wp-singular post-template-default single single-post postid-343 single-format-standard wp-custom-logo wp-theme-alsinan",
-  "/how-visitors-move-around-dubai-without-stress/": "wp-singular post-template-default single single-post postid-334 single-format-standard wp-custom-logo wp-theme-alsinan",
   "/category/cars/": "archive category category-cars category-3 wp-custom-logo wp-theme-alsinan hfeed"
 };

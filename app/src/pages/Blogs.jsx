@@ -188,12 +188,12 @@ export default function Blogs() {
       </Link>
       </div>
       <div className="col-lg-4 col-md-6 mb-4">
-      <Link className="text-decoration-none d-block h-100" to="/how-visitors-move-around-dubai-without-stress/">
+      <Link className="text-decoration-none d-block h-100" to="/compare-different-hotel-transport-options-dubai/">
       <div className="card h-100">
       <div className="card-img-top">
       <img loading="lazy" width="640" height="303" src="/wp-content/uploads/2026/01/Untitled-design-8-768x364.webp" className="img-fluid wp-post-image" alt="Calm tourists arriving at Dubai International Airport with light luggage, heading toward pre arranged transport for a stress free start to their trip." decoding="async" srcSet="/wp-content/uploads/2026/01/Untitled-design-8-768x364.webp 768w, /wp-content/uploads/2026/01/Untitled-design-8-300x142.png 300w, /wp-content/uploads/2026/01/Untitled-design-8-1024x485.webp 1024w, /wp-content/uploads/2026/01/Untitled-design-8.webp 1408w" sizes="(max-width: 640px) 100vw, 640px" />                </div>
       <div className="card-body">
-      <PostDate route="/how-visitors-move-around-dubai-without-stress/" />
+      <PostDate route="/compare-different-hotel-transport-options-dubai/" />
       <h5 className="card-title">How Visitors Move Around Dubai Without Stress</h5>
       <p className="card-text">
                           Dubai is exciting, but moving around it for the first time can feel confusing. This guide helps visitors travel confidently.                  </p>

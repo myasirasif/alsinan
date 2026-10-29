@@ -24,7 +24,6 @@ import PostRideServiceForDailyCommutingInDubai from "./pages/PostRideServiceForD
 import PostWhatToThinkAboutBeforeTravelingToDubai from "./pages/PostWhatToThinkAboutBeforeTravelingToDubai";
 import PostTheDailyTransportChallengesBusinessesFaceInDubai from "./pages/PostTheDailyTransportChallengesBusinessesFaceInDubai";
 import PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai from "./pages/PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai";
-import PostHowVisitorsMoveAroundDubaiWithoutStress from "./pages/PostHowVisitorsMoveAroundDubaiWithoutStress";
 import CategoryCars from "./pages/CategoryCars";
 import ThankYou from "./pages/ThankYou";
 import SvcBusRentalDubai from "./pages/SvcBusRentalDubai";
@@ -102,7 +101,6 @@ export default function App() {
         <Route path="/what-to-think-about-before-traveling-to-dubai/" element={<PostWhatToThinkAboutBeforeTravelingToDubai />} />
         <Route path="/the-daily-transport-challenges-businesses-face-in-dubai/" element={<PostTheDailyTransportChallengesBusinessesFaceInDubai />} />
         <Route path="/why-many-families-prefer-dedicated-transport-services-in-dubai/" element={<PostWhyManyFamiliesPreferDedicatedTransportServicesInDubai />} />
-        <Route path="/how-visitors-move-around-dubai-without-stress/" element={<PostHowVisitorsMoveAroundDubaiWithoutStress />} />
         <Route path="/category/cars/" element={<CategoryCars />} />
         <Route path="/how-to-choose-a-staff-transport-company-in-dubai/" element={<PostHowToChooseAStaffTransportCompanyInDubai />} />
         <Route path="/bus-rental-in-dubai-what-to-check-before-you-book/" element={<PostBusRentalInDubaiWhatToCheckBeforeYouBook />} />

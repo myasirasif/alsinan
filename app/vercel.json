@@ -135,6 +135,11 @@
       "source": "/services/for-private/",
       "destination": "/services/private-car-rental-in-dubai/",
       "statusCode": 301
+    },
+    {
+      "source": "/how-visitors-move-around-dubai-without-stress/",
+      "destination": "/compare-different-hotel-transport-options-dubai/",
+      "statusCode": 301
     }
   ],
   "headers": [

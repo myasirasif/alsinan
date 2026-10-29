@@ -1954,7 +1954,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/services/airport-transport-in-dubai/"
   },
   "/compare-different-hotel-transport-options-dubai/": {
-    "title": "Compare Different Hotel Transport Options in Dubai",
+    "title": "Hotel Transport in Dubai: Comparing Options for Guests and Groups",
     "meta": [
       {
         "name": "google-site-verification",
@@ -1962,7 +1962,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Compare different hotel transport options in Dubai and learn how visitors move between city areas comfortably without stress or delays."
+        "content": "Compare hotel shuttles, taxis, cars with drivers and chartered buses in Dubai. Which suits single guests, families, conferences and event groups."
       },
       {
         "name": "robots",
@@ -1978,11 +1978,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Compare Different Hotel Transport Options in Dubai"
+        "content": "Hotel Transport in Dubai: Comparing Options for Guests and Groups"
       },
       {
         "property": "og:description",
-        "content": "Compare different hotel transport options in Dubai and learn how visitors move between city areas comfortably without stress or delays."
+        "content": "Compare hotel shuttles, taxis, cars with drivers and chartered buses in Dubai. Which suits single guests, families, conferences and event groups."
       },
       {
         "property": "og:url",
@@ -2038,11 +2038,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Compare Different Hotel Transport Options in Dubai"
+        "content": "Hotel Transport in Dubai: Comparing Options for Guests and Groups"
       },
       {
         "name": "twitter:description",
-        "content": "Compare different hotel transport options in Dubai and learn how visitors move between city areas comfortably without stress or delays."
+        "content": "Compare hotel shuttles, taxis, cars with drivers and chartered buses in Dubai. Which suits single guests, families, conferences and event groups."
       },
       {
         "name": "twitter:image",
@@ -2068,7 +2068,7 @@ export const seo = {
     "canonical": "https://alsinantransport.com/compare-different-hotel-transport-options-dubai/"
   },
   "/transport-service-options-for-airport-transfers-uae/": {
-    "title": "Transport Service Options for Airport Transfers in the UAE",
+    "title": "Airport Transfers in the UAE for Groups, Staff and Families",
     "meta": [
       {
         "name": "google-site-verification",
@@ -2076,7 +2076,7 @@ export const seo = {
       },
       {
         "name": "description",
-        "content": "Explore the best transport service options for airport transfers in the UAE, including private, shared, and affordable solutions with Alsinan Transport."
+        "content": "How to plan airport transfers in the UAE for groups, new staff and families. When a taxi is enough, when to book a driver, and what to share when you book."
       },
       {
         "name": "robots",
@@ -2092,11 +2092,11 @@ export const seo = {
       },
       {
         "property": "og:title",
-        "content": "Transport Service Options for Airport Transfers in the UAE"
+        "content": "Airport Transfers in the UAE for Groups, Staff and Families"
       },
       {
         "property": "og:description",
-        "content": "Explore the best transport service options for airport transfers in the UAE, including private, shared, and affordable solutions with Alsinan Transport."
+        "content": "How to plan airport transfers in the UAE for groups, new staff and families. When a taxi is enough, when to book a driver, and what to share when you book."
       },
       {
         "property": "og:url",
@@ -2152,11 +2152,11 @@ export const seo = {
       },
       {
         "name": "twitter:title",
-        "content": "Transport Service Options for Airport Transfers in the UAE"
+        "content": "Airport Transfers in the UAE for Groups, Staff and Families"
       },
       {
         "name": "twitter:description",
-        "content": "Explore the best transport service options for airport transfers in the UAE, including private, shared, and affordable solutions with Alsinan Transport."
+        "content": "How to plan airport transfers in the UAE for groups, new staff and families. When a taxi is enough, when to book a driver, and what to share when you book."
       },
       {
         "name": "twitter:image",
@@ -2636,140 +2636,6 @@ export const seo = {
       }
     ],
     "canonical": "https://alsinantransport.com/why-many-families-prefer-dedicated-transport-services-in-dubai/"
-  },
-  "/how-visitors-move-around-dubai-without-stress/": {
-    "title": "How Visitors Move Around Dubai Without Stress",
-    "meta": [
-      {
-        "name": "google-site-verification",
-        "content": "XGsVjWwG-TKBsEorZOM6cexZ79ZiUwT7yPV4A8GFDZ4"
-      },
-      {
-        "name": "description",
-        "content": "How visitors get around Dubai without the stress: comparing taxis, ride apps, metro and private transport, and when each one makes sense."
-      },
-      {
-        "name": "robots",
-        "content": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
-      },
-      {
-        "property": "og:locale",
-        "content": "en_US"
-      },
-      {
-        "property": "og:type",
-        "content": "article"
-      },
-      {
-        "property": "og:title",
-        "content": "How Visitors Move Around Dubai Without Stress"
-      },
-      {
-        "property": "og:description",
-        "content": "How visitors get around Dubai without the stress: comparing taxis, ride apps, metro and private transport, and when each one makes sense."
-      },
-      {
-        "property": "og:url",
-        "content": "https://alsinantransport.com/how-visitors-move-around-dubai-without-stress/"
-      },
-      {
-        "property": "og:site_name",
-        "content": "Alsinan Transport"
-      },
-      {
-        "property": "article:tag",
-        "content": "Dubai airport arrival"
-      },
-      {
-        "property": "article:tag",
-        "content": "Dubai transport tips"
-      },
-      {
-        "property": "article:tag",
-        "content": "Dubai Travel"
-      },
-      {
-        "property": "article:tag",
-        "content": "Dubai travel guide"
-      },
-      {
-        "property": "article:tag",
-        "content": "Moving around Dubai"
-      },
-      {
-        "property": "article:section",
-        "content": "Cars"
-      },
-      {
-        "property": "og:updated_time",
-        "content": "2026-01-06T04:51:27+00:00"
-      },
-      {
-        "property": "og:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
-      },
-      {
-        "property": "og:image:secure_url",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
-      },
-      {
-        "property": "og:image:width",
-        "content": "1408"
-      },
-      {
-        "property": "og:image:height",
-        "content": "667"
-      },
-      {
-        "property": "og:image:alt",
-        "content": "Calm tourists arriving at Dubai International Airport with light luggage, heading toward pre arranged transport for a stress free start to their trip."
-      },
-      {
-        "property": "og:image:type",
-        "content": "image/png"
-      },
-      {
-        "property": "article:published_time",
-        "content": "2026-01-06T04:49:13+00:00"
-      },
-      {
-        "property": "article:modified_time",
-        "content": "2026-01-06T04:51:27+00:00"
-      },
-      {
-        "name": "twitter:card",
-        "content": "summary_large_image"
-      },
-      {
-        "name": "twitter:title",
-        "content": "How Visitors Move Around Dubai Without Stress"
-      },
-      {
-        "name": "twitter:description",
-        "content": "How visitors get around Dubai without the stress: comparing taxis, ride apps, metro and private transport, and when each one makes sense."
-      },
-      {
-        "name": "twitter:image",
-        "content": "https://alsinantransport.com/wp-content/uploads/2026/01/Untitled-design-8.png"
-      },
-      {
-        "name": "twitter:label1",
-        "content": "Written by"
-      },
-      {
-        "name": "twitter:data1",
-        "content": "Yaserr Khan"
-      },
-      {
-        "name": "twitter:label2",
-        "content": "Time to read"
-      },
-      {
-        "name": "twitter:data2",
-        "content": "4 minutes"
-      }
-    ],
-    "canonical": "https://alsinantransport.com/how-visitors-move-around-dubai-without-stress/"
   },
   "/category/cars/": {
     "title": "Cars Archives - Alsinan Transport",

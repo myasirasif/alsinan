@@ -50,7 +50,6 @@ const POST_TOPICS = {
   "/what-to-think-about-before-traveling-to-dubai/": "transport for a trip to Dubai",
   "/the-daily-transport-challenges-businesses-face-in-dubai/": "staff transport in Dubai",
   "/why-many-families-prefer-dedicated-transport-services-in-dubai/": "dedicated family transport in Dubai",
-  "/how-visitors-move-around-dubai-without-stress/": "getting around Dubai",
 };
 
 for (const [route, topic] of Object.entries(POST_TOPICS)) {

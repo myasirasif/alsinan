@@ -14,6 +14,7 @@ const cfg = JSON.parse(fs.readFileSync(path.join(dir, "app", "vercel.json"), "ut
 // every legacy URL that must end up redirected, in the trailing-slash form
 // Vercel normalises to, and the bare form as well
 const MUST_REDIRECT = [
+  "/how-visitors-move-around-dubai-without-stress/",
   "/tag/dubai-travel/", "/tag/dubai-travel",
   "/category/cars/", "/category/buses/", "/category/uncategorized/",
   "/tag/dubai-transport-tips/",
@@ -39,7 +40,6 @@ const MUST_NOT_REDIRECT = [
   "/", "/about/", "/services/", "/services/airport-transport-in-dubai/",
   "/our-fleet/", "/blogs/", "/contact-us/", "/privacy-policy/",
   "/terms-and-conditions/",
-  "/how-visitors-move-around-dubai-without-stress/",
   "/sitemap.xml", "/robots.txt",
 ];
 

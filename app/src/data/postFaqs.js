@@ -5,6 +5,42 @@
 // No prices, ranges or figures anywhere: the client does not want pricing on
 // the site, so a cost question explains what a quote depends on instead.
 export const postFaqs = {
+  "/transport-service-options-for-airport-transfers-uae/": [
+    [
+      "Can you pick up from any UAE airport?",
+      "Yes. We arrange pickups and drop-offs at Dubai International, Al Maktoum International, Zayed International in Abu Dhabi and Sharjah International, to and from anywhere in the seven emirates.",
+    ],
+    [
+      "What happens if my flight is delayed?",
+      "Share your flight number when you book. That allows the pickup time to be adjusted to the actual arrival.",
+    ],
+    [
+      "Can you handle a group arriving on different flights?",
+      "Yes. Send the list of flights and passenger names, and the pickups can be planned flight by flight or grouped where arrival times are close.",
+    ],
+    [
+      "Do you offer return trips to the airport?",
+      "Yes. Share the departure flight and pickup address, and the return trip can be booked together with the arrival.",
+    ],
+  ],
+  "/compare-different-hotel-transport-options-dubai/": [
+    [
+      "Can you handle transport for a full event, not just one trip?",
+      "Yes. Send the full schedule and passenger numbers, and every movement can be planned together, from airport arrivals to departures.",
+    ],
+    [
+      "Can guests be picked up from more than one hotel?",
+      "Yes. Share each hotel and the number of guests at each, and the route can be planned to collect everyone.",
+    ],
+    [
+      "Do you work directly with hotels?",
+      "Yes. Hotels can book transport for their guests, including airport pickups, venue transfers and day trips.",
+    ],
+    [
+      "How early should we book for a busy event week?",
+      "As early as you can. During large exhibitions and peak tourist months, vehicles book up quickly.",
+    ],
+  ],
   "/what-affects-the-cost-of-staff-transport-in-dubai/": [
     [
       "How is staff transport priced in Dubai?",

@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
+import ServiceHero from "../components/sections/ServiceHero";
 import { seo } from "../data/seo";
 import { waLink } from "../lib/whatsapp";
 
@@ -13,35 +14,28 @@ export default function SvcHotelTransportServiceInDubai() {
   return (
     <>
       <Seo {...seo["/services/hotel-transport-service-in-dubai/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For Hotel</h2>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/hotel-transport-service-in-dubai/"
+        crumb="Hotel Transport"
+        heading="Hotel Transport in Dubai for Guests and Groups"
+        subline="Airport pickups and hotel transfers across the city, arranged in advance so your guests are never left waiting."
+        points={["Always on time", "Friendly, safe drivers", "Vehicles for every group"]}
+        image={{
+          src: "/wp-content/uploads/2025/10/busses-hero-h960.webp",
+          width: 960, height: 640,
+          alt: "Two Toyota Coaster minibuses used for reliable group and staff transport services in Dubai by Alsinan Transport",
+          srcSet: "/wp-content/uploads/2025/10/busses-hero-h480.webp 480w, /wp-content/uploads/2025/10/busses-hero-h768.webp 768w, /wp-content/uploads/2025/10/busses-hero-h960.webp 960w",
+        }}
+      />
 
 
       <div className="service_post">
       <div className="container">
       <div className="row">
 
-      <div className="col-lg-6">
-      <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="853" src="/wp-content/uploads/2025/10/busses-768x1024.jpg" className="attachment-large size-large wp-post-image" alt="Two Toyota Coaster minibuses used for reliable group and staff transport services in Dubai by Alsinan Transport" decoding="async" srcSet="/wp-content/uploads/2025/10/busses-768x1024.jpg 768w, /wp-content/uploads/2025/10/busses-225x300.jpg 225w, /wp-content/uploads/2025/10/busses.webp 960w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
-      </div>
-
-      <div className="col-lg-6 my-auto">
+      <div className="col-lg-12">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For Hotel</h2>
-      <h1 className="wp-block-heading"><strong><strong>Reliable Hotel Transport Service in Dubai</strong></strong></h1>
+      <h2 className="wp-block-heading"><strong><strong>Reliable Hotel Transport Service in Dubai</strong></strong></h2>
       <p>Moving around Dubai should feel easy, especially when you are staying at a hotel and want to make the most of your time. At Alsinan Transport, every hotel transfer is kept simple, dependable and comfortable. Whether you are travelling alone, with family or as part of a business group, our hotel transport service in Dubai is designed to suit your schedule and the way you travel.</p>
       <p>From smooth airport pickups to hotel transfers across the city, we handle the planning so you can focus on your stay, your meetings, your sightseeing or your special events. Every journey is arranged carefully so it feels seamless from hotel lobby to destination.</p>
       <Link className="btn btn-primary" to="/contact-us/">Book Now</Link>

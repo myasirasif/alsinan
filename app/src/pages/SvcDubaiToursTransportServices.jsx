@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
+import ServiceHero from "../components/sections/ServiceHero";
 import { seo } from "../data/seo";
 import { waLink } from "../lib/whatsapp";
 
@@ -13,35 +14,23 @@ export default function SvcDubaiToursTransportServices() {
   return (
     <>
       <Seo {...seo["/services/dubai-tours-transport-services/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For Tours &#038; Excursions</h2>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/dubai-tours-transport-services/"
+        crumb="Tours & Excursions"
+        heading="Dubai Tours Transport Services for Groups of Any Size"
+        subline="Travel together, stay on schedule and stay comfortable, from a half day outing to a multi day itinerary."
+        points={["Stay together in one vehicle", "Drivers who know the city", "Vehicles for every group size"]}
+        image={null}
+      />
 
 
       <div className="service_post">
       <div className="container">
       <div className="row">
 
-      <div className="col-lg-6">
-      <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="407" src="/wp-content/uploads/2025/10/tour-transport-op-1024x651.jpg" className="attachment-large size-large wp-post-image" alt="Open top tour bus carrying tourists for Dubai city sightseeing and tours transport services" decoding="async" srcSet="/wp-content/uploads/2025/10/tour-transport-op-1024x651.jpg 1024w, /wp-content/uploads/2025/10/tour-transport-op-300x191.jpg 300w, /wp-content/uploads/2025/10/tour-transport-op-768x488.jpg 768w, /wp-content/uploads/2025/10/tour-transport-op-1536x976.webp 1536w, /wp-content/uploads/2025/10/tour-transport-op.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
-      </div>
-
-      <div className="col-lg-6 my-auto">
+      <div className="col-lg-12">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For Tours &#038; Excursions</h2>
-      <h1 className="wp-block-heading">Comfortable and Reliable Dubai Tours Transport Services</h1>
+      <h2 className="wp-block-heading">Comfortable and Reliable Dubai Tours Transport Services</h2>
       <p>Dubai is full of experiences you do not want to miss, from modern skylines and waterfront views to desert landscapes and traditional markets. When you are responsible for managing a tour or group trip, you should not have to worry about vehicles, timing or coordination. That is where <strong><Link to="/">Alsinan Transport</Link></strong> supports you.</p>
       <p>Our Dubai tours <Link to="/services/">transport services</Link> help groups travel together, stay on schedule and remain comfortable throughout the journey. Whether it is a school tour, a family outing, a corporate program or a multi day itinerary, we handle the transport planning so you can stay focused on the experience itself.</p>
       <p>From smaller outings to full bus rental in Dubai for large groups, we suggest the right option and keep your day moving smoothly from one stop to the next.</p>

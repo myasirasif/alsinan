@@ -1421,6 +1421,17 @@ section.banner_home.banner_inner.banner_contact {
   align-items: center;
 }
 
+/* A page with no photograph fit for a hero gets the copy across the full
+   width rather than an empty half, the same way .about_panel--no-media does. */
+.svc_hero--no-media .svc_hero__grid {
+  grid-template-columns: 1fr;
+}
+
+.svc_hero--no-media .svc_hero__sub,
+.svc_hero--no-media .svc_hero__copy {
+  max-width: 44rem;
+}
+
 .svc_hero__crumb {
   display: flex;
   align-items: center;

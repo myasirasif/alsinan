@@ -7,6 +7,7 @@ import useThemeScripts from "../hooks/useThemeScripts";
 import { seo } from "../data/seo";
 import { staffFaqs } from "../data/staffFaqs";
 import { waLink } from "../lib/whatsapp";
+import ServiceHero from "../components/sections/ServiceHero";
 
 export default function SvcStaffTransportInDubai() {
   useThemeScripts([]);
@@ -14,36 +15,19 @@ export default function SvcStaffTransportInDubai() {
   return (
     <>
       <Seo {...seo["/services/staff-transport-in-dubai/"]} />
-      <section className="svc_hero" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="container">
-      <div className="svc_hero__grid">
-
-      <div className="svc_hero__copy">
-      <nav className="svc_hero__crumb" aria-label="Breadcrumb">
-      <Link to="/services/">Services</Link>
-      <span aria-hidden="true">/</span>
-      <span>Staff Transport</span>
-      </nav>
-      <h1>Staff Transport in Dubai, On Time for Every Shift</h1>
-      <p className="svc_hero__sub">Fixed daily routes for offices, labour camps, hotels and warehouses. Licensed drivers, vehicles sized to your headcount, 24/7 across all 7 emirates.</p>
-      <ul className="svc_hero__points">
-      <li>RTA-licensed drivers</li>
-      <li>Routes planned around your shift times</li>
-      <li>One contact for the whole contract</li>
-      </ul>
-      <div className="svc_hero__actions">
-      <a href={waLink("/services/staff-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener">Get a Quote on WhatsApp</a>
-      <a href="tel:+971555252397" className="btn btn-secondary">Call +971 55 525 2397</a>
-      </div>
-      </div>
-
-      <div className="svc_hero__media">
-      <img src="/wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg" width="1024" height="683" alt="Toyota Coaster passenger bus used for staff transport in Dubai" fetchPriority="high" decoding="async" srcSet="/wp-content/uploads/2025/10/staff-transport-op-768x512-v2.jpg 768w, /wp-content/uploads/2025/10/staff-transport-op-1024x683.jpg 1024w, /wp-content/uploads/2025/10/staff-transport-op-1536x1024.jpg 1536w" sizes="(max-width: 991px) 100vw, 44vw" />
-      </div>
-
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/staff-transport-in-dubai/"
+        crumb="Staff Transport"
+        heading="Staff Transport in Dubai, On Time for Every Shift"
+        subline="Fixed daily routes for offices, labour camps, hotels and warehouses. Licensed drivers, vehicles sized to your headcount, 24/7 across all 7 emirates."
+        points={["RTA-licensed drivers", "Routes planned around your shift times", "One contact for the whole contract"]}
+        image={{
+          src: "/wp-content/uploads/2025/10/staff-transport-op-h1024.webp",
+          width: 1024, height: 683,
+          alt: "Toyota Coaster passenger bus used for staff transport in Dubai",
+          srcSet: "/wp-content/uploads/2025/10/staff-transport-op-h480.webp 480w, /wp-content/uploads/2025/10/staff-transport-op-h768.webp 768w, /wp-content/uploads/2025/10/staff-transport-op-h1024.webp 1024w",
+        }}
+      />
 
 
       <div className="service_post">

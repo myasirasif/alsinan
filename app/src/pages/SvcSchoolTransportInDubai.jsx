@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
+import ServiceHero from "../components/sections/ServiceHero";
 import { seo } from "../data/seo";
 import { schoolFaqs } from "../data/schoolFaqs";
 import { waLink } from "../lib/whatsapp";
@@ -14,22 +15,14 @@ export default function SvcSchoolTransportInDubai() {
   return (
     <>
       <Seo {...seo["/services/school-transport-in-dubai/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">School Transport in Dubai</span>
-      <h2>Daily School Runs with Licensed, Screened Drivers</h2>
-      <p>Fixed routes across Dubai and the wider UAE. The same trusted driver every day, supervised boarding, and vehicles prepared for students.</p>
-      <a href={waLink("/services/school-transport-in-dubai/")} className="btn btn-primary" target="_blank" rel="noopener"><img src="/wp-content/uploads/2025/09/icon_wp.svg" alt="Chat with Alsinan Transport on WhatsApp" width="37" height="36" /> WhatsApp Us</a>
-      <Link className="btn btn-danger" to="/contact-us/">BOOK NOW</Link>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/school-transport-in-dubai/"
+        crumb="School Transport"
+        heading="School Transport in Dubai, the Same Route Every Morning"
+        subline="Fixed daily routes for schools and families, run by licensed, screened drivers. We operate 24/7 across all seven emirates."
+        points={["Licensed, screened drivers", "Fixed daily routes", "24/7 across all seven emirates"]}
+        image={null}
+      />
 
 
       <div className="service_post">
@@ -43,9 +36,7 @@ export default function SvcSchoolTransportInDubai() {
 
       <div className="col-lg-6 my-auto">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For School</h2>
-      <h1 className="wp-block-heading"><strong>Safe and Reliable School Transport in Dubai</strong></h1>
+      <h2 className="wp-block-heading"><strong>Safe and Reliable School Transport in Dubai</strong></h2>
       <p>Alsinan Transport runs school bus transport and private school transport in Dubai on fixed daily routes, with licensed, screened drivers. We operate 24/7 across all seven emirates.</p>
       <p>School mornings in Dubai already start early and get busy very fast. Different timings, changing traffic and constant responsibilities make the start of the day stressful for both parents and schools. This is exactly where Alsinan Transport becomes helpful. Whether daily pickups are required, a quick arrangement is needed, or a sudden school activity is planned, we make sure every child travels safely and comfortably. With our service, students reach school on time, relaxed and prepared for the day, while parents and schools feel confident that transport is fully handled.</p>
       <p>Parents feel more at ease knowing that daily school travel is managed responsibly. Schools feel assured that children and staff will arrive according to schedule. Our drivers do more than just drive. They stay calm, greet students warmly and maintain discipline in a friendly way. Our vehicles are well maintained and suited perfectly for school routes. We manage the difficult side of daily travel so mornings become smoother for everyone involved in School transport in Dubai.</p>

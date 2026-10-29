@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
+import ServiceHero from "../components/sections/ServiceHero";
 import { seo } from "../data/seo";
 import { waLink } from "../lib/whatsapp";
 
@@ -13,35 +14,28 @@ export default function SvcAirportTransportInDubai() {
   return (
     <>
       <Seo {...seo["/services/airport-transport-in-dubai/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For Airport</h2>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/airport-transport-in-dubai/"
+        crumb="Airport Transport"
+        heading="Airport Transport in Dubai, Timed to Your Flight"
+        subline="Pickups planned around flight schedules and real road conditions, with drivers who know the terminals and vehicles sized to your luggage."
+        points={["Pickups planned around your flight", "Drivers who know the airport layouts", "Available around the clock"]}
+        image={{
+          src: "/wp-content/uploads/2025/10/For-Airport-h1024.webp",
+          width: 1024, height: 683,
+          alt: "Airport terminal with aircraft and passengers representing reliable airport transport service in Dubai by Alsinan Transport",
+          srcSet: "/wp-content/uploads/2025/10/For-Airport-h480.webp 480w, /wp-content/uploads/2025/10/For-Airport-h768.webp 768w, /wp-content/uploads/2025/10/For-Airport-h1024.webp 1024w",
+        }}
+      />
 
 
       <div className="service_post">
       <div className="container">
       <div className="row">
 
-      <div className="col-lg-6">
-      <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="427" src="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg" className="attachment-large size-large wp-post-image" alt="Airport terminal with aircraft and passengers representing reliable airport transport service in Dubai by Alsinan Transport" decoding="async" srcSet="/wp-content/uploads/2025/10/For-Airport-1024x683.jpg 1024w, /wp-content/uploads/2025/10/For-Airport-300x200.jpg 300w, /wp-content/uploads/2025/10/For-Airport-768x512.jpg 768w, /wp-content/uploads/2025/10/For-Airport-1536x1024.webp 1536w, /wp-content/uploads/2025/10/For-Airport.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
-      </div>
-
-      <div className="col-lg-6 my-auto">
+      <div className="col-lg-12">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For Airport</h2>
-      <h1 className="wp-block-heading"><strong>Stress Free Airport Transport in Dubai</strong></h1>
+      <h2 className="wp-block-heading"><strong>Stress Free Airport Transport in Dubai</strong></h2>
       <p>Catching a flight already brings enough responsibility on its own, so the journey to and from the airport should never feel stressful. With Alsinan Transport, your vehicle waits for you at the right time and the right place, without uncertainty or last minute panic. The driver understands Dubai traffic, peak rush hours and the sensible routes that save precious time. You simply sit comfortably, relax and let your airport transport in Dubai take you smoothly to your terminal without pressure.</p>
       <p>Every traveler and every situation is different. Sometimes it is a solo business trip with light luggage. Sometimes it is a small family with children, strollers and multiple bags. At times it is an entire team or group working on a tight schedule. We match the vehicle, timing and planning to your real travel situation so your transfer feels calm, organized and effortless from your doorstep to the airport.</p>
       <p>If you are flying alone and want a quick, direct transfer, we keep everything simple and efficient. If you are traveling with family or a bigger group, we make sure space, luggage capacity and coordination are handled carefully so you do not need to juggle anything at the airport. The goal is to make your Airport transport in Dubai feel clear, relaxed and dependable.</p>

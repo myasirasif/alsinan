@@ -20,21 +20,21 @@ const MESSAGES = {
 
   // service pages
   "/services/school-transport-in-dubai/":
-    "Hi Alsinan, I am enquiring about school transport in Dubai. Could you share routes and pricing?",
+    "Hi, I need school transport in Dubai. School: __, pickup areas: __, number of children: __",
   "/services/staff-transport-in-dubai/":
     "Hi, I need staff transport in Dubai. Number of staff: __, pickup area: __, shift timings: __",
   "/services/labour-transport-in-dubai/":
-    "Hi Alsinan, I am enquiring about daily labour transport in Dubai from accommodation to site.",
+    "Hi, I need labour transport in Dubai. Crew size: __, accommodation area: __, site and shift timings: __",
   "/services/bus-rental-dubai/":
-    "Hi Alsinan, I am enquiring about bus rental in Dubai with a driver. Could you share sizes and pricing?",
+    "Hi, I need bus rental in Dubai with a driver. Passengers: __, date: __, pickup and drop off: __",
   "/services/airport-transport-in-dubai/":
-    "Hi Alsinan, I am enquiring about airport transport in Dubai. Could you share pricing?",
+    "Hi, I need airport transport in Dubai. Flight date and time: __, passengers: __, pickup or drop off: __",
   "/services/hotel-transport-service-in-dubai/":
-    "Hi Alsinan, I am enquiring about hotel transport in Dubai for our guests.",
+    "Hi, I need hotel transport in Dubai. Hotel: __, guests: __, dates: __",
   "/services/private-car-rental-in-dubai/":
-    "Hi Alsinan, I am enquiring about private car rental in Dubai. Could you share available vehicles?",
+    "Hi, I need a private car in Dubai. With or without driver: __, dates: __, pickup area: __",
   "/services/dubai-tours-transport-services/":
-    "Hi Alsinan, I am enquiring about transport for a tour or excursion in Dubai.",
+    "Hi, I need transport for a tour in Dubai. Group size: __, date: __, places you want to visit: __",
 
   // blog
   "/blogs/": "Hi Alsinan, I was reading your blog and would like to ask about your transport services.",

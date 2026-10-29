@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import { ServicesSection, ServiceBox } from "../components/sections/ServicesSection";
 import { WhyChoose, ChoosePoint } from "../components/sections/WhyChoose";
 import useThemeScripts from "../hooks/useThemeScripts";
+import ServiceHero from "../components/sections/ServiceHero";
 import { seo } from "../data/seo";
 import { waLink } from "../lib/whatsapp";
 
@@ -13,35 +14,28 @@ export default function SvcPrivateCarRentalInDubai() {
   return (
     <>
       <Seo {...seo["/services/private-car-rental-in-dubai/"]} />
-      <section className="banner_home banner_inner banner_inner_services" style={{ backgroundImage: "url('/wp-content/uploads/2025/10/banner_bg.webp')" }}>
-      <div className="banner_shadow"></div>
-      <div className="container h-100">
-      <div className="row h-100 justify-content-center">
-      <div className="col-xl-6 my-auto">
-      <div className="content_banner text-center">
-      <span className="h1_head">Services</span>
-      <h2>For Private Travellers</h2>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
+      <ServiceHero
+        route="/services/private-car-rental-in-dubai/"
+        crumb="Private Travellers"
+        heading="Private Car Rental in Dubai, With or Without a Driver"
+        subline="Choose your own timing and route. Drive yourself if you prefer being behind the wheel, or let a professional chauffeur handle the road."
+        points={["Drive yourself or ride with a chauffeur", "A fleet for every journey", "Always available"]}
+        image={{
+          src: "/wp-content/uploads/2025/10/private-transport-h1024.webp",
+          width: 1024, height: 683,
+          alt: "Private car service in Dubai with comfortable sedan for reliable transport by Alsinan Transport",
+          srcSet: "/wp-content/uploads/2025/10/private-transport-h480.webp 480w, /wp-content/uploads/2025/10/private-transport-h768.webp 768w, /wp-content/uploads/2025/10/private-transport-h1024.webp 1024w",
+        }}
+      />
 
 
       <div className="service_post">
       <div className="container">
       <div className="row">
 
-      <div className="col-lg-6">
-      <div className="post-thumbnail service_thumbnail">
-      <img width="640" height="427" src="/wp-content/uploads/2025/10/private-transport-1024x683.jpg" className="attachment-large size-large wp-post-image" alt="Private car service in Dubai with comfortable sedan for reliable transport by Alsinan Transport" decoding="async" srcSet="/wp-content/uploads/2025/10/private-transport-1024x683.jpg 1024w, /wp-content/uploads/2025/10/private-transport-300x200.jpg 300w, /wp-content/uploads/2025/10/private-transport-768x512.jpg 768w, /wp-content/uploads/2025/10/private-transport-1536x1024.webp 1536w, /wp-content/uploads/2025/10/private-transport.webp 1920w" sizes="(max-width: 640px) 100vw, 640px" />          </div>
-      </div>
-
-      <div className="col-lg-6 my-auto">
+      <div className="col-lg-12">
       <div className="post-content service_content">
-      <h3>Services</h3>
-      <h2>For Private Travellers</h2>
-      <h1 className="wp-block-heading"><strong><strong><strong><strong>Premium Private Car Rental in Dubai for Comfortable City Travel</strong></strong></strong></strong></h1>
+      <h2 className="wp-block-heading"><strong><strong><strong><strong>Premium Private Car Rental in Dubai for Comfortable City Travel</strong></strong></strong></strong></h2>
       <p>Exploring Dubai becomes easier, smoother and far more enjoyable when you are not relying on taxis or crowded public transport. With Alsinan Transport, you get private car rental in Dubai that lets you choose your timing, your destinations and your pace. Whether it is a business visit, a sightseeing plan or a relaxed family outing, your journey runs on your schedule, not anyone else’s.</p>
       <p>You can drive yourself if you prefer being behind the wheel, or you can let a professional chauffeur handle the road while you relax. If you want something more refined, our luxury car rental in Dubai gives you comfort, elegance and presence that fits business meetings, special occasions and premium travel experiences.</p>
       <Link className="btn btn-primary" to="/contact-us/">Book Now</Link>
